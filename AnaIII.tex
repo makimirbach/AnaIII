@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage[standard]{ntheorem}
 
+\newcommand{\cara}{Carathéodory-Fortsetzung}
+
 \begin{document}
 
 \title{Analysis III}
@@ -66,5 +68,26 @@ $\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Alge
 	\item
 \end{enumerate}
 \end{Beispiel}
+
+\chapter{Das Lebesgue -Maß und -Integral}
+\section{Das Lebesgue-Maß}
+
+Halbring $\mathcal{Q}^n$ Inhalt.\\
+$vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
+
+\begin{Satz}
+	Prämaß auf Halbring\\
+	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
+\end{Satz}
+
+\begin{Lemma}
+	$vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
+\end{Lemma}
+
+\begin{Definition}
+	Das (äußere) Lebesguemaß einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
+	$$ \mathscr{L}^n(E) := inf\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \cup_{i = 1}^{\infty} P_i \} $$
+\end{Definition}
+
 
 \end{document}
