@@ -1,0 +1,45 @@
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{ntheorem}
+\newtheorem{defi}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{satz}{Satz}
+
+\begin{document}
+
+\title{Analysis III}
+\author{Dr. Tobias Lamm}
+%\date{}
+\maketitle
+\chapter{I. Maße und messbare Funktionen}
+\section{ $\sigma$-Algebren und Maße} 
+Notation: $X$ Menge, \\ $P(X) =$ \textbraceleft Teilmengen von $X$\textbraceright  {} Potenzmenge \\
+$A$ $\subset$  $P(X)$ Mengensystem
+\begin{defi}
+Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra}, falls
+\begin{enumerate}
+	\item $X \in \mathscr{A}$
+	\item $A \in \mathscr{A} \Rightarrow X \backslash A \in \mathscr{A}$
+	\item $A_i \in \mathscr{A}$, $i \in$ $\mathbb{N} \Rightarrow \bigcup_{i = 1}^{\infty} A_i$
+\end{enumerate}
+Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
+\end{defi}
+
+\subsubsection{Bemerkung}
+\begin{enumerate}
+	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, denn:
+	$\bigcap_{i=1}^{\infty} A_i = X\backslash (\bigcup_{i=1}^{\infty} (X \backslash A_i))$
+	\item $\emptyset \in \mathscr{A}$
+	\item $A, B \in \mathscr{A} \Rightarrow A \backslash B \in \mathscr{A}$, denn $A \backslash B = A \cap (X \backslash B)$
+\end{enumerate}
+
+\subsubsection{Beispiel}
+\begin{enumerate}
+	\item $P(X)$ trivial
+	\item \textbraceleft$ \emptyset, X $\textbraceright{} trivial 
+\end{enumerate}
+
+\end{document}
