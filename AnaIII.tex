@@ -1,29 +1,25 @@
-\documentclass[11pt]{memoir}
-
+\documentclass[11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{mathrsfs}
 \usepackage{amssymb}
-\usepackage[standard]{ntheorem}
+\usepackage{ntheorem}
+\newtheorem{defi}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{satz}{Satz}
 
 \begin{document}
 
 \title{Analysis III}
-\author{Prof. Dr. Tobias Lamm}
-\date{Wintersemester 2015/16}
-
+\author{Dr. Tobias Lamm}
+%\date{}
 \maketitle
-
 \chapter{Maße und messbare Funktionen}
-\section{$\sigma$-Algebren und Maße}
+\section{ $\sigma$-Algebren und Maße} 
 Notation: $X$ Menge, \\ $P(X) =$ \textbraceleft Teilmengen von $X$\textbraceright  {} Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
-<<<<<<< Updated upstream
-\begin{Definition}
-=======
 
 \begin{defi}
->>>>>>> Stashed changes
 Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra}, falls
 \begin{enumerate}
 	\item $X \in \mathscr{A}$
@@ -31,33 +27,42 @@ Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra},
 	\item $A_i \in \mathscr{A}$, $i \in$ $\mathbb{N} \Rightarrow \bigcup_{i = 1}^{\infty} A_i$
 \end{enumerate}
 Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
-\end{Definition}
+\end{defi}
 
-\begin{Bemerkung}
+\subsubsection{Bemerkung}
 \begin{enumerate}
 	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, denn:
 	$\bigcap_{i=1}^{\infty} A_i = X\backslash (\bigcup_{i=1}^{\infty} (X \backslash A_i))$
 	\item $\emptyset \in \mathscr{A}$
 	\item $A, B \in \mathscr{A} \Rightarrow A \backslash B \in \mathscr{A}$, denn $A \backslash B = A \cap (X \backslash B)$
 \end{enumerate}
-\end{Bemerkung}
 
-\begin{Beispiel}
+\subsubsection{Beispiel}
 \begin{enumerate}
 	\item $P(X)$ trivial
-	\item \textbraceleft$ \emptyset, X $\textbraceright{} trivial
+	\item \textbraceleft$ \emptyset, X $\textbraceright{} trivial 
 \end{enumerate}
-\end{Beispiel}
 
-<<<<<<< Updated upstream
-\end{document}
-=======
 \begin{satz}
 Jeder Durchschnitt von (endlich oder $\infty$-vielen) $\sigma$-Algebren auf derselben Menge $X$ ist eine $\sigma$-Algebra auf $X$.
 \end{satz}
 
 \begin{defi}
 Für ein Mengensystem $E \subset P(X)$ heißt \\ 
+$\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in X und E $ \subset \mathscr{A}$\textbraceright die \underline{ von $E$ erzeugte $\sigma$-Algebra}.
 \end{defi}
+
+\subsubsection{Bemerkung}
+\begin{enumerate}
+	\item $P(X)$ $\sigma$-Algebra mit $E \subset P(X)$
+	\item Satz 1 $\Rightarrow \sigma(E)$ ist $\sigma$-Algebra
+	\item $\mathscr{A}$ $\sigma$-Algebra mit $E \subset \mathscr{A} \Rightarrow \sigma(E) \subset 		\mathscr{A}$ "kleinste"{} $\sigma$-Algebra, die $E$ enthält.
+\end{enumerate}
+
+\subsubsection{Beispiel}
+\begin{enumerate}
+	\item  
+\end{enumerate}
+
+
 \end{document}
->>>>>>> Stashed changes
