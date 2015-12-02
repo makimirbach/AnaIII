@@ -7,11 +7,13 @@
 \usepackage[standard]{ntheorem}
 \everymath{\displaystyle}
 
+\newcommand{\cara}{Carathéodory-Fortsetzung}
+
 \begin{document}
 
-\title{Analysis III}
-\author{Prof. Dr. Tobias Lamm}
-\date{Wintersemester 2015/16}
+\title{\textbf{Analysis III}\\ Skript zur Vorlesung von Prof. Dr. Tobias Lamm}
+\author{Tamar Mirbach\\ Younis Bensalah}
+\date{Wintersemester 2015/16\\ Karlsruher Institut für Technologie}
 
 \maketitle
 
@@ -72,6 +74,7 @@ $\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Alge
 \end{enumerate}
 \end{Beispiel}
 
+
 \begin{Definition}
 Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen $s \in \mathbb{R}$, falls eine der folgenden Alternativen gilt:
 \begin{itemize}
@@ -97,6 +100,27 @@ ist Fortsetzung von $\lambda$.
 Sei $\mu$ Carathéodory-Fortsetzung des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$
 
 \end{Lemma}
+
+
+\chapter{Das Lebesgue -Maß und -Integral}
+\section{Das Lebesgue-Maß}
+
+Halbring $\mathcal{Q}^n$ Inhalt.\\
+$vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
+
+\begin{Satz}
+	Prämaß auf Halbring\\
+	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
+\end{Satz}
+
+\begin{Lemma}
+	$vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
+\end{Lemma}
+
+\begin{Definition}
+	Das (äußere) Lebesguemaß einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
+	$$ \mathscr{L}^n(E) := inf\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \cup_{i = 1}^{\infty} P_i \} $$
+\end{Definition}
 
 
 \end{document}
