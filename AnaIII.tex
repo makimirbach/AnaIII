@@ -5,6 +5,7 @@
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage[standard]{ntheorem}
+\everymath{\displaystyle}
 
 \begin{document}
 
@@ -28,10 +29,10 @@ Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra},
 Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 \end{Definition}
 
-\begin{Bemerkung}
+\begin{Bemerkung} %mit doppeltem $$ große Caps, sonst kleine mit Grenzen rechts nebendran. Groß passt nicht in Fließtext
 \begin{enumerate}
-	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, denn:
-	$\bigcap_{i=1}^{\infty} A_i = X\backslash (\bigcup_{i=1}^{\infty} (X \backslash A_i))$
+	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow $ $$\bigcap_{i = 1}^{\infty} A_i$$, denn:
+	$$\bigcap_{i=1}^{\infty} A_i $$ $= X\backslash ($ $$\bigcup_{i=1}^{\infty} (X \backslash A_i))$$
 	\item $\emptyset \in \mathscr{A}$
 	\item $A, B \in \mathscr{A} \Rightarrow A \backslash B \in \mathscr{A}$, denn $A \backslash B = A \cap (X \backslash B)$
 \end{enumerate}
@@ -50,7 +51,7 @@ Jeder Durchschnitt von (endlich oder $\infty$-vielen) $\sigma$-Algebren auf ders
 
 \begin{Definition}
 Für ein Mengensystem $E \subset P(X)$ heißt \\
-$\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in X und E $ \subset \mathscr{A}$\textbraceright die \underline{ von $E$ erzeugte $\sigma$-Algebra}.
+$\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in X und E $ \subset \mathscr{A}$\textbraceright {} die \underline{ von $E$ erzeugte $\sigma$-Algebra}.
 \end{Definition}
 
 \begin{Bemerkung}
@@ -63,8 +64,39 @@ $\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Alge
 
 \begin{Beispiel}
 \begin{enumerate}
-	\item
+	\item $E \subset X$ $\Rightarrow $ $\sigma(E)$ = \textbraceleft $X$, $E$, $\emptyset$, $X \setminus E$\textbraceright
+	\item $(X, d)$ sei metrischer Raum. $\mathscr{O}:=$ \textbraceleft offene Teilmenge von $X$ \\
+	$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \underline{Borel $\sigma$-Algebra}. Elemente darin heißen \underline{Borelmengen} \\
+	$X = \mathbb{R}^{n}: \mathscr{B(O)} = \mathscr{B}^{n}$ \\
+	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \textbraceleft$\pm\infty$\textbraceright {}($a < b$ Anordnung)
 \end{enumerate}
 \end{Beispiel}
+
+\begin{Definition}
+Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen $s \in \mathbb{R}$, falls eine der folgenden Alternativen gilt:
+\begin{itemize}
+	\item  $s \in \mathbb{R}$ und $\forall \epsilon > 0$ gilt $s_{k} \in (s-\epsilon, s+\epsilon)$ $\forall k$ groß genug
+	\item $s = \infty$ und $\forall r \in \mathbb{R}: s_{k} \in (r, \infty]$ $\forall k$ groß genug
+	\item $s = -\infty$ und $\forall r \in \mathbb{R}: s_k \in (-\infty, r)$ $\forall k$ groß genug
+\end{itemize}
+
+\end{Definition}
+
+
+
+%Satz I.11, VL 06.11.15
+\begin{Satz}
+$\lambda: R \rightarrow [0, \infty], {}R \subset P(X)$ (Prämaß auf Ring), $\forall {}E \subset X:$ \\
+\begin{center}
+$\mu(E):= inf\{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}\}$
+\end{center}
+ist Fortsetzung von $\lambda$.
+\end{Satz}
+
+\begin{Lemma}
+Sei $\mu$ Carathéodory-Fortsetzung des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$
+
+\end{Lemma}
+
 
 \end{document}
