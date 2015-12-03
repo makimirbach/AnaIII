@@ -19,7 +19,7 @@
 
 \chapter{Maße und messbare Funktionen}
 \section{$\sigma$-Algebren und Maße}
-Notation: $X$ Menge, \\ $P(X) =$ \textbraceleft Teilmengen von $X$\textbraceright  {} Potenzmenge \\
+\emph{Notation}: $X$ Menge, \\ $P(X) =$ \textbraceleft Teilmengen von $X$\textbraceright  {} Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
 \begin{Definition}
 Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra}, falls
@@ -31,10 +31,10 @@ Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra},
 Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 \end{Definition}
 
-\begin{Bemerkung} %mit doppeltem $$ große Caps, sonst kleine mit Grenzen rechts nebendran. Groß passt nicht in Fließtext
+\begin{Bemerkung}
 \begin{enumerate}
-	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow $ $$\bigcap_{i = 1}^{\infty} A_i$$, denn:
-	$$\bigcap_{i=1}^{\infty} A_i $$ $= X\backslash ($ $$\bigcup_{i=1}^{\infty} (X \backslash A_i))$$
+	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, denn:
+	$\bigcap_{i=1}^{\infty} A_i  = X \backslash (\bigcup_{i=1}^{\infty} (X \backslash A_i))$
 	\item $\emptyset \in \mathscr{A}$
 	\item $A, B \in \mathscr{A} \Rightarrow A \backslash B \in \mathscr{A}$, denn $A \backslash B = A \cap (X \backslash B)$
 \end{enumerate}
