@@ -6,6 +6,10 @@
 \usepackage{amssymb}
 \usepackage[standard]{ntheorem}
 \everymath{\displaystyle}
+\usepackage{amsmath, amssymb} %Damit geht dann cases
+%\usepackage{array}
+\usepackage{mathabx} %für #
+
 
 \newcommand{\cara}{Carathéodory-Fortsetzung}
 
@@ -19,8 +23,11 @@
 
 \chapter{Maße und messbare Funktionen}
 \section{$\sigma$-Algebren und Maße}
+
+
 \emph{Notation}: $X$ Menge, \\ $P(X) =$ \textbraceleft Teilmengen von $X$\textbraceright  {} Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
+%Def. I.1
 \begin{Definition}
 Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra}, falls
 \begin{enumerate}
@@ -31,6 +38,7 @@ Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra},
 Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 \end{Definition}
 
+%Bem.
 \begin{Bemerkung}
 \begin{enumerate}
 	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, denn:
@@ -40,22 +48,26 @@ Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 \end{enumerate}
 \end{Bemerkung}
 
+%Bsp.
 \begin{Beispiel}
 \begin{enumerate}
 	\item $P(X)$ trivial
-	\item \textbraceleft$ \emptyset, X $\textbraceright{} trivial
+	\item $\{ \emptyset, X \}${} trivial
 \end{enumerate}
 \end{Beispiel}
 
+%Satz I.1
 \begin{Satz}
 Jeder Durchschnitt von (endlich oder $\infty$-vielen) $\sigma$-Algebren auf derselben Menge $X$ ist eine $\sigma$-Algebra auf $X$.
 \end{Satz}
 
+%Def I.2
 \begin{Definition}
 Für ein Mengensystem $E \subset P(X)$ heißt \\
-$\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in X und E $ \subset \mathscr{A}$\textbraceright {} die \underline{ von $E$ erzeugte $\sigma$-Algebra}.
+$\sigma(E):=\bigcap \{ \mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in $X$ und $E$ $\subset \mathscr{A} \}$ die \underline{von $E$ erzeugte $\sigma$-Algebra}.
 \end{Definition}
 
+%Bem.
 \begin{Bemerkung}
 \begin{enumerate}
 	\item $P(X)$ $\sigma$-Algebra mit $E \subset P(X)$
@@ -64,6 +76,7 @@ $\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Alge
 \end{enumerate}
 \end{Bemerkung}
 
+%Bsp.
 \begin{Beispiel}
 \begin{enumerate}
 	\item $E \subset X$ $\Rightarrow $ $\sigma(E)$ = \textbraceleft $X$, $E$, $\emptyset$, $X \setminus E$\textbraceright
@@ -74,7 +87,7 @@ $\sigma(E):=\bigcap$ \textbraceleft $\mathscr{A}: \mathscr{A}$ ist $\sigma$-Alge
 \end{enumerate}
 \end{Beispiel}
 
-
+%Def I.3
 \begin{Definition}
 Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen $s \in \mathbb{R}$, falls eine der folgenden Alternativen gilt:
 \begin{itemize}
@@ -82,8 +95,116 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 	\item $s = \infty$ und $\forall r \in \mathbb{R}: s_{k} \in (r, \infty]$ $\forall k$ groß genug
 	\item $s = -\infty$ und $\forall r \in \mathbb{R}: s_k \in (-\infty, r)$ $\forall k$ groß genug
 \end{itemize}
-
 \end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+\begin{enumerate}
+	\item $(a_n)$ monoton wachsende Folge 
+	$\Rightarrow \lim a_n \in \mathbb{\overline{R}}$
+	\item $\sum\limits_{n=1}^{\infty} a_n \in \mathbb{\overline{R}}$, $a_n \geq 0$ $ \forall n \in \mathbb{N}$
+	\item offene Teilmengen von $\overline{\mathbb{R}}$: \\
+	$U \subset \overline{\mathbb{R}} $ offen $\Leftrightarrow U \cap \mathbb{R}$ offen und falls $\{+\infty\}$ oder $\{-\infty\}$ in $M$ liegt, existiert ein $a \in \mathbb{R}$ mit $(a,{} \infty ]\subset U$ bzw. $[-\infty, a) \subset U$
+\end{enumerate}
+\end{Bemerkung}
+ % Hier fehlt noch eine kleine Tabelle
+ 
+ %Def I.4
+\begin{Definition}
+$\mathscr{A} \subset P(X)$ $\sigma$-Algebra. Eine nicht negative Mengenfunktion $\mu: \mathscr{A} \rightarrow [0, \infty]$ heißt \underline{Maß} auf $\mathscr{A}$, wenn
+\begin{enumerate}
+	\item $\mu(\infty) = 0$
+	\item für paarweise disjunkte Mengen $A_i \in \mathscr{A}, i \in \mathbb{N}$ gilt: \\
+	$\mu(\bigcup\limits_{i=1}^{\infty}A_i) = \sum\limits_{i=1}^{\infty} \mu(A_i)$ \underline{$\sigma$-Additivität}
+\end{enumerate}
+Das Tripel $(X, \mathscr{A}, \mu)$ wird als Maßraum bezeichnet.
+\end{Definition}
+
+%Bem
+\begin{Bemerkung}
+Monotonie: $A \subset B \Rightarrow \mu(A) \leq \mu(B)$\\
+$\mu(B) = \mu(A \cup B\backslash A) = \mu(A) + \underbrace{\mu(B\backslash A)}_{\geq 0}\geq \mu(A)$
+\end{Bemerkung}
+
+%Def I.5
+\begin{Definition}
+$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \underline{endlich}, wenn $\mu(A)$ \textless {} $ \infty $ $\forall A \in \mathscr{A}$, $\mu$ heißt \underline{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i)$ \textless {} $ \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
+Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
+\end{Definition}
+
+
+%Bsp.
+\begin{Beispiel}
+\begin{enumerate}
+	\item $X$ Menge, $\mathscr{A} = P(X), x \in X$ \underline{Diracmaß} 
+	\begin{equation}
+		\delta_{x} (A) =
+		\begin{cases}
+			1 & \text{falls } x \in A\\
+		0 & \text{sonst}
+		\end{cases}
+	\end{equation}
+	\begin{itemize}
+		\item $\delta_x ( \emptyset) = 0$
+		\item Sei $A = \bigcup\limits_{i=1}^{\infty} A_i$ und $A_i$ sind paarweise disjunkt.
+		\begin{enumerate}
+			\item $x \in A$, $\delta_x(A) = 1 = \sum\limits_{i=1}^{\infty} \delta_x(A_i)$, $x \in A_i$ für genau ein i
+			\item $x \notin A \Rightarrow \delta_x(A) = 0 = \sum\limits_{i=1}^{\infty}A_i)$
+					\end{enumerate}
+		Weil $\delta_x(X) = 1$, ist $\delta_x$ ein Wahrscheinlichkeitsmaß.
+	\end{itemize}
+	\item $X$ beliebig, $\mathscr{A} = P(X)$: \underline{Zählmaß} card: $P(X) \rightarrow [0, +\infty]$
+	\begin{equation}
+		card(A) :=
+		\begin{cases}
+			\varhash \text{ Elemente von} A & A \text{ endlich} \\
+			\infty & \text{sonst}
+		\end{cases}
+	\end{equation}
+	$card(\emptyset) = 0$ \\
+	$A = \bigcup\limits_{i=1}^{\infty} A_i$ paarweise disjunkt.
+	\begin{enumerate}
+		\item $A$ endlich $\Rightarrow$ endliche Vereinigung von endlichen Mengen
+		\item $A$ nicht endlich
+		\begin{enumerate}
+			\item ein $A_i$ ist nicht endlich
+			\item $\forall A_i$ endlich
+		\end{enumerate}
+		card endlich $\Leftrightarrow X$ endlich \\
+		card ist $\sigma$-endlich $\Leftrightarrow X$ abzählbar
+	\end{enumerate}
+\end{enumerate}
+\end{Beispiel}
+
+%Satz I.2
+\begin{Satz}
+$(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \in \mathbb{N}$ die Aussagen
+\begin{enumerate}
+	\item $A_1 \subset A_2 \subset ...  A_i \subset A_{i+1} \subset .. $\\
+	$\Rightarrow \mu(\bigcup\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+	\item Aus $A_1 \supset A_2 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\mu(A_1)$ \textless  {} $ \infty$ folgt\\
+	$\mu(\bigcap\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+	\item $\mu(\bigcup\limits_{i=1}^{\infty} A_i) \leq \sum\limits_{i=1}^{\infty} \mu(A_i)$ \\
+	($A_i$ müssen hier nicht paarweise disjunkt sein)
+\end{enumerate}
+\end{Satz}
+
+%Bem
+\begin{Bemerkung}
+\begin{enumerate}
+	\item \emph{1.} heißt \underline{Stetigkeit von unten} \\
+	\emph{2.} heißt \underline{Stetigkeit von oben} \\
+	\emph{3.} \underline{$\sigma$-Subadditivität} des Maßes
+	\item  $\mu(A_1$ \textless $\infty)$ in \emph{2.} kann durch $\mu(A_k) $ \textless  $\infty$ für ein $k \in \mathbb{N}$ ersetzt werden.
+\end{enumerate}
+\end{Bemerkung}
+
+%Bsp.
+\begin{Beispiel}
+$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k$) \textgreater $\infty$ \\
+card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne 0 \lim_{k \rightarrow \infty} $card$ (A_k) = \infty$
+\end{Beispiel}
+
 
 
 
