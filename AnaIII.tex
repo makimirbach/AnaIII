@@ -4,12 +4,19 @@
 \usepackage[ngerman]{babel}
 \usepackage{mathrsfs}
 \usepackage{amssymb}
-\usepackage[standard]{ntheorem}
+\usepackage{ntheorem}
 \everymath{\displaystyle}
 \usepackage{amsmath, amssymb} %Damit geht dann cases
 %\usepackage{array}
 \usepackage{mathabx} %für #
 
+\theoremstyle{break}
+
+\newtheorem{Definition}{Definition}[chapter]
+\newtheorem{Bemerkung}{Bemerkung}[chapter]
+\newtheorem{Beispiel}{Beispiel}[chapter]
+\newtheorem{Lemma}{Lemma}[chapter]
+\newtheorem{Satz}{Satz}[chapter]
 
 \newcommand{\cara}{Carathéodory-Fortsetzung}
 
@@ -100,7 +107,7 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 %Bem.
 \begin{Bemerkung}
 \begin{enumerate}
-	\item $(a_n)$ monoton wachsende Folge 
+	\item $(a_n)$ monoton wachsende Folge
 	$\Rightarrow \lim a_n \in \mathbb{\overline{R}}$
 	\item $\sum\limits_{n=1}^{\infty} a_n \in \mathbb{\overline{R}}$, $a_n \geq 0$ $ \forall n \in \mathbb{N}$
 	\item offene Teilmengen von $\overline{\mathbb{R}}$: \\
@@ -108,7 +115,7 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 \end{enumerate}
 \end{Bemerkung}
  % Hier fehlt noch eine kleine Tabelle
- 
+
  %Def I.4
 \begin{Definition}
 $\mathscr{A} \subset P(X)$ $\sigma$-Algebra. Eine nicht negative Mengenfunktion $\mu: \mathscr{A} \rightarrow [0, \infty]$ heißt \underline{Maß} auf $\mathscr{A}$, wenn
@@ -136,7 +143,7 @@ Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 %Bsp.
 \begin{Beispiel}
 \begin{enumerate}
-	\item $X$ Menge, $\mathscr{A} = P(X), x \in X$ \underline{Diracmaß} 
+	\item $X$ Menge, $\mathscr{A} = P(X), x \in X$ \underline{Diracmaß}
 	\begin{equation}
 		\delta_{x} (A) =
 		\begin{cases}
