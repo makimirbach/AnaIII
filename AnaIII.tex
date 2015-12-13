@@ -25,7 +25,7 @@
 \section{$\sigma$-Algebren und Maße}
 
 
-\emph{Notation}: $X$ Menge, \\ $P(X) =$ \textbraceleft Teilmengen von $X$\textbraceright  {} Potenzmenge \\
+\emph{Notation}: $X$ Menge, \\ $P(X) =$ \{ Teilmengen von $X$\}  {} Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
 %Def. I.1
 \begin{Definition}
@@ -83,7 +83,7 @@ $\sigma(E):=\bigcap \{ \mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in $X$ und
 	\item $(X, d)$ sei metrischer Raum. $\mathscr{O}:=$ \textbraceleft offene Teilmenge von $X$ \\
 	$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \underline{Borel $\sigma$-Algebra}. Elemente darin heißen \underline{Borelmengen} \\
 	$X = \mathbb{R}^{n}: \mathscr{B(O)} = \mathscr{B}^{n}$ \\
-	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \textbraceleft$\pm\infty$\textbraceright {}($a < b$ Anordnung)
+	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \{t$\pm\infty$\} {}($a < b$ Anordnung)
 \end{enumerate}
 \end{Beispiel}
 
@@ -201,12 +201,71 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 
 %Bsp.
 \begin{Beispiel}
-$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k$) \textgreater $\infty$ \\
+$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k$) \textgreater $ \infty$ \\
 card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne 0 \lim_{k \rightarrow \infty} $card$ (A_k) = \infty$
 \end{Beispiel}
 
+%Def I.6
+\begin{Definition}
+Sei $(X, \mathscr{A}, \mu)$ Maßraum. Jede Menge $A \in \mathscr{A}$ mit $\mu(A) = 0$ heißt \underline{$\mu$-Nullmenge}. Das Maß heißt \underline{vollständig}, wenn $N \subset A $ für ein $A \subset \mathscr{A}$ mit $\mu(A) = 0 \Rightarrow N \in \mathscr{A}$ und $\mu(N) = 0$.
+\end{Definition}
+
+%Bsp.
+\begin{Beispiel}
+(das blöde Maß): \\
+$\mu(A) = 0$ $ \forall A \in \mathscr{A}$ und $\mathscr{A} \ne P(X)$ ist \underline{nicht vollständig}
+\end{Beispiel}
+
+%Bem.
+\begin{Bemerkung}
+Jedes Maß kann vervollständigt werden (siehe Blatt $2$) 
+\end{Bemerkung}
 
 
+\section{Messbare Funktionen}
+
+%Def. I.7
+\begin{Definition}
+Seien $(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume.\\
+ Eine Abbildung $f: X \rightarrow Y$ heißt \underline{$\mathscr{A}-\mathscr{C}$-messbar}, wenn $f^{-1}(\mathscr{C}) \subset \mathscr{A}$, d.h. $f^{-1}(C) \in \mathscr{A}$ $ \forall C \in \mathscr{C}$
+\end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+$f$ heißt kurz messbar (bzw. $\mathscr{A}$-messbar), wenn an $\mathscr{A}, \mathscr{C}$ (bzw. $\mathscr{C}$) kein Zweifel besteht.
+\end{Bemerkung}
+
+%Bsp
+\begin{Beispiel} 
+
+\begin{enumerate}
+	\item $(X, \mathscr{A}), (Y, \mathscr{C})$ beliebig. \\
+	$f: X \rightarrow Y, f(x) = y_0 \in Y$ \\
+	$\forall x \in X, c \in \mathscr{C}$: 
+	\begin{equation}
+		f^{-1}(c) = 
+		\begin{cases}
+			x & y_0 \in C \\
+			\emptyset & y_0 \notin C
+		\end{cases}
+	\end{equation}
+	\item Für $E \subset X$ beliebig heißt $\chi_E: X \rightarrow \mathbb{R}$, \\
+	\begin{equation}
+		\chi_E(x) =
+		\begin{cases}
+			1 & x \in E \\
+			0 & \text{sonst}
+		\end{cases}
+	\end{equation}
+	\underline{charakteristische Funktion} von $E$ auf $\mathbb{R}$. \\
+	Sei $\mathscr{B}^1$ als $\sigma$-Algebra gegeben. \\
+	$\chi_E$ ist $\mathscr{A}$-messbar $\Leftrightarrow$ $\{1\} = \bigcap\limits_k (1-$
+\end{enumerate}
+
+\end{Beispiel}
+
+
+\newpage
 
 %Satz I.11, VL 06.11.15
 \begin{Satz}
@@ -255,7 +314,7 @@ $vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
 
 \begin{Definition}
 	Das (äußere) Lebesguemaß einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
-	$$ \mathscr{L}^n(E) := inf\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \cup_{i = 1}^{\infty} P_i \} $$
+	$ \mathscr{L}^n(E) := inf\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \cup_{i = 1}^{\infty} P_i \} $
 \end{Definition}
 
 
