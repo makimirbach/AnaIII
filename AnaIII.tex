@@ -9,6 +9,10 @@
 \usepackage{amsmath, amssymb} %Damit geht dann cases
 %\usepackage{array}
 \usepackage{mathabx} %für #
+%\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
+\usepackage{fdsymbol} %varrightwavearrow
+%\usepackage{fontenc} % Für "
+
 
 \theoremstyle{break}
 
@@ -32,7 +36,7 @@
 \section{$\sigma$-Algebren und Maße}
 
 
-\emph{Notation}: $X$ Menge, \\ $P(X) =$ \{ Teilmengen von $X$\}  {} Potenzmenge \\
+\emph{Notation}: $X$ Menge, \\ $P(X) =$ \{Teilmengen von $X$\}  {} Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
 %Def. I.1
 \begin{Definition}
@@ -148,7 +152,7 @@ Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 		\delta_{x} (A) =
 		\begin{cases}
 			1 & \text{falls } x \in A\\
-		0 & \text{sonst}
+			0 & \text{sonst}
 		\end{cases}
 	\end{equation}
 	\begin{itemize}
@@ -164,7 +168,7 @@ Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 	\begin{equation}
 		card(A) :=
 		\begin{cases}
-			\varhash \text{ Elemente von} A & A \text{ endlich} \\
+			\varhash \text{ Elemente von } A & A \text{ endlich} \\
 			\infty & \text{sonst}
 		\end{cases}
 	\end{equation}
@@ -266,10 +270,210 @@ $f$ heißt kurz messbar (bzw. $\mathscr{A}$-messbar), wenn an $\mathscr{A}, \mat
 	\end{equation}
 	\underline{charakteristische Funktion} von $E$ auf $\mathbb{R}$. \\
 	Sei $\mathscr{B}^1$ als $\sigma$-Algebra gegeben. \\
-	$\chi_E$ ist $\mathscr{A}$-messbar $\Leftrightarrow$ $\{1\} = \bigcap\limits_k (1-$
+	$\chi_E$ ist $\mathscr{A}$-messbar $\Leftrightarrow$ $\{1\} = \bigcap\limits_k \left(1- \dfrac{1}{k}, 1 + \dfrac{1}{k}\right), E \in \mathscr{A}$
+	\item $(X, \mathscr{A}), (Y, \mathscr{C}), (Z, \mathscr{D})$ messbare Räume \\
+	$f: X \rightarrow Y$ $ \mathscr{A}-\mathscr{C}$-messbar \\
+	$g: Y \rightarrow Z$ $ \mathscr{C}-\mathscr{D}$-messbar \\
+	$\underrightarrow{Beh.}$ $  g \circ f: X \rightarrow Z$ $ \mathscr{A}-\mathscr{D}$-messbar, denn \\
+	$(g \circ f)^{-1}(\mathscr{D}) = f^{-1}(g^{-1}(\mathscr{D})) \subset f^{-1}(\mathscr{D}) \subset \mathscr{A}$
 \end{enumerate}
-
 \end{Beispiel}
+
+% Lemma I.1
+\begin{Lemma}
+$(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $f: X \rightarrow Y$ Abbildung. Für beliebige Mengensysteme $\xi \in \mathscr{C}$ gilt $f^{-1}(\sigma(\xi)) = \sigma(f^{-1}(\xi))$
+\end{Lemma}
+
+% Lemma I.2
+\begin{Lemma}
+Seien $(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $\mathscr{C} = \sigma(\xi)$ für ein Mengensystem $\xi \subset P(Y)$. Jede Abbildung $f: X \rightarrow Y$ mit $f^{-1}(\xi) \subset \mathscr{A}$ ist $\mathscr{A}-\mathscr{C}$-messbar.
+\end{Lemma}
+
+%Bsp
+\begin{Beispiel}
+\begin{enumerate}
+	\item Jedes $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$ stetig ist $\mathscr{B}^n-\mathscr{B}^m-$ messbar, denn $f^{-1}(\text{offen})$ ist offen. \\
+	\emph{Notation}: $f$ ist \underline{Borel-messbar} 
+	\item $X \ne \emptyset$ Menge, $(Y, \mathscr{C})$ messbarer Raum, $f: X \rightarrow Y$ Abbildung. \\
+	Blatt $\varrightwavearrow$ $f^{-1}(\mathscr{C})$ $\sigma$-Algebra. Tatsächlich ist es die kleinste $\sigma$-Algebra, die $f: X \rightarrow Y$ messbar macht. $f^{-1}(\mathscr{C})$ heißt die \underline{durch $f$ und $(Y, \mathscr{C})$ induzierte $\sigma$-Algebra}
+\end{enumerate}
+\end{Beispiel}
+
+%Definition I.8
+\begin{Definition}
+Sei $(X, \mathscr{A})$ messbarer Raum und $D \in \mathscr{A}$. Eine Funktion $f: D \rightarrow \overline{\mathbb{R}}$ heißt \underline{numerische Funktion}.
+\end{Definition}
+
+%Bem
+\begin{Bemerkung}
+Numerische Funktionen sind $\mathscr{A}$-messbar (auf $D$), wenn $f^{-1}(\overline{\mathbb{B}^1}) \subset \mathscr{A}|_D:= \{A \cap D |A \in \mathscr{A}\}$ \\
+($\mathscr A | _D$ ist $\sigma$-Algebra, siehe Übung).
+\end{Bemerkung}
+
+%Lemma I.3
+\begin{Lemma}
+$(X, \mathscr A)$ messbarer Raum, $D \in \mathscr A$, $f: D \rightarrow \overline {\mathbb R}$. Dann sind äquivalent:
+\begin{enumerate}
+	\item $f$ ist $\mathscr A$-messbar
+	\item $\forall U \subset \mathbb R$ offen ist $f^{-1}(U) \in \mathscr A |_D$ und $f^{-1}(\{\infty\}), f^{-1}(\{-\infty\}) \in \mathscr A |_D$
+	\item $\{f \leq s\} := \{x \in D: f(x) \leq x\} \in \mathscr A |_D$ $ \forall s \in \mathbb R$
+	\item $\{f < s\} := \{x \in D: f(x) < x\} \in \mathscr A |_D$ $ \forall s \in \mathbb R$
+	\item $\{f \geq s\} := \{x \in D: f(x) \geq x\} \in \mathscr A |_D$ $ \forall s \in \mathbb R$
+	\item $\{f > s\} := \{x \in D: f(x) > x\} \in \mathscr A |_D$ $ \forall s \in \mathbb R$
+\end{enumerate}
+\end{Lemma}
+
+%Lemma I.4
+\begin{Lemma}
+$(X, \mathscr A)$ messbarer Raum. $D \in \mathscr a$ und $f, g: D \rightarrow \overline{\mathbb R }$ $\mathscr A$-messbar \\
+$ \left( f^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr A |_D, g^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr A |_D\right)$. \\ Dann sind die Mengen $\{f < g\}:= \{x \in D: f(x) < g(x)\}$ und $\{f \leq g\}$ Elemente aus $\mathscr A |_D$.
+\end{Lemma}
+
+%Satz I.3
+\begin{Satz}
+$(X, \mathscr A)$ messbarer Raum. $D \in \mathscr A$, $f_k: D \rightarrow \overline{\mathbb R}$ Folge von $\mathscr A$-messbaren numerischen Funktionen. dann sind $\inf\limits_k f_k$, $\sup\limits_k f_k$, $\liminf\limits_{k\rightarrow \infty} f_k$, $\limsup\limits_{k \rightarrow \infty} f_k$ auch $\mathscr A$-messbar. \\
+(Hierbei ist $(\liminf f_k)(x) = \liminf f_k(x)$, ebenso $\limsup$)
+\end{Satz}
+
+%Satz I.4
+\begin{Satz}
+$(X, \mathscr A)$ messbarer Raum, $D \in \mathscr A$, $f, g: D \rightarrow \overline{\mathbb R }$ $\mathscr A$-messbar und $\alpha \in \mathbb R$. Dann sind $f+g, \alpha \cdotp f, f^\pm, \max{\{f, g\}}, \min{\{f, g\}}, \|f\|, f \cdotp g, \dfrac{f}{g}$ $\mathscr A$-messbar. \\
+$\left( f^+ = \max{\{f, 0\}} \geq 0, f^- = \max{\{-f, 0\}} \geq 0, f = f^+ - f^-, \|f\| = f^+ + f^- \right)$
+\end{Satz}
+
+%Wieso x in M in A?? Was ist dann M?
+%Bem
+\begin{Bemerkung}
+$(X, \mathscr A, \mu)$ Maßraum. Man sagt, die Aussage $A[x]$ ist wahr für \underline{$\mu$-fast alle $x \in M \in \mathscr A$}, falls eine $\mu$-Mullmenge $N$ existiert mit $\{x \in M: A[x]  \text{ falsch}\} \subset N$.\\
+$f, g: X \rightarrow \overline{\mathbb R}$ Aussage  "$f(x) \leq g(x)$ für $\mu$-fast alle $x \in X$"  bedeutet: \\
+$\exists N \subset \mathscr A$ mit $\mu(N) = 0$, sodass $\forall x \in X\backslash N: f(x) \leq g(x)$ \\
+Eine Funktion $h$ ist "\underline{$\mu$-fast überall auf $X$}" definiert, wenn $h$ aus $D \in \mathscr A$ definiert ist und $\mu(X \backslash D) = 0$. \\
+Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert punktweise $\mu$-fast überall gegen $f: D \rightarrow \overline{\mathbb R}$, falls eine Menge $M \in \mathscr A$ existiert mit $\mu(N) = 0$ und $\lim\limits_ {k \rightarrow \infty} f_k(x) = f(x)$ $\forall x \in D \backslash N$
+\end{Bemerkung}
+
+%Definition I.9
+\begin{Definition}
+$(X, \mathscr A, \mu)$ Maßraum. Eine auf $D \in \mathscr A$ definierte numerische Funktion $f$ heißt \underline{$\mu$ messbar} (auf $X$), wenn $\mu(X \backslash D) = 0$ und $f$ $\mathscr A$-messbar ist.
+\end{Definition}
+
+%bem
+\begin{Bemerkung}
+Die Relation $f = g$ $\mu$-fast überall ist eine Äquivalenzrelation. Sei $D \in \mathscr A, f: D \rightarrow \overline{\mathbb R} \mu$-messbar. Dann gibt es eine $\mathscr A$-messbare Funkion $g: X \rightarrow \overline{\mathbb R}$ mit $f = g$ auf $D$. \\
+\emph{Z.B.} \\
+\begin{equation}
+	g(x) = 
+	\begin{cases}
+		f(x) & , x \in D \\
+		0 & \text{, sonst}
+	\end{cases}
+\end{equation} \\
+$\rightarrow$ Satz $1.3$ und $1.4$ gelten auch für $\mu$-messbare Funktionen (man muss zusätzlich fordern, dass $f, g, f \cdotp g, \dfrac{f}{g}$ $ \mu$-fast überall definiert sind)
+\end{Bemerkung}
+
+
+%Lemma I.5
+\begin{Lemma}
+$(X, \mathscr A, \mu)$ vollständiger Maßraum und $f$ $\mu$-messbar auf $X$. Dann ist auch jede Funktion $\tilde f$ mit $\tilde f = f$ $\mu-$fast überall auf $X$ $\mu$-messbar.
+\end{Lemma}
+
+
+%Satz I.5
+\begin{Satz}
+$(X, \mathscr A, \mu)$ vollständiger Maßraum, $f_k, k \in \mathbb N$ $\mu$-messbar. Falls $f_k$ punktweise $\mu$-fast überall gegen $f$ konvergiert, so ist $f$ $\mu$-messbar.
+\end{Satz}
+
+%Satz I.6
+\begin{Satz}{\emph{Egorov:}} \\
+$(X, \mathscr A, \mu)$ Maßraum. $D \in \mathscr A$ Menge mit $\mu(D) \less \infty$ und $f_k, f$ $ \mu|_D$-messbar, $\mu|_D$ - fast überall endliche Funktionen mit $f_k \rightarrow f$ $\mu|_D$- fast überall. \\
+Dann existiert $\forall \epsilon \> 0$ eine Menge $B \subset D, B \in \mathscr A$ mit \\
+\begin{enumerate}
+	\item $\mu(D\backslash B) \less \epsilon$
+	\item $f_n \rightarrow f$ gleichmäßig auf $B$. 
+\end{enumerate}
+\end{Satz}
+
+\section{Äußere Maße}
+
+%Def I.10
+\begin{Definition}
+Sei $X$ eine Menge. Eine Funktion $\mu: P(X) \rightarrow [0, \infty]$ mit $\mu(\emptyset) = 0$ und $A \subset \bigcup\limits_{i=1}^\infty A_i \Rightarrow \mu(A) \leq \sum\limits_{i=1}^\infty \mu(A_i)$ heißt \underline{äußeres Maß} auf $X$.
+\end{Definition}
+
+%Bem
+\begin{Bemerkung}
+\begin{enumerate}
+	\item Äußeres Maß ist immer auf $P(X)$ definiert.
+	\item $\mu$ Maß auf $P(X) \Rightarrow$ $\mu$ \underline{äußeres Maß}. 
+	\item Begriffe $\sigma$-Additiv, $\sigma$-endlich, endlich, monoton, Nullmengen sind wie bei Maßen definiert.
+	\item Jedes äußere Maß ist monoton. $A \subset B \Rightarrow \mu(A) \leq \mu(B)$
+\end{enumerate}
+\end{Bemerkung}
+
+%Def I.11
+\begin{Definition}
+Sei $\mu$ äußeres Maß auf $X$. Die Menge $A \subset X$ heißt \underline{$\mu$-messbar}, falls für alle $S \subset X$: \\
+$\mu(S) \geq \mu(S \cap A) + \mu(S \backslash A)$ \\
+$\mathscr M(\mu):= \{ A \subset X | A$ $ \mu-messbar \}$
+\end{Definition}
+
+%Bem
+\begin{Bemerkung}
+Es gilt $(S \cap A) \cup (S \backslash A) = S$. Also $\mu(S) \leq \mu(S \cap A) + \mu(S \backslash A)$ \\
+$A$ $\mu$-messbar $\Leftrightarrow$ $\mu(S) = \mu(S \cap A) + \mu(S \backslash A)$ $\forall S \subset X$
+\end{Bemerkung}
+
+%Satz I.7
+\begin{Satz}
+Sei $\mathscr Q$ ein System von Teilmengen einer Menge $X$, das die leere Menge enthält und sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ mit $\lambda(\emptyset) = 0$.\\
+Definiere $\mu: P(X) \rightarrow [0, \infty]$ für beliebige $E \subset X$ durch \\
+ $\mu(E) := \inf \left\lbrace \sum\limits_{i=1}^\infty \lambda(P_i) | P_i \in \mathscr Q \forall i, E \subset \bigcup\limits_{i=1}^\infty P_i \right\rbrace$ \\
+Dann ist $\mu$ äußeres Maß. $(\inf \emptyset = + \infty)$
+\end{Satz}
+
+%Satz I.8
+\begin{Satz}
+$\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß auf $X$. Für $M \subset X$ erhält man durch $\mu|_M : P(X) \rightarrow [0, \infty], \mu|_M := \mu(A \cap M)$ ein \underline{äußeres Maß} (Einschränkung von $\mu$ auf $M$) auf $X$. Es gilt: $A$ $ \mu-$messbar $\Rightarrow$  $A$ $ \mu|_M $-messbar
+\end{Satz}
+
+%Satz I.9
+\begin{Satz}
+Sei $\mu$ äußeres Maß auf $X$. Dann gilt:
+\begin{enumerate}
+	\item $N$ $\mu$-Nullmenge $\Rightarrow N$ $\mu$-messbar 
+	\item $N_i, i \in \mathbb N,$ $\mu$-messbar $\Rightarrow \bigcup\limits_{x=1}^\infty N_i$ Nullmengen
+\end{enumerate}
+\end{Satz}
+
+
+%Lemma I.6
+\begin{Lemma}
+$\mu$ äußeres Maß auf $X$, $A_i \in \mathscr M(\mu), i = 1, ... k$ seien paarweise disjunkt. Dann gilt $\forall S \subset X$: \\
+$\mu\left(S \cap \bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \mu(S \cap A_i)$
+\end{Lemma}
+
+%Satz I.10
+\begin{Satz}
+Sei $\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß. Dann ist $\mathscr M(\mu)$ eine $\sigma$-Algebra und $\mu$ ist ein vollständiges Maß auf $\mathscr M(\mu)$.
+\end{Satz}
+
+%Lemma I.7
+\begin{Lemma}
+Sei $\mu$ äußeres Maß und seien $A_i \in \mathscr M(\mu), i \in \mathbb N$. Dann gelten:
+\begin{enumerate}
+	\item aus $A_1 \subset A_2 \subset ...$ folgt $\mu\left(\bigcup\limits_{i=1}^\infty A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$ 
+	\item aus $A_1 \supset A_2 \supset ...$ folgt $\mu\left(\bigcap\limits_{i=1}^\infty A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$, falls $\mu(A_1) \less \infty$
+\end{enumerate}
+\end{Lemma}
+
+
+%hö, das sollte aber I.5 sein. Was ist wo I.4??
+\section{Fortsetzungssatz von Carathéodory}
+
+%Def I.12
+\begin{Definition}
+\end{Definition}
+
+
 
 
 \newpage
