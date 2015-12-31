@@ -471,12 +471,83 @@ Sei $\mu$ äußeres Maß und seien $A_i \in \mathscr M(\mu), i \in \mathbb N$. D
 
 %Def I.12
 \begin{Definition}
+Ein Mengensystem $\mathscr A \in P(X)$ heißt \underline{$\cap$-stabil}, \underline{ $\cup$-stabil }, \underline{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch $A \cap B \in \mathscr A, A \cup B \in \mathscr A, A\backslash B \in \mathscr A$.
+\end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+$\cap$-stabil $(\cup$-stabil$)$ $\Rightarrow$ $\cap$-Stabilität $($bzw. $\cup)$ von endlichen Durchschnitten.
+\end{Bemerkung}
+
+%Def I.13.
+\begin{Definition}
+Ein Mengensystem $\mathscr R \in P(X)$ heißt \underline{Ring} über $X$, falls
+\begin{enumerate}
+	\item $\emptyset \in \mathscr R$
+	\item $A, B \in \mathscr R \Rightarrow A\backslash B \in \mathscr R$
+	\item $A, B \in \mathscr R \Rightarrow A \cup B \in \mathscr R$
+\end{enumerate}
+Ist $X \in \mathscr R$, so heißt $\mathscr R$ \underline{Algebra}.
 \end{Definition}
 
 
+%Bsp.
+\begin{Beispiel}
+\begin{enumerate}
+	\item Für $A \subset X$ ist $\{\emptyset, A\}$ ein Ring. Für $A \ne X$ ist $\{\emptyset, A\}$ keine Algebra. $P(X)$ ist Algebra
+	\item $\{$endliche Teilmengen von $X\}$ Ring über $X$, ebenso $\{ $abzählbare Teilmengen von $X\}$
+\end{enumerate}
+\end{Beispiel}
+
+%Bem.
+\begin{Bemerkung}
+\begin{enumerate}
+	\item $A, B \in \mathscr R$ (Ring) $\Rightarrow A \cap B = A \backslash (A \backslash B) \in \mathscr R$
+	 \item Satz 1.1 ist auch für Ringe bzw. Algebren richtig; Satz 1.1 $\rightarrow$ erzeugte $\sigma$-Algebra. Also können wir auch erzeugte Ringe und erzeugte Algebren definieren.
+\end{enumerate}
+\end{Bemerkung}
 
 
-\newpage
+%Def I.14
+\begin{Definition}
+Sei $\mathscr R \subset P(X)$ ein Ring. Eine Funktion $\lambda: \mathscr R \rightarrow [0, \infty]$ heißt \underline{Prämaß} auf $\mathscr R$, falls
+\begin{enumerate}
+	\item $\lambda(\emptyset) = 0$
+	\item für paarweise disjunkte $A_i \in \mathscr R, i \in \mathbb N$ mit $\bigcup\limits_{i=1}^\infty A_i \in \mathscr R$: \\
+	$\lambda \left(\bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \lambda(A_i)$
+\end{enumerate}
+\end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, endlich, monoton, Nullmenge werden wie bei Maßen definiert
+\end{Bemerkung}
+
+%Bsp.
+\begin{Beispiel}
+\begin{enumerate}
+	\item $\mathscr R$ Ring über $X$,  
+	\begin{equation}
+	\lambda(A) =
+		\begin{cases}
+			0 & A = \emptyset \\
+			\infty & \text{sonst}
+		\end{cases}
+	\end{equation}
+	\item $\mathscr R = \{$endliche Teilmengen vom $X\}$, $\lambda = $ $card|_{\mathscr R}$ ist Prämaß
+	\item alle äußeren Maße sind Prämaße, wenn man sie einschränkt auf $\mathscr R = \mathscr M(\mu)$
+\end{enumerate}
+\end{Beispiel}
+
+%Def I.15
+\begin{Definition}
+Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\mu$ auf $X$ (bzw. ein Maß $\mu$ auf $\mathscr A$) heißt \underline{Fortsetzung} von $\lambda$, falls gilt:
+\begin{enumerate}
+	\item $\mu|_\mathscr R = \lambda$, d.h. $\mu(A) = \lambda(A)$ $\forall A \in \mathscr R$
+	\item $\mathscr R \in \mathscr M(\mu) ($bzw. $\mathscr R \subset \mathscr A)$
+\end{enumerate}
+\end{Definition}
+
 
 %Satz I.11, VL 06.11.15
 \begin{Satz}
@@ -484,14 +555,15 @@ $\lambda: R \rightarrow [0, \infty], {}R \subset P(X)$ (Prämaß auf Ring), $\fo
 \begin{center}
 $\mu(E):= inf\{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}\}$
 \end{center}
-ist Fortsetzung von $\lambda$.
+ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußere Maß$)$
 \end{Satz}
 
+%Lemma I.6
 \begin{Lemma}
 Sei $\mu$ \cara{} des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt $\tilde{\mu}(R) \leq \mu(E)$ $\forall E \in \sigma(R)$.
 \end{Lemma}
 
-
+%Satz I.12 
 \begin{Satz} \emph{Hopf-Fortsetzung} \\
 Sei $\lambda: R \rightarrow [0, \infty]$ Prämaß auf Ring $R \subset P(X)$. Dann existiert ein Maß $\mu$ auf $\sigma(R)$ mit $\mu =\lambda$ auf $R$. Diese Fortsetzung ist \underline{eindeutig}, falls $\lambda$ $\sigma$-endlich ist.
 \end{Satz}
@@ -500,15 +572,108 @@ Sei $\lambda: R \rightarrow [0, \infty]$ Prämaß auf Ring $R \subset P(X)$. Dan
 Sei $\mu$ Maß auf $X$ mit der Eigenschaft: $\forall D \subset X: \exists E \in \mathscr{M}(\mu)$ mit $D \subset E$ und $\mu(D) = \mu(E)$. Dann heißt $\mu$ \underline{reguläres} äußeres Maß.
 
 \begin{Beispiel}
-
 Blödes Beispiel
 \end{Beispiel}
 
+%Satz I.13
 \begin{Satz}
-Sei $\mu$ \cara{} des Prämaßes $\lambda$ auf $R$.
+Sei $\mu$ \cara{} des Prämaßes $\lambda$ auf $R$. Dann existiert zu jedem $D \subset X$ ein $E \in \sigma(R) \subset \mathscr M(\mu)$ mit $E \supset D$ und $\mu(D) = \mu(E)$
+\end{Satz}
+
+%Satz I.14
+\begin{Satz}
+$\lambda$  $\sigma$-endliches Prämaß auf Ring $\mathscr R$ und $\mu$ sei \cara{} von $\lambda$. Dann ist $\mu|_{\mathscr M(\mu)}$ die \underline{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. Insbesondere gibt es genau eine Fortsetzung von $\lambda$ zu einem Maß auf $\mathscr M(\mu)$.
+\end{Satz}
+
+%Lemma I.9
+\begin{Lemma}
+Sei $\lambda: \mathscr R \rightarrow [0, \infty]$ Prämaß auf Ring $\mathscr R$ und $\lambda$ sei $\sigma$-endlich. $\mu$ sei die \cara{} von $\lambda$. $D \subset X$ ist genau dann $\mu$-messbar, falls eine der beiden folgenden Bedingungen gilt:
+\begin{enumerate}
+	\item $\exists E \in \sigma(\mathscr R)$ mit $E \supset D$ und $\mu(E \backslash D) = 0$
+	\item $\exists C \in \sigma(\mathscr R)$ mit $C \subset D$ und $\mu(D \backslash C) = 0$
+\end{enumerate}
+\end{Lemma}
+
+%Michelle 09.11.15
+Prämaß auf Ring kann zu einem \underline{Maß} fortgesetzt werden: \\
+\underline{Ziel}: Volumen (Flächeninhalt) einer Menge $\Omega \subset \mathbb R^n$ zu berechnen ($\rightarrow$ Maß einer Menge)
+
+
+%I.5 Halbringe und Inhalte
+\section{Halbringe und Inhalte}
+%Def. I.16
+\begin{Definition}
+Ein Mengensystem $\mathscr Q \subset P(X)$ heißt \underline{Halbring} über $X$, falls
+\begin{enumerate}
+	\item $\emptyset \in \mathscr Q$
+	\item $P, Q \in \mathscr Q \Rightarrow P \cap Q \in \mathscr Q$
+	\item $P, Q \in \mathscr Q \Rightarrow P \backslash Q = \bigcup\limits_{i=1}^k P_i$ mit $P_i \in \mathscr Q$ paarweise disjunkt.
+\end{enumerate}
+\end{Definition}
+
+%Bsp.
+\begin{Beispiel}
+\begin{enumerate}
+	\item $X$ beliebige Menge. $Q := \{\emptyset\} \cup \{\{a\}:  a \in X\}$ ist Halbring 
+	\item $I \subset \mathbb R$ heißt \underline{Intervall}, falls $a, b \in \mathbb R$ existieren mit $a \leq b$ und $(a, b) \subset \overline{I} \subset [a, b]$. Quader in $\mathbb R^n$ $ Q:= I_1 \times ... \times I_n$,  $I_1, ... I_n$ Intervalle.
+\end{enumerate}
+\end{Beispiel}
+
+%Satz I.15
+\begin{Satz}
+$Q^n := \{Q \in \mathbb R^n: Q $ Quader$\}$ ist Halbring über $\mathbb R^n$
+\end{Satz}
+
+%Satz I.16
+\begin{Satz}
+$\mathscr Q$ Halbring über $X$ und $\mathscr F := \{F = \bigcup\limits_{i=1}^k P_i, k \in \mathbb N, P_i \in \mathscr Q$ $\forall 1 \leq i \leq k\}$. Dann ist $\mathscr F$ der von $\mathscr Q$ erzeugte Ring.
+\end{Satz}
+
+%Bsp.
+\begin{Beispiel}
+\begin{enumerate}
+	\item $\mathscr Q = \{\emptyset \} \cup \{\{a\}: a \in X\} \rightarrow \mathscr F = \{$ endliche Teilmengen von $X\}$
+	\item $\mathscr Q^n \rightarrow$ E erzeugter Ring $\mathscr F^n:= \{$endliche Vereinigung von Quadern$\}$: Figuren
+\end{enumerate}
+\end{Beispiel}
+
+%Lemma I.10
+\begin{Lemma}
+Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gilt: $\sigma(\mathscr Q) = \sigma(\mathscr F)$, $(\sigma(.)$: erzeugte $\sigma$-Algebra$)$
+\end{Lemma}
+
+%Lemma I.11
+\begin{Lemma}
+Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Zu jedem $F \in \mathscr F$ existieren $P_1, ... P_k \in \mathscr Q$ \underline{paarweise disjunkt} mit $F = \bigcup\limits_{i=1}^k P_i$
+\end{Lemma}
+
+%Def I.17
+\begin{Definition}
+Sei $\mathscr Q \subset P(X)$ Halbring über $X$. Eine Funktione $\lambda: \mathscr Q \rightarrow [0, \infty ]$ heißt \underline{Inhalt} auf $\mathscr Q$, falls
+\begin{enumerate}
+	\item $\lambda(\emptyset) = 0$
+	\item $\lambda\left(\bigcup\limits_{i=1}^n	A_i\right) = \sum\limits_{i=1}^n \lambda(A_i)$ für paarweise disjunkte $A_i \in \mathscr Q$ mit $\bigcup\limits_{i=1}^n A_i \in \mathscr Q$
+\end{enumerate}
+Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma$-additiv auf $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: $\lambda\left(\bigcup\limits_{i\in \mathbb N} A_i \right) = \sum\limits_{i=1}^\infty \lambda(A_i)$, falls $\bigcup\limits_{i \in \mathbb N} A_i \in \mathscr Q$
+\end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+\begin{enumerate}
+	\item Ist $\mathscr Q$ Ring, so stimmt die Definition von Prämaß auf \emph{Def. 1.14} überein
+	\item Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, monoton, Nullmenge übertragen sich direkt auf Inhalte.
+\end{enumerate}
+\end{Bemerkung}
+
+%Satz I.17
+\begin{Satz}
+Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit $\overline{\lambda}(Q) = \lambda(Q)$ $\forall Q \in \mathscr Q$
 \end{Satz}
 
 
+
+
+\newpage
 %Kapitel 2
 
 \chapter{Das Lebesgue -Maß und -Integral}
@@ -528,7 +693,7 @@ $vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
 
 \begin{Definition}
 	Das (äußere) Lebesguemaß einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
-	$ \mathscr{L}^n(E) := inf\left\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \cup_{i = 1}^{\infty} P_i \right\} $
+	$ \mathscr{L}^n(E) := inf \left\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i \right\}$
 \end{Definition}
 
 
