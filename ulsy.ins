@@ -1,0 +1,19 @@
+\def\batchfile{ulsy.ins}
+\input docstrip.tex
+\preamble
+
+Copyright (C) 1995 Ulrich Goldschmitt
+All rights reserved.
+
+This file is the installation file to the ulsy-package.
+\endpreamble
+
+\keepsilent
+
+\generateFile{Uulsy.fd}{f}{
+  \from{ulsy.dtx}{Uulsy}}
+
+\generateFile{ulsy.sty}{f}{
+  \from{ulsy.dtx}{ulsy}}
+
+\endinput

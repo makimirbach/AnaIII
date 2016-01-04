@@ -12,6 +12,7 @@
 %\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
 \usepackage{fdsymbol} %varrightwavearrow
 %\usepackage{fontenc} % Für "
+\usepackage{ulsy} %Für Widerspruchspfeil
 
 
 \theoremstyle{break}
@@ -670,7 +671,10 @@ Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma
 Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit $\overline{\lambda}(Q) = \lambda(Q)$ $\forall Q \in \mathscr Q$
 \end{Satz}
 
-
+%Fehlt hier noch was?? Die Vorlesung nach dem 09.11. war über was??
+%
+%
+%
 
 
 \newpage
@@ -695,6 +699,80 @@ $vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
 	Das (äußere) Lebesguemaß einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
 	$ \mathscr{L}^n(E) := inf \left\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i \right\}$
 \end{Definition}
+
+
+
+
+\newpage
+
+
+%Ich brauche Beschäftigung: VL 23.11.15: ab Satz II.5
+%31.12.15 spät abends. Noch ist der folgende Satz II.5 im pdf als II.2 gezählt
+
+%Satz II.5 
+\begin{Satz}
+Sei $U \subseteq \mathbb R^n$ offen und $f: U \rightarrow \mathbb R^n$ lokal Lipschitz $($z.B. $f \in \mathscr C^1(U, \mathbb R^n))$, so gilt:
+\begin{enumerate}
+	\item $N \subset U$ $\mathscr L^n$-Nullmenge $\Rightarrow$ $f(N)$ $\mathscr L^n$-Nullmenge
+	\item $E \subset U$ $\mathscr L^n$-messbar $\Rightarrow$ $f(E)$ $\mathscr L^n$-messbar.
+\end{enumerate}
+\end{Satz}
+
+
+%Satz II.6
+\begin{Satz}
+Für $S \in O(n)$ und $a \in \mathbb R^n$ gilt: 
+$\mathscr L^n (S(E) +a) = \mathscr L^n(E)$ $\forall E \subset \mathbb R^n$
+\end{Satz}
+
+
+%Lemma II.5
+\begin{Lemma}
+$\forall S \in GL(n)$ $\exists$ Diagonalmatrix $\Lambda$ mit Einträgen $\lambda_i > 0$ und $T_1, T_2 \in O(n)$, sodass $S = T_1\cdotp\Lambda\cdotp T_2$ $($Polarzerlegung$)$
+\end{Lemma}
+
+
+%Satz II.7
+\begin{Satz}
+\emph{Lineare Transformationsformel} \\
+Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt: $\mathscr L^n(S(E)) = |\det S| \mathscr L^n(E)$ $\forall E \subset \mathbb R^n$
+\end{Satz}
+
+
+%YES! Erste Matrix! Sogar mit Punkten!! :D
+%Bsp Ellipsoid
+\begin{Beispiel}
+\emph{Ellipsoid} \\
+$\lambda_1, ..., \lambda_n = 0$, $E = \left\{ x \in \mathbb R^n | \left( \dfrac{x_1}{\lambda_1} \right)^2 + ... + \left (\dfrac{x_n}{\lambda_n}\right)^2 < 1 \right\}$ \\
+Jetzt gilt: $E = \Lambda(\mathscr B_1(0))$, $\Lambda =$
+$\begin{pmatrix}
+      \lambda_1 & 	 &	&	& 0 \\
+      		 &  	\ddots \\
+		 &	& \ddots \\
+		 &	&	& \ddots \\
+		 0 &	&	&	&	\lambda_n
+\end{pmatrix}$
+$\Rightarrow \mathscr L^n(E) = (\lambda_1 \cdotp ... \cdotp \lambda_n)\mathscr L^n(\mathscr B_1(0))$
+\end{Beispiel}
+
+
+%Bsp Vitali
+\begin{Beispiel}
+\emph{Vitali 1905} \\
+$\exists S \subset [0, 1]$, die nicht $\mathscr L^1$-messbar ist. Auf $[0, 1]$ gibt es die Äquivalenzrelation 
+\begin{center}
+	$x \sim y \Leftrightarrow x - y \in \mathbb Q$
+\end{center}
+Auswahlaxiom: $\exists$ Repräsentantensystem $S \subset [0, 1]$ für $\sim$, d.h. $\forall y \in [0, 1]$ $\exists! x \in S: x \sim y$ \\
+Sei jetzt $q_1, q_2, ...$ eine Abzählung von $\mathbb Q \cap [-1, 1]$. Dann gilt: $(q_j + S) \cap (q_k +S)  \emptyset $ $\forall j \ne k$ \\
+$($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x_2 = q_k -q_j \in \mathbb Q \Rightarrow x_1 \sim x_2  \Rightarrow x_1 = x_2 \Rightarrow q_j = q_k $\blitzd $ )$ \\
+
+\emph{Behauptung:} $[0, 1]$ $\underbrace{\subset}_{1)}$ $\bigcup\limits_{k=1}^\infty
+ (q_k + S) \subset [-1, 2]$ \\
+ Zu $1)$: zu $y \in (0, 1)$ existiert $x \in S: y - x = q \in \mathbb Q \cap [-1, 1] \Rightarrow$ $\exists k: y \in q_k + S$ \\
+\emph{Annahme:} $S$ ist $\mathscr L^1$-messbar mit $\mathscr L^1(S) = \mathscr L^1(q + S)$ $\forall q \in \mathbb Q$ folgt: $\sum\limits_{k=1}^\infty \mathscr L^1(S) = \sum\limits_{k=1}^\infty \mathscr L^1(q_k + S) \underbrace{=}_ {\text{Satz I.10}} \mathscr L^1\left(\bigcup\limits_{k=1}^\infty (q_k + S) \right) \in (1, 3]$ \blitzd
+
+\end{Beispiel}
 
 
 \end{document}

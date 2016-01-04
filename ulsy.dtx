@@ -1,0 +1,71 @@
+\def\fileversion{1.0}
+\def\filedate{1.2.1995}
+\def\docdate{1.2.1995}
+
+% \iffalse
+%<*driver>
+\documentclass[12pt]{ltxdoc}
+\usepackage{ulsy}
+\begin{document}
+\def\fileversion{1.0}
+\def\filedate{95/02/01}
+\def\docdate {95/02/01}
+\title{The \textsf{ulsy} package\thanks{This file
+        has version number \fileversion, last
+        revised \filedate.}}
+\author{Ulrich Goldschmitt\\ulrich@carlotta.iam.uni-bonn.de}
+\date{\filedate}
+\maketitle
+\DocInput{ulsy.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \MakeShortVerb{\|}
+%
+% \section{How to work with the \textsf{ulsy}-Symbols}
+%
+% In this package two symbols are defined, first an odplus-symbol, secondly
+% a symbol for contradiction.
+
+% 
+%
+% Now look first at the definition of the font (placed in \texttt{Uulsy.fd}):
+%    \begin{macrocode}
+%<*Uulsy>
+\DeclareFontFamily{U}{ulsy}{}
+\DeclareFontShape{U}{ulsy}{m}{n}
+   {  <10><12> ulsy10}{}
+%</Uulsy>
+%    \end{macrocode}
+% As you can see, there are only the sizes \textsf{10pt} and \textsf{12pt}
+% available (but there are five size-variants in each font of the 
+% contradiction-symbol).
+%
+% The names are defined like this:
+%    \begin{macrocode}
+%<*ulsy>
+\newcommand{\odplus}{{\usefont{U}{ulsy}{m}{n}\symbol{'010}}}
+\newcommand{\blitza}{{\usefont{U}{ulsy}{m}{n}\symbol{'011}}}
+\newcommand{\blitzb}{{\usefont{U}{ulsy}{m}{n}\symbol{'012}}}
+\newcommand{\blitzc}{{\usefont{U}{ulsy}{m}{n}\symbol{'013}}}
+\newcommand{\blitzd}{{\usefont{U}{ulsy}{m}{n}\symbol{'014}}}
+\newcommand{\blitze}{{\usefont{U}{ulsy}{m}{n}\symbol{'015}}}
+%</ulsy>
+%    \end{macrocode}
+% 
+% Now let's see how they look like (you should be aware that the
+% big ones (especially |\blitze|) may overlap with the line before or after):
+%
+% \noindent
+% |\odplus|: \odplus,\\
+% |\blitza|: \blitza, |\blitzb|: \blitzb, |\blitzc|: \blitzc, |\blitzd|: \blitzd\, |\blitze|: \blitze\ . 
+%
+% \noindent
+% \textit{\bfseries Have fun!}
+%
+% 
+%
+\endinput
+
+

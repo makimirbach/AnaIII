@@ -1,0 +1,47 @@
+
+*** INHALT ***
+
+In dieser Distribution sind enthalten:
+README (dieses File)
+ulsy10.mf
+ulsy10.tfm
+ulsy.ins
+ulsy.dtx
+
+*** SINN ***
+
+Erzeugung (leider nur) zweier mathematischer Zeichen:
+a) ein Zeichen f"ur orthogonale direkte Summe (kleine Abwandlung von \oplus),
+b) ein Zeichen (in f"unf Gr"o"senvarianten) f"ur 'Widerspruch' (der bekannte,
+nach unten weisende, Blitzstrahl).
+
+*** ANLEITUNG ***
+
+a) F"uhre ('latex' nat"urlich im Sinne von LaTeX2e zu verstehen)
+
+latex ulsy.ins
+
+aus und erhalte Uulsy.fd sowie ulsy.sty.
+
+b) Kopiere diese beiden Files in Dein privates TEXINPUT-Directory (oder
+einfach dorthin, wo Du latex aufrufst).
+
+c) Lege das (hoffentlich mit binary kopierte ?) File ulsy10.tfm
+in einen im TEXFONTS-Pfad angegebenen Ordner.
+
+d) Lege das File ulsy10.mf in einen von MakeTeXPK/METAFONT erreichbaren
+Ordner kann.
+
+e) F"uhre
+
+latex ulsy.dtx
+
+aus, um die Anleitung zu "ubersetzen (vorher allerdings sollte zumindest
+eine Zeichensatzvariante "ubersetzt worden sein, um eine geeignete
+Gr"o"se wie ulsy10.300pk oder ulsy10.360pk zur Verf"ugung zu haben, oder
+aber man hat ein MakeTeXPK installiert, was beim dvips-Aufruf automatisch
+die Fonterzeugung "ubernimmt).
+
+e) Complaints, comments to: ulrich@carlotta.iam.uni-bonn.de
+
+ug (Feb 95)
