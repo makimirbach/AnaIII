@@ -13,6 +13,7 @@
 \usepackage{fdsymbol} %varrightwavearrow
 %\usepackage{fontenc} % Für "
 \usepackage{ulsy} %Für Widerspruchspfeil
+\usepackage{mathtools} %Für Rightarrow mit Wort darüber
 
 
 \theoremstyle{break}
@@ -275,7 +276,7 @@ $f$ heißt kurz messbar (bzw. $\mathscr{A}$-messbar), wenn an $\mathscr{A}, \mat
 	\item $(X, \mathscr{A}), (Y, \mathscr{C}), (Z, \mathscr{D})$ messbare Räume \\
 	$f: X \rightarrow Y$ $ \mathscr{A}-\mathscr{C}$-messbar \\
 	$g: Y \rightarrow Z$ $ \mathscr{C}-\mathscr{D}$-messbar \\
-	$\underrightarrow{Beh.}$ $  g \circ f: X \rightarrow Z$ $ \mathscr{A}-\mathscr{D}$-messbar, denn \\
+	$\xRightarrow{Beh.}$ $  g \circ f: X \rightarrow Z$ $ \mathscr{A}-\mathscr{D}$-messbar, denn \\
 	$(g \circ f)^{-1}(\mathscr{D}) = f^{-1}(g^{-1}(\mathscr{D})) \subset f^{-1}(\mathscr{D}) \subset \mathscr{A}$
 \end{enumerate}
 \end{Beispiel}
@@ -771,8 +772,97 @@ $($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x
  (q_k + S) \subset [-1, 2]$ \\
  Zu $1)$: zu $y \in (0, 1)$ existiert $x \in S: y - x = q \in \mathbb Q \cap [-1, 1] \Rightarrow$ $\exists k: y \in q_k + S$ \\
 \emph{Annahme:} $S$ ist $\mathscr L^1$-messbar mit $\mathscr L^1(S) = \mathscr L^1(q + S)$ $\forall q \in \mathbb Q$ folgt: $\sum\limits_{k=1}^\infty \mathscr L^1(S) = \sum\limits_{k=1}^\infty \mathscr L^1(q_k + S) \underbrace{=}_ {\text{Satz I.10}} \mathscr L^1\left(\bigcup\limits_{k=1}^\infty (q_k + S) \right) \in (1, 3]$ \blitzd
-
 \end{Beispiel}
+
+
+%27.11.15
+
+%der erste Absatz ist nicht wirklich beschriftet, sondern einfach so da, ich tex ihn mal einfach ab, habe das geschwungene tau aber noch nie in Ana gesehen^^
+
+%
+$(X, \mathscr A)$ messbarer Raum \\
+$\rightarrow \mathscr A-TF$ \\
+$\rightarrow \tau_\mathscr A ^+ = \left\{\phi \in \tau_\mathscr A | \phi \geq 0\right\}$ \\
+Jetzt $(X, \mathscr A, \mu)$ Maßraum. Neue Notation: \underline{$\tau^+ (\mu)$} statt $\tau_\mathscr A ^+$ \\
+Definiere für $\phi \in \tau+(\mu)$ mit Wertemenge $\{s_1, ... , s_l\} \subset [0, \infty)$ das \emph{Integral}: \\
+$I(\phi) = \sum\limits_{i=1}^l s_i \mu(\{\phi = s_i\}) \in [0, \infty]$
+
+
+%Lemma II.6
+\begin{Lemma}
+Für $\phi, \psi \in \tau	^+(\mu)$ und $\alpha, \beta \in [0, \infty)$ gelten:
+\begin{enumerate}
+	\item $I(\alpha\phi + \beta\psi) = \alpha I(\phi) + \beta I(\psi)$
+	\item $\phi \leq \psi \Rightarrow I(\phi) \leq I(\psi)$ 
+\end{enumerate}
+\end{Lemma}
+
+
+%Def II.4
+\begin{Definition}
+Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb R} \mathscr A$-messbar. Ist $f: X \rightarrow [0, \infty]$, so setzen wir:
+$\int f d\mu := \sup\left\{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f\right\}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
+
+Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von $f^+ = \max{f, 0}$ und $f^- = \max{-f, 0}$ wie eben definiert und nicht beide unendlich, so setzen wir: \\
+$\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ \\
+$(f = f^+ - f^-)$ \\
+$($Das \underline{Lebesgue-Integral}!$)$
+\end{Definition}
+
+%Lemma II.7
+\begin{Lemma}
+Für $f \in \tau^+ (\mu)$ gilt: $\int f d\mu = I(f)$
+\end{Lemma}
+
+%Bsp.
+\begin{Beispiel}
+$\mathscr L^1$ auf $\mathbb R$; $\mathscr A = \mathscr M(\mathscr L^1), \chi_\mathbb Q \in \tau^+ (\mathscr L^1)$ \\
+$\mathbb Q \in \mathscr B^1$ $($Blatt 2$)$ \\
+$\int \chi_\mathscr Q d\mathscr L^1 = 0 \cdotp \mathscr L^1(\mathbb R \backslash \mathbb Q) + 1 \cdotp \mathscr L^1(\mathbb Q) = 0$
+\end{Beispiel}
+
+%Def II.5
+\begin{Definition}
+Eine Funktion $f: X \rightarrow \overline{\mathbb R}; ((X, \mathscr A, \mu)$ Maßraum$)$ heißt \underline{integrierbar bzgl. $\mu$}, wenn sie \underline{$\mathscr A$-messbar} ist und wenn gilt: \\
+$\int f d\mu \in \mathbb R$ $\Leftrightarrow$ $\int f^+ d\mu + \int f^- d\mu < \infty$
+\end{Definition}
+
+%Satz II.9
+\begin{Satz}
+Sei $(X, \mathscr A, \mu)$ Maßraum und $f, g: X \rightarrow \overline{\mathbb R}$ seien $\mathscr A$-messbar. Ist $f \leq g$ $\mu$-fast unendlich und $\int f d\mu > -\infty$, so existiert auch $\int g d\mu$ und es gilt: \\
+$\int f d\mu \leq \int g d\mu$ \\
+Analog:  Ist $f \geq g$ $\mu$-fast unendlich und $\int f d\mu < \infty$, so existiert auch $\int g d\mu$ und es gilt: \\
+$\int f d\mu \geq \int g d\mu$
+\end{Satz}
+
+%Bem.
+\begin{Bemerkung}
+Sei $\mu$ vollständiges Maß, $f$ $\mu$-messbar und $f = g$ $\mu$-fast überall \\
+$\xRightarrow{\text{Lemma I.5}} g$ $\mu$-messbar \\
+$\Rightarrow \int f d\mu = \int g d\mu$, falls einer der beiden existiert.
+\end{Bemerkung}
+
+%Lemma II.8: Tschebyscheff-Ungleichung
+\begin{Lemma}
+\emph{Tschebyscheff-Ungleichung} \\
+Für eine $\mathscr A$-messbare Funktion $f: X \rightarrow [0, \infty]$ mit $\int f d\mu < \infty$ gilt: \\
+\begin{equation}
+	\mu(\{f \geq s\}) \leq
+	\begin{cases}
+		\dfrac{1}{s}\int f d\mu & s \in (0, \infty) \\
+		0 & s = \infty
+	\end{cases}
+\end{equation}
+\end{Lemma}
+
+%Lemma II.9
+\begin{Lemma}
+$f: X \rightarrow \overline{\mathbb R}$ sei $\mathscr A$-messbar. 
+\begin{enumerate}
+	\item Ist $\int f d\mu < \infty \Rightarrow \{f = \infty\}$ ist $\mu$-Nullmenge.
+	\item Ist $f \geq 0$ und $\int f d\mu = 0 \Rightarrow \{f > 0\}$ ist $\mu$-Nullmenge. 
+\end{enumerate}
+\end{Lemma}
 
 
 \end{document}
