@@ -13,7 +13,8 @@
 \usepackage{fdsymbol} %varrightwavearrow
 %\usepackage{fontenc} % Für "
 \usepackage{ulsy} %Für Widerspruchspfeil
-\usepackage{mathtools} %Für Rightarrow mit Wort darüber
+\usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
+\usepackage{extpfeil} %für = mit Wort drüber
 
 
 \theoremstyle{break}
@@ -684,8 +685,8 @@ Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ de
 \chapter{Das Lebesgue -Maß und -Integral}
 \section{Das Lebesgue-Maß}
 
-Halbring $\mathcal{Q}^n$ Inhalt.\\
-$vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
+Halbring $\mathscr{Q}^n$ Inhalt.\\
+$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
 \begin{Satz}
 	Prämaß auf Halbring\\
@@ -693,7 +694,7 @@ $vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$
 \end{Satz}
 
 \begin{Lemma}
-	$vol^n : \mathcal{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
+	$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
 \end{Lemma}
 
 \begin{Definition}
@@ -864,5 +865,264 @@ $f: X \rightarrow \overline{\mathbb R}$ sei $\mathscr A$-messbar.
 \end{enumerate}
 \end{Lemma}
 
+
+%VL 30.11.15
+
+
+
+
+%An welchem Package kann es liegen, dass \underbrace nicht mehr funktioniert, da schwarze Balken darüber liegen? Bis letztens ging es noch. mit abrace lässt es sich nicht lösen, google kann nicht helfen.
+
+%VL 04.12.15
+
+%Bsp.
+%Viel Spaß, sollte das mal jemand Korrektur lesen müssen. Es hat auch super viel Spaß gemacht, das zu schreiben. 04.01.16 - Freude! :)
+\begin{Beispiel}
+$f: \mathbb R^n \rightarrow \mathbb R$, $f(x) = |x|^{-\alpha}, \alpha \in \mathbb R$ \\
+\emph{Behauptung:} $\int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ \\
+%das hier macht nicht so wirklich Sinn. Wieso über B oder ohne gleich??
+$\int\limits_{\mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ \\
+$A_k := \left\{x \in \mathbb R^n | 2^k \leq |x| < 2^{k+1}\right\}, k \in \mathbb Z$ \\
+$\bigcup\limits_{k \in \mathbb Z} A_k = \mathbb R^n\backslash\{0\}$ \\
+$g = \sum\limits_{k \in \mathbb Z} 2^{-k\alpha}\chi_{A_k}$ \\
+Es gilt: $2^{-\alpha}g \leq f \leq g$ $\forall \alpha \geq 0$ \\
+Auf $\mathbb R^n\backslash\{0\}: 2^{-\alpha}g \geq f\geq g$ $\forall \alpha < 0$ \\
+Sei $x \in A_k$ für ein $k \in \mathbb Z \Rightarrow 2^k \leq |x| \leq 2^{k+1}$ und $g(x) = 2^{-k\alpha}$ \\
+$\alpha \geq 0 \Rightarrow 2^{k\alpha} \leq |x|^\alpha \leq 2^{(k+1)\alpha} \Rightarrow |x|^{-\alpha} \geq 2^{-k\alpha - \alpha}, |x|^{-\alpha} \leq 2^{-k\alpha} = g(x) = 2^{-\alpha} g(x)$ \\
+Es reicht, die Behauptung für $g$ zu zeigen! \\
+Satz II.7: $\mathscr L^n(A_k) = 2^{kn}\underbrace{\mathscr L^n(A_0)}_{=: \nu_n \in (0, \infty)}$ \\
+$A_k = 2^k A_0$ \\
+Es ist weiter $\sum\limits_{k=0}^l 2^{-k\alpha}\chi_{A_k}$ $\underrightarrow{k \rightarrow \infty}$ $\sum\limits_{k=0}^\infty 2^{-k\alpha}\chi_{A_k} = g\chi_{\mathbb R^n \backslash \mathscr B_1(0)}$ punktweise und monoton. \\
+Satz II.10 \\
+$\rightarrow \int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} g d\mathscr L^n = \int g\chi_{\mathbb R^n\backslash B_1(0)} d\mathscr L^n = \int \sum\limits_{k=1}^\infty 2^{-k\alpha}\chi_{A_k} d\mathscr L^n = \int \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l 2^{-k\alpha} \chi_{A_k} d\mathscr L^n$ 
+$\xlongequal{\text{Satz II.10}} \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l \int 2^{-k\alpha}\chi_{A_k} d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \int \chi_{A_k} d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \mathscr L^n (A_k)$ \\
+\begin{equation}
+= \sum\limits_{k=0}^\infty  \nu_n 2^{k(n-\alpha} =
+\begin{cases}
+	\nu_n \cdotp \dfrac{1}{1-2^{n-\alpha})} & , \alpha > n \\
+	\infty & , \text{sonst}
+\end{cases} 
+\end{equation}
+\begin{equation}
+\overline{g}(x) :=
+\begin{cases}
+	g(x) & \forall x \in \mathbb R^n \backslash \{0\} \\
+	\infty & x = 0
+\end{cases}
+\end{equation}
+$\xRightarrow{\alpha < 0} 2^{-\alpha}\overline{g} \geq f \geq g$ $\forall x \in \mathbb R^n$ \\
+$\alpha > 0: 2^{-\alpha}g \leq f \leq \overline g$ \\
+$\mathscr L^n$ ist ein \underline{vollständiges Maß} \\
+$\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} d\mathscr L^n = \int \overline g \chi_{\mathscr B_1(0)} d\mathscr L^n$
+\end{Beispiel}
+
+%Satz II.12
+\begin{Satz}
+Sei $f: X \rightarrow \overline{\mathbb R}$ messbar, $(X, \mathscr A, \mu)$ Maßraum. Dann gelten:
+\begin{enumerate}
+	\item $f$ integrierbar $\Leftrightarrow$ $|f|$ integrierbar.
+	\item $\left| \int f d\mu \right| \leq \int |f| d\mu$, falls $\int f d\mu$ existiert.
+	\item Ist $g: X \rightarrow [0, \infty]$ $\mathscr A$-messbar mit $|f| \leq g$ $\mu$-fast überall und $\int g d\mu < \infty$ $\Rightarrow f$ ist integrierbar. 
+\end{enumerate}
+\end{Satz}
+
+%Bsp.
+\begin{Beispiel}
+$f: \mathbb R^n \rightarrow \mathbb R$ $\mathscr M(\mathscr L^n)$-messbar und es existiert $c \in [0, \infty)$ mit $|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathscr B_\epsilon (0)$ mit $\alpha < n$ \\
+Bzw. $|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathbb R^n \backslash \mathscr B_\mathbb R (0)$ mit $\alpha > n$ $\Rightarrow f$ ist auf $\mathscr B_\epsilon (0)$ bzw. $\mathbb R^n \backslash \mathscr B_\mathscr R (0)$ integrierbar $\mathscr L^n$.
+\end{Beispiel}
+
+
+%II.3 Konvergenzsätze und L^p-Räume
+\section{Konvergenzsätze und $L^p$-Räume}
+
+%Satz II.13: Lemma von Fatou
+\begin{Satz}
+\emph{Lemma von Fatou} \\
+$(X, \mathscr A, \mu)$ Maßraum. Sei $f_k: X \rightarrow [0, \infty]$ Folge von $\mathscr A$-messbaren Funktionen. Für $f: X \rightarrow \overline{\mathbb R}, f(x) = \liminf_{k \rightarrow \infty} f_k (x)$ gilt: \\
+\begin{center}
+$\int f d\mu \leq \liminf_{k \rightarrow \infty} \int f_k d\mu$
+\end{center}
+
+Bsp. $f_\epsilon = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}$
+\end{Satz}
+
+%Satz II.14 Satz über majorisierte Konvergenz, Satz von Lebesgue
+\begin{Satz}
+\emph{Satz über majorisierte Konvergenz, Satz von Lebesgue} \\
+Sei $(X, \mathscr A, \mu)$ Maßruam und $f_1, f_2, ...$ Folge $\mathscr A$-messbarer Funktionen mit \\$f(x) := \lim_{k \rightarrow \infty} f_k (x)$ für $\mu$-fast alle $x \in X$. \\
+Es gebe eine integrierbare Funktion $($bzgl. $\mu)$ $g: X \rightarrow [0, \infty]$ mit \\
+$\sup_{k \in \mathbb N} |f_k (x)| \leq g(x)$ für $\mu$-fast alle $x \in X$. Dann ist $f$ integrierbar bzgl $\mu$ mit 
+\begin{center}
+$\int f d\mu = \lim_{k \rightarrow \infty} \int f_k d\mu$.
+\end{center}
+\end{Satz}
+
+%Bem.
+\begin{Bemerkung}
+Es gilt sogar: $\|f - f_k\|_{L^1(\mu)} = \int |f - f_k|d\mu$ $\underrightarrow{k \rightarrow \infty}$ $0$
+\end{Bemerkung}
+
+\emph{Riemann-Integral}
+Welche Funktionen sind $R$-integrierbar? \\
+$f: I:=[a, b] \rightarrow \mathbb R$ \\
+Sei $Z$ eine Unterteilung von $I$, d.h. $a=x_0\leq x_1 \leq ... \leq x_N = b$ in Teilintervalle $(x_{i-1}, x_i) \ni \xi_i$ \\
+$f$ ist $R$-integrierbar $\Leftrightarrow$ \\
+$S_{Z, \xi} (f) := \sum\limits_{i=1}^N f(\xi_i)(x_i - x_{i-1})$ konvergiert für $\Delta(Z) \rightarrow 0$ \\
+
+
+%Def. Das ist eine Definition ohne Nummer? Macht die die Nummerierung dann kaputt? Oder hat er die Nummer da nur vergessen? Ich denke, es ist nur eine Unterdef, also ohne die normale Nummerierung.
+\emph{Definition} \\
+$\overline{s_Z}(f) = \sum\limits_{i=1}^N (\sup f)(x_i  - x_{i-1})$ \underline{Obersumme} \\
+%in deinem Aufschrieb ist da noch ein [x_{i-1}, x_i) schräg unter dem sup. Was macht das da? 04.12.15, Seite k oben
+\underline{$s_Z$}$(f) = \sum\limits_{i=1}^N (\inf f)(x_i - x_{i-1})$ \underline{Untersumme} \\
+Es gilt:
+$\int\limits_a^b f(x) dx = s \Leftrightarrow \sup_z \underline{s_Z}(f) = \inf \overline{s_Z}(f) = s$ \\
+$($Mehr Details heute 15:45 bei unserem Lieblingsübungsleiter$)$
+
+%Satz II.15
+\begin{Satz}
+Sei $f: I \rightarrow \mathbb R$ beschränkte Funktion auf $I = [a, b]$. Dann gilt: \\
+$f R$-integrierbar $\Leftrightarrow \mathscr L^1(\{x \in I | f $ ist nicht stetig in $x \}) = 0$ \\
+In diesem Fall ist $f$ auch Lebesgue-integrierbar und die Integrale stimmen überein.
+\end{Satz}
+
+%Juchu, das war die VL vom 04.12.
+
+%Jetzt der 07.12. Die erste Seite ist eine Zusammenfassung bisheriger Sätze
+
+%Satz II.16 Stetigkeit von Parameterintegralen
+\begin{Satz}
+\emph{Stetigkeit von Parameterintegralen} \\
+$X$ ein metrischer Raum, $\mu$ ein Maß auf $Y$, $f: X \times Y \rightarrow \mathbb R$ mit den Eigenschaften:
+\begin{enumerate}
+	\item $\forall x \in X:$ $f(x, \cdotp)$ integrierbar
+	\item $f(\cdotp, y)$ ist in $x_0$ für $\mu$-fast alle $y$ stetig.
+	\item $\exists g: Y \rightarrow \mathbb R^+$ integrierbar, $|f(x, y)| \leq g(y)$ $\forall y \in Y \backslash Nx$, $Nx$ $\mu$-Nullmenge
+\end{enumerate}
+$\Rightarrow F: X \rightarrow \mathbb R$, $F(x):= \int f(x, y) d\mu$ ist stetig in $x_0$.
+\end{Satz}
+
+%Satz II.17 Differentation unter den Integralzeichen
+\begin{Satz}
+\emph{Differentation unter den Integralzeichen} \\
+$I$ offenes Integral, $\mu$-Maß auf $Y$, $f: I \times Y \rightarrow \mathbb R$ mit 
+\begin{enumerate}
+	\item $f(x, \cdotp)$ integrierbar für alle $x \in I$
+	\item $f(\cdotp, y)$ ist in $x_0 \in I$ differenzierbar für $\mu$-fast alle $y$
+	\item $\dfrac{|f(x, y) - f(x_0, y)|}{|x - x_0|} \leq g(y)$ für alle $y \in Y \backslash Nx, \mu(Nx)= 0$ und $f$ ist $\mu$-integrierbar \\
+\end{enumerate}
+$\Rightarrow F: I \rightarrow \mathbb R, F(x):= \int f(x, y)d\mu(y)$ ist in $x_0$ differenzierbar mit $ F'(x) = \int \dfrac{\partial f}{\partial x}(x_0, y) d\mu(y)$
+
+\end{Satz}
+
+%Lemma II.10
+\begin{Lemma}
+Sei $U \subset \mathbb R^n$ offen, $\mu$ Maß auf $Y$, $f: U \times Y \rightarrow \mathbb R$ mit
+\begin{enumerate}
+	\item $f(x, \cdotp)$ ist $\mu$-integrierbar für alle $x$
+	\item $f(\cdotp, y)$ ist in $\mathscr C^1(U)$ für $\mu$-fast alle $y$.
+	%Was tut das D da? ist das ein Differentialsymbol? VL 07.12. Seite f
+	\item $|D_x f(x, y)| \leq g(y)$ für alle $x$ und $g$ integrierbar. 
+\end{enumerate}
+$\Rightarrow F: U \rightarrow \mathbb R, F(x):= \int f(x, y) d\mu(y)$ ist $\mathscr C^1(U)$ mit $\dfrac{\partial F}{\partial x}(x) = \int \dfrac{\partial f}{\partial x}(x, y) d\mu(y)$
+\end{Lemma}
+
+%Bsp.
+\begin{Beispiel}
+$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) =\{x| \phi(x) \ne 0\}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
+%Was auch immer das ist. Also 'support'
+$\forall h$ Lebesgue-integrierbar ist \\
+$\phi \Asterisk h(x) = \int \phi(x-y)f(y) d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ ist \underline{glatt}
+\end{Beispiel}
+
+%Def II.7 L^p-Raum
+
+%juchuu, hier beginnt, das Chaos mit den Lp-Räumen und dem Lebesgueding
+\begin{Definition}
+\emph{$L^p$-Raum} \\
+Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty$ \\
+\begin{equation}
+\|f\|_{L^p (\mu)} =
+\begin{cases}
+	\left( \int |f|^p d\mu\right) ^{\dfrac{1}{p}} & , \text{für } 1 \leq p < \infty \\
+	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & , p = \infty
+\end{cases}
+\end{equation}
+$L^p(\mu):= \{f \mu$-messbar mit $\|f\|_{L^p (\mu)} < \infty\}$ auf $L^p$ definieren die Äquivalenzrelation
+\begin{center}
+	$f \sim g \Leftrightarrow f(x) = g(x)$ für $\mu$-fast alle $x$
+\end{center}
+Definiere $L^p(\mu) := L^p(\mu) /_\sim$ \\
+Häufig schreiben wir $\|f\|_{L^p}$ anstelle von $\|f\|_{L^p (\mu)}$
+\end{Definition}
+
+%Def II.8
+\begin{Definition}
+$E \subset X$ $\mu$-messbar, $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, definiere die Fortsetzung
+\begin{equation}
+f_0(x) =
+\begin{cases}
+	f(x) & x \in E \\
+	0 & \text{sonst}
+\end{cases}
+\end{equation}
+$L^p(E) := \{f: E \rightarrow \overline{\mathbb R}, f_0 \in L^p(x)\}$ und $L^p(E, \mu) = L^p(E, \mu)/_\sim$
+\end{Definition}
+
+%Bem.
+%ist es komisch, dass ich den Sinn dieser Bemerkung nicht verstehe? Gehört in der ersten Gleichung villeicht das ^p weg?
+\begin{Bemerkung}
+$L(E, \mu) = L^p(\mu|_E)$ und $L^p(E, \mu) = L^p(\mu|_E)$
+\end{Bemerkung}
+
+%Satz II.18
+\begin{Satz}
+Für $1 \leq p \leq \infty$ ist $(L^p(\mu),\, \|\cdotp\|_{L^p(\mu)})$ ein normierter Vektorraum. Insbesondere gilt: für $\lambda \in \mathbb R$, $f, g \in L^p(\mu)$:
+\begin{enumerate}
+	\item $\|f\|_{L^p} = 0 \Rightarrow f=0$ $\mu$-fast überall
+	\item $f \in L^p(\mu)$ und $\|\lambda f\|_{L^p} = |\lambda|\|f\|_{L^p}$ 
+	\item $f +g \in L^p(\mu)$ und $\|f + g\|_{L^p} \leq \|f\|_{L^p} + \|g\|_{L^p}$
+\end{enumerate}
+
+%Lemma II.11 Youngsche Ungleichung
+\begin{Lemma}
+\emph{Youngsche Ungleichung} \\
+Für $1 < p, q < \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ gilt $\forall x, y \geq 0$
+\begin{center}
+	$xy \leq \dfrac{1}{p}x^p + \dfrac{1}{q}y^q$
+\end{center}
+\end{Lemma}
+\end{Satz}
+
+%Satz II.19 Hölder Ungleichung
+\begin{Satz}
+\emph{Höldersche Ungleichung} \\
+$f, g$ $\mu$-messbar, $1 \leq p, q \leq \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ \\
+\begin{center}
+	$\Rightarrow \left| \int f, g, d\mu\right| \leq \|f\|_{L^p}\|g\|_{L^p}$
+\end{center}
+\end{Satz}
+
+
+%Satz II.20 Minkovski Ungleichung
+\begin{Satz}
+\emph{Minkovski-Ungleichung} \\
+$f, g \in L^p(\mu), 1 \leq p \leq \infty$ dann gilt:
+\begin{center}
+	$\|f+g\|_{L^p} \leq \|f\|_{L^p} + \|g\|_{L^p}$
+\end{center}
+\end{Satz}
+
+%Lemma II.12
+\begin{Lemma}
+Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$, falls $\sum\limits_{i=1}^\infty \|u_i\|_{L^p} < \infty$ dann gilt:
+\begin{enumerate}
+	\item $\lim_{k \rightarrow \infty} f_k (x) = f(x)$ existiert und $\forall x \in X\backslash N$ mit $\mu(N) =0$
+	\item Mit $f(x) = 0$ $\forall x \in N$ folgt $f \in L^p(\mu)$
+	\item $\|f-f_k\|_{L^p} \rightarrow 0$ 
+\end{enumerate}
+
+\end{Lemma}
 
 \end{document}
