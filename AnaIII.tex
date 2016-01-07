@@ -869,9 +869,69 @@ $f: X \rightarrow \overline{\mathbb R}$ sei $\mathscr A$-messbar.
 %VL 30.11.15
 
 
+%Satz II.10 Satz von der monotonen Konvergenz von Beppo Levi
+\begin{Satz}
+\emph{Satz von der monotonen Konvergenz von Beppo Levi} \\
+Sei $(X, \mathscr A, \mu)$ Maßraum und $f_k: X \rightarrow [0, \infty]$ sei Folge $\mathscr A$-messbarer Funktionen mit $f_1 \leq f_2 \leq ...$ Definiere $f: [0, \infty]$ durch $f(x) = \lim_{k \rightarrow \infty} f_k (x)$. Dann gilt:
+\begin{center}
+	$\int f d\mu = \lim_{k\rightarrow \infty} \int f_k d\mu$
+\end{center}
+\end{Satz}
+
+
+%Bsp.
+\begin{Beispiel}
+% Ich setzte das mal in einen Center, sonst sieht das übel doof aus. Doofe Idee, dann ist die Überschrift auch zentriert.
+
+%\begin{center}
+	$f_{\epsilon} (x) = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}(x)$
+%\end{center}  
+$(\mathbb R, \mathscr M(\mathscr L^1), \mathscr L^1)$ Maßraum, $\epsilon > 0$, $f_\epsilon \, \mathscr M(\mathscr L^1)$-messbar.
+\begin{equation}
+	\lim_{\epsilon \searrow 0} f_\epsilon (x) = f_0 (x) =
+	\begin{cases}
+		0 & x \ne 0 \\
+		\infty & x = 0
+	\end{cases}
+\end{equation}
+$0 = \int f_0 \, d\mathscr L^1 \ne \lim_{\epsilon \rightarrow 0} \int f_e \, d\mathscr L^1$ $\xlongequal{\lim_{\epsilon \searrow 0}}$ $\dfrac{1}{2\epsilon} \mathscr L^1([-\epsilon, \epsilon]) =1$
+\end{Beispiel}
+
+
+%Satz II.11
+\begin{Satz}
+$(X, \mathscr A, \mu)$ Maßraum. Für $\mathscr A$-messbare Funktionen $f, g: X \rightarrow \overline{\mathbb R} $ und $\alpha, \beta \in \mathbb R$ sei $\alpha\int f \, d\mu + \beta \int g \, d\mu$ in $\overline{\mathbb R}$ definiert. Dann ist $\alpha f + \beta g$ außerhalb einer $\mu$-Nullmenge $N$ definiert und mit $\alpha f + \beta g = 0$ auf $N$ gilt: \\
+\begin{center}
+	$\int (\alpha f + \beta g) \, d\mu = \alpha \int f \, d\mu + \beta \int g \, d\mu$
+\end{center}
+\end{Satz}
+
+%Def II.6
+\begin{Definition}
+$(X, \mathscr A, \mu)$ Maßraum und $E \subset X$ sei $\mathscr A$-messbar. Dann setzten wir $($falls das rechte Integral existiert$)$: 
+\begin{center}
+	$\int_E f \, d\mu := \int f \chi_E \, d\mu$
+\end{center}
+$f$ heißt \underline{auf $E$ integrierbar}, falls $f \chi_E$ integrierbar ist.
+\end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+$(f \chi_E)^\pm = f^\pm \chi_E \leq f^\pm$. $f$ integrierbar $\Rightarrow$ $f$ integrierbar auf $E$. \\
+$f \geq 0$ $\Rightarrow$ $\int_E f \, d\mu$ existiert $\forall E \, \mathscr A$-messbar
+\end{Bemerkung}
+
+%Behauptung, zu der er dann noch lange Gedanken/Beweise aufgeschrieben hat. Aufschrieb aus verständlichen Gründen unvollständig, dreimal darfst du raten, wer da die Vorlesung gehalten hat. 
+
+\emph{Behauptung}: \\
+$\int_{\mathbb R^n \backslash \mathscr B_1 (0)} f \, d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$
+%Das war dann der 30.11.
+
 
 
 %An welchem Package kann es liegen, dass \underbrace nicht mehr funktioniert, da schwarze Balken darüber liegen? Bis letztens ging es noch. mit abrace lässt es sich nicht lösen, google kann nicht helfen.
+
+
 
 %VL 04.12.15
 
@@ -1124,5 +1184,40 @@ Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$
 \end{enumerate}
 
 \end{Lemma}
+
+%Jup, der 07.12. ist dann auch soweit fertig.
+
+
+\newpage
+%Ich fange mal noch mit Kapitel III an
+%KAPITEL 3
+\chapter{Der Satz von Fubini und die Transformationsformel}
+Ana I: $f: [a, b] \times [c, d] \rightarrow \mathbb R$ stetig \\
+$\underrightarrow{Fubini} \int\limits_a^b \left( \int\limits_c^d f(x, y) dy\right) dx = \int\limits_c^d \left( \int\limits_a^b f(x, y) dx \right) dy$
+
+%Def III.1
+\begin{Definition}
+Seien $\alpha_i$ äußere Maße auf $X_i, i = 1, ... n$. Eine Menge $P \subset X_1 \times ... \times X_n$ heißt \underline{Produktmenge}, wenn es $\mathscr M(\alpha_i)$ messbare Mengen $A_i \subset X_i$ gibt mit $P = A_1 \times ... \times A_n$
+\end{Definition}
+
+%Lemma III.1
+\begin{Lemma}
+$\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Dann gilt:
+\begin{enumerate}
+	\item Das System $\mathscr P$ der Produktmengen ist ein Halbring.
+	\item Die Funktion $\lambda: \mathscr P \rightarrow [0, \infty], \, \lambda(A_1 \times ... \times A_n) = \prod\limits_{i=1}^n \alpha_i(A_i)$ ist ein Prämaß.
+\end{enumerate}
+\end{Lemma}
+
+%Def III.2
+\begin{Definition}
+Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \underline{Produktmaß} $\alpha_1 \times ... \times \alpha_n$ einer Menge $E \subset X_1 \times ... \times X_n$ ist definiert durch 
+\begin{center}
+	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\left\{ \sum\limits_{j=1}^\infty \lambda(P_j): P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j \right\}$
+
+\end{center}
+\end{Definition}
+
+
 
 \end{document}
