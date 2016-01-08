@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage{mathrsfs}
+\usepackage{mathrsfs} %hübsche Buchstaben
 \usepackage{amssymb}
 \usepackage{ntheorem}
 \everymath{\displaystyle}
@@ -10,12 +10,17 @@
 %\usepackage{array}
 \usepackage{mathabx} %für #
 %\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
-\usepackage{fdsymbol} %varrightwavearrow
+\usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace
 %\usepackage{fontenc} % Für "
 \usepackage{ulsy} %Für Widerspruchspfeil
 \usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
 \usepackage{extpfeil} %für = mit Wort drüber
 
+
+%13.11 Freitag Younis
+%16.11 Montag Tamar
+%20.11 Freitag T
+%21.12 
 
 \theoremstyle{break}
 
@@ -1189,6 +1194,8 @@ Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$
 %Jup, der 07.12. ist dann auch soweit fertig.
 
 
+
+
 \newpage
 %Ich fange mal noch mit Kapitel III an
 %KAPITEL 3
@@ -1218,6 +1225,81 @@ Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \underline{Produ
 
 \end{center}
 \end{Definition}
+
+\emph{bekannt}: 
+$\mathbb R^n = \mathbb R^{n_1} \times \mathbb R^{n_2}$, $n_1 + n_2 = n$
+
+%Lemma III.2
+\begin{Lemma}
+Es gilt 
+\begin{center}
+	$\mathscr L^n = \mathscr L^{n_1} \times \mathscr L^{n_2}$
+\end{center}
+\end{Lemma}
+
+%Satz III.1: Fubini
+%wuhu, Monstersatz
+
+\begin{Satz}
+\emph{Satz von Fubini} \\
+Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
+\begin{enumerate}
+	\item $\forall S \subset X \times Y$ $\exists R \in \mathscr M(\mu \times \nu)$ mit $S \subset R$ und $(\mu \times \nu)(S) = (\mu \times \nu)(R)$
+	
+	\item Für $A \in \mathscr M(\mu), B \in \mathscr M(\nu)$ ist $A \times B \in \mathscr M(\mu \times \nu)$ und $(\mu \times \nu)(A \times B) = \mu(A)\nu(B)$
+	
+	\item Für $S \subset X \times Y$, $S \in \mathscr M(\mu \times \nu)$ und $S$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ $($d.h. $\exists S_n \subset X \times Y$ mit $\bigcup S_n = S$ und $(\mu \times \nu)(S_n) < \infty$ $\forall n)$. \\
+	Dann gilt: $S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, $(y \mapsto \mu(S_y))$ ist $\mathscr M(\nu)$-messbar. \\
+	$S^x := \{y : (x, y) \in S\}$ ist für $\mu$-fast alle $x \in X$ in $\mathscr M(\nu)$, $(x \mapsto \nu(S^x))$ ist $\mathscr M(\mu)$-messbar und $(\mu \times \nu)(S) = \int \mu(S_y)\, d\nu(y) = \int \nu(S^x) \, d\mu(x)$ \\
+	\emph{Prinzip von \underline{Cavalieri}}
+	
+	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt: \\
+	$(x \mapsto f(x, y))$ ist für $\nu$-fast alle $y \in Y$ $\mathscr M(\mu)$-messbar. \\
+	$\left(y \mapsto \int f(x, y) \, d\mu(x)\right) $ ist $\mathscr M(\nu)$-messbar, \\
+	$(y \mapsto f(x, y))$ ist für $\mu$-fast alle $x \in X$ $\mathscr M(\nu)$-messbar, \\
+	$\left( x \mapsto \int f(x, y) \, d\nu(y)\right)$ ist $\mathscr M(\mu)$-messbar mit 
+	\begin{center}
+		$\int f \, d(\mu \times \nu) = \int \left( \int f(x, y) \, d\mu(x) \right) \, d\nu(y) = \int \left( \int f(x, y) \, d\nu(y) \right) \, d\mu(x)$ \\
+	\end{center}
+	\emph{\underline{Tonelli}}
+	
+	\item Für $f \in L^1(\mu \times \nu)$ gilt: \\
+	$(x \mapsto f(x, y)) \in L^1(\mu)$ für $\nu$-fast alle $y \in Y$, \\
+	$(y \mapsto \int f(x, y)\, d\mu(x)) \in L^1(\nu)$, \\
+	$(y \mapsto f(x, y)) \in L^1(\nu)$ für $\mu$-fast alle $x \in X$, \\ 
+	$(x \mapsto \int f(x, y) \, d\nu(y)) \in L^1(\mu)$ und 
+	\begin{center}
+		$\int f \, d(\mu \times \nu) = \int \int f(x, y) \, d\mu(x)d\nu(y) = \int \int f(x, y) \, d\nu(y)d\mu(x)$
+	\end{center}
+	\emph{\underline{Fubini}} 
+\end{enumerate}
+\end{Satz}
+
+%Bsp.
+\begin{Beispiel}
+Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$, \\
+$\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\}$ \\
+$\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$ \\
+$(\mathscr B_1(0))_y = \{x \in \mathbb R^{n-1}: |x| < \sqrt{1-y^2},\,  y \in (-1, 1]\} = \sqrt{1-y^2}\mathscr B_1^{n-1} (0)$  \\
+$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)(\mathscr B_1(0)) = \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y)$ $=\int\limits_{-1}^1 (1- y^2)^{\dfrac{n-1}{2}} \alpha_{n-1}\, d\mathscr L^1(y) = \alpha_{n-1} \int\limits_{-1}^1 (1 - y^2)^{\dfrac{n-1}{2}} \, dy \\
+\xlongequal{y = \cos{\theta}}  \alpha_{n-1} \int\limits_0^\pi \sin^n \theta \, d\theta =: \alpha_{n-1} A_n$ \\
+\begin{center}
+	$\alpha_n = \alpha_{n-1} A_n$
+\end{center}
+$A_n = \int\limits_0^\pi \sin^n \theta\, d\theta$ \\
+$\rightarrow A_n = \dfrac{n-1}{n} A_{n-2}$ $\forall n \geq 2$,\\
+ $A_0 = \pi, A_1 = 2..$ \\
+$\Rightarrow A_{2k} = \dfrac{2k -1}{2k} \cdotp ... \cdotp \dfrac{1}{2} A_0 = \pi \prod\limits_{j=1}^k \dfrac{2j -1}{2j}$ \\
+$A_{2k+1} = \dfrac{2k}{2k+1} \cdotp ... \cdotp \dfrac{2}{3} A_1 = 2 \prod\limits_{j=1}^k \dfrac{2j}{2j+1}$
+$\Rightarrow A_{2k+1} \cdotp A_{2k} = \dfrac{2\pi}{2k +1}$\\
+$A_{2k} A_{2k-1} = \dfrac{2\pi}{2k} \dfrac{2k-1}{2k-1} = \dfrac{\pi}{k}$ \\
+$\alpha_{2k} = (A_{2k} \cdotp A_{2k-1})\cdotp ... \cdotp (A_2 \cdotp A_1) \alpha_0 = \dfrac{\pi^k}{k!}\underbrace{\alpha_0}_{=1} = \dfrac{\pi^k}{k!}$ \\
+$\alpha_{2k+1} = (A_{2k-1}\cdotp A_{2k}) ... (A_3 \cdotp A_2) \underbrace{\alpha_1}_{=2} = 2 \prod\limits_{j=1}^k \dfrac{2\pi}{2j+1} = \dfrac{\pi^k}{\left(k + \dfrac{1}{2}\right)\left(k- \dfrac{1}{2}\right)... \dfrac{1}{2}}$ \\
+$\alpha_3 = \dfrac{\pi}{\dfrac{3}{4}} = \dfrac{4\pi}{3}$ \\
+\emph{Bemerkung}: \\
+$\alpha_n \rightarrow 0$ mit $n \rightarrow \infty$
+\end{Beispiel}
+
 
 
 
