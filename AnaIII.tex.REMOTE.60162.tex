@@ -17,12 +17,11 @@
 \usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
 
 
-% 
+
 %13.11 Freitag Younis
-%16.11 Montag Younis done
+%16.11 Montag Tamar
 %20.11 Freitag T
-%11.12 von Michelle abgetext, fast nicht lesbar: KONTROLLE
-%21.12 von wem?
+%21.12
 
 \theoremstyle{changebreak}
 \theoremseparator{\medskip}
@@ -1218,72 +1217,13 @@ Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$
 	\item Mit $f(x) = 0$ $\forall x \in N$ folgt $f \in L^p(\mu)$
 	\item $\|f-f_k\|_{L^p} \rightarrow 0$
 \end{enumerate}
+
 \end{Lemma}
 
 %Jup, der 07.12. ist dann auch soweit fertig.
 
 
 
-
-%Freitag, 11.12.15 fertig, aber
-%UNBEDINGT NOCHMAL KONTROLLIEREN! DÜRFTEN VIELE FEHLER DRIN SEIN
-%erstes
-%Satz II.21 Riesz-Fischer
-\begin{Satz}
-\emph{Riesz-Fischer} \\
-$\left(L^p(\mu), \|\cdotp\|_{L^p}\right)$ ist vollständig, d.h. ein Banachraum. 
-\end{Satz}
-
-%Lemma II.13
-\begin{Lemma}
-Konvergiert $\{f_k\}_k \subset L^p (\mu)$ gegen $f \in L^p$, dann existiert eine Teilfolge $\{f_{k_j}\}_{j \in \mathbb N}$, sodass $f_k \rightarrow f$ punktweise $\mu$-fast überall.
-\end{Lemma}
-
-%Bsp
-\begin{Beispiel}
-für $n = 2^k + j$ definiere $f_n(x) = \chi_{\left[\dfrac{j}{2^k}, \dfrac{j+1}{2^k}\right]}$, $0 \leq j \leq 2^k$ \\
-Für $p \rightarrow \infty: \|f_n\|_{L^p(\mathscr L^1)} = L^1\left(\left[\dfrac{j}{1^k}, \dfrac{j+1}{2^k} \right] ^{\dfrac{1}{p}} \right) = 2^{-\dfrac{k}{p}} \rightarrow 0$, d.h. $f_n \rightarrow 0$ in $L^p(\mathscr L^1)$ \\
-Also $\forall x \in [0, 1]: \limsup_{n \rightarrow \infty} f_n (x) = 1$, d.h. $f_n$ konvergiert nicht punktweise fast überall. \\
-mögliche Teilfolge $\{f_{2^k}\}_{k \in \mathbb N}$ konvergiert punktweise fast überall.
-\end{Beispiel}
-
-%Satz II.22: Dichtheit C^0_c (x) in L^p (\Omega)
-\begin{Satz}
-\emph{Dichtheit $C^0_c (x)$ in $L^p(\Omega)$}: \\
-Sei $\Omega \subset \mathbb R^n$ offen und $1 \leq p < \infty$. Dann gibt es zu jedem $f \in L^p$ eine Folge $f_k \in C^0_c (\Omega)$ mit $\|f_k - f\|_{L^p} \rightarrow 0$\\
-$(\mu$ ist Radon-Maß, z.B. Lebesgue-Maß$)$
-\end{Satz}
-
-%Def II.9
-\begin{Definition}
-Der \underline{Träger} einer Funktion $f: \Omega \rightarrow \mathbb R$ ist $spt(f) = \overline{\{x \in \Omega: f(x) \ne 0\}} $
-und $C_c^0 (\Omega) = \{g \in C^0(\Omega): sprt(y) \, \text{kompakt} \subset \Omega\}$
-\end{Definition}
-
-
-%Bem.
-\begin{Bemerkung}
-Falls $\mu$ ein Radonmaß, folgt aus $Satz \, II.22$ und $Satz \,  II.21$, dass $\overline{C^0_c (\Omega)}^{\|\cdotp\|_{L^p}} = L^p (\mu)$ für $p < \infty$
-\end{Bemerkung}
-
-%Satz II.23: Konvergenzsatz von Vitali
-\begin{Satz}
-\emph{Konvergenzsatz von Vitali} \\
-Sei $\mu$ ein Maß auf $A \subset P(X)$ und $1 \leq p < \infty$ \\
-$\{f_n\}_{n \in \mathbb N} \subset L^p(\mu)$ mit $f_n \rightarrow f$ $\mu$-fast überall, dann ist äquivalent:
-\begin{enumerate}
-	\item $f \subset L^p(\mu)$ und $\lim_{k \rightarrow \infty} \|f_k -f \|_{L^p (\mu)} = 0$
-	\item $\{f_k\}_{k \in \mathbb N}$ ist gleichgradig integrierbar mit $\lambda(A) = \lim_{n \rightarrow \infty} \int_A |f_n|^p \, d\mu$ gilt:
-	\begin{enumerate}
-		\item $\forall \epsilon > 0$ $\exists \delta > 0$, sodass $\lambda(A) < \epsilon$, falls $\mu(A) < \delta$
-		\item $\forall \epsilon > 0$ $\exists E \in \mathscr A$ mit $\mu(E) < \infty$ und $\lambda(X \backslash E) < \epsilon$
-	\end{enumerate}
-\end{enumerate}
-
-\end{Satz}
-
-
-%Montag, 14.12.15 fertig
 
 \newpage
 %Ich fange mal noch mit Kapitel III an
