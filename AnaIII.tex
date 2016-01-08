@@ -711,7 +711,35 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 	$ \mathscr{L}^n(E) := inf \left\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i \right\}$
 \end{Definition}
 
+\begin{Satz}
+	Für $\mathscr{L}^n$ auf $\mathbb{R}^n$ gilt:
+	\begin{enumerate}
+		\item $\mathscr{B}^n \subset \mathscr{M}(\mathscr{L}^n)$ $($Alle Borelmengen sind $\mathscr{L}^n$-messbar.$)$
+		\item Zu $E \subset \mathbb{R}^n$ existiert $B \in \mathscr{B}$ mit $E \subset B$
+			und $\mathscr{L}^n(B) = \mathscr{L}^n(E)$
+		\item $\mathscr{L}^n(K) < \infty$ \, $\forall K \subset \mathbb{R}^n kompakt.$
+	\end{enumerate}
+\end{Satz}
 
+\begin{Lemma}
+	Für $E \subset \mathbb{R}^n$ gilt:
+	\begin{enumerate}
+		\item $\mathscr{L}^n(E) = inf\{\mathscr{L}^n(U) $ \, $|$ \, $U$ offen mit $E \subset{U}\}$
+		\item $\mathscr{L}^n(E) = sup\{\mathscr{L}^n(K) $ \, $|$ \, $K$ kompakt mit $K \subset{E}\}$,
+			falls $E \in \mathscr{M}(\mathscr{L}^n)$
+	\end{enumerate}
+\end{Lemma}
+
+\begin{Satz}
+	$D \subset \mathbb{R}^n$ ist genau dann $\mathscr{L}^n$-messbar, wenn eine der folgenden Bedingungen gilt:
+	\begin{enumerate}
+		\item $\exists B \in \mathscr{B}^n$ mit $B \ni D$ und $\mathscr{L}^n(B \backslash D) = 0$
+		\item $\exists C \in \mathscr{B}^n$ mit $C \subset D$ und $\mathscr{L}^n(D \backslash C) = 0$
+	\end{enumerate}
+	\textit{Zusatz:}\\
+	Es kann $B = \bigcap\limits_{i = 1}^\infty U_i$ mit $U_i$ offen, $C = \bigcup\limits_{j = 1}^\infty A_j$ mit $A_j$
+	abgeschlossen gewählt werden.
+\end{Satz}
 
 
 \newpage
