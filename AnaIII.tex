@@ -1285,6 +1285,9 @@ $\{f_n\}_{n \in \mathbb N} \subset L^p(\mu)$ mit $f_n \rightarrow f$ $\mu$-fast 
 
 %Montag, 14.12.15 fertig
 
+
+
+
 \newpage
 %Ich fange mal noch mit Kapitel III an
 %KAPITEL 3
@@ -1389,7 +1392,123 @@ $\alpha_3 = \dfrac{\pi}{\dfrac{3}{4}} = \dfrac{4\pi}{3}$ \\
 $\alpha_n \rightarrow 0$ mit $n \rightarrow \infty$
 \end{Beispiel}
 
+%Das war der 18.12.15, der ansonsten nur aus dem Beweis des Satzen von Fubini bestand.
+
+%21.12.15 fehlt noch
 
 
+
+%neues Jahr, Freude:
+%08.01.16 bei unserem Lieblingsübungsleiter -.-
+
+\section{Transformationssatz}
+%aber das ist vermutlich gar kein neuer Absatz, die Überschrift ist nur ungünstig groß?
+
+%Ich habe mit Grapher das mit den Zeichnungen mal ausprobiert, das ist aber noch nicht so ganz tauglich. Also mache ich erstmal ohne weiter.
+
+$\Phi: \mathbb R^n \rightarrow \mathbb R^n$ $\mathscr C^1$ Diffeomorphismus, $L^n(\Phi(A))$
+
+%Def III.3
+\begin{Definition}
+Eine Abbildung $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen heißt \underline{$\mathscr C^1$-Diffeomorphismus}, falls:
+\begin{enumerate}
+	\item $\Phi$ bijektiv
+	\item $\Phi, \Phi^{-1}$ sind stetig differenzierbar. 
+\end{enumerate}
+\end{Definition}
+
+%Bsp: Polartkoordinaten
+\begin{Beispiel}
+\emph{Polarkoordinaten} \\
+$\Phi: (0, \infty) \times (0, 2\pi) \rightarrow \mathbb R^2 \backslash \{x, 0)| x \geq 0\}$ \\
+$\Phi(r, \theta) = (r \cos \theta, r \sin \theta)$ \\
+\begin{equation}
+	\Phi^{-1}(x, y) =
+	\begin{cases}
+		(r, \arccos\left(\dfrac{x}{r}\right)) & , y \geq 0 \\
+		(r, 2\pi - \arccos\left(\dfrac{x}{r}\right)) & , y < 0
+	\end{cases}
+\end{equation}
+mit $r = \sqrt{|x|^2 + y^2} $\\
+$\Phi^{-1} (x, y) = \left(r, \dfrac{\pi}{2} + \arccos\left(\dfrac{y}{r}\right)\right)$ für $x < 0$
+
+%Und noch ein schönes Bild.
+\end{Beispiel}
+
+%Bsp
+\begin{Beispiel}
+Für $n = 1$: \\
+falls $\Phi: I \rightarrow J$, $I, J \subset \mathbb R$ offene Intervalle \\
+$\Phi$ $\mathscr C^1$ und streng monoton. \\
+\begin{center}
+	$\Rightarrow \int\limits_a^b f\left(\Phi(s)\right) \Phi^{-1}(s) \, ds = \int\limits_{\Phi(a)}^{\Phi(b)} f(s) \, ds$ 
+\end{center}
+für $f$ stetig und $[a, b] \subset I$. \\
+
+\emph{1. Fall}: $\Phi(a) < \Phi(b)$ \\
+$\alpha = \min{\{\Phi(a), \Phi(b)\}}, \beta = \max{\{\Phi(a), \Phi(b)\}} $ \\
+$\Rightarrow \alpha = \Phi(a)$ und $\beta = \Phi(b)$ und $\Phi'(s) \geq 0$ $\forall s$ \\
+
+\emph{2. Fall}: $\Phi(b) > \Phi(a)$ \\
+$\Rightarrow \alpha= \Phi(b)$ ung $\beta = \Phi(a)$ und $\Phi'(s) \leq 0$ $\forall s$
+\begin{center}
+	$\Rightarrow \int\limits_a^b f(\Phi(s))|\Phi'(s)|\, ds = \int\limits_a^b f(s)\, ds$
+\end{center}
+\end{Beispiel}
+
+\emph{Notation}: \\
+für $x \in \mathbb R^n, f > 0$ \\
+\begin{center}
+	$Q(x, y) := \{y \in \mathbb R^n: \|y-x\|_\infty \leq f\}$ 
+\end{center}
+wobei $\|y-x\|_\infty = \max_{i = 1, .. n} |x^{i} - y^{i}|$
+
+
+%Lemma III.4
+\begin{Lemma}
+Sei $U \subset \mathbb R^n$ offen, $x_0 \in U$. \\
+$\Phi: U \rightarrow \mathbb R^n$ differenzierbar in $x_0$ und $D\phi(x) \in GL_n(\mathbb R^n)$. \\
+Sei $Q_j = Q(x_i, l_j)$ gegeben mit $x_i \rightarrow x_0$ und $l_j \rightarrow 0$ für $x_0 \in Q_j$ $\forall j$
+\begin{center}
+	$\Rightarrow  \limsup_{j \rightarrow \infty} \dfrac{L^n(\phi(Q_j))}{L^n(Q_j)} \leq \left| \det (D\phi(x_0))\right|$
+\end{center}
+\end{Lemma}
+
+
+%Satz III.3 Tranformationsformel
+\begin{Satz}
+\emph{Transformationsformel} \\
+Seien $U, V \subset \mathbb R^n$ offen, $\Phi: U \rightarrow V$ $\mathscr C^1$ Diffeomorphismen. \\
+$A \subset U $ $\mathscr L^n$-messbar, dann ist $\Phi(A) $ $\mathscr L^n$-messbar und \\
+\begin{center}
+	$\mathscr L^n(\Phi(A)) = \int |\det (D\Phi(x))| \, dx$\\
+	$(dx$ anstelle von $d\mathscr L^n(x))$
+\end{center}
+Weiter gilt für $\mathscr L^n$-messbare Funktion $f: V \rightarrow \overline{\mathbb R}$:
+\begin{center}
+	$\int_{V = \Phi(U)} f(y) \, dy = \int_U f(\Phi(x))|\det (D\Phi(x))|\, dx$,
+\end{center}
+falls eines der Integrale definiert ist.
+\end{Satz}
+
+%Bsp 1
+\begin{Beispiel}
+\emph{Gauß-Integral}: 
+$f(x, y) = e^{-(x^2 + y^2)}$ \\
+$\int_{\mathbb R^2} f(x, y) \, \mathscr L^2(x, y) = \int_\mathbb R \int_\mathbb R e^{-x^2} e^{-y^2} \, dx\, dy = \left(\int \mathbb R e^{-x^2} \, dx \right)^2$ \\
+Da $\det(D\phi(r, \theta)) = r$ $($s. Bsp.$)$ \\
+$\Rightarrow \int_\mathbb R f(x, y) \, d\mathscr L^2(x,y) = \int_{(0, \infty) \times (0, 2\pi)} f(\phi(r, \theta))r \, dr\, d\theta = \int\limits_0^\infty \int\limits_0^{2\phi} e^{-r^2} \, d\theta\, r \, dr = 2\pi \int\limits_0^\infty e^{-r^2}r\, dr = -\pi e^{-r^2} |_0^\infty = \pi \Rightarrow \int_\mathbb R e^{-x^2} \, dx = \sqrt{\pi}$
+\end{Beispiel}
+
+%Younis, das kann ich nicht lesen. Letzte Seite der VL am 08.01
+%Bsp. 2
+\begin{Beispiel}
+Sei $s \in Q_n(\mathbb R)$ und $\phi(x) = sx$ \\
+$\Rightarrow D\phi(x) = s$ \\
+$\Rightarrow \mathscr L^n(\phi(A)) = |\det(s)|\mathscr L^n(A)$ \\
+$\int $
+\end{Beispiel}
+
+%abgesehen davon, dass ich mir an vielen Stellen nicht so ganz sicher bin, was du da gemeint hast, ist der 08.01. dann auch fertig
 
 \end{document}
