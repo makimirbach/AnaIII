@@ -683,10 +683,76 @@ Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma
 Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit $\overline{\lambda}(Q) = \lambda(Q)$ $\forall Q \in \mathscr Q$
 \end{Satz}
 
-%Fehlt hier noch was?? Die Vorlesung nach dem 09.11. war über was??
-%
-%
-%
+%Fehlt hier noch was?? Die Vorlesung nach dem 09.11. war über was:
+%13.11.15
+
+%Lemma I.12
+\begin{Lemma}
+Ein Inhalt $\lambda$ auf dem Halbring $\mathscr Q$ über $X$ ist monoton und subadditiv.
+\end{Lemma}
+
+Auf $\mathscr Q^n = \{Q = I_1 \times ... \times I_n: I_i \in J, 1 \leq i \leq n, $ Quader in $\mathbb R^n \}$ .
+Halbring, falls $Q = I_1 \times ... \times I_n$ und $(a_i, b_i) \subset I_i \subset [a_i, b_i]$:
+\begin{center}
+	$vol^n(Q) := \prod\limits_{i=1}^n (b_i - a_i)$
+\end{center}
+
+%Satz I.18
+\begin{Satz}
+$vol^n(\cdotp)$ ist ein Inhalt auf $\mathscr Q^n$
+\end{Satz}
+
+%Satz I.19
+\begin{Satz}
+$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$, $F$ sei der von $\mathscr Q$ erzeugte Ring und $\overline{\lambda}: F \rightarrow [0, \infty]$ der eindeutig bestimmte Inhalt auf $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda \; ($Satz I.17$)$ 
+Dann ist $\overline{\lambda}$ ein Prämaß auf $F$.
+\end{Satz}
+
+
+
+%Was tust du da? Das ist sehr komisch. Bzw. ich weiß nicht, wo das hässliche F herkommt und was noch zur Bemerkung gehört, bzw. wofür die Gänsefüßchen stehen.
+%Bem
+\begin{Bemerkung}
+$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$ und $\overline{\lambda} : F \rightarrow [0, \infty]$ Prämaß auf dem von $\mathscr Q$ erzeugten Ring $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda$ \\
+
+Satz I.17: $\overline{\lambda}(F) = \sum\limits_{i=1}^n \lambda(Q_i)$ mit $F \in \mathscr F$ und $F = \bigcup\limits_{i=1}^n Q_i \in \mathscr Q$
+\end{Bemerkung}
+
+Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\mu = \overline{\mu}$
+
+
+%Satz I.20
+\begin{Satz}
+Sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q$ über $X$. Sei $\mu: P(X) \rightarrow [0, \infty]$ das aus $\lambda$ konstruierte äußere Maß $($Satz I.7$)$ \\
+D.h.: 
+\begin{center}
+	$\mu(E) := \inf\left\{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i \right\}$
+\end{center}
+Dann ist $\mu$ eine Fortsetzung von $\lambda$.
+\end{Satz}
+
+
+%Satz I.21
+\begin{Satz}
+Für einen Inhalt $\lambda$ auf einem Ring $R$ auf $A_i \in P,\, i \in \mathbb N$ betrachte die Aussagen:
+\begin{enumerate}
+	\item $\lambda$ ist Prämaß auf $R$
+	\item $A_1 \subset A_2 \subset ... \subset A_i \subset A_{i+1} \subset ...$ 
+	\begin{center}
+		$\Rightarrow \lambda\left( \bigcup_{i \in \mathbb N} a_i \right) = \lim_{i \rightarrow \infty} \lambda(A_i)$ 
+	\end{center}
+	\item $A_1 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\lambda(A_1) < \infty$
+	\begin{center}
+		$\Rightarrow \lambda\left(\bigcap_{i \in \mathbb B} A_i \right) = \lim_{i\rightarrow \infty} \lambda(A_i)$
+	\end{center}
+	\item $A_1 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\lambda(A_1) <  \infty$ und $\bigcap\limits_{i=1}^\infty A_i = \emptyset$
+	\begin{center}
+		$\Rightarrow \lim \lambda(A_i) = 0$
+	\end{center}
+\end{enumerate}
+Dann gilt: $1. \Leftrightarrow 2. \Rightarrow 3. \Rightarrow 4.$ \\
+Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \, \forall A \in R$, dann sind $1. - 4.$ äquivalent.
+\end{Satz}
 
 
 \newpage
@@ -1340,9 +1406,15 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 
 	\item Für $A \in \mathscr M(\mu), B \in \mathscr M(\nu)$ ist $A \times B \in \mathscr M(\mu \times \nu)$ und $(\mu \times \nu)(A \times B) = \mu(A)\nu(B)$
 
-	\item Für $S \subset X \times Y$, $S \in \mathscr M(\mu \times \nu)$ und $S$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ $($d.h. $\exists S_n \subset X \times Y$ mit $\bigcup S_n = S$ und $(\mu \times \nu)(S_n) < \infty$ $\forall n)$. \\
-	Dann gilt: $S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, $(y \mapsto \mu(S_y))$ ist $\mathscr M(\nu)$-messbar. \\
-	$S^x := \{y : (x, y) \in S\}$ ist für $\mu$-fast alle $x \in X$ in $\mathscr M(\nu)$, $(x \mapsto \nu(S^x))$ ist $\mathscr M(\mu)$-messbar und $(\mu \times \nu)(S) = \int \mu(S_y)\, d\nu(y) = \int \nu(S^x) \, d\mu(x)$ \\
+	\item Für $S \subset X \times Y$, $S \in \mathscr M(\mu \times \nu)$ und $S$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ 
+	$($d.h. $\exists S_n \subset X \times Y$ mit $\bigcup S_n = S$ und $(\mu \times \nu)(S_n) < \infty$ $\forall n)$. \\
+	Dann gilt: $S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, 
+	$(y \mapsto \mu(S_y))$ ist $\mathscr M(\nu)$-messbar. \\
+	$S^x := \{y : (x, y) \in S\}$ ist für $\mu$-fast alle $x \in X$ in $\mathscr M(\nu)$, 
+	$(x \mapsto \nu(S^x))$ ist $\mathscr M(\mu)$-messbar und 
+	\begin{center}
+		$(\mu \times \nu)(S) = \int \mu(S_y)\, d\nu(y) = \int \nu(S^x) \, d\mu(x)$ \\
+	\end{center}
 	\emph{Prinzip von \underline{Cavalieri}}
 
 	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt: \\
