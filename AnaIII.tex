@@ -715,7 +715,10 @@ Dann ist $\overline{\lambda}$ ein Prämaß auf $F$.
 \begin{Bemerkung}
 $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$ und $\overline{\lambda} : F \rightarrow [0, \infty]$ Prämaß auf dem von $\mathscr Q$ erzeugten Ring $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda$ \\
 
+$\mathscr  F =$ Menge aller Figuren. Oder so. \\
+
 Satz I.17: $\overline{\lambda}(F) = \sum\limits_{i=1}^n \lambda(Q_i)$ mit $F \in \mathscr F$ und $F = \bigcup\limits_{i=1}^n Q_i \in \mathscr Q$
+
 \end{Bemerkung}
 
 Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\mu = \overline{\mu}$
@@ -764,10 +767,12 @@ Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \, \forall A \in R$, dann sind 
 Halbring $\mathscr{Q}^n$ Inhalt.\\
 $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
-\begin{Satz}
-	Prämaß auf Halbring\\
-	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
-\end{Satz}
+%Ich kommentiere das jetzt aus, bis das Sätze-Zählen-Problem gelöst ist.
+%Jetzt ist Luisin endlich Satz II.3. Wie es sich gehört
+%\begin{Satz}
+%	Prämaß auf Halbring\\
+%	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
+%\end{Satz}
 
 \begin{Lemma}
 	$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
@@ -808,8 +813,100 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 	abgeschlossen gewählt werden.
 \end{Satz}
 
-
+%Younis, hier begannst du mit Kapitel II. Kannst du da bitte noch ergänzen, was fehlt?
+%Oder ich suche die Stelle raus, wenn ich Lust darauf habe.
 \newpage
+
+%20.11.15
+%Satz II.3: Luisin
+\begin{Satz}
+\emph{Luisin}: \\
+Sei $A \subset \mathbb R^n$ offen mit $\mathscr L^n(A) < + \infty$. $f$ sei $\mathscr L^n|_A$-messbar mit Werten in $\mathbb R$. \\
+Für alle $\epsilon > 0$ existiert $\kappa = \kappa_\epsilon \subset A$ kompakt mit
+\begin{enumerate}
+	\item $\mathscr L^n(A \backslash \kappa) < \epsilon$
+	\item $f|_\kappa$ ist stetig.
+\end{enumerate}
+\end{Satz}
+%Krasser Scheiß, ist der Beweis lang.
+
+%OOOOOOH! Das sollte Satz II.3 sein, ist aber als II.4 gezählt. Sind das am Anfang der Kapitels wirklich schon drei Sätze oder soll eins davon etwas anderes sein?
+
+
+
+%Def II.2
+\begin{Definition}
+Ein äußeres Maß $\mu$ auf $\mathbb R^n$ heißt \underline{Borelmaß}, falls gilt:
+\begin{enumerate}
+	\item $B \in \mathscr B^n \Rightarrow B \, \mu$-messbar $(B \in \mathscr M(\mu))$
+	\item $\mu(\kappa) < \infty \, \forall \kappa \subset \mathbb R^n$ kompakt
+\end{enumerate}
+\end{Definition}
+
+%Bsp.
+\begin{Beispiel}
+$\mathscr L^n$ $($Satz II.1$) \varrightwavearrow \, \mathscr L^n|_E$, $E \subset \mathbb R^n$ beliebig
+\end{Beispiel}
+
+\emph{Notation}: \\
+Ein Maß $\mu$ auf $\mathbb R^n$ heißt \underline{translationsinvariant}, wenn mit $E + a = \{x +a | x \in E\}$ gilt:
+\begin{center}
+	$\mu(E+a) = \mu(E) \, \forall E \subset \mathbb R^n, a \in \mathbb R^n$
+\end{center}
+
+%Bsp.
+\begin{Beispiel}
+$\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus der Definition von $\mathscr L^n$. \\
+\begin{center}
+	$\mathscr L^n(E) = \inf\left\{ \sum vol^n(P_i) | P_i \in \mathscr Q, \,\bigcup\limits_{i=1}^\infty P_i \supset E \right\}$
+\end{center}
+\end{Beispiel}
+
+%noch ein Verweis auf das Hausdorffmaß? VL 20.11.15, Seite 5. Auch auf der Seite davor schon
+
+%Lemma II.3
+\begin{Lemma}
+Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$ 
+\begin{center}
+	$\Rightarrow H = \left\{x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n\right\}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
+\end{center}
+\end{Lemma}
+
+%Ist der Index hier wirklich ein c? VL 20.11.15, immer noch Seite 5
+%Bsp.
+\begin{Beispiel}
+$\mathscr L^2(\{x_c = 0\}) = 0$
+\end{Beispiel}
+
+%Satz II.4
+\begin{Satz}
+Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$. Dann gilt:
+\begin{center}
+	$\mu(E) = \theta \mathscr L^n(E)$ $ \forall E \subset \mathbb R^n$ 
+\end{center}
+ist $\mathscr L^n$-messbar, $\theta = \mu([0, 1]^n)$
+\end{Satz}
+
+%Bsp.
+%ui, sind hier viele Beispiele
+\begin{Beispiel}
+$\mathscr H^n = \mathscr L^n$ $(($sehr$)$ bisschen schwierig$)$
+\end{Beispiel}
+
+%Lemma II.4
+\begin{Lemma}
+Sei $U \subset \mathbb R^n$ offen unf $f: U \rightarrow \mathbb R^n$ Lipschitz-stetig mit Konstante $L$ bzgl $\|x\|_\infty := \max_{1 \leq i \leq n} |x_i |$. Dann gilt:
+\begin{center}
+	$\mathscr L^n(f(E)) \leq L^n \mathscr L^n (E)$ $\forall E \subset U$
+\end{center}
+\end{Lemma}
+
+%Bsp. schon wieder eins
+\begin{Beispiel}
+$\mathscr L^n(E) = 0 \Rightarrow \mathscr L^n(f(E)) = 0$
+\end{Beispiel}
+%Oh, der 20.11.15 ist schon fertig und ich bin noch gar nicht in Freiburg :( Schau bitte auf jeden Fall wegen der Nummerierung nach, was mit den Sätzen da am Anfang des Kapitels ist!
+
 
 
 %Ich brauche Beschäftigung: VL 23.11.15: ab Satz II.5
@@ -1489,7 +1586,7 @@ Eine Abbildung $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen heißt 
 \end{enumerate}
 \end{Definition}
 
-%Bsp: Polartkoordinaten
+%Bsp: Polarkoordinaten
 \begin{Beispiel}
 \emph{Polarkoordinaten} \\
 $\Phi: (0, \infty) \times (0, 2\pi) \rightarrow \mathbb R^2 \backslash \{x, 0)| x \geq 0\}$ \\
@@ -1561,9 +1658,32 @@ Weiter gilt für $\mathscr L^n$-messbare Funktion $f: V \rightarrow \overline{\m
 	$\int_{V = \Phi(U)} f(y) \, dy = \int_U f(\Phi(x))|\det (D\Phi(x))|\, dx$,
 \end{center}
 falls eines der Integrale definiert ist.
+%Ab hier von Lamm am 11.01.16
+Sei $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen, $\mathscr C^k$-Diffeomorphismus $(k \in \mathbb N)$: \\
+
+
+\emph{Gramsche Matrix}: \\
+$g \in (g_{ij})$, 
+\begin{center}
+	$g(x) = D\Phi(x)^T D \Phi(x)$ \\
+	bzw. $g_{ij}(x) = \langle \partial_i \Phi(x), \partial_j \Phi(x) \rangle$
+\end{center}
+$\varrightwavearrow g$ symmetrisch und strikt positiv definit: 
+\begin{center}
+	$\langle g(x)v, v\rangle = |D\Phi(x)v|^2 > 0$ $\forall x \in U, v \in \mathbb R^n\backslash \{0\}$
+\end{center}
+$\varrightwavearrow g^{(x)}$ ist invertierbar;
+$(g^{ij}$ meint Inverses$)$ \\
+$\varrightwavearrow g^{ij}(x) := (g(x)^{-1})_{ij} \Rightarrow \sum\limits_{j=1}^n g^{ij} g_{jk} = \delta_{jk}$ \\
+$\det g(x) = \det(D\Phi(x)^T D \Phi(x)) = |\det(D \Phi(x))|^2$
+ 
+\begin{center}
+	$\int_V f(y) \, dy = \int_U f(\Phi(x)) \sqrt{\det g(x)} \, dx$
+\end{center}
+
 \end{Satz}
 
-%Bsp 1
+%Bsp 1 Hirsch
 \begin{Beispiel}
 \emph{Gauß-Integral}: 
 $f(x, y) = e^{-(x^2 + y^2)}$ \\
@@ -1573,7 +1693,7 @@ $\Rightarrow \int_\mathbb R f(x, y) \, d\mathscr L^2(x,y) = \int_{(0, \infty) \t
 \end{Beispiel}
 
 %Younis, das kann ich nicht lesen. Letzte Seite der VL am 08.01
-%Bsp. 2
+%Bsp. 2 Hirsch
 \begin{Beispiel}
 Sei $s \in Q_n(\mathbb R)$ und $\phi(x) = sx$ \\
 $\Rightarrow D\phi(x) = s$ \\
@@ -1582,5 +1702,18 @@ $\int $
 \end{Beispiel}
 
 %abgesehen davon, dass ich mir an vielen Stellen nicht so ganz sicher bin, was du da gemeint hast, ist der 08.01. dann auch fertig
+
+%ab hier mit 11.01. weiter
+$\phi: U \rightarrow V$ Diffeomorphismus, $x \in U, y \in V$, $v: V \rightarrow \mathbb R$ Funktion, \\
+$v = v(y) \varrightwavearrow u:= v \circ \phi: U \rightarrow \mathbb R, \, u(x) = v(\phi(x))$
+
+%Bsp. Kugelkoordinaten
+\begin{Beispiel}
+\emph{Kugelkoordinaten - Polarkoordinaten in $\mathbb R^3$} \\
+$\phi: \underbrace{(0, \infty) \times (0, \pi), \times (0, 2\pi)}_{=: U} \rightarrow \mathbb R^3 \backslash \{x, 0, z): x \geq 0\}$ \\
+$\phi(r, \theta, \phi) = (r \sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$ \\
+$\varrightwavearrow V = v(x, y, z) \varrightwavearrow u(r, \theta, \phi) = v(r\sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$
+\end{Beispiel}
+
 
 \end{document}
