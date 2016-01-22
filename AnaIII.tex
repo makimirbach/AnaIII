@@ -15,9 +15,10 @@
 \usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
 \usepackage{extpfeil} %für = mit Wort drüber
 \usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
+\usepackage{braket} % Für schönere Mengen. Oder so. Hier ist z. B. \Set drin und die vertikalen Balken sind schön.
 
 
-% 
+%
 %13.11 Freitag Younis
 %16.11 Montag Younis done
 %20.11 Freitag T
@@ -705,7 +706,7 @@ $vol^n(\cdotp)$ ist ein Inhalt auf $\mathscr Q^n$
 
 %Satz I.19
 \begin{Satz}
-$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$, $F$ sei der von $\mathscr Q$ erzeugte Ring und $\overline{\lambda}: F \rightarrow [0, \infty]$ der eindeutig bestimmte Inhalt auf $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda \; ($Satz I.17$)$ 
+$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$, $F$ sei der von $\mathscr Q$ erzeugte Ring und $\overline{\lambda}: F \rightarrow [0, \infty]$ der eindeutig bestimmte Inhalt auf $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda \; ($Satz I.17$)$
 Dann ist $\overline{\lambda}$ ein Prämaß auf $F$.
 \end{Satz}
 
@@ -728,7 +729,7 @@ Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\m
 %Satz I.20
 \begin{Satz}
 Sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q$ über $X$. Sei $\mu: P(X) \rightarrow [0, \infty]$ das aus $\lambda$ konstruierte äußere Maß $($Satz I.7$)$ \\
-D.h.: 
+D.h.:
 \begin{center}
 	$\mu(E) := \inf\left\{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i \right\}$
 \end{center}
@@ -741,9 +742,9 @@ Dann ist $\mu$ eine Fortsetzung von $\lambda$.
 Für einen Inhalt $\lambda$ auf einem Ring $R$ auf $A_i \in P,\, i \in \mathbb N$ betrachte die Aussagen:
 \begin{enumerate}
 	\item $\lambda$ ist Prämaß auf $R$
-	\item $A_1 \subset A_2 \subset ... \subset A_i \subset A_{i+1} \subset ...$ 
+	\item $A_1 \subset A_2 \subset ... \subset A_i \subset A_{i+1} \subset ...$
 	\begin{center}
-		$\Rightarrow \lambda\left( \bigcup_{i \in \mathbb N} a_i \right) = \lim_{i \rightarrow \infty} \lambda(A_i)$ 
+		$\Rightarrow \lambda\left( \bigcup_{i \in \mathbb N} a_i \right) = \lim_{i \rightarrow \infty} \lambda(A_i)$
 	\end{center}
 	\item $A_1 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\lambda(A_1) < \infty$
 	\begin{center}
@@ -778,7 +779,7 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
 \begin{Definition}
 	Das \underline{(äußere) Lebesguemaß} einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
-	$ \mathscr{L}^n(E) := inf \left\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i \right\}$
+	$ \mathscr{L}^n(E) := inf \Set{ \sum_{i = 1}^{\infty} vol^n(P_i) | P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i }$
 \end{Definition}
 
 \begin{Satz}
@@ -858,7 +859,7 @@ $\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus de
 
 %Lemma II.3
 \begin{Lemma}
-Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$ 
+Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$
 \begin{center}
 	$\Rightarrow H = \left\{x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n\right\}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
 \end{center}
@@ -874,7 +875,7 @@ $\mathscr L^2(\{x_c = 0\}) = 0$
 \begin{Satz}
 Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$. Dann gilt:
 \begin{center}
-	$\mu(E) = \theta \mathscr L^n(E)$ $ \forall E \subset \mathbb R^n$ 
+	$\mu(E) = \theta \mathscr L^n(E)$ $ \forall E \subset \mathbb R^n$
 \end{center}
 ist $\mathscr L^n$-messbar, $\theta = \mu([0, 1]^n)$
 \end{Satz}
@@ -897,7 +898,7 @@ Sei $U \subset \mathbb R^n$ offen unf $f: U \rightarrow \mathbb R^n$ Lipschitz-s
 \begin{Beispiel}
 $\mathscr L^n(E) = 0 \Rightarrow \mathscr L^n(f(E)) = 0$
 \end{Beispiel}
-%Oh, der 20.11.15 ist schon fertig und ich bin noch gar nicht in Freiburg :( 
+%Oh, der 20.11.15 ist schon fertig und ich bin noch gar nicht in Freiburg :(
 
 
 %Ich brauche Beschäftigung: VL 23.11.15: ab Satz II.5
@@ -991,7 +992,7 @@ $E \subset X$ \\
 
 %Satz II.8
 \begin{Satz}
-Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \geq ...$ und 
+Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \geq ...$ und
 \begin{center}
 	$\lim_{k \rightarrow \infty} f_k(x) = f(x) \, \forall x\in X$
 \end{center}
@@ -1412,7 +1413,7 @@ Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$
 %Satz II.21 Riesz-Fischer
 \begin{Satz}
 \emph{Riesz-Fischer} \\
-$\left(L^p(\mu), \|\cdotp\|_{L^p}\right)$ ist vollständig, d.h. ein Banachraum. 
+$\left(L^p(\mu), \|\cdotp\|_{L^p}\right)$ ist vollständig, d.h. ein Banachraum.
 \end{Satz}
 
 %Lemma II.13
@@ -1517,37 +1518,37 @@ Es gilt
 \emph{Satz von Fubini} \\
 Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 \begin{enumerate}
-	\item $\forall S \subset X \times Y$ $\exists R \in \mathscr M(\mu \times \nu)$ mit $S \subset R$ und 
+	\item $\forall S \subset X \times Y$ $\exists R \in \mathscr M(\mu \times \nu)$ mit $S \subset R$ und
 	\begin{center}
 		$(\mu \times \nu)(S) = (\mu \times \nu)(R)$
 	\end{center}
 	\item Für $A \in \mathscr M(\mu), B \in \mathscr M(\nu)$ ist $A \times B \in \mathscr M(\mu \times \nu)$ und
-	\begin{center} 
+	\begin{center}
 		$(\mu \times \nu)(A \times B) = \mu(A)\nu(B)$
 	\end{center}
-	\item Für $S \subset X \times Y$, $S \in \mathscr M(\mu \times \nu)$ und $S$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ 
+	\item Für $S \subset X \times Y$, $S \in \mathscr M(\mu \times \nu)$ und $S$ sei $\sigma$-endlich bezüglich $\mu \times \nu$
 	\par
-	$\left(\text{d.h.} \exists S_n \subset X \times Y \text{ mit }\bigcup S_n = S\text{ und }(\mu \times \nu)(S_n) < \infty \,\forall n\right)$. 
+	$\left(\text{d.h.} \exists S_n \subset X \times Y \text{ mit }\bigcup S_n = S\text{ und }(\mu \times \nu)(S_n) < \infty \,\forall n\right)$.
 	\par
-	Dann gilt: 
+	Dann gilt:
 	\par
-	$S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, \\ 
+	$S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, \\
 	$(y \mapsto \mu(S_y))$ ist $\mathscr M(\nu)$-messbar. \\
 	\par
 	$S^x := \{y : (x, y) \in S\}$ ist für $\mu$-fast alle $x \in X$ in $\mathscr M(\nu)$, \\
-	$(x \mapsto \nu(S^x))$ ist $\mathscr M(\mu)$-messbar und 
+	$(x \mapsto \nu(S^x))$ ist $\mathscr M(\mu)$-messbar und
 	\begin{center}
 		$(\mu \times \nu)(S) = \int \mu(S_y)\, d\nu(y) = \int \nu(S^x) \, d\mu(x)$ \\
 	\end{center}
 	\emph{Prinzip von \underline{Cavalieri}}
 
-	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt: 
+	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt:
 	\par
-	$(x \mapsto f(x, y))$ ist für $\nu$-fast alle $y \in Y$ $\mathscr M(\mu)$-messbar. 
+	$(x \mapsto f(x, y))$ ist für $\nu$-fast alle $y \in Y$ $\mathscr M(\mu)$-messbar.
 	\par
-	$\left(y \mapsto \int f(x, y) \, d\mu(x)\right) $ ist $\mathscr M(\nu)$-messbar, 
+	$\left(y \mapsto \int f(x, y) \, d\mu(x)\right) $ ist $\mathscr M(\nu)$-messbar,
 	\par
-	$(y \mapsto f(x, y))$ ist für $\mu$-fast alle $x \in X$ $\mathscr M(\nu)$-messbar, 
+	$(y \mapsto f(x, y))$ ist für $\mu$-fast alle $x \in X$ $\mathscr M(\nu)$-messbar,
 	\par
 	$\left( x \mapsto \int f(x, y) \, d\nu(y)\right)$ ist $\mathscr M(\mu)$-messbar mit
 	\begin{center}
@@ -1555,13 +1556,13 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 	\end{center}
 	\emph{\underline{Tonelli}}
 
-	\item Für $f \in L^1(\mu \times \nu)$ gilt: 
+	\item Für $f \in L^1(\mu \times \nu)$ gilt:
 	\par
-	$(x \mapsto f(x, y)) \in L^1(\mu)$ für $\nu$-fast alle $y \in Y$, 
+	$(x \mapsto f(x, y)) \in L^1(\mu)$ für $\nu$-fast alle $y \in Y$,
 	\par
-	$(y \mapsto \int f(x, y)\, d\mu(x)) \in L^1(\nu)$, 
+	$(y \mapsto \int f(x, y)\, d\mu(x)) \in L^1(\nu)$,
 	\par
-	$(y \mapsto f(x, y)) \in L^1(\nu)$ für $\mu$-fast alle $x \in X$, 
+	$(y \mapsto f(x, y)) \in L^1(\nu)$ für $\mu$-fast alle $x \in X$,
 	\par
 	$(x \mapsto \int f(x, y) \, d\nu(y)) \in L^1(\mu)$ und
 	\begin{center}
@@ -1573,7 +1574,7 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 
 %Bsp.
 \begin{Beispiel}
-Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$, 
+Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$,
 $\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$\\
 \par
 $\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\} $
@@ -1590,24 +1591,24 @@ $\overequal{y = \cos{\theta}}  \alpha_{n-1} \int\limits_0^\pi \sin^n \theta \, d
 \par\bigskip
 $=: \alpha_{n-1} A_n$  \\
 \par\bigskip
-$A_n = \int\limits_0^\pi \sin^n \theta\, d\theta$ 
+$A_n = \int\limits_0^\pi \sin^n \theta\, d\theta$
 \par\bigskip
 $\rightarrow A_n = \dfrac{n-1}{n} A_{n-2}$ $\forall n \geq 2$,
 \par\bigskip
- $A_0 = \pi, A_1 = 2..$ 
+ $A_0 = \pi, A_1 = 2..$
  \par\bigskip
-$\Rightarrow A_{2k} = \dfrac{2k -1}{2k} \cdotp ... \cdotp \dfrac{1}{2} A_0 = \pi \prod\limits_{j=1}^k \dfrac{2j -1}{2j}$ 
+$\Rightarrow A_{2k} = \dfrac{2k -1}{2k} \cdotp ... \cdotp \dfrac{1}{2} A_0 = \pi \prod\limits_{j=1}^k \dfrac{2j -1}{2j}$
 \par\bigskip
 $A_{2k+1} = \dfrac{2k}{2k+1} \cdotp ... \cdotp \dfrac{2}{3} A_1 = 2 \prod\limits_{j=1}^k \dfrac{2j}{2j+1}$
 $\Rightarrow A_{2k+1} \cdotp A_{2k} = \dfrac{2\pi}{2k +1}$
 \par\bigskip
-$A_{2k} A_{2k-1} = \dfrac{2\pi}{2k} \dfrac{2k-1}{2k-1} = \dfrac{\pi}{k}$ 
+$A_{2k} A_{2k-1} = \dfrac{2\pi}{2k} \dfrac{2k-1}{2k-1} = \dfrac{\pi}{k}$
 \par\bigskip
-$\alpha_{2k} = (A_{2k} \cdotp A_{2k-1})\cdotp ... \cdotp (A_2 \cdotp A_1) \alpha_0 = \dfrac{\pi^k}{k!}\underbrace{\alpha_0}_{=1} = \dfrac{\pi^k}{k!}$ 
+$\alpha_{2k} = (A_{2k} \cdotp A_{2k-1})\cdotp ... \cdotp (A_2 \cdotp A_1) \alpha_0 = \dfrac{\pi^k}{k!}\underbrace{\alpha_0}_{=1} = \dfrac{\pi^k}{k!}$
 \par\bigskip
-$\alpha_{2k+1} = (A_{2k-1}\cdotp A_{2k}) ... (A_3 \cdotp A_2) \underbrace{\alpha_1}_{=2} = 2 \prod\limits_{j=1}^k \dfrac{2\pi}{2j+1} = \dfrac{\pi^k}{\left(k + \dfrac{1}{2}\right)\left(k- \dfrac{1}{2}\right)... \dfrac{1}{2}}$ 
+$\alpha_{2k+1} = (A_{2k-1}\cdotp A_{2k}) ... (A_3 \cdotp A_2) \underbrace{\alpha_1}_{=2} = 2 \prod\limits_{j=1}^k \dfrac{2\pi}{2j+1} = \dfrac{\pi^k}{\left(k + \dfrac{1}{2}\right)\left(k- \dfrac{1}{2}\right)... \dfrac{1}{2}}$
 \par\bigskip
-$\alpha_3 = \dfrac{\pi}{\dfrac{3}{4}} = \dfrac{4\pi}{3}$ 
+$\alpha_3 = \dfrac{\pi}{\dfrac{3}{4}} = \dfrac{4\pi}{3}$
 \par\bigskip
 \emph{Bemerkung}: \\
 
@@ -1622,14 +1623,14 @@ $\alpha_n \rightarrow 0$ mit $n \rightarrow \infty$
 %Bsp.
 \begin{Beispiel}
 $\mu$ $\sigma$-endliches äußeres Maß auf $X$ und $f: X \rightarrow [0, \infty]\, \mu$-messbar. $\phi: [0, \infty] \rightarrow [0, \infty]$ stetig mit $\phi(0) = 0$ und $\phi\lvert_{[0, \infty]}$ stetig differenzierbar mit $\phi'(t) >0$ \\
-\emph{Behauptung}: 
+\emph{Behauptung}:
 $\int_t \phi(f(x)) \, d\mu(x) = \int\limits_0^\infty \phi'(t)\mu(\{x \in X: f(x) >t\} \, dt$\\
 \emph{Anwendung der Behauptung}:  \\
 $\phi(t) = |t|^p, \, p>1, \, \phi'(t) = p \cdotp t^p \varrightwavearrow \int(f(x))^p \, d\mu(x) = \int\limits_0^\infty p\cdotp t^{p-1} \mu(\{f > t\}) \, dt$ \\
 Betrachte $E = \{(x, t) \in X \times [0, \infty]: t < f(x)\}$ Produktmaß $\mu \times \mathscr L^1$. \\
-Die Funktionen 
+Die Funktionen
 \begin{itemize}
-	\item $(x, t) \mapsto t$ 
+	\item $(x, t) \mapsto t$
 	\item $(x, t) \mapsto f(x)$
 	\item $(x, t) \mapsto \phi'(t)$
 \end{itemize}
@@ -1649,9 +1650,9 @@ $($Es fehlt die Überdeckung von kompakten Intervallen, damit Riemann = Lebesgue
 \begin{Satz}
 $f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ sind integrierbar bezüglich $\mathscr L^n$. Dann gilt:
 \begin{center}
-	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$ 
+	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$
 	\par\bigskip
-	\emph{Notation}: $d\mathscr L^n = dx$ 
+	\emph{Notation}: $d\mathscr L^n = dx$
 	\par\bigskip
 	$\left(\int\limits_a^b f' \cdotp g \,dx = -\int\limits_a^b f\cdotp g' \, cx + [f\cdotp g]_{x=a}^{x=b} \right)$
 \end{center}
@@ -1674,7 +1675,7 @@ $\Phi: \mathbb R^n \rightarrow \mathbb R^n$ $\mathscr C^1$ Diffeomorphismus, $L^
 Eine Abbildung $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen heißt \underline{$\mathscr C^1$-Diffeomorphismus}, falls:
 \begin{enumerate}
 	\item $\Phi$ bijektiv
-	\item $\Phi, \Phi^{-1}$ sind stetig differenzierbar. 
+	\item $\Phi, \Phi^{-1}$ sind stetig differenzierbar.
 \end{enumerate}
 \end{Definition}
 
@@ -1702,7 +1703,7 @@ Für $n = 1$: \\
 falls $\Phi: I \rightarrow J$, $I, J \subset \mathbb R$ offene Intervalle \\
 $\Phi$ $\mathscr C^1$ und streng monoton. \\
 \begin{center}
-	$\Rightarrow \int\limits_a^b f\left(\Phi(s)\right) \Phi^{-1}(s) \, ds = \int\limits_{\Phi(a)}^{\Phi(b)} f(s) \, ds$ 
+	$\Rightarrow \int\limits_a^b f\left(\Phi(s)\right) \Phi^{-1}(s) \, ds = \int\limits_{\Phi(a)}^{\Phi(b)} f(s) \, ds$
 \end{center}
 für $f$ stetig und $[a, b] \subset I$. \\
 
@@ -1720,7 +1721,7 @@ $\Rightarrow \alpha= \Phi(b)$ ung $\beta = \Phi(a)$ und $\Phi'(s) \leq 0$ $\fora
 \emph{Notation}: \\
 für $x \in \mathbb R^n, f > 0$ \\
 \begin{center}
-	$Q(x, y) := \{y \in \mathbb R^n: \|y-x\|_\infty \leq f\}$ 
+	$Q(x, y) := \{y \in \mathbb R^n: \|y-x\|_\infty \leq f\}$
 \end{center}
 wobei $\|y-x\|_\infty = \max_{i = 1, .. n} |x^{i} - y^{i}|$
 
@@ -1755,12 +1756,12 @@ Sei $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen, $\mathscr C^k$-Di
 
 
 \emph{Gramsche Matrix}: \\
-$g \in (g_{ij})$, 
+$g \in (g_{ij})$,
 \begin{center}
 	$g(x) = D\Phi(x)^T D \Phi(x)$ \\
 	bzw. $g_{ij}(x) = \langle \partial_i \Phi(x), \partial_j \Phi(x) \rangle$
 \end{center}
-$\varrightwavearrow g$ symmetrisch und strikt positiv definit: 
+$\varrightwavearrow g$ symmetrisch und strikt positiv definit:
 \begin{center}
 	$\langle g(x)v, v\rangle = |D\Phi(x)v|^2 > 0$ $\forall x \in U, v \in \mathbb R^n\backslash \{0\}$
 \end{center}
@@ -1768,7 +1769,7 @@ $\varrightwavearrow g^{(x)}$ ist invertierbar;
 $(g^{ij}$ meint Inverses$)$ \\
 $\varrightwavearrow g^{ij}(x) := (g(x)^{-1})_{ij} \Rightarrow \sum\limits_{j=1}^n g^{ij} g_{jk} = \delta_{jk}$ \\
 $\det g(x) = \det(D\Phi(x)^T D \Phi(x)) = |\det(D \Phi(x))|^2$
- 
+
 \begin{center}
 	$\int_V f(y) \, dy = \int_U f(\Phi(x)) \sqrt{\det g(x)} \, dx$
 \end{center}
@@ -1777,7 +1778,7 @@ $\det g(x) = \det(D\Phi(x)^T D \Phi(x)) = |\det(D \Phi(x))|^2$
 
 %Bsp 1 Hirsch
 \begin{Beispiel}
-\emph{Gauß-Integral}: 
+\emph{Gauß-Integral}:
 $f(x, y) = e^{-(x^2 + y^2)}$ \\
 $\int_{\mathbb R^2} f(x, y) \, \mathscr L^2(x, y) = \int_\mathbb R \int_\mathbb R e^{-x^2} e^{-y^2} \, dx\, dy = \left(\int \mathbb R e^{-x^2} \, dx \right)^2$ \\
 Da $\det(D\phi(r, \theta)) = r$ $($s. Bsp.$)$ \\
@@ -1808,7 +1809,7 @@ $\varrightwavearrow V = v(x, y, z) \varrightwavearrow u(r, \theta, \phi) = v(r\s
 \end{Beispiel}
 
 
-\chapter{Das Flächenmaß auf Untermannigfaltigkeiten und der Satz von Gauß} 
+\chapter{Das Flächenmaß auf Untermannigfaltigkeiten und der Satz von Gauß}
 
 %Def IV.1
 \begin{Definition}
@@ -1838,7 +1839,7 @@ Es gilt: $ker g(x) = ker Df(x)$
 
 %Def. IV.2
 \begin{Definition}
-Sei $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n$, Immersion mit induzierter Matrix $g$ und $B \subseteq U$ sei $\mathscr L^n$-messbar. Der $m$-dimensionale Flächeninhalt von $\phi$ auf $B$ ist 
+Sei $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n$, Immersion mit induzierter Matrix $g$ und $B \subseteq U$ sei $\mathscr L^n$-messbar. Der $m$-dimensionale Flächeninhalt von $\phi$ auf $B$ ist
 \begin{center}
 	$A_B(\phi) := \int_B J \phi(x) \, d \mathscr L^n(x)$
 \end{center}
@@ -1853,7 +1854,7 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ \\
 	$J\phi(t) = |\phi'(t)|$ \\
 	$A_I(\phi) = \int_I |\phi'(t)|\, dt = L(\phi)$: Bodenlänge = eindimensionaler Flächeninhalt
-	
+
 	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion \\
 	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$\\
 	$D\phi = (J_x \phi, J_y \phi)$ \\
@@ -1870,17 +1871,17 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 		1 & 0 \\
 		0 & \sin^2 \theta \\
 	\end{pmatrix}$
-	
+
 	%Bildchen
-	
+
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \overequal{\text{Fubini}} \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
 	\
 	item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
 	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow \mathscr C(U)$ injektiv \\
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \overequal{\text{Satz 3.3}} \mathscr L^n(\phi(E)) \, \forall E \subseteq U \, \mathscr L^n$-messbar
-	
+
 	\item $U \subseteq \mathbb R^n, u \in \mathscr C^1(U, \mathbb R^k), m+k =n,\, \phi(x) := (x, u(x)), \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion \\
-	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> = 
+	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> =
 	\delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ \\
 	$g = (D\phi)^T D\phi = \underbrace{\mathbb E_{\mathbb R^m}}_{\text{Einheitsmatrix im }\mathbb R^m} + (Du)^TDu$  \\%mathbb E soll Einheitsmatrix, also mathbb 1 sein
 	$\Rightarrow A_E(\phi) = \int_E \sqrt{(\det(\mathbb E_{\mathbb R^m} +(Du)^TDu)}\,d\mathscr L^m \, \forall E \subseteq U\, \mathscr L^m$-messbar
@@ -1888,7 +1889,7 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 \end{Beispiel}
 
 \emph{Spezialfall: $k=1$} \\
-\emph{Behauptung}: Zu jedem Punkt $x \in U$ existiert eine Orthonormalbasis $v_1, ... , v_m$ mit: 
+\emph{Behauptung}: Zu jedem Punkt $x \in U$ existiert eine Orthonormalbasis $v_1, ... , v_m$ mit:
 \begin{center}
 	$Du(x) v_1 = |Du(x)|, Du(x) v_j = 0\, \forall j \geq 2$
 \end{center}
@@ -1924,14 +1925,14 @@ $f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \,
 \begin{Bemerkung}
 \begin{enumerate}
 	\item $f: U \rightarrow M \, \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion $\Rightarrow f:U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus
-	
+
 	\item $f: U \rightarrow ?$ injektive Immersion $\nRightarrow f: U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus.
 \end{enumerate}
 \end{Bemerkung}
 
 %Lemma IV.1
 \begin{Lemma}
-Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ gibt es lokale Parametrisierung $f_i: U \rightarrow M, i \in \mathbb N$, sodass 
+Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ gibt es lokale Parametrisierung $f_i: U \rightarrow M, i \in \mathbb N$, sodass
 \begin{center}
 	$M = \bigcup\limits_{i=1}^\infty f(U)$
 \end{center}
