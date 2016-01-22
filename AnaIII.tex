@@ -22,7 +22,7 @@
 %16.11 Montag Younis done
 %20.11 Freitag T
 %11.12 von Michelle abgetext, fast nicht lesbar: KONTROLLE
-%21.12 von wem?
+%21.12 von Michelle
 
 \theoremstyle{changebreak}
 \theoremseparator{\medskip}
@@ -36,6 +36,7 @@
 \newcommand{\cara}{Carathéodory-Fortsetzung}
 \newcommand\overequal[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $ #1 $}}}{=}}}
 \newcommand{\quotes}[1]{``#1''}
+\newcommand{\umgf}{$m$-dimensionale Untermannigfaltigkeit des $\mathbb R^n$}
 
 \begin{document}
 
@@ -767,19 +768,16 @@ Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \, \forall A \in R$, dann sind 
 Halbring $\mathscr{Q}^n$ Inhalt.\\
 $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
-%Ich kommentiere das jetzt aus, bis das Sätze-Zählen-Problem gelöst ist.
-%Jetzt ist Luisin endlich Satz II.3. Wie es sich gehört
-%\begin{Satz}
-%	Prämaß auf Halbring\\
-%	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
-%\end{Satz}
+
+	Prämaß auf Halbring\\
+	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
 
 \begin{Lemma}
 	$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
 \end{Lemma}
 
 \begin{Definition}
-	Das (äußere) Lebesguemaß einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
+	Das \underline{(äußere) Lebesguemaß} einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
 	$ \mathscr{L}^n(E) := inf \left\{ \sum_{i = 1}^{\infty} vol^n(P_i) \mid P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i \right\}$
 \end{Definition}
 
@@ -813,10 +811,6 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 	abgeschlossen gewählt werden.
 \end{Satz}
 
-%Younis, hier begannst du mit Kapitel II. Kannst du da bitte noch ergänzen, was fehlt?
-%Oder ich suche die Stelle raus, wenn ich Lust darauf habe.
-\newpage
-
 %20.11.15
 %Satz II.3: Luisin
 \begin{Satz}
@@ -829,8 +823,6 @@ Für alle $\epsilon > 0$ existiert $\kappa = \kappa_\epsilon \subset A$ kompakt 
 \end{enumerate}
 \end{Satz}
 %Krasser Scheiß, ist der Beweis lang.
-
-%OOOOOOH! Das sollte Satz II.3 sein, ist aber als II.4 gezählt. Sind das am Anfang der Kapitels wirklich schon drei Sätze oder soll eins davon etwas anderes sein?
 
 
 
@@ -905,8 +897,7 @@ Sei $U \subset \mathbb R^n$ offen unf $f: U \rightarrow \mathbb R^n$ Lipschitz-s
 \begin{Beispiel}
 $\mathscr L^n(E) = 0 \Rightarrow \mathscr L^n(f(E)) = 0$
 \end{Beispiel}
-%Oh, der 20.11.15 ist schon fertig und ich bin noch gar nicht in Freiburg :( Schau bitte auf jeden Fall wegen der Nummerierung nach, was mit den Sätzen da am Anfang des Kapitels ist!
-
+%Oh, der 20.11.15 ist schon fertig und ich bin noch gar nicht in Freiburg :( 
 
 
 %Ich brauche Beschäftigung: VL 23.11.15: ab Satz II.5
@@ -977,11 +968,43 @@ $($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x
 \end{Beispiel}
 
 
+\section{Lebesgue-Integral}
+%Def II.3
+\begin{Definition}
+$(X, \mathscr A)$ messbarer Raum. Eine Funktion $\phi: X \rightarrow \mathbb R$ heißt \underline{$\mathscr A$-Treppenfunktion} $(\mathscr A$-TF$)$, falls sie $\mathscr A$-messbar ist und nur endlich vielen FUnktonswerte annimmt. Nach Satz I.4 ist die Menge $\tau_ \mathscr A$ der $\mathscr A$-TF ein $\mathbb R$-Vektorraum. \\
+Nun setzte $\tau_\mathscr A^+ := \left\{\phi\in \tau_\mathscr A: \phi \geq\right\}$
+\end{Definition}
+
+
+%Bsp
+\begin{Beispiel}
+$E \subset X$ \\
+\begin{equation}
+	\chi_E (x) :=
+	\begin{cases}
+		1 &, x \in E \\
+		0 & , x \notin E
+	\end{cases}
+	\in \tau_\mathscr A^+ \Leftrightarrow E \in \mathscr A
+\end{equation}
+\end{Beispiel}
+
+%Satz II.8
+\begin{Satz}
+Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \geq ...$ und 
+\begin{center}
+	$\lim_{k \rightarrow \infty} f_k(x) = f(x) \, \forall x\in X$
+\end{center}
+\end{Satz}
 %27.11.15
 
 %der erste Absatz ist nicht wirklich beschriftet, sondern einfach so da, ich tex ihn mal einfach ab, habe das geschwungene tau aber noch nie in Ana gesehen^^
 
-%
+
+%Absatz
+
+
+\emph{komische Vorbemerkung?}
 $(X, \mathscr A)$ messbarer Raum \\
 $\rightarrow \mathscr A-TF$ \\
 $\rightarrow \tau_\mathscr A ^+ = \left\{\phi \in \tau_\mathscr A | \phi \geq 0\right\}$ \\
@@ -1082,12 +1105,7 @@ Sei $(X, \mathscr A, \mu)$ Maßraum und $f_k: X \rightarrow [0, \infty]$ sei Fol
 
 %Bsp.
 \begin{Beispiel}
-%\textrm{ }\\[-10pt]
-% Ich setzte das mal in einen Center, sonst sieht das übel doof aus. Doofe Idee, dann ist die Überschrift auch zentriert.
-
-%\begin{center}
-	$f_{\epsilon} (x) = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}(x)$
-%\end{center}
+$f_{\epsilon} (x) = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}(x)$
 $(\mathbb R, \mathscr M(\mathscr L^1), \mathscr L^1)$ Maßraum, $\epsilon > 0$, $f_\epsilon \, \mathscr M(\mathscr L^1)$-messbar.
 \begin{equation}
 	\lim_{\epsilon \searrow 0} f_\epsilon (x) = f_0 (x) =
@@ -1538,12 +1556,21 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 
 %Bsp.
 \begin{Beispiel}
-Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$, \\
-$\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\}$ \\
-$\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$ \\
-$(\mathscr B_1(0))_y = \{x \in \mathbb R^{n-1}: |x| < \sqrt{1-y^2},\,  y \in (-1, 1]\} = \sqrt{1-y^2}\mathscr B_1^{n-1} (0)$  \\
-$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)(\mathscr B_1(0)) = \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y)$ $=\int\limits_{-1}^1 (1- y^2)^{\dfrac{n-1}{2}} \alpha_{n-1}\, d\mathscr L^1(y) = \alpha_{n-1} \int\limits_{-1}^1 (1 - y^2)^{\dfrac{n-1}{2}} \, dy \\
-\overequal{y = \cos{\theta}}  \alpha_{n-1} \int\limits_0^\pi \sin^n \theta \, d\theta =: \alpha_{n-1} A_n$ \\
+Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$, 
+$\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$\\
+\begin{align}
+	\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\} 
+\end{align}
+\begin{align}
+	(\mathscr B_1(0))_y = \{x \in \mathbb R^{n-1}: |x| < \sqrt{1-y^2},\,  y \in (-1, 1]\} = \sqrt{1-y^2}\mathscr B_1^{n-1} (0) 
+\end{align}
+\begin{flalign}
+\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)(\mathscr B_1(0)) \\
+= \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y) \\
+=\int\limits_{-1}^1 (1- y^2)^{\dfrac{n-1}{2}} \alpha_{n-1}\, d\mathscr L^1(y) = \alpha_{n-1} \int\limits_{-1}^1 (1 - y^2)^{\dfrac{n-1}{2}} \, dy \\
+\overequal{y = \cos{\theta}}  \alpha_{n-1} \int\limits_0^\pi \sin^n \theta \, d\theta =: \alpha_{n-1} A_n  \\
+\end{flalign}
+
 \begin{center}
 	$\alpha_n = \alpha_{n-1} A_n$
 \end{center}
@@ -1564,8 +1591,43 @@ $\alpha_n \rightarrow 0$ mit $n \rightarrow \infty$
 %Das war der 18.12.15, der ansonsten nur aus dem Beweis des Satzen von Fubini bestand.
 
 %21.12.15 fehlt noch
+%von Michelle
 
+%Bsp.
+\begin{Beispiel}
+$\mu$ $\sigma$-endliches äußeres Maß auf $X$ und $f: X \rightarrow [0, \infty]\, \mu$-messbar. $\phi: [0, \infty] \rightarrow [0, \infty]$ stetig mit $\phi(0) = 0$ und $\phi\lvert_{[0, \infty]}$ stetig differenzierbar mit $\phi'(t) >0$ \\
+\emph{Behauptung}: 
+$\int_t \phi(f(x)) \, d\mu(x) = \int\limits_0^\infty \phi'(t)\mu(\{x \in X: f(x) >t\} \, dt$\\
+\emph{Anwendung der Behauptung}:  \\
+$\phi(t) = |t|^p, \, p>1, \, \phi'(t) = p \cdotp t^p \varrightwavearrow \int(f(x))^p \, d\mu(x) = \int\limits_0^\infty p\cdotp t^{p-1} \mu(\{f > t\}) \, dt$ \\
+Betrachte $E = \{(x, t) \in X \times [0, \infty]: t < f(x)\}$ Produktmaß $\mu \times \mathscr L^1$. \\
+Die Funktionen 
+\begin{itemize}
+	\item $(x, t) \mapsto t$ 
+	\item $(x, t) \mapsto f(x)$
+	\item $(x, t) \mapsto \phi'(t)$
+\end{itemize}
+sind $\mu \times \mathscr L^1$-messbar. \\
+\par
+$\Rightarrow E \in \mathscr M(\mu \times \mathscr L^1) \varrightwavearrow (x, t) \mapsto \phi'(t) \chi_E(x, t)$ ist $\mu \times \mathscr L^1$-messbar \\
+\par
+$\Rightarrow \int_x \phi(f(x)) \, d\mu(x) = \int_x \left( \int\limits_0^{f(x)}\phi'(t)\, dt\right)d\mu(x) = \int_x\int\limits_0^\infty \phi'(t) \chi_E(x, t)\, dt \,d\mu(x)$
+\par
+$\overequal{Fubini}\, \int \phi'(t) \chi_E(x, t) \,d(\mu \times \mathscr L^1)(x, t) \,\overequal{Fubini} \,\int\limits_0^\infty \int_x \phi'(t)\chi_E(x, t) \,d\mu(x) \,d\mathscr L^1(x)$
+\par
+$ = \int\limits_0^\infty \phi'(t) \mu(\{x \in X: f(x) >t\})\, dt$ \\
+$($Es fehlt die Überdeckung von kompakten Intervallen, damit Riemann = Lebesgue$)$
+\end{Beispiel}
 
+%Satz III.2
+\begin{Satz}
+$f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ sind integrierbar bezüglich $\mathscr L^n$. Dann gilt:
+\begin{center}
+	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$
+\end{center}
+\end{Satz}
+
+\newpage
 
 %neues Jahr, Freude:
 %08.01.16 bei unserem Lieblingsübungsleiter -.-
@@ -1714,6 +1776,186 @@ $\phi: \underbrace{(0, \infty) \times (0, \pi), \times (0, 2\pi)}_{=: U} \righta
 $\phi(r, \theta, \phi) = (r \sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$ \\
 $\varrightwavearrow V = v(x, y, z) \varrightwavearrow u(r, \theta, \phi) = v(r\sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$
 \end{Beispiel}
+
+
+\chapter{Das Flächenmaß auf Untermannigfaltigkeiten und der Satz von Gauß} 
+
+%Def IV.1
+\begin{Definition}
+Sei $U \subset \mathbb R^n$ offen. Eine Abbildung $f \in \mathscr C^1(U, \mathbb R^{n+k})$ heißt \underline{Immersion}, falls gilt:
+\begin{center}
+	$ rang D f(x) = n \Leftrightarrow ker D f(x) = \{0\}$ $\forall x \in U$
+\end{center}
+\end{Definition}
+
+%Bsp.
+\begin{Beispiel}
+$\gamma: [0, 1] \rightarrow \mathbb R^2$ mit $\gamma'(t) \ne 0$ $\forall t \in [0,1]$
+\end{Beispiel}
+
+%Bem.
+\begin{Bemerkung}
+Die Vektoren $\partial_1 f(x), ..., \partial_n f(x)$ bilden eine Basis von $Bild\,(Df(x))$ \\
+Analog zu vorher: Definiere die Gramersche Matrix $($ bzw. induzierte Matrix$): g(x) = \underbrace{Df(x)^T}_{\in \mathbb R^{n \times (n+k)}}\cdotp \underbrace{Df(x)}_{\in \mathbb R^{(n+k) \times n}} \in \mathbb R^{n\times n}$ \\
+$g= (g_{ij}), g_{ij}(x) = <\partial_i f(x), \partial_j f(x)>$ \\
+Tatsächlich ist $(g_{ij})$ für eine beliebige Abbildung $f \in \mathscr C^1(U, \mathbb R^{n+k})$ definiert und positiv semi-definit. $<g(x)v, v> = |Df(x)v|^2 \geq 0$ \\
+$g$ ist strikt positiv definit und damit invertierbar, falls
+\begin{center}
+	$|Df(x)v|^2 > 0$ $\forall v \in \mathbb R^n \backslash \{0\} \Leftrightarrow f$ Immersion
+\end{center}
+Es gilt: $ker g(x) = ker Df(x)$
+\end{Bemerkung}
+
+%Def. IV.2
+\begin{Definition}
+Sei $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n$, Immersion mit induzierter Matrix $g$ und $B \subseteq U$ sei $\mathscr L^n$-messbar. Der $m$-dimensionale Flächeninhalt von $\phi$ auf $B$ ist 
+\begin{center}
+	$A_B(\phi) := \int_B J \phi(x) \, d \mathscr L^n(x)$
+\end{center}
+mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
+\end{Definition}
+
+%Formatierung
+%Klausurrelevante Beispiele
+\begin{Beispiel}
+\begin{enumerate}
+	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$ $\varrightwavearrow \phi'(t) \ne 0 \, \forall t\in I \varrightwavearrow \phi$ Immersion \\
+	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ \\
+	$J\phi(t) = |\phi'(t)|$ \\
+	$A_I(\phi) = \int_I |\phi'(t)|\, dt = L(\phi)$: Bodenlänge = eindimensionaler Flächeninhalt
+	
+	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion \\
+	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$\\
+	$D\phi = (J_x \phi, J_y \phi)$ \\
+	$g= (g_{ij}) =$
+	%Da fehlen Betragsstriche?
+	$\begin{pmatrix}
+      		|Dx\phi|^2 & 	<J_x\phi, J_y\phi \\
+      		<J_x\phi, J_y\phi> &  	|D_y\phi|^2 \\
+	\end{pmatrix}$ \\
+	$\varrightwavearrow J\phi = \sqrt{|\partial_x \phi|^2 |\partial_y \phi|^2 - <\partial_x\phi, \partial_y\phi>^2}$ $(= |\partial_x\phi \times \partial_y \phi|: $Vektor-Produkt$)$ \\
+	$U:= (0, \pi) \times (0, 2\pi), \phi(\theta, \Phi) = (\sin\theta\cos\Phi, \sin\theta\sin\Phi, \cos\theta)$ \\
+	$\varrightwavearrow J\phi(\theta, \Phi) = \sin\theta, (g_{ij}) = $
+	$\begin{pmatrix}
+		1 & 0 \\
+		0 & \sin^2 \theta \\
+	\end{pmatrix}$
+	
+	%Bildchen
+	
+	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \overequal{\text{Fubini}} \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
+	\
+	item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
+	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow \mathscr C(U)$ injektiv \\
+	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \overequal{\text{Satz 3.3}} \mathscr L^n(\phi(E)) \, \forall E \subseteq U \, \mathscr L^n$-messbar
+	
+	\item $U \subseteq \mathbb R^n, u \in \mathscr C^1(U, \mathbb R^k), m+k =n,\, \phi(x) := (x, u(x)), \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion \\
+	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> = 
+	\delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ \\
+	$g = (D\phi)^T D\phi = \underbrace{\mathbb E_{\mathbb R^m}}_{\text{Einheitsmatrix im }\mathbb R^m} + (Du)^TDu$  \\%mathbb E soll Einheitsmatrix, also mathbb 1 sein
+	$\Rightarrow A_E(\phi) = \int_E \sqrt{(\det(\mathbb E_{\mathbb R^m} +(Du)^TDu)}\,d\mathscr L^m \, \forall E \subseteq U\, \mathscr L^m$-messbar
+\end{enumerate}
+\end{Beispiel}
+
+\emph{Spezialfall: $k=1$} \\
+\emph{Behauptung}: Zu jedem Punkt $x \in U$ existiert eine Orthonormalbasis $v_1, ... , v_m$ mit: 
+\begin{center}
+	$Du(x) v_1 = |Du(x)|, Du(x) v_j = 0\, \forall j \geq 2$
+\end{center}
+
+
+%Satz IV.1
+\begin{Satz}
+Sei $\Phi \in \mathscr C^1(U, \tilde U)$ Diffeomorphismus. $U, \tilde U \subseteq \mathbb R^m$ und $\phi \in \mathscr C^1(\tilde U, \mathbb R^n)$ sei Immersion. Dann gilt:
+\begin{center}
+	$A_{\Phi(B)}(\phi) = A_B (\phi \circ \Phi) \, \forall B \subseteq U \, \mathscr L^n$-messbar
+\end{center}
+%Skript Seite 102 + Beweis (Sina), Bildchen vorhanden
+\end{Satz}
+
+%Satz IV:2
+\begin{Satz}
+$\phi_1, \phi_2$ wie oben, $M$ sein $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$. Dann sind $U_1 ', U_2 '$ offen in $\mathbb R^m$ und $\phi_2^{-1}\circ \phi_1$ ist $\mathscr C^1$-Diffeomorphismus.
+\end{Satz}
+
+%Satz IV.3
+\begin{Satz}
+Jede $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ kann als abzählbare Vereinigung $M = \bigcup\limits_{i=1}^\infty K_i$ von relativ kompakten Mengen $K_i \subseteq \mathbb R^n$ geschrieben werden.
+\end{Satz}
+
+%Def. IV.3
+\begin{Definition}
+\emph{injektive Immersion} \\
+Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit. Eine \underline{lokale Parametrisierung} von $M$ ist ein $\mathscr C^1$-Homomorphismus. \\
+$f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \, \forall x \in U$, wobei $U \subseteq \mathbb R^m$ offen ist.
+\end{Definition}
+
+%Bem
+\begin{Bemerkung}
+\begin{enumerate}
+	\item $f: U \rightarrow M \, \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion $\Rightarrow f:U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus
+	
+	\item $f: U \rightarrow ?$ injektive Immersion $\nRightarrow f: U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus.
+\end{enumerate}
+\end{Bemerkung}
+
+%Lemma IV.1
+\begin{Lemma}
+Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ gibt es lokale Parametrisierung $f_i: U \rightarrow M, i \in \mathbb N$, sodass 
+\begin{center}
+	$M = \bigcup\limits_{i=1}^\infty f(U)$
+\end{center}
+\end{Lemma}
+
+
+%Satz IV.4
+\begin{Satz}
+Sei $M \subset \mathbb R^n$ \umgf. \,$ B \subset M$ heißt \underline{messbar}, falls $\phi^{-1}(B) \, L^m$-messbar ist für alle lokalen Parametrisierungen \\
+ $\phi: \underbrace{U}_{\subset \mathbb R^m \text{ offen}} \rightarrow M$  \\
+ Das System $M$ alles messbaren Teilmengen von $M$ ist eine $\sigma$-Algebra und enthält alle Borelmengen. Auf $M$ existiert genau ein Maß $\mu_M$, sodass für jede lokale Parametrisierung $\phi: U \rightarrow M$ und jede messbare Menge $B \subset \phi(U)$ gilt:
+ \begin{center}
+ 	$\mu_M(B) = \int_{\phi^{-1}(B)} \partial \phi(X) \, d L^m(x)$
+ \end{center}
+\end{Satz}
+
+%Satz IV.5
+\begin{Satz}
+Sei $M \subset \mathbb R^n$ \umgf. $M \subset \bigcup\limits_{i=1}^\infty M_i$ disjunkt, $M_i \subset V_i, \, \phi_i: U_i \rightarrow V_i = \phi_i(U_i)$ lokale Parametrisierung. Für eine $M$-messbare Funktion $u: M \rightarrow \overline{\mathbb R}$ gilt:
+\begin{center}
+	$\int_M u \, d\mu_M = \sum\limits_{i=1}^\infty \int_{\phi_i^{-1}(M_i)} u(\phi_i(x))J\phi_i(x) \, dL^m(x)$
+\end{center}
+\end{Satz}
+
+%Satz IV.6
+\begin{Satz}
+Sei $\lambda > 0, \, Q \in \mathscr O(n), a \in \mathbb R^n$ und $\tau: \mathbb R^n \rightarrow \mathbb R^n$, $\tau(p) = \lambda Q(p+a)$ \\
+Ist $M \subset \mathbb R^n$ \umgf $\Rightarrow \tau(M) =: N$ ist \umgf und für $\mu_m, \mu_N$ gilt:
+\begin{enumerate}
+	\item $A \subset M$ messbar $\Rightarrow \tau(A) \supset N$ messbar und $\mu_N (\tau(A)) = \lambda^m \mu_M (A)$
+	\item Ist $u: N \rightarrow \overline{\mathbb R}$ $\mu_M$-messbar $\Rightarrow u \circ \tau: M \rightarrow \overline{\mathbb R}$ $\mu_M$-messbar, und falls entweder $u \geq 0$ oder $u \mu_N$-intgrierbar ist, gilt:
+	\begin{center}
+		$\int_N u(q) \,d\mu_N(q) = \lambda^m \int_M u(\tau(p))\, \mu_M(p)$
+	\end{center}
+\end{enumerate}
+\end{Satz}
+
+%Satz IV.7 Zwiebelformel
+\begin{Satz}
+\emph{Zwiebelformel}: \\
+Für $u \in L^n(\mathbb R^{n+1})$ ist $u|_{JB_r} \in L^1(\mu_{JB_r})$ für fast alle $r >0$ mit $JB_r:= JB_r(0)$ und es gilt:
+\begin{center}
+	$\int{\mathbb R^{n+1}} u(p) \, dL^{n+1}(p) = \int\limits_0^\infty \int_{JB_r} u(p) \,d\mu_{JB_r} \,dL^1(r) = \int\limits_0^\infty r^n \int_{S^n} u(rw)\,d\mu_{S^n}(u) \,dL^1(r)$
+\end{center}
+\end{Satz}
+
+%Bsp
+\begin{Beispiel}
+$u = \chi_{B_1}(0), \omega_n = \mu_{S^n} (S^n) $\\
+$L_{n+1} = \mathscr L^{n+1}(B_1(0)) = \int_{\mathbb R^{n+1}} \chi_{B_1}(0) \,dL^{n+1} = \int\limits_0^1 \mu_{JB_r}(JF_r) \,dL^1(r) = \int\limits_0^1 r^n \omega_n \, dL^1(r)   = \dfrac{\omega_n}{n+1}$ \\
+$\omega_1 = 2\pi, \, \alpha_2 = \pi; \, \omega_2 = 4\pi \, \Rightarrow \alpha_3 = \dfrac{4}{3}\pi$
+\end{Beispiel}
+
+
 
 
 \end{document}
