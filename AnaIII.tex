@@ -16,11 +16,9 @@
 \usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
 \usepackage{extpfeil} %für = mit Wort drüber
 \usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
-<<<<<<< Updated upstream
 \usepackage{braket} % Für schönere Mengen. Oder so. Hier ist z. B. \Set drin und die vertikalen Balken sind schön.
-=======
+
 %Oder mdsymbol?
->>>>>>> Stashed changes
 
 
 %
@@ -1867,26 +1865,33 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 
 \begin{Beispiel}
 \begin{enumerate}
-	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$ $\varrightwavearrow \phi'(t) \ne 0 \quad \forall t\in I $
+	% 1)
+	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$ 
 	\par
-	$\varrightwavearrow \phi$ Immersion \\
-	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ \\
-	$J\phi(t) = |\phi'(t)|$ \\
+	$\varrightwavearrow \phi'(t) \ne 0 \quad \forall t\in I $
+	\par
+	$\varrightwavearrow \phi$ Immersion 
+	\par
+	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ 
+	\par
+	$J\phi(t) = |\phi'(t)|$ 
+	\par
 	$A_I(\phi) = \int_I |\phi'(t)|\, dt = L(\phi)$: Bodenlänge = eindimensionaler Flächeninhalt
-<<<<<<< Updated upstream
 
-	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion \\
-	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$\\
+	% 2)
+	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion 
+	\par
+	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$
+	\par
 	$D\phi = (J_x \phi, J_y \phi)$ \\
-=======
 	
+	% 3)
 	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion 
 	\par
 	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$
 	\par
 	$D\phi = (J_x \phi, J_y \phi)$ 
 	\par
->>>>>>> Stashed changes
 	$g= (g_{ij}) =$
 	%Da fehlen Betragsstriche?
 	$\begin{pmatrix}
@@ -1905,21 +1910,23 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	\end{pmatrix}$
 
 	%Bildchen
-<<<<<<< Updated upstream
 
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \overequal{\text{Fubini}} \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
-	\
-	item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
+	
+	% 4)
+	\item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
 	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow \mathscr C(U)$ injektiv \\
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \overequal{\text{Satz 3.3}} \mathscr L^n(\phi(E)) \, \forall E \subseteq U \, \mathscr L^n$-messbar
 
+	% 5)
 	\item $U \subseteq \mathbb R^n, u \in \mathscr C^1(U, \mathbb R^k), m+k =n,\, \phi(x) := (x, u(x)), \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion \\
 	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> =
 	\delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ \\
-=======
+
 	
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \quad \overequal{\text{Fubini}} \quad \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
 	
+	% 6)
 	\item $\phi \in \mathscr C^1(U, \mathbb R^n), \, U \subseteq \mathbb R^n$, 
 	\par
 	$\phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \quad \forall x \in U$
@@ -1930,6 +1937,7 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	\par
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \quad \overequal{\text{Satz 3.3}} \quad \mathscr L^n(\phi(E)) \quad \forall E \subseteq U \, \mathscr L^n$-messbar
 	
+	% 7)
 	\item $U \subseteq \mathbb R^n, \;u \in \mathscr C^1(U, \mathbb R^k), \, m+k =n,$
 	\par
 	$ \phi(x) := (x, u(x)), \, \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion 
@@ -1938,7 +1946,6 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	\par
 	$= \quad \delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ 
 	\par
->>>>>>> Stashed changes
 	$g = (D\phi)^T D\phi = \underbrace{\mathbb E_{\mathbb R^m}}_{\text{Einheitsmatrix im }\mathbb R^m} + (Du)^TDu$  \\%mathbb E soll Einheitsmatrix, also mathbb 1 sein
 	\par\bigskip
 	$\Rightarrow A_E(\phi) = \int_E \sqrt{(\det(\mathbb E_{\mathbb R^m} +\; (Du)^TDu)}\,d\mathscr L^m \quad \forall E \subseteq U\, \mathscr L^m$-messbar
@@ -1985,17 +1992,14 @@ wobei $U \subseteq \mathbb R^m$ offen ist.
 %Bem
 \begin{Bemerkung}
 \begin{enumerate}
-<<<<<<< Updated upstream
 	\item $f: U \rightarrow M \, \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion $\Rightarrow f:U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus
 
 	\item $f: U \rightarrow ?$ injektive Immersion $\nRightarrow f: U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus.
-=======
 	\item $f: U \rightarrow M \quad \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion \\
 	$\Rightarrow f:U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus
 	
 	\item $f: U \rightarrow \,?\,$ injektive Immersion \\
 	$\nRightarrow f: U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus.
->>>>>>> Stashed changes
 \end{enumerate}
 \end{Bemerkung}
 
