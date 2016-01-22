@@ -1558,18 +1558,21 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 \begin{Beispiel}
 Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$, 
 $\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$\\
-\begin{align}
-	\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\} 
-\end{align}
-\begin{align}
-	(\mathscr B_1(0))_y = \{x \in \mathbb R^{n-1}: |x| < \sqrt{1-y^2},\,  y \in (-1, 1]\} = \sqrt{1-y^2}\mathscr B_1^{n-1} (0) 
-\end{align}
-\begin{flalign}
-\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)(\mathscr B_1(0)) \\
-= \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y) \\
-=\int\limits_{-1}^1 (1- y^2)^{\dfrac{n-1}{2}} \alpha_{n-1}\, d\mathscr L^1(y) = \alpha_{n-1} \int\limits_{-1}^1 (1 - y^2)^{\dfrac{n-1}{2}} \, dy \\
-\overequal{y = \cos{\theta}}  \alpha_{n-1} \int\limits_0^\pi \sin^n \theta \, d\theta =: \alpha_{n-1} A_n  \\
-\end{flalign}
+\par
+$\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\} $
+\par\bigskip
+$(\mathscr B_1(0))_y = \{x \in \mathbb R^{n-1}: |x| < \sqrt{1-y^2},\,  y \in (-1, 1]\} = \sqrt{1-y^2}\mathscr B_1^{n-1} (0) $
+\par\bigskip
+$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)(\mathscr B_1(0))$
+\par\bigskip
+$ = \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y) $
+\par\bigskip
+$=\int\limits_{-1}^1 (1- y^2)^{\dfrac{n-1}{2}} \alpha_{n-1}\, d\mathscr L^1(y) = \alpha_{n-1} \int\limits_{-1}^1 (1 - y^2)^{\dfrac{n-1}{2}} \, dy $
+\par\bigskip
+$\overequal{y = \cos{\theta}}  \alpha_{n-1} \int\limits_0^\pi \sin^n \theta \, d\theta $
+\par\bigskip
+$=: \alpha_{n-1} A_n$  \\
+
 
 \begin{center}
 	$\alpha_n = \alpha_{n-1} A_n$
@@ -1623,7 +1626,9 @@ $($Es fehlt die Überdeckung von kompakten Intervallen, damit Riemann = Lebesgue
 \begin{Satz}
 $f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ sind integrierbar bezüglich $\mathscr L^n$. Dann gilt:
 \begin{center}
-	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$
+	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$ \\
+	\emph{Notation}: $d\mathscr L^n = dx$ \\
+	$\left(\int\limits_a^b f' \cdotp g \,dx = -\int\limits_a^b f\cdotp g' \, cx + [f\cdotp g]_{x=a}^{x=b} \right)$
 \end{center}
 \end{Satz}
 
