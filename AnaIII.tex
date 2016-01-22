@@ -734,7 +734,7 @@ Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\m
 Sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q$ über $X$. Sei $\mu: P(X) \rightarrow [0, \infty]$ das aus $\lambda$ konstruierte äußere Maß $($Satz I.7$)$ \\
 D.h.:
 \begin{center}
-	$\mu(E) := \inf\left\{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i \right\}$
+	$\mu(E) := \inf\Set{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i }$
 \end{center}
 Dann ist $\mu$ eine Fortsetzung von $\lambda$.
 \end{Satz}
@@ -798,8 +798,8 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 \begin{Lemma}
 	Für $E \subset \mathbb{R}^n$ gilt:
 	\begin{enumerate}
-		\item $\mathscr{L}^n(E) = inf\{\mathscr{L}^n(U) $ \, $|$ \, $U$ offen mit $E \subset{U}\}$
-		\item $\mathscr{L}^n(E) = sup\{\mathscr{L}^n(K) $ \, $|$ \, $K$ kompakt mit $K \subset{E}\}$,
+		\item $\mathscr{L}^n(E) = inf\Set{\mathscr{L}^n(U) | \text{U offen mit E} \subset{U}}$
+		\item $\mathscr{L}^n(E) = sup\Set{\mathscr{L}^n(K) | \text{K kompakt mit K} \subset{E}}$,
 			falls $E \in \mathscr{M}(\mathscr{L}^n)$
 	\end{enumerate}
 \end{Lemma}
@@ -864,7 +864,7 @@ $\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus de
 \begin{Lemma}
 Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$
 \begin{center}
-	$\Rightarrow H = \left\{x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n\right\}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
+	$\Rightarrow H = \Set{ x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
 \end{center}
 \end{Lemma}
 
@@ -1030,7 +1030,7 @@ Für $\phi, \psi \in \tau	^+(\mu)$ und $\alpha, \beta \in [0, \infty)$ gelten:
 %Def II.4
 \begin{Definition}
 Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb R} \mathscr A$-messbar. Ist $f: X \rightarrow [0, \infty]$, so setzen wir:
-$\int f d\mu := \sup\left\{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f\right\}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
+$\int f d\mu := \sup\Set{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
 
 Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von $f^+ = \max{f, 0}$ und $f^- = \max{-f, 0}$ wie eben definiert und nicht beide unendlich, so setzen wir: \\
 $\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ \\
@@ -1311,7 +1311,7 @@ $\Rightarrow F: U \rightarrow \mathbb R, F(x):= \int f(x, y) d\mu(y)$ ist $\math
 
 %Bsp.
 \begin{Beispiel}
-$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) =\{x| \phi(x) \ne 0\}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
+$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) = \Set{x| \phi(x) \ne 0}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
 %Was auch immer das ist. Also 'support'
 $\forall h$ Lebesgue-integrierbar ist \\
 $\phi \Asterisk h(x) = \int \phi(x-y)f(y) d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ ist \underline{glatt}
@@ -1330,7 +1330,7 @@ Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty
 	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & , p = \infty
 \end{cases}
 \end{equation}
-$L^p(\mu):= \{f \mu$-messbar mit $\|f\|_{L^p (\mu)} < \infty\}$ auf $L^p$ definieren die Äquivalenzrelation
+$L^p(\mu):= \Set{f \mu\text{-messbar mit }\|f\|_{L^p (\mu)} < \infty}$ auf $L^p$ definieren die Äquivalenzrelation
 \begin{center}
 	$f \sim g \Leftrightarrow f(x) = g(x)$ für $\mu$-fast alle $x$
 \end{center}
@@ -1498,7 +1498,7 @@ $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Dann gilt:
 \begin{Definition}
 Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \underline{Produktmaß} $\alpha_1 \times ... \times \alpha_n$ einer Menge $E \subset X_1 \times ... \times X_n$ ist definiert durch
 \begin{center}
-	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\left\{ \sum\limits_{j=1}^\infty \lambda(P_j): P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j \right\}$
+	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\Set{ \sum\limits_{j=1}^\infty \lambda(P_j) | P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j }$
 
 \end{center}
 \end{Definition}
@@ -1866,42 +1866,42 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 \begin{Beispiel}
 \begin{enumerate}
 	% 1)
-	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$ 
+	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$
 	\par
 	$\varrightwavearrow \phi'(t) \ne 0 \quad \forall t\in I $
 	\par
-	$\varrightwavearrow \phi$ Immersion 
+	$\varrightwavearrow \phi$ Immersion
 	\par
-	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ 
+	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$
 	\par
-	$J\phi(t) = |\phi'(t)|$ 
+	$J\phi(t) = |\phi'(t)|$
 	\par
 	$A_I(\phi) = \int_I |\phi'(t)|\, dt = L(\phi)$: Bodenlänge = eindimensionaler Flächeninhalt
 
 	% 2)
-	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion 
+	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion
 	\par
 	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$
 	\par
 	$D\phi = (J_x \phi, J_y \phi)$ \\
-	
+
 	% 3)
-	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion 
+	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion
 	\par
 	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$
 	\par
-	$D\phi = (J_x \phi, J_y \phi)$ 
+	$D\phi = (J_x \phi, J_y \phi)$
 	\par
 	$g= (g_{ij}) =$
 	%Da fehlen Betragsstriche?
 	$\begin{pmatrix}
       		|Dx\phi|^2 & 	<J_x\phi, J_y\phi \\
       		<J_x\phi, J_y\phi> &  	|D_y\phi|^2 \\
-	\end{pmatrix}$ 
+	\end{pmatrix}$
 	\par\bigskip
-	$\varrightwavearrow J\phi = \sqrt{|\partial_x \phi|^2 |\partial_y \phi|^2 - <\partial_x\phi, \partial_y\phi>^2}$ $(= |\partial_x\phi \times \partial_y \phi|: $Vektor-Produkt$)$ 
+	$\varrightwavearrow J\phi = \sqrt{|\partial_x \phi|^2 |\partial_y \phi|^2 - <\partial_x\phi, \partial_y\phi>^2}$ $(= |\partial_x\phi \times \partial_y \phi|: $Vektor-Produkt$)$
 	\par
-	$U:= (0, \pi) \times (0, 2\pi), \phi(\theta, \Phi) = (\sin\theta\cos\Phi, \sin\theta\sin\Phi, \cos\theta)$ 
+	$U:= (0, \pi) \times (0, 2\pi), \phi(\theta, \Phi) = (\sin\theta\cos\Phi, \sin\theta\sin\Phi, \cos\theta)$
 	\par
 	$\varrightwavearrow J\phi(\theta, \Phi) = \sin\theta, (g_{ij}) = $
 	$\begin{pmatrix}
@@ -1912,7 +1912,7 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	%Bildchen
 
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \overequal{\text{Fubini}} \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
-	
+
 	% 4)
 	\item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
 	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow \mathscr C(U)$ injektiv \\
@@ -1923,28 +1923,28 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> =
 	\delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ \\
 
-	
+
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \quad \overequal{\text{Fubini}} \quad \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
-	
+
 	% 6)
-	\item $\phi \in \mathscr C^1(U, \mathbb R^n), \, U \subseteq \mathbb R^n$, 
+	\item $\phi \in \mathscr C^1(U, \mathbb R^n), \, U \subseteq \mathbb R^n$,
 	\par
 	$\phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \quad \forall x \in U$
 	\par
-	$\Leftrightarrow \phi$ ist lokaler Diffeomorphismus. 
+	$\Leftrightarrow \phi$ ist lokaler Diffeomorphismus.
 	\par
-	$J(\phi)= |\det D\phi|$ ist zusätzlich $\phi: U \rightarrow \mathscr C(U)$ injektiv 
+	$J(\phi)= |\det D\phi|$ ist zusätzlich $\phi: U \rightarrow \mathscr C(U)$ injektiv
 	\par
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \quad \overequal{\text{Satz 3.3}} \quad \mathscr L^n(\phi(E)) \quad \forall E \subseteq U \, \mathscr L^n$-messbar
-	
+
 	% 7)
 	\item $U \subseteq \mathbb R^n, \;u \in \mathscr C^1(U, \mathbb R^k), \, m+k =n,$
 	\par
-	$ \phi(x) := (x, u(x)), \, \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion 
+	$ \phi(x) := (x, u(x)), \, \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion
 	\par
 	$g_{ij}(x) \quad = <\partial_i \phi(x), \partial_j \phi(x)> \quad=\quad <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> \quad$
 	\par
-	$= \quad \delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ 
+	$= \quad \delta_{ij} + <\partial_i u(x), \partial_j u(x)> $
 	\par
 	$g = (D\phi)^T D\phi = \underbrace{\mathbb E_{\mathbb R^m}}_{\text{Einheitsmatrix im }\mathbb R^m} + (Du)^TDu$  \\%mathbb E soll Einheitsmatrix, also mathbb 1 sein
 	\par\bigskip
@@ -1982,9 +1982,9 @@ Jede $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ kan
 %Def. IV.3
 \begin{Definition}
 \emph{injektive Immersion} \\
-Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit. Eine \underline{lokale Parametrisierung} von $M$ ist ein $\mathscr C^1$-Homomorphismus. 
+Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit. Eine \underline{lokale Parametrisierung} von $M$ ist ein $\mathscr C^1$-Homomorphismus.
 \par\bigskip
-$f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \quad \forall x \in U$, 
+$f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \quad \forall x \in U$,
 \par
 wobei $U \subseteq \mathbb R^m$ offen ist.
 \end{Definition}
@@ -1997,7 +1997,7 @@ wobei $U \subseteq \mathbb R^m$ offen ist.
 	\item $f: U \rightarrow ?$ injektive Immersion $\nRightarrow f: U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus.
 	\item $f: U \rightarrow M \quad \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion \\
 	$\Rightarrow f:U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus
-	
+
 	\item $f: U \rightarrow \,?\,$ injektive Immersion \\
 	$\nRightarrow f: U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus.
 \end{enumerate}
@@ -2015,7 +2015,7 @@ Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^
 %Satz IV.4
 \begin{Satz}
 Sei $M \subset \mathbb R^n$ \umgf. \,$ B \subset M$ heißt \underline{messbar}, falls $\phi^{-1}(B) \, L^m$-messbar ist für alle lokalen Parametrisierungen \\
- $\phi: \underbrace{U}_{\subset \mathbb R^m \text{ offen}} \rightarrow M$  
+ $\phi: \underbrace{U}_{\subset \mathbb R^m \text{ offen}} \rightarrow M$
  \par\bigskip
  Das System $M$ alles messbaren Teilmengen von $M$ ist eine $\sigma$-Algebra und enthält alle Borelmengen. Auf $M$ existiert genau ein Maß $\mu_M$, sodass für jede lokale Parametrisierung $\phi: U \rightarrow M$ und jede messbare Menge $B \subset \phi(U)$ gilt:
  \begin{center}
@@ -2033,7 +2033,7 @@ Sei $M \subset \mathbb R^n$ \umgf. $M \subset \bigcup\limits_{i=1}^\infty M_i$ d
 
 %Satz IV.6
 \begin{Satz}
-Sei $\lambda > 0, \, Q \in \mathscr O(n), a \in \mathbb R^n$ und $\tau: \mathbb R^n \rightarrow \mathbb R^n$, $\tau(p) = \lambda Q(p+a)$ 
+Sei $\lambda > 0, \, Q \in \mathscr O(n), a \in \mathbb R^n$ und $\tau: \mathbb R^n \rightarrow \mathbb R^n$, $\tau(p) = \lambda Q(p+a)$
 \par
 Ist $M \subset \mathbb R^n$ \umgf $\Rightarrow \tau(M) =: N$ ist \umgf und für $\mu_m, \mu_N$ gilt:
 \begin{enumerate}
