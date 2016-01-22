@@ -7,6 +7,7 @@
 \usepackage{ntheorem}
 \everymath{\displaystyle}
 \usepackage{amsmath, amssymb} %Damit geht dann cases
+\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen werden.
 %\usepackage{array}
 \usepackage{mathabx} %für #
 %\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
@@ -16,6 +17,8 @@
 \usepackage{extpfeil} %für = mit Wort drüber
 \usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
 \usepackage{braket} % Für schönere Mengen. Oder so. Hier ist z. B. \Set drin und die vertikalen Balken sind schön.
+
+%Oder mdsymbol?
 
 
 %
@@ -117,9 +120,9 @@ $\sigma(E):=\bigcap \{ \mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in $X$ und
 \begin{Definition}
 Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen $s \in \mathbb{R}$, falls eine der folgenden Alternativen gilt:
 \begin{itemize}
-	\item  $s \in \mathbb{R}$ und $\forall \epsilon > 0$ gilt $s_{k} \in (s-\epsilon, s+\epsilon)$ $\forall k$ groß genug
-	\item $s = \infty$ und $\forall r \in \mathbb{R}: s_{k} \in (r, \infty]$ $\forall k$ groß genug
-	\item $s = -\infty$ und $\forall r \in \mathbb{R}: s_k \in (-\infty, r)$ $\forall k$ groß genug
+	\item  $s \in \mathbb{R}$ und $\forall \epsilon > 0$ gilt $s_{k} \in (s-\epsilon, s+\epsilon) \quad\forall k$ groß genug
+	\item $s = \infty$ und $\forall r \in \mathbb{R}: s_{k} \in (r, \infty] \quad \forall k$ groß genug
+	\item $s = -\infty$ und $\forall r \in \mathbb{R}: s_k \in (-\infty, r) \quad \forall k$ groß genug
 \end{itemize}
 \end{Definition}
 
@@ -128,7 +131,7 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 \begin{enumerate}
 	\item $(a_n)$ monoton wachsende Folge
 	$\Rightarrow \lim a_n \in \mathbb{\overline{R}}$
-	\item $\sum\limits_{n=1}^{\infty} a_n \in \mathbb{\overline{R}}$, $a_n \geq 0$ $ \forall n \in \mathbb{N}$
+	\item $\sum\limits_{n=1}^{\infty} a_n \in \mathbb{\overline{R}}$, $a_n \geq 0 \quad \forall n \in \mathbb{N}$
 	\item offene Teilmengen von $\overline{\mathbb{R}}$: \\
 	$U \subset \overline{\mathbb{R}} $ offen $\Leftrightarrow U \cap \mathbb{R}$ offen und falls $\{+\infty\}$ oder $\{-\infty\}$ in $M$ liegt, existiert ein $a \in \mathbb{R}$ mit $(a,{} \infty ]\subset U$ bzw. $[-\infty, a) \subset U$
 \end{enumerate}
@@ -154,7 +157,7 @@ $\mu(B) = \mu(A \cup B\backslash A) = \mu(A) + \underbrace{\mu(B\backslash A)}_{
 
 %Def I.5
 \begin{Definition}
-$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \underline{endlich}, wenn $\mu(A)$ \textless {} $ \infty $ $\forall A \in \mathscr{A}$, $\mu$ heißt \underline{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i)$ \textless {} $ \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
+$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \underline{endlich}, wenn $\mu(A)$ \textless {} $ \infty \quad \forall A \in \mathscr{A}$, $\mu$ heißt \underline{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i)$ \textless {} $ \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
 Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 \end{Definition}
 
@@ -363,7 +366,7 @@ $(X, \mathscr A, \mu)$ Maßraum. Man sagt, die Aussage $A[x]$ ist wahr für \und
 $f, g: X \rightarrow \overline{\mathbb R}$ Aussage  \quotes{$f(x) \leq g(x)$ für $\mu$-fast alle $x \in X$}  bedeutet: \\
 $\exists N \subset \mathscr A$ mit $\mu(N) = 0$, sodass $\forall x \in X\backslash N: f(x) \leq g(x)$ \\
 Eine Funktion $h$ ist \quotes{\underline{$\mu$-fast überall auf $X$}} definiert, wenn $h$ aus $D \in \mathscr A$ definiert ist und $\mu(X \backslash D) = 0$. \\
-Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert punktweise $\mu$-fast überall gegen $f: D \rightarrow \overline{\mathbb R}$, falls eine Menge $M \in \mathscr A$ existiert mit $\mu(N) = 0$ und $\lim\limits_ {k \rightarrow \infty} f_k(x) = f(x)$ $\forall x \in D \backslash N$
+Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert punktweise $\mu$-fast überall gegen $f: D \rightarrow \overline{\mathbb R}$, falls eine Menge $M \in \mathscr A$ existiert mit $\mu(N) = 0$ und $\lim\limits_ {k \rightarrow \infty} f_k(x) = f(x)\quad \forall x \in D \backslash N$
 \end{Bemerkung}
 
 %Definition I.9
@@ -434,7 +437,7 @@ $\mathscr M(\mu):= \{ A \subset X | A$ $ \mu-messbar \}$
 %Bem
 \begin{Bemerkung}
 Es gilt $(S \cap A) \cup (S \backslash A) = S$. Also $\mu(S) \leq \mu(S \cap A) + \mu(S \backslash A)$ \\
-$A$ $\mu$-messbar $\Leftrightarrow$ $\mu(S) = \mu(S \cap A) + \mu(S \backslash A)$ $\forall S \subset X$
+$A$ $\mu$-messbar $\Leftrightarrow$ $\mu(S) = \mu(S \cap A) + \mu(S \backslash A)\quad \forall S \subset X$
 \end{Bemerkung}
 
 %Satz I.7
@@ -575,7 +578,7 @@ ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußer
 
 %Lemma I.6
 \begin{Lemma}
-Sei $\mu$ \cara{} des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt $\tilde{\mu}(R) \leq \mu(E)$ $\forall E \in \sigma(R)$.
+Sei $\mu$ \cara{} des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt $\tilde{\mu}(R) \leq \mu(E)\quad \forall E \in \sigma(R)$.
 \end{Lemma}
 
 %Satz I.12
@@ -682,7 +685,7 @@ Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma
 
 %Satz I.17
 \begin{Satz}
-Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit $\overline{\lambda}(Q) = \lambda(Q)$ $\forall Q \in \mathscr Q$
+Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit $\overline{\lambda}(Q) = \lambda(Q)\quad \forall Q \in \mathscr Q$
 \end{Satz}
 
 %Fehlt hier noch was?? Die Vorlesung nach dem 09.11. war über was:
@@ -731,7 +734,7 @@ Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\m
 Sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q$ über $X$. Sei $\mu: P(X) \rightarrow [0, \infty]$ das aus $\lambda$ konstruierte äußere Maß $($Satz I.7$)$ \\
 D.h.:
 \begin{center}
-	$\mu(E) := \inf\Set{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i }$
+	$\mu(E) := \inf\left\{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i \right\}$
 \end{center}
 Dann ist $\mu$ eine Fortsetzung von $\lambda$.
 \end{Satz}
@@ -756,7 +759,7 @@ Für einen Inhalt $\lambda$ auf einem Ring $R$ auf $A_i \in P,\, i \in \mathbb N
 	\end{center}
 \end{enumerate}
 Dann gilt: $1. \Leftrightarrow 2. \Rightarrow 3. \Rightarrow 4.$ \\
-Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \, \forall A \in R$, dann sind $1. - 4.$ äquivalent.
+Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \quad \forall A \in R$, dann sind $1. - 4.$ äquivalent.
 \end{Satz}
 
 
@@ -795,8 +798,8 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 \begin{Lemma}
 	Für $E \subset \mathbb{R}^n$ gilt:
 	\begin{enumerate}
-		\item $\mathscr{L}^n(E) = inf\Set{\mathscr{L}^n(U) | \text{U offen mit E} \subset{U}}$
-		\item $\mathscr{L}^n(E) = sup\Set{\mathscr{L}^n(K) | \text{K kompakt mit K} \subset{E}}$,
+		\item $\mathscr{L}^n(E) = inf\{\mathscr{L}^n(U) $ \, $|$ \, $U$ offen mit $E \subset{U}\}$
+		\item $\mathscr{L}^n(E) = sup\{\mathscr{L}^n(K) $ \, $|$ \, $K$ kompakt mit $K \subset{E}\}$,
 			falls $E \in \mathscr{M}(\mathscr{L}^n)$
 	\end{enumerate}
 \end{Lemma}
@@ -832,7 +835,7 @@ Für alle $\epsilon > 0$ existiert $\kappa = \kappa_\epsilon \subset A$ kompakt 
 Ein äußeres Maß $\mu$ auf $\mathbb R^n$ heißt \underline{Borelmaß}, falls gilt:
 \begin{enumerate}
 	\item $B \in \mathscr B^n \Rightarrow B \, \mu$-messbar $(B \in \mathscr M(\mu))$
-	\item $\mu(\kappa) < \infty \, \forall \kappa \subset \mathbb R^n$ kompakt
+	\item $\mu(\kappa) < \infty \quad \forall \kappa \subset \mathbb R^n$ kompakt
 \end{enumerate}
 \end{Definition}
 
@@ -844,7 +847,7 @@ $\mathscr L^n$ $($Satz II.1$) \varrightwavearrow \, \mathscr L^n|_E$, $E \subset
 \emph{Notation}: \\
 Ein Maß $\mu$ auf $\mathbb R^n$ heißt \underline{translationsinvariant}, wenn mit $E + a = \{x +a | x \in E\}$ gilt:
 \begin{center}
-	$\mu(E+a) = \mu(E) \, \forall E \subset \mathbb R^n, a \in \mathbb R^n$
+	$\mu(E+a) = \mu(E) \quad \forall E \subset \mathbb R^n, a \in \mathbb R^n$
 \end{center}
 
 %Bsp.
@@ -861,7 +864,7 @@ $\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus de
 \begin{Lemma}
 Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$
 \begin{center}
-	$\Rightarrow H = \Set{ x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
+	$\Rightarrow H = \left\{x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n\right\}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
 \end{center}
 \end{Lemma}
 
@@ -890,7 +893,7 @@ $\mathscr H^n = \mathscr L^n$ $(($sehr$)$ bisschen schwierig$)$
 \begin{Lemma}
 Sei $U \subset \mathbb R^n$ offen unf $f: U \rightarrow \mathbb R^n$ Lipschitz-stetig mit Konstante $L$ bzgl $\|x\|_\infty := \max_{1 \leq i \leq n} |x_i |$. Dann gilt:
 \begin{center}
-	$\mathscr L^n(f(E)) \leq L^n \mathscr L^n (E)$ $\forall E \subset U$
+	$\mathscr L^n(f(E)) \leq L^n \mathscr L^n (E)\quad \forall E \subset U$
 \end{center}
 \end{Lemma}
 
@@ -917,7 +920,7 @@ Sei $U \subseteq \mathbb R^n$ offen und $f: U \rightarrow \mathbb R^n$ lokal Lip
 %Satz II.6
 \begin{Satz}
 Für $S \in O(n)$ und $a \in \mathbb R^n$ gilt:
-$\mathscr L^n (S(E) +a) = \mathscr L^n(E)$ $\forall E \subset \mathbb R^n$
+$\mathscr L^n (S(E) +a) = \mathscr L^n(E)\quad \forall E \subset \mathbb R^n$
 \end{Satz}
 
 
@@ -959,13 +962,13 @@ $\exists S \subset [0, 1]$, die nicht $\mathscr L^1$-messbar ist. Auf $[0, 1]$ g
 	$x \sim y \Leftrightarrow x - y \in \mathbb Q$
 \end{center}
 Auswahlaxiom: $\exists$ Repräsentantensystem $S \subset [0, 1]$ für $\sim$, d.h. $\forall y \in [0, 1]$ $\exists! x \in S: x \sim y$ \\
-Sei jetzt $q_1, q_2, ...$ eine Abzählung von $\mathbb Q \cap [-1, 1]$. Dann gilt: $(q_j + S) \cap (q_k +S)  \emptyset $ $\forall j \ne k$ \\
+Sei jetzt $q_1, q_2, ...$ eine Abzählung von $\mathbb Q \cap [-1, 1]$. Dann gilt: $(q_j + S) \cap (q_k +S)  \emptyset \quad \forall j \ne k$ \\
 $($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x_2 = q_k -q_j \in \mathbb Q \Rightarrow x_1 \sim x_2  \Rightarrow x_1 = x_2 \Rightarrow q_j = q_k $\blitzd $ )$ \\
 
 \emph{Behauptung:} $[0, 1]$ $\underbrace{\subset}_{1)}$ $\bigcup\limits_{k=1}^\infty
  (q_k + S) \subset [-1, 2]$ \\
  Zu $1)$: zu $y \in (0, 1)$ existiert $x \in S: y - x = q \in \mathbb Q \cap [-1, 1] \Rightarrow$ $\exists k: y \in q_k + S$ \\
-\emph{Annahme:} $S$ ist $\mathscr L^1$-messbar mit $\mathscr L^1(S) = \mathscr L^1(q + S)$ $\forall q \in \mathbb Q$ folgt: $\sum\limits_{k=1}^\infty \mathscr L^1(S) = \sum\limits_{k=1}^\infty \mathscr L^1(q_k + S) \underbrace{=}_ {\text{Satz I.10}} \mathscr L^1\left(\bigcup\limits_{k=1}^\infty (q_k + S) \right) \in (1, 3]$ \blitzd
+\emph{Annahme:} $S$ ist $\mathscr L^1$-messbar mit $\mathscr L^1(S) = \mathscr L^1(q + S)\quad \forall q \in \mathbb Q$ folgt: $\sum\limits_{k=1}^\infty \mathscr L^1(S) = \sum\limits_{k=1}^\infty \mathscr L^1(q_k + S) \underbrace{=}_ {\text{Satz I.10}} \mathscr L^1\left(\bigcup\limits_{k=1}^\infty (q_k + S) \right) \in (1, 3]$ \blitzd
 \end{Beispiel}
 
 
@@ -994,7 +997,7 @@ $E \subset X$ \\
 \begin{Satz}
 Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \geq ...$ und
 \begin{center}
-	$\lim_{k \rightarrow \infty} f_k(x) = f(x) \, \forall x\in X$
+	$\lim_{k \rightarrow \infty} f_k(x) = f(x) \quad \forall x\in X$
 \end{center}
 \end{Satz}
 %27.11.15
@@ -1027,7 +1030,7 @@ Für $\phi, \psi \in \tau	^+(\mu)$ und $\alpha, \beta \in [0, \infty)$ gelten:
 %Def II.4
 \begin{Definition}
 Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb R} \mathscr A$-messbar. Ist $f: X \rightarrow [0, \infty]$, so setzen wir:
-$\int f d\mu := \sup\Set{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
+$\int f d\mu := \sup\left\{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f\right\}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
 
 Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von $f^+ = \max{f, 0}$ und $f^- = \max{-f, 0}$ wie eben definiert und nicht beide unendlich, so setzen wir: \\
 $\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ \\
@@ -1163,8 +1166,8 @@ $\int\limits_{\mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alp
 $A_k := \left\{x \in \mathbb R^n | 2^k \leq |x| < 2^{k+1}\right\}, k \in \mathbb Z$ \\
 $\bigcup\limits_{k \in \mathbb Z} A_k = \mathbb R^n\backslash\{0\}$ \\
 $g = \sum\limits_{k \in \mathbb Z} 2^{-k\alpha}\chi_{A_k}$ \\
-Es gilt: $2^{-\alpha}g \leq f \leq g$ $\forall \alpha \geq 0$ \\
-Auf $\mathbb R^n\backslash\{0\}: 2^{-\alpha}g \geq f\geq g$ $\forall \alpha < 0$ \\
+Es gilt: $2^{-\alpha}g \leq f \leq g\quad \forall \alpha \geq 0$ \\
+Auf $\mathbb R^n\backslash\{0\}: 2^{-\alpha}g \geq f\geq g\quad \forall \alpha < 0$ \\
 Sei $x \in A_k$ für ein $k \in \mathbb Z \Rightarrow 2^k \leq |x| \leq 2^{k+1}$ und $g(x) = 2^{-k\alpha}$ \\
 $\alpha \geq 0 \Rightarrow 2^{k\alpha} \leq |x|^\alpha \leq 2^{(k+1)\alpha} \Rightarrow |x|^{-\alpha} \geq 2^{-k\alpha - \alpha}, |x|^{-\alpha} \leq 2^{-k\alpha} = g(x) = 2^{-\alpha} g(x)$ \\
 Es reicht, die Behauptung für $g$ zu zeigen! \\
@@ -1188,7 +1191,7 @@ $\overequal{\text{Satz II.10}} \, \, \, \, \lim_{l \rightarrow \infty} \sum\limi
 	\infty & x = 0
 \end{cases}
 \end{equation}
-$\xRightarrow{\alpha < 0} 2^{-\alpha}\overline{g} \geq f \geq g$ $\forall x \in \mathbb R^n$ \\
+$\xRightarrow{\alpha < 0} 2^{-\alpha}\overline{g} \geq f \geq g\quad \forall x \in \mathbb R^n$ \\
 $\alpha > 0: 2^{-\alpha}g \leq f \leq \overline g$ \\
 $\mathscr L^n$ ist ein \underline{vollständiges Maß} \\
 $\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} d\mathscr L^n = \int \overline g \chi_{\mathscr B_1(0)} d\mathscr L^n$
@@ -1276,7 +1279,7 @@ $X$ ein metrischer Raum, $\mu$ ein Maß auf $Y$, $f: X \times Y \rightarrow \mat
 \begin{enumerate}
 	\item $\forall x \in X:$ $f(x, \cdotp)$ integrierbar
 	\item $f(\cdotp, y)$ ist in $x_0$ für $\mu$-fast alle $y$ stetig.
-	\item $\exists g: Y \rightarrow \mathbb R^+$ integrierbar, $|f(x, y)| \leq g(y)$ $\forall y \in Y \backslash Nx$, $Nx$ $\mu$-Nullmenge
+	\item $\exists g: Y \rightarrow \mathbb R^+$ integrierbar, $|f(x, y)| \leq g(y)\quad \forall y \in Y \backslash Nx$, $Nx$ $\mu$-Nullmenge
 \end{enumerate}
 $\Rightarrow F: X \rightarrow \mathbb R$, $F(x):= \int f(x, y) d\mu$ ist stetig in $x_0$.
 \end{Satz}
@@ -1308,7 +1311,7 @@ $\Rightarrow F: U \rightarrow \mathbb R, F(x):= \int f(x, y) d\mu(y)$ ist $\math
 
 %Bsp.
 \begin{Beispiel}
-$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) =\Set{x| \phi(x) \ne 0}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
+$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) =\{x| \phi(x) \ne 0\}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
 %Was auch immer das ist. Also 'support'
 $\forall h$ Lebesgue-integrierbar ist \\
 $\phi \Asterisk h(x) = \int \phi(x-y)f(y) d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ ist \underline{glatt}
@@ -1327,7 +1330,7 @@ Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty
 	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & , p = \infty
 \end{cases}
 \end{equation}
-$L^p(\mu):= \Set{f \mu\text{-messbar mit }\|f\|_{L^p (\mu)} < \infty}$ auf $L^p$ definieren die Äquivalenzrelation
+$L^p(\mu):= \{f \mu$-messbar mit $\|f\|_{L^p (\mu)} < \infty\}$ auf $L^p$ definieren die Äquivalenzrelation
 \begin{center}
 	$f \sim g \Leftrightarrow f(x) = g(x)$ für $\mu$-fast alle $x$
 \end{center}
@@ -1397,7 +1400,7 @@ $f, g \in L^p(\mu), 1 \leq p \leq \infty$ dann gilt:
 Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$, falls $\sum\limits_{i=1}^\infty \|u_i\|_{L^p} < \infty$ dann gilt:
 \begin{enumerate}
 	\item $\lim_{k \rightarrow \infty} f_k (x) = f(x)$ existiert und $\forall x \in X\backslash N$ mit $\mu(N) =0$
-	\item Mit $f(x) = 0$ $\forall x \in N$ folgt $f \in L^p(\mu)$
+	\item Mit $f(x) = 0\quad \forall x \in N$ folgt $f \in L^p(\mu)$
 	\item $\|f-f_k\|_{L^p} \rightarrow 0$
 \end{enumerate}
 \end{Lemma}
@@ -1495,7 +1498,7 @@ $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Dann gilt:
 \begin{Definition}
 Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \underline{Produktmaß} $\alpha_1 \times ... \times \alpha_n$ einer Menge $E \subset X_1 \times ... \times X_n$ ist definiert durch
 \begin{center}
-	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\Set{ \sum\limits_{j=1}^\infty \lambda(P_j) | P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j }$
+	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\left\{ \sum\limits_{j=1}^\infty \lambda(P_j): P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j \right\}$
 
 \end{center}
 \end{Definition}
@@ -1593,7 +1596,7 @@ $=: \alpha_{n-1} A_n$  \\
 \par\bigskip
 $A_n = \int\limits_0^\pi \sin^n \theta\, d\theta$
 \par\bigskip
-$\rightarrow A_n = \dfrac{n-1}{n} A_{n-2}$ $\forall n \geq 2$,
+$\rightarrow A_n = \dfrac{n-1}{n} A_{n-2}\quad \forall n \geq 2$,
 \par\bigskip
  $A_0 = \pi, A_1 = 2..$
  \par\bigskip
@@ -1658,6 +1661,16 @@ $f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ s
 \end{center}
 \end{Satz}
 
+%Lemma III.3
+\begin{Lemma}
+$f \in \mathscr C^1_C(\mathbb R^n), \, g\in \mathscr C^1(\mathbb R^n) \Rightarrow \int_{\mathbb R^n}g\, dx = - \int_{\mathbb R^n}f \partial_j g\, dx$ \\
+$\varrightwavearrow x \in \mathscr C^1(\mathbb R^n, \mathbb R^n):$
+\begin{center}
+	%$\nabla$
+	$\int <\largetriangledown f, x>\, ds = - \int f\, dv(x) \,dx$
+\end{center}
+\end{Lemma}
+
 \newpage
 
 %neues Jahr, Freude:
@@ -1709,10 +1722,10 @@ für $f$ stetig und $[a, b] \subset I$. \\
 
 \emph{1. Fall}: $\Phi(a) < \Phi(b)$ \\
 $\alpha = \min{\{\Phi(a), \Phi(b)\}}, \beta = \max{\{\Phi(a), \Phi(b)\}} $ \\
-$\Rightarrow \alpha = \Phi(a)$ und $\beta = \Phi(b)$ und $\Phi'(s) \geq 0$ $\forall s$ \\
+$\Rightarrow \alpha = \Phi(a)$ und $\beta = \Phi(b)$ und $\Phi'(s) \geq 0\quad \forall s$ \\
 
 \emph{2. Fall}: $\Phi(b) > \Phi(a)$ \\
-$\Rightarrow \alpha= \Phi(b)$ ung $\beta = \Phi(a)$ und $\Phi'(s) \leq 0$ $\forall s$
+$\Rightarrow \alpha= \Phi(b)$ ung $\beta = \Phi(a)$ und $\Phi'(s) \leq 0\quad \forall s$
 \begin{center}
 	$\Rightarrow \int\limits_a^b f(\Phi(s))|\Phi'(s)|\, ds = \int\limits_a^b f(s)\, ds$
 \end{center}
@@ -1730,7 +1743,7 @@ wobei $\|y-x\|_\infty = \max_{i = 1, .. n} |x^{i} - y^{i}|$
 \begin{Lemma}
 Sei $U \subset \mathbb R^n$ offen, $x_0 \in U$. \\
 $\Phi: U \rightarrow \mathbb R^n$ differenzierbar in $x_0$ und $D\phi(x) \in GL_n(\mathbb R^n)$. \\
-Sei $Q_j = Q(x_i, l_j)$ gegeben mit $x_i \rightarrow x_0$ und $l_j \rightarrow 0$ für $x_0 \in Q_j$ $\forall j$
+Sei $Q_j = Q(x_i, l_j)$ gegeben mit $x_i \rightarrow x_0$ und $l_j \rightarrow 0$ für $x_0 \in Q_j\quad \forall j$
 \begin{center}
 	$\Rightarrow  \limsup_{j \rightarrow \infty} \dfrac{L^n(\phi(Q_j))}{L^n(Q_j)} \leq \left| \det (D\phi(x_0))\right|$
 \end{center}
@@ -1763,7 +1776,7 @@ $g \in (g_{ij})$,
 \end{center}
 $\varrightwavearrow g$ symmetrisch und strikt positiv definit:
 \begin{center}
-	$\langle g(x)v, v\rangle = |D\Phi(x)v|^2 > 0$ $\forall x \in U, v \in \mathbb R^n\backslash \{0\}$
+	$\langle g(x)v, v\rangle = |D\Phi(x)v|^2 > 0\quad \forall x \in U, v \in \mathbb R^n\backslash \{0\}$
 \end{center}
 $\varrightwavearrow g^{(x)}$ ist invertierbar;
 $(g^{ij}$ meint Inverses$)$ \\
@@ -1815,13 +1828,13 @@ $\varrightwavearrow V = v(x, y, z) \varrightwavearrow u(r, \theta, \phi) = v(r\s
 \begin{Definition}
 Sei $U \subset \mathbb R^n$ offen. Eine Abbildung $f \in \mathscr C^1(U, \mathbb R^{n+k})$ heißt \underline{Immersion}, falls gilt:
 \begin{center}
-	$ rang D f(x) = n \Leftrightarrow ker D f(x) = \{0\}$ $\forall x \in U$
+	$ rang D f(x) = n \Leftrightarrow ker D f(x) = \{0\}\quad \forall x \in U$
 \end{center}
 \end{Definition}
 
 %Bsp.
 \begin{Beispiel}
-$\gamma: [0, 1] \rightarrow \mathbb R^2$ mit $\gamma'(t) \ne 0$ $\forall t \in [0,1]$
+$\gamma: [0, 1] \rightarrow \mathbb R^2$ mit $\gamma'(t) \ne 0\quad \forall t \in [0,1]$
 \end{Beispiel}
 
 %Bem.
@@ -1832,7 +1845,7 @@ $g= (g_{ij}), g_{ij}(x) = <\partial_i f(x), \partial_j f(x)>$ \\
 Tatsächlich ist $(g_{ij})$ für eine beliebige Abbildung $f \in \mathscr C^1(U, \mathbb R^{n+k})$ definiert und positiv semi-definit. $<g(x)v, v> = |Df(x)v|^2 \geq 0$ \\
 $g$ ist strikt positiv definit und damit invertierbar, falls
 \begin{center}
-	$|Df(x)v|^2 > 0$ $\forall v \in \mathbb R^n \backslash \{0\} \Leftrightarrow f$ Immersion
+	$|Df(x)v|^2 > 0\quad \forall v \in \mathbb R^n \backslash \{0\} \Leftrightarrow f$ Immersion
 \end{center}
 Es gilt: $ker g(x) = ker Df(x)$
 \end{Bemerkung}
@@ -1848,24 +1861,48 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 
 %Formatierung
 %Klausurrelevante Beispiele
+
+
 \begin{Beispiel}
 \begin{enumerate}
-	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$ $\varrightwavearrow \phi'(t) \ne 0 \, \forall t\in I \varrightwavearrow \phi$ Immersion \\
-	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ \\
-	$J\phi(t) = |\phi'(t)|$ \\
+	% 1)
+	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$ 
+	\par
+	$\varrightwavearrow \phi'(t) \ne 0 \quad \forall t\in I $
+	\par
+	$\varrightwavearrow \phi$ Immersion 
+	\par
+	$g(t) = <\phi'(t), \phi'(t) > = |\phi'(t)|^2$ 
+	\par
+	$J\phi(t) = |\phi'(t)|$ 
+	\par
 	$A_I(\phi) = \int_I |\phi'(t)|\, dt = L(\phi)$: Bodenlänge = eindimensionaler Flächeninhalt
 
-	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion \\
-	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$\\
+	% 2)
+	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion 
+	\par
+	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$
+	\par
 	$D\phi = (J_x \phi, J_y \phi)$ \\
+	
+	% 3)
+	\item $U \subseteq \mathbb R^2: \phi: U \rightarrow \mathbb R^3$ Immersion 
+	\par
+	$\varrightwavearrow J_x \phi, J_y \phi$ linear unabhängig auf $U$ $($reguläre Fläche$)$
+	\par
+	$D\phi = (J_x \phi, J_y \phi)$ 
+	\par
 	$g= (g_{ij}) =$
 	%Da fehlen Betragsstriche?
 	$\begin{pmatrix}
       		|Dx\phi|^2 & 	<J_x\phi, J_y\phi \\
       		<J_x\phi, J_y\phi> &  	|D_y\phi|^2 \\
-	\end{pmatrix}$ \\
-	$\varrightwavearrow J\phi = \sqrt{|\partial_x \phi|^2 |\partial_y \phi|^2 - <\partial_x\phi, \partial_y\phi>^2}$ $(= |\partial_x\phi \times \partial_y \phi|: $Vektor-Produkt$)$ \\
-	$U:= (0, \pi) \times (0, 2\pi), \phi(\theta, \Phi) = (\sin\theta\cos\Phi, \sin\theta\sin\Phi, \cos\theta)$ \\
+	\end{pmatrix}$ 
+	\par\bigskip
+	$\varrightwavearrow J\phi = \sqrt{|\partial_x \phi|^2 |\partial_y \phi|^2 - <\partial_x\phi, \partial_y\phi>^2}$ $(= |\partial_x\phi \times \partial_y \phi|: $Vektor-Produkt$)$ 
+	\par
+	$U:= (0, \pi) \times (0, 2\pi), \phi(\theta, \Phi) = (\sin\theta\cos\Phi, \sin\theta\sin\Phi, \cos\theta)$ 
+	\par
 	$\varrightwavearrow J\phi(\theta, \Phi) = \sin\theta, (g_{ij}) = $
 	$\begin{pmatrix}
 		1 & 0 \\
@@ -1875,23 +1912,51 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	%Bildchen
 
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \overequal{\text{Fubini}} \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
-	\
-	item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
+	
+	% 4)
+	\item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
 	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow \mathscr C(U)$ injektiv \\
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \overequal{\text{Satz 3.3}} \mathscr L^n(\phi(E)) \, \forall E \subseteq U \, \mathscr L^n$-messbar
 
+	% 5)
 	\item $U \subseteq \mathbb R^n, u \in \mathscr C^1(U, \mathbb R^k), m+k =n,\, \phi(x) := (x, u(x)), \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion \\
 	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> =
 	\delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ \\
+
+	
+	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \quad \overequal{\text{Fubini}} \quad \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
+	
+	% 6)
+	\item $\phi \in \mathscr C^1(U, \mathbb R^n), \, U \subseteq \mathbb R^n$, 
+	\par
+	$\phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \quad \forall x \in U$
+	\par
+	$\Leftrightarrow \phi$ ist lokaler Diffeomorphismus. 
+	\par
+	$J(\phi)= |\det D\phi|$ ist zusätzlich $\phi: U \rightarrow \mathscr C(U)$ injektiv 
+	\par
+	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \quad \overequal{\text{Satz 3.3}} \quad \mathscr L^n(\phi(E)) \quad \forall E \subseteq U \, \mathscr L^n$-messbar
+	
+	% 7)
+	\item $U \subseteq \mathbb R^n, \;u \in \mathscr C^1(U, \mathbb R^k), \, m+k =n,$
+	\par
+	$ \phi(x) := (x, u(x)), \, \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion 
+	\par
+	$g_{ij}(x) \quad = <\partial_i \phi(x), \partial_j \phi(x)> \quad=\quad <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> \quad$
+	\par
+	$= \quad \delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ 
+	\par
 	$g = (D\phi)^T D\phi = \underbrace{\mathbb E_{\mathbb R^m}}_{\text{Einheitsmatrix im }\mathbb R^m} + (Du)^TDu$  \\%mathbb E soll Einheitsmatrix, also mathbb 1 sein
-	$\Rightarrow A_E(\phi) = \int_E \sqrt{(\det(\mathbb E_{\mathbb R^m} +(Du)^TDu)}\,d\mathscr L^m \, \forall E \subseteq U\, \mathscr L^m$-messbar
+	\par\bigskip
+	$\Rightarrow A_E(\phi) = \int_E \sqrt{(\det(\mathbb E_{\mathbb R^m} +\; (Du)^TDu)}\,d\mathscr L^m \quad \forall E \subseteq U\, \mathscr L^m$-messbar
 \end{enumerate}
 \end{Beispiel}
 
+\par\bigskip
 \emph{Spezialfall: $k=1$} \\
 \emph{Behauptung}: Zu jedem Punkt $x \in U$ existiert eine Orthonormalbasis $v_1, ... , v_m$ mit:
 \begin{center}
-	$Du(x) v_1 = |Du(x)|, Du(x) v_j = 0\, \forall j \geq 2$
+	$Du(x) v_1 = |Du(x)|, \quad Du(x) v_j = 0\quad \forall j \geq 2$
 \end{center}
 
 
@@ -1899,14 +1964,14 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 \begin{Satz}
 Sei $\Phi \in \mathscr C^1(U, \tilde U)$ Diffeomorphismus. $U, \tilde U \subseteq \mathbb R^m$ und $\phi \in \mathscr C^1(\tilde U, \mathbb R^n)$ sei Immersion. Dann gilt:
 \begin{center}
-	$A_{\Phi(B)}(\phi) = A_B (\phi \circ \Phi) \, \forall B \subseteq U \, \mathscr L^n$-messbar
+	$A_{\Phi(B)}(\phi) = A_B (\phi \circ \Phi) \quad \forall B \subseteq U \, \mathscr L^n$-messbar
 \end{center}
 %Skript Seite 102 + Beweis (Sina), Bildchen vorhanden
 \end{Satz}
 
-%Satz IV:2
+%Satz IV,2
 \begin{Satz}
-$\phi_1, \phi_2$ wie oben, $M$ sein $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$. Dann sind $U_1 ', U_2 '$ offen in $\mathbb R^m$ und $\phi_2^{-1}\circ \phi_1$ ist $\mathscr C^1$-Diffeomorphismus.
+$\phi_1, \phi_2$ wie oben, $M$ sei $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$. Dann sind $U_1 ', U_2 '$ offen in $\mathbb R^m$ und $\phi_2^{-1}\circ \phi_1$ ist $\mathscr C^1$-Diffeomorphismus.
 \end{Satz}
 
 %Satz IV.3
@@ -1917,8 +1982,11 @@ Jede $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ kan
 %Def. IV.3
 \begin{Definition}
 \emph{injektive Immersion} \\
-Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit. Eine \underline{lokale Parametrisierung} von $M$ ist ein $\mathscr C^1$-Homomorphismus. \\
-$f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \, \forall x \in U$, wobei $U \subseteq \mathbb R^m$ offen ist.
+Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit. Eine \underline{lokale Parametrisierung} von $M$ ist ein $\mathscr C^1$-Homomorphismus. 
+\par\bigskip
+$f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \quad \forall x \in U$, 
+\par
+wobei $U \subseteq \mathbb R^m$ offen ist.
 \end{Definition}
 
 %Bem
@@ -1927,6 +1995,11 @@ $f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \,
 	\item $f: U \rightarrow M \, \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion $\Rightarrow f:U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus
 
 	\item $f: U \rightarrow ?$ injektive Immersion $\nRightarrow f: U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus.
+	\item $f: U \rightarrow M \quad \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion \\
+	$\Rightarrow f:U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus
+	
+	\item $f: U \rightarrow \,?\,$ injektive Immersion \\
+	$\nRightarrow f: U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus.
 \end{enumerate}
 \end{Bemerkung}
 
@@ -1942,7 +2015,8 @@ Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^
 %Satz IV.4
 \begin{Satz}
 Sei $M \subset \mathbb R^n$ \umgf. \,$ B \subset M$ heißt \underline{messbar}, falls $\phi^{-1}(B) \, L^m$-messbar ist für alle lokalen Parametrisierungen \\
- $\phi: \underbrace{U}_{\subset \mathbb R^m \text{ offen}} \rightarrow M$  \\
+ $\phi: \underbrace{U}_{\subset \mathbb R^m \text{ offen}} \rightarrow M$  
+ \par\bigskip
  Das System $M$ alles messbaren Teilmengen von $M$ ist eine $\sigma$-Algebra und enthält alle Borelmengen. Auf $M$ existiert genau ein Maß $\mu_M$, sodass für jede lokale Parametrisierung $\phi: U \rightarrow M$ und jede messbare Menge $B \subset \phi(U)$ gilt:
  \begin{center}
  	$\mu_M(B) = \int_{\phi^{-1}(B)} \partial \phi(X) \, d L^m(x)$
@@ -1959,13 +2033,14 @@ Sei $M \subset \mathbb R^n$ \umgf. $M \subset \bigcup\limits_{i=1}^\infty M_i$ d
 
 %Satz IV.6
 \begin{Satz}
-Sei $\lambda > 0, \, Q \in \mathscr O(n), a \in \mathbb R^n$ und $\tau: \mathbb R^n \rightarrow \mathbb R^n$, $\tau(p) = \lambda Q(p+a)$ \\
+Sei $\lambda > 0, \, Q \in \mathscr O(n), a \in \mathbb R^n$ und $\tau: \mathbb R^n \rightarrow \mathbb R^n$, $\tau(p) = \lambda Q(p+a)$ 
+\par
 Ist $M \subset \mathbb R^n$ \umgf $\Rightarrow \tau(M) =: N$ ist \umgf und für $\mu_m, \mu_N$ gilt:
 \begin{enumerate}
 	\item $A \subset M$ messbar $\Rightarrow \tau(A) \supset N$ messbar und $\mu_N (\tau(A)) = \lambda^m \mu_M (A)$
 	\item Ist $u: N \rightarrow \overline{\mathbb R}$ $\mu_M$-messbar $\Rightarrow u \circ \tau: M \rightarrow \overline{\mathbb R}$ $\mu_M$-messbar, und falls entweder $u \geq 0$ oder $u \mu_N$-intgrierbar ist, gilt:
 	\begin{center}
-		$\int_N u(q) \,d\mu_N(q) = \lambda^m \int_M u(\tau(p))\, \mu_M(p)$
+		$\int_N u(q) \,d\mu_N(q) = \lambda^m \int_M u(\tau(p))\, d\mu_M(p)$
 	\end{center}
 \end{enumerate}
 \end{Satz}
@@ -1973,7 +2048,7 @@ Ist $M \subset \mathbb R^n$ \umgf $\Rightarrow \tau(M) =: N$ ist \umgf und für 
 %Satz IV.7 Zwiebelformel
 \begin{Satz}
 \emph{Zwiebelformel}: \\
-Für $u \in L^n(\mathbb R^{n+1})$ ist $u|_{JB_r} \in L^1(\mu_{JB_r})$ für fast alle $r >0$ mit $JB_r:= JB_r(0)$ und es gilt:
+Für $u \in L^n(\mathbb R^{n+1})$ ist $u\lvert_{JB_r} \in L^1(\mu_{JB_r})$ für fast alle $r >0$ mit $JB_r:= JB_r(0)$ und es gilt:
 \begin{center}
 	$\int{\mathbb R^{n+1}} u(p) \, dL^{n+1}(p) = \int\limits_0^\infty \int_{JB_r} u(p) \,d\mu_{JB_r} \,dL^1(r) = \int\limits_0^\infty r^n \int_{S^n} u(rw)\,d\mu_{S^n}(u) \,dL^1(r)$
 \end{center}
@@ -1981,8 +2056,10 @@ Für $u \in L^n(\mathbb R^{n+1})$ ist $u|_{JB_r} \in L^1(\mu_{JB_r})$ für fast 
 
 %Bsp
 \begin{Beispiel}
-$u = \chi_{B_1}(0), \omega_n = \mu_{S^n} (S^n) $\\
-$L_{n+1} = \mathscr L^{n+1}(B_1(0)) = \int_{\mathbb R^{n+1}} \chi_{B_1}(0) \,dL^{n+1} = \int\limits_0^1 \mu_{JB_r}(JF_r) \,dL^1(r) = \int\limits_0^1 r^n \omega_n \, dL^1(r)   = \dfrac{\omega_n}{n+1}$ \\
+$u = \chi_{B_1}(0),\, \omega_n = \mu_{S^n} (S^n) $\\
+$L_{n+1} = \mathscr L^{n+1}(B_1(0)) = \int_{\mathbb R^{n+1}} \chi_{B_1}(0) \,dL^{n+1} = \int\limits_0^1 \mu_{JB_r}(JF_r) \,dL^1(r) = \int\limits_0^1 r^n \omega_n \, dL^1(r) $
+\par
+$= \dfrac{\omega_n}{n+1}$ \\
 $\omega_1 = 2\pi, \, \alpha_2 = \pi; \, \omega_2 = 4\pi \, \Rightarrow \alpha_3 = \dfrac{4}{3}\pi$
 \end{Beispiel}
 
