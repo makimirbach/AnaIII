@@ -441,7 +441,7 @@ $A$ $\mu$-messbar $\Leftrightarrow$ $\mu(S) = \mu(S \cap A) + \mu(S \backslash A
 \begin{Satz}
 Sei $\mathscr Q$ ein System von Teilmengen einer Menge $X$, das die leere Menge enthält und sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ mit $\lambda(\emptyset) = 0$.\\
 Definiere $\mu: P(X) \rightarrow [0, \infty]$ für beliebige $E \subset X$ durch \\
- $\mu(E) := \inf \left\lbrace \sum\limits_{i=1}^\infty \lambda(P_i) | P_i \in \mathscr Q \forall i, E \subset \bigcup\limits_{i=1}^\infty P_i \right\rbrace$ \\
+ $\mu(E) := \inf \Set{ \sum\limits_{i=1}^\infty \lambda(P_i) | P_i \in \mathscr Q \forall i, E \subset \bigcup\limits_{i=1}^\infty P_i }$ \\
 Dann ist $\mu$ äußeres Maß. $(\inf \emptyset = + \infty)$
 \end{Satz}
 
@@ -568,7 +568,7 @@ Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\
 \begin{Satz}
 $\lambda: R \rightarrow [0, \infty], {}R \subset P(X)$ (Prämaß auf Ring), $\forall {}E \subset X:$ \\
 \begin{center}
-$\mu(E):= inf\{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}\}$
+$\mu(E):= inf\Set{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}}$
 \end{center}
 ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußere Maß$)$
 \end{Satz}
@@ -641,7 +641,7 @@ $Q^n := \{Q \in \mathbb R^n: Q $ Quader$\}$ ist Halbring über $\mathbb R^n$
 
 %Satz I.16
 \begin{Satz}
-$\mathscr Q$ Halbring über $X$ und $\mathscr F := \{F = \bigcup\limits_{i=1}^k P_i, k \in \mathbb N, P_i \in \mathscr Q$ $\forall 1 \leq i \leq k\}$. Dann ist $\mathscr F$ der von $\mathscr Q$ erzeugte Ring.
+$\mathscr Q$ Halbring über $X$ und $\mathscr F := \Set{F = \bigcup\limits_{i=1}^k P_i, k \in \mathbb N, P_i \in \mathscr Q \quad \forall 1 \leq i \leq k}$. Dann ist $\mathscr F$ der von $\mathscr Q$ erzeugte Ring.
 \end{Satz}
 
 %Bsp.
@@ -731,7 +731,7 @@ Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\m
 Sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q$ über $X$. Sei $\mu: P(X) \rightarrow [0, \infty]$ das aus $\lambda$ konstruierte äußere Maß $($Satz I.7$)$ \\
 D.h.:
 \begin{center}
-	$\mu(E) := \inf\left\{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i \right\}$
+	$\mu(E) := \inf\Set{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i }$
 \end{center}
 Dann ist $\mu$ eine Fortsetzung von $\lambda$.
 \end{Satz}
@@ -795,8 +795,8 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 \begin{Lemma}
 	Für $E \subset \mathbb{R}^n$ gilt:
 	\begin{enumerate}
-		\item $\mathscr{L}^n(E) = inf\{\mathscr{L}^n(U) $ \, $|$ \, $U$ offen mit $E \subset{U}\}$
-		\item $\mathscr{L}^n(E) = sup\{\mathscr{L}^n(K) $ \, $|$ \, $K$ kompakt mit $K \subset{E}\}$,
+		\item $\mathscr{L}^n(E) = inf\Set{\mathscr{L}^n(U) | \text{U offen mit E} \subset{U}}$
+		\item $\mathscr{L}^n(E) = sup\Set{\mathscr{L}^n(K) | \text{K kompakt mit K} \subset{E}}$,
 			falls $E \in \mathscr{M}(\mathscr{L}^n)$
 	\end{enumerate}
 \end{Lemma}
@@ -851,7 +851,7 @@ Ein Maß $\mu$ auf $\mathbb R^n$ heißt \underline{translationsinvariant}, wenn 
 \begin{Beispiel}
 $\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus der Definition von $\mathscr L^n$. \\
 \begin{center}
-	$\mathscr L^n(E) = \inf\left\{ \sum vol^n(P_i) | P_i \in \mathscr Q, \,\bigcup\limits_{i=1}^\infty P_i \supset E \right\}$
+	$\mathscr L^n(E) = \inf\Set{ \sum vol^n(P_i) | P_i \in \mathscr Q, \,\bigcup\limits_{i=1}^\infty P_i \supset E }$
 \end{center}
 \end{Beispiel}
 
@@ -861,7 +861,7 @@ $\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus de
 \begin{Lemma}
 Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$
 \begin{center}
-	$\Rightarrow H = \left\{x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n\right\}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
+	$\Rightarrow H = \Set{ x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
 \end{center}
 \end{Lemma}
 
@@ -938,7 +938,7 @@ Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt: $\mat
 %Bsp Ellipsoid
 \begin{Beispiel}
 \emph{Ellipsoid} \\
-$\lambda_1, ..., \lambda_n = 0$, $E = \left\{ x \in \mathbb R^n | \left( \dfrac{x_1}{\lambda_1} \right)^2 + ... + \left (\dfrac{x_n}{\lambda_n}\right)^2 < 1 \right\}$ \\
+$\lambda_1, ..., \lambda_n = 0$, $E = \Set{ x \in \mathbb R^n | \left( \dfrac{x_1}{\lambda_1} \right)^2 + ... + \left (\dfrac{x_n}{\lambda_n}\right)^2 < 1 }$ \\
 Jetzt gilt: $E = \Lambda(\mathscr B_1(0))$, $\Lambda =$
 $\begin{pmatrix}
       \lambda_1 & 	 &	&	& 0 \\
@@ -1027,7 +1027,7 @@ Für $\phi, \psi \in \tau	^+(\mu)$ und $\alpha, \beta \in [0, \infty)$ gelten:
 %Def II.4
 \begin{Definition}
 Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb R} \mathscr A$-messbar. Ist $f: X \rightarrow [0, \infty]$, so setzen wir:
-$\int f d\mu := \sup\left\{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f\right\}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
+$\int f d\mu := \sup\Set{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
 
 Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von $f^+ = \max{f, 0}$ und $f^- = \max{-f, 0}$ wie eben definiert und nicht beide unendlich, so setzen wir: \\
 $\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ \\
@@ -1261,7 +1261,7 @@ $($Mehr Details heute 15:45 bei unserem Lieblingsübungsleiter$)$
 %Satz II.15
 \begin{Satz}
 Sei $f: I \rightarrow \mathbb R$ beschränkte Funktion auf $I = [a, b]$. Dann gilt: \\
-$f R$-integrierbar $\Leftrightarrow \mathscr L^1(\{x \in I | f $ ist nicht stetig in $x \}) = 0$ \\
+$f R$-integrierbar $\Leftrightarrow \mathscr L^1(\Set{x \in I | f \text{ ist nicht stetig in } x }) = 0$ \\
 In diesem Fall ist $f$ auch Lebesgue-integrierbar und die Integrale stimmen überein.
 \end{Satz}
 
@@ -1308,7 +1308,7 @@ $\Rightarrow F: U \rightarrow \mathbb R, F(x):= \int f(x, y) d\mu(y)$ ist $\math
 
 %Bsp.
 \begin{Beispiel}
-$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) =\{x| \phi(x) \ne 0\}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
+$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) =\Set{x| \phi(x) \ne 0}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
 %Was auch immer das ist. Also 'support'
 $\forall h$ Lebesgue-integrierbar ist \\
 $\phi \Asterisk h(x) = \int \phi(x-y)f(y) d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ ist \underline{glatt}
@@ -1327,7 +1327,7 @@ Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty
 	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & , p = \infty
 \end{cases}
 \end{equation}
-$L^p(\mu):= \{f \mu$-messbar mit $\|f\|_{L^p (\mu)} < \infty\}$ auf $L^p$ definieren die Äquivalenzrelation
+$L^p(\mu):= \Set{f \mu\text{-messbar mit }\|f\|_{L^p (\mu)} < \infty}$ auf $L^p$ definieren die Äquivalenzrelation
 \begin{center}
 	$f \sim g \Leftrightarrow f(x) = g(x)$ für $\mu$-fast alle $x$
 \end{center}
@@ -1495,7 +1495,7 @@ $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Dann gilt:
 \begin{Definition}
 Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \underline{Produktmaß} $\alpha_1 \times ... \times \alpha_n$ einer Menge $E \subset X_1 \times ... \times X_n$ ist definiert durch
 \begin{center}
-	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\left\{ \sum\limits_{j=1}^\infty \lambda(P_j): P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j \right\}$
+	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\Set{ \sum\limits_{j=1}^\infty \lambda(P_j) | P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j }$
 
 \end{center}
 \end{Definition}
