@@ -1517,35 +1517,52 @@ Es gilt
 \emph{Satz von Fubini} \\
 Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 \begin{enumerate}
-	\item $\forall S \subset X \times Y$ $\exists R \in \mathscr M(\mu \times \nu)$ mit $S \subset R$ und $(\mu \times \nu)(S) = (\mu \times \nu)(R)$
-
-	\item Für $A \in \mathscr M(\mu), B \in \mathscr M(\nu)$ ist $A \times B \in \mathscr M(\mu \times \nu)$ und $(\mu \times \nu)(A \times B) = \mu(A)\nu(B)$
-
+	\item $\forall S \subset X \times Y$ $\exists R \in \mathscr M(\mu \times \nu)$ mit $S \subset R$ und 
+	\begin{center}
+		$(\mu \times \nu)(S) = (\mu \times \nu)(R)$
+	\end{center}
+	\item Für $A \in \mathscr M(\mu), B \in \mathscr M(\nu)$ ist $A \times B \in \mathscr M(\mu \times \nu)$ und
+	\begin{center} 
+		$(\mu \times \nu)(A \times B) = \mu(A)\nu(B)$
+	\end{center}
 	\item Für $S \subset X \times Y$, $S \in \mathscr M(\mu \times \nu)$ und $S$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ 
-	$($d.h. $\exists S_n \subset X \times Y$ mit $\bigcup S_n = S$ und $(\mu \times \nu)(S_n) < \infty$ $\forall n)$. \\
-	Dann gilt: $S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, 
+	\par
+	$\left(\text{d.h.} \exists S_n \subset X \times Y \text{ mit }\bigcup S_n = S\text{ und }(\mu \times \nu)(S_n) < \infty \,\forall n\right)$. 
+	\par
+	Dann gilt: 
+	\par
+	$S_y := \{x: (x, y) \in S\}$ ist für $\nu$-fast alle $y \in Y$ in $\mathscr M(\mu)$, \\ 
 	$(y \mapsto \mu(S_y))$ ist $\mathscr M(\nu)$-messbar. \\
-	$S^x := \{y : (x, y) \in S\}$ ist für $\mu$-fast alle $x \in X$ in $\mathscr M(\nu)$, 
+	\par
+	$S^x := \{y : (x, y) \in S\}$ ist für $\mu$-fast alle $x \in X$ in $\mathscr M(\nu)$, \\
 	$(x \mapsto \nu(S^x))$ ist $\mathscr M(\mu)$-messbar und 
 	\begin{center}
 		$(\mu \times \nu)(S) = \int \mu(S_y)\, d\nu(y) = \int \nu(S^x) \, d\mu(x)$ \\
 	\end{center}
 	\emph{Prinzip von \underline{Cavalieri}}
 
-	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt: \\
-	$(x \mapsto f(x, y))$ ist für $\nu$-fast alle $y \in Y$ $\mathscr M(\mu)$-messbar. \\
-	$\left(y \mapsto \int f(x, y) \, d\mu(x)\right) $ ist $\mathscr M(\nu)$-messbar, \\
-	$(y \mapsto f(x, y))$ ist für $\mu$-fast alle $x \in X$ $\mathscr M(\nu)$-messbar, \\
+	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt: 
+	\par
+	$(x \mapsto f(x, y))$ ist für $\nu$-fast alle $y \in Y$ $\mathscr M(\mu)$-messbar. 
+	\par
+	$\left(y \mapsto \int f(x, y) \, d\mu(x)\right) $ ist $\mathscr M(\nu)$-messbar, 
+	\par
+	$(y \mapsto f(x, y))$ ist für $\mu$-fast alle $x \in X$ $\mathscr M(\nu)$-messbar, 
+	\par
 	$\left( x \mapsto \int f(x, y) \, d\nu(y)\right)$ ist $\mathscr M(\mu)$-messbar mit
 	\begin{center}
 		$\int f \, d(\mu \times \nu) = \int \left( \int f(x, y) \, d\mu(x) \right) \, d\nu(y) = \int \left( \int f(x, y) \, d\nu(y) \right) \, d\mu(x)$ \\
 	\end{center}
 	\emph{\underline{Tonelli}}
 
-	\item Für $f \in L^1(\mu \times \nu)$ gilt: \\
-	$(x \mapsto f(x, y)) \in L^1(\mu)$ für $\nu$-fast alle $y \in Y$, \\
-	$(y \mapsto \int f(x, y)\, d\mu(x)) \in L^1(\nu)$, \\
-	$(y \mapsto f(x, y)) \in L^1(\nu)$ für $\mu$-fast alle $x \in X$, \\
+	\item Für $f \in L^1(\mu \times \nu)$ gilt: 
+	\par
+	$(x \mapsto f(x, y)) \in L^1(\mu)$ für $\nu$-fast alle $y \in Y$, 
+	\par
+	$(y \mapsto \int f(x, y)\, d\mu(x)) \in L^1(\nu)$, 
+	\par
+	$(y \mapsto f(x, y)) \in L^1(\nu)$ für $\mu$-fast alle $x \in X$, 
+	\par
 	$(x \mapsto \int f(x, y) \, d\nu(y)) \in L^1(\mu)$ und
 	\begin{center}
 		$\int f \, d(\mu \times \nu) = \int \int f(x, y) \, d\mu(x)d\nu(y) = \int \int f(x, y) \, d\nu(y)d\mu(x)$
@@ -1632,8 +1649,10 @@ $($Es fehlt die Überdeckung von kompakten Intervallen, damit Riemann = Lebesgue
 \begin{Satz}
 $f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ sind integrierbar bezüglich $\mathscr L^n$. Dann gilt:
 \begin{center}
-	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$ \\
-	\emph{Notation}: $d\mathscr L^n = dx$ \\
+	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$ 
+	\par\bigskip
+	\emph{Notation}: $d\mathscr L^n = dx$ 
+	\par\bigskip
 	$\left(\int\limits_a^b f' \cdotp g \,dx = -\int\limits_a^b f\cdotp g' \, cx + [f\cdotp g]_{x=a}^{x=b} \right)$
 \end{center}
 \end{Satz}
