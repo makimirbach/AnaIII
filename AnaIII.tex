@@ -230,7 +230,7 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 
 %Bsp.
 \begin{Beispiel}
-$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k$) \textgreater $ \infty$ \\
+$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k) > \infty$ \\
 card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne 0 \lim_{k \rightarrow \infty} $card$ (A_k) = \infty$
 \end{Beispiel}
 
@@ -764,46 +764,74 @@ Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \quad \forall A \in R$, dann si
 
 
 \newpage
+
+
+
+
+
+
+
+
+
 %Kapitel 2
 
-\chapter{Das Lebesgue -Maß und -Integral}
-\section{Das Lebesgue-Maß}
+\chapter{Das Lebesgue - Maß und - Integral}
+\section{Das Lebesgue - Maß}
 
-Halbring $\mathscr{Q}^n$ Inhalt.\\
-$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
+Halbring $\mathscr{Q}^n$ \\
+Inhalt $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
 
 	Prämaß auf Halbring\\
-	$\Rightarrow$ \cara\; ist äußeres Maß auf $P(X)$.
+	$\Rightarrow$ \cara\, ist äußeres Maß auf $P(X)$.
 
+%Lemma II.1
 \begin{Lemma}
 	$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
 \end{Lemma}
 
+%Def II.1
 \begin{Definition}
-	Das \underline{(äußere) Lebesguemaß} einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
-	$ \mathscr{L}^n(E) := inf \Set{ \sum_{i = 1}^{\infty} vol^n(P_i) | P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i }$
+	Das \underline{(äußere) Lebesgue - Maß} einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
+	$ \mathscr{L}^n(E) := \inf \Set{ \sum_{i = 1}^{\infty} vol^n(P_i) | P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i }$
 \end{Definition}
 
+%Bem
+\begin{Bemerkung}
+$\mathscr L^n$ ist reguläres äußeres Maß auf $P(\mathbb R^n)$. \\
+$\mathscr L^n \vert_{\mu(\mathscr L^n)}$ ist vollständiges Maß.
+\end{Bemerkung}
+
+\par
+\emph{Notation}: 
+\begin{center}
+	$E \in \mathscr M(\mathscr L^n) \Leftrightarrow E$ ist Lebesgue-messbar $\Leftrightarrow E$ ist $\mathscr L^n$-messbar.
+\end{center}
+\par
+
+%Satz II.1
 \begin{Satz}
 	Für $\mathscr{L}^n$ auf $\mathbb{R}^n$ gilt:
 	\begin{enumerate}
-		\item $\mathscr{B}^n \subset \mathscr{M}(\mathscr{L}^n)$ $($Alle Borelmengen sind $\mathscr{L}^n$-messbar.$)$
+		\item $\mathscr{B}^n \subset \mathscr{M}(\mathscr{L}^n)$ \quad $($Alle Borelmengen sind $\mathscr{L}^n$-messbar.$)$
 		\item Zu $E \subset \mathbb{R}^n$ existiert $B \in \mathscr{B}$ mit $E \subset B$
 			und $\mathscr{L}^n(B) = \mathscr{L}^n(E)$
 		\item $\mathscr{L}^n(K) < \infty$ \, $\forall K \subset \mathbb{R}^n kompakt.$
 	\end{enumerate}
 \end{Satz}
 
+%Lemma II.2
 \begin{Lemma}
 	Für $E \subset \mathbb{R}^n$ gilt:
 	\begin{enumerate}
-		\item $\mathscr{L}^n(E) = inf\Set{\mathscr{L}^n(U) | \text{U offen mit E} \subset{U}}$
-		\item $\mathscr{L}^n(E) = sup\Set{\mathscr{L}^n(K) | \text{K kompakt mit K} \subset{E}}$,
+		\item $\mathscr{L}^n(E) = \inf\Set{\mathscr{L}^n(U) | \text{U offen mit E} \subset{U}}$
+		\item $\mathscr{L}^n(E) = \sup\Set{\mathscr{L}^n(K) | \text{K kompakt mit K} \subset{E}}$,
 			falls $E \in \mathscr{M}(\mathscr{L}^n)$
 	\end{enumerate}
 \end{Lemma}
 
+
+%Satz II.2
 \begin{Satz}
 	$D \subset \mathbb{R}^n$ ist genau dann $\mathscr{L}^n$-messbar, wenn eine der folgenden Bedingungen gilt:
 	\begin{enumerate}
@@ -819,7 +847,7 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 %Satz II.3: Luisin
 \begin{Satz}
 \emph{Luisin}: \\
-Sei $A \subset \mathbb R^n$ offen mit $\mathscr L^n(A) < + \infty$. $f$ sei $\mathscr L^n|_A$-messbar mit Werten in $\mathbb R$. \\
+Sei $A \subset \mathbb R^n$ offen mit $\mathscr L^n(A) < + \infty$. $f$ sei $\mathscr L^n\vert_A$-messbar mit Werten in $\mathbb R$. \\
 Für alle $\epsilon > 0$ existiert $\kappa = \kappa_\epsilon \subset A$ kompakt mit
 \begin{enumerate}
 	\item $\mathscr L^n(A \backslash \kappa) < \epsilon$
@@ -845,7 +873,7 @@ $\mathscr L^n$ $($Satz II.1$) \varrightwavearrow \, \mathscr L^n|_E$, $E \subset
 \end{Beispiel}
 
 \emph{Notation}: \\
-Ein Maß $\mu$ auf $\mathbb R^n$ heißt \underline{translationsinvariant}, wenn mit $E + a = \{x +a | x \in E\}$ gilt:
+Ein Maß $\mu$ auf $\mathbb R^n$ heißt \underline{translationsinvariant}, wenn mit $E + a = \Set{x +a | x \in E}$ gilt:
 \begin{center}
 	$\mu(E+a) = \mu(E) \quad \forall E \subset \mathbb R^n, a \in \mathbb R^n$
 \end{center}
@@ -864,7 +892,7 @@ $\mathscr L^n$, denn $vol^n$ ist translationsinvariant und der Rest folgt aus de
 \begin{Lemma}
 Sei $\mu$ tranlationsinvariantes Borelmaß auf $\mathbb R^n$
 \begin{center}
-	$\Rightarrow H = \Set{ x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n}$, $c \in \mathbb R$, ist $\mu$-Nullmenge.
+	$\Rightarrow H = \Set{ x \in \mathbb R^n | x_i = c \text{ für ein } 1\leq i \leq n}$, $c \in \mathbb R$ , ist $\mu$-Nullmenge.
 \end{center}
 \end{Lemma}
 
@@ -891,7 +919,7 @@ $\mathscr H^n = \mathscr L^n$ $(($sehr$)$ bisschen schwierig$)$
 
 %Lemma II.4
 \begin{Lemma}
-Sei $U \subset \mathbb R^n$ offen unf $f: U \rightarrow \mathbb R^n$ Lipschitz-stetig mit Konstante $L$ bzgl $\|x\|_\infty := \max_{1 \leq i \leq n} |x_i |$. Dann gilt:
+Sei $U \subset \mathbb R^n$ offen und $f: U \rightarrow \mathbb R^n$ Lipschitz-stetig mit Konstante $L$ bzgl $\|x\|_\infty := \max_{1 \leq i \leq n} |x_i |$. Dann gilt:
 \begin{center}
 	$\mathscr L^n(f(E)) \leq L^n \mathscr L^n (E)\quad \forall E \subset U$
 \end{center}
@@ -930,10 +958,13 @@ $\forall S \in GL(n)$ $\exists$ Diagonalmatrix $\Lambda$ mit Einträgen $\lambda
 \end{Lemma}
 
 
-%Satz II.7
+%Satz II.7 Lineare Transformationsformel
 \begin{Satz}
 \emph{Lineare Transformationsformel} \\
-Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt: $\mathscr L^n(S(E)) = |\det S| \mathscr L^n(E)$ $\forall E \subset \mathbb R^n$
+Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt: 
+\begin{center}
+	$\mathscr L^n(S(E)) = \vert\det S \vert \cdotp \mathscr L^n(E) \quad \forall E \subset \mathbb R^n$
+\end{center}
 \end{Satz}
 
 
@@ -942,15 +973,15 @@ Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt: $\mat
 \begin{Beispiel}
 \emph{Ellipsoid} \\
 $\lambda_1, ..., \lambda_n = 0$, $E = \Set{ x \in \mathbb R^n | \left( \dfrac{x_1}{\lambda_1} \right)^2 + ... + \left (\dfrac{x_n}{\lambda_n}\right)^2 < 1 }$ \\
-Jetzt gilt: $E = \Lambda(\mathscr B_1(0))$, $\Lambda =$
+Jetzt gilt: $E = \Lambda(\mathscr B_1(0))$,\; $\Lambda =$
 $\begin{pmatrix}
       \lambda_1 & 	 &	&	& 0 \\
       		 &  	\ddots \\
 		 &	& \ddots \\
 		 &	&	& \ddots \\
 		 0 &	&	&	&	\lambda_n
-\end{pmatrix}$
-$\Rightarrow \mathscr L^n(E) = (\lambda_1 \cdotp ... \cdotp \lambda_n)\mathscr L^n(\mathscr B_1(0))$
+\end{pmatrix}$ \\
+$\Rightarrow \mathscr L^n(E) = (\lambda_1 \cdotp ... \cdotp \lambda_n) \cdotp \mathscr L^n(\mathscr B_1(0))$
 \end{Beispiel}
 
 
@@ -961,22 +992,42 @@ $\exists S \subset [0, 1]$, die nicht $\mathscr L^1$-messbar ist. Auf $[0, 1]$ g
 \begin{center}
 	$x \sim y \Leftrightarrow x - y \in \mathbb Q$
 \end{center}
-Auswahlaxiom: $\exists$ Repräsentantensystem $S \subset [0, 1]$ für $\sim$, d.h. $\forall y \in [0, 1]$ $\exists! x \in S: x \sim y$ \\
-Sei jetzt $q_1, q_2, ...$ eine Abzählung von $\mathbb Q \cap [-1, 1]$. Dann gilt: $(q_j + S) \cap (q_k +S)  \emptyset \quad \forall j \ne k$ \\
-$($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x_2 = q_k -q_j \in \mathbb Q \Rightarrow x_1 \sim x_2  \Rightarrow x_1 = x_2 \Rightarrow q_j = q_k $\blitzd $ )$ \\
+Auswahlaxiom: $\exists$ Repräsentantensystem $S \subset [0, 1]$ für $\sim$, d.h. 
+\begin{center}
+	$\forall y \in [0, 1]$ $\exists! x \in S: x \sim y$ 
+\end{center}
+Sei jetzt $q_1, q_2, ...$ eine Abzählung von $\mathbb Q \cap [-1, 1]$. Dann gilt: 
+\begin{center}
+	$(q_j + S) \cap (q_k +S)  \emptyset \quad \forall j \ne k$ 
+\end{center}
+$($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x_2 = q_k -q_j \in \mathbb Q$
+$ \Rightarrow x_1 \sim x_2  \Rightarrow x_1 = x_2 \Rightarrow q_j = q_k $\blitzd $ )$ \\
 
 \emph{Behauptung:} $[0, 1]$ $\underbrace{\subset}_{1)}$ $\bigcup\limits_{k=1}^\infty
  (q_k + S) \subset [-1, 2]$ \\
- Zu $1)$: zu $y \in (0, 1)$ existiert $x \in S: y - x = q \in \mathbb Q \cap [-1, 1] \Rightarrow$ $\exists k: y \in q_k + S$ \\
-\emph{Annahme:} $S$ ist $\mathscr L^1$-messbar mit $\mathscr L^1(S) = \mathscr L^1(q + S)\quad \forall q \in \mathbb Q$ folgt: $\sum\limits_{k=1}^\infty \mathscr L^1(S) = \sum\limits_{k=1}^\infty \mathscr L^1(q_k + S) \underbrace{=}_ {\text{Satz I.10}} \mathscr L^1\left(\bigcup\limits_{k=1}^\infty (q_k + S) \right) \in (1, 3]$ \blitzd
+ Zu $1)$: zu $y \in (0, 1)$ existiert $x \in S: $
+ \begin{center}
+	 $y - x = q \in \mathbb Q \cap [-1, 1] \Rightarrow$ $\exists k: y \in q_k + S$ 
+\end{center}
+
+\emph{Annahme:} $S$ ist $\mathscr L^1$-messbar mit $\mathscr L^1(S) = \mathscr L^1(q + S)$\\
+$\forall q \in \mathbb Q$ folgt: 
+\begin{center}
+	$\sum\limits_{k=1}^\infty \mathscr L^1(S) = \sum\limits_{k=1}^\infty \mathscr L^1(q_k + S) \underbrace{=}_ {\text{Satz I.10}} \mathscr L^1\left(\bigcup\limits_{k=1}^\infty (q_k + S) \right) \in (1, 3]$ \blitzd
+\end{center}
 \end{Beispiel}
 
 
+
+%II.2 : LEBESGUE-INTEGRAL
 \section{Lebesgue-Integral}
 %Def II.3
 \begin{Definition}
-$(X, \mathscr A)$ messbarer Raum. Eine Funktion $\phi: X \rightarrow \mathbb R$ heißt \underline{$\mathscr A$-Treppenfunktion} $(\mathscr A$-TF$)$, falls sie $\mathscr A$-messbar ist und nur endlich vielen FUnktonswerte annimmt. Nach Satz I.4 ist die Menge $\tau_ \mathscr A$ der $\mathscr A$-TF ein $\mathbb R$-Vektorraum. \\
-Nun setzte $\tau_\mathscr A^+ := \left\{\phi\in \tau_\mathscr A: \phi \geq\right\}$
+$(X, \mathscr A)$ messbarer Raum. Eine Funktion $\phi: X \rightarrow \mathbb R$ heißt \underline{$\mathscr A$-Treppenfunktion} $(\mathscr A$-TF$)$, falls sie $\mathscr A$-messbar ist und nur endlich vielen Funktonswerte annimmt. Nach Satz I.4 ist die Menge $\tau_ \mathscr A$ der $\mathscr A$-TF ein $\mathbb R$-Vektorraum. \\
+Nun setze: 
+\begin{center}
+	$\tau_\mathscr A^+ := \left\{\phi\in \tau_\mathscr A: \phi \geq\right\}$
+\end{center}
 \end{Definition}
 
 
@@ -989,13 +1040,13 @@ $E \subset X$ \\
 		1 &, x \in E \\
 		0 & , x \notin E
 	\end{cases}
-	\in \tau_\mathscr A^+ \Leftrightarrow E \in \mathscr A
+	\in \tau_\mathscr A^+ \quad \Leftrightarrow \quad E \in \mathscr A
 \end{equation}
 \end{Beispiel}
 
 %Satz II.8
 \begin{Satz}
-Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \geq ...$ und
+Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \leq ...$ und
 \begin{center}
 	$\lim_{k \rightarrow \infty} f_k(x) = f(x) \quad \forall x\in X$
 \end{center}
@@ -1006,16 +1057,21 @@ Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $
 
 
 %Absatz
+\par\bigskip
 
-
-\emph{komische Vorbemerkung?}
+\emph{komische Vorbemerkung?}\\
 $(X, \mathscr A)$ messbarer Raum \\
 $\rightarrow \mathscr A-TF$ \\
 $\rightarrow \tau_\mathscr A ^+ = \left\{\phi \in \tau_\mathscr A | \phi \geq 0\right\}$ \\
-Jetzt $(X, \mathscr A, \mu)$ Maßraum. Neue Notation: \underline{$\tau^+ (\mu)$} statt $\tau_\mathscr A ^+$ \\
-Definiere für $\phi \in \tau+(\mu)$ mit Wertemenge $\{s_1, ... , s_l\} \subset [0, \infty)$ das \emph{Integral}: \\
-$I(\phi) = \sum\limits_{i=1}^l s_i \mu(\{\phi = s_i\}) \in [0, \infty]$
-
+Jetzt $(X, \mathscr A, \mu)$ Maßraum. \\
+Neue Notation: 
+\begin{center}	
+	\underline{$\tau^+ (\mu)$} statt $\tau_\mathscr A ^+$ 
+\end{center}	
+Definiere für $\phi \in \tau+(\mu)$ mit Wertemenge $\{s_1, ... , s_l\} \subset [0, \infty)$ das \emph{Integral}: 
+\begin{center}
+	$I(\phi) = \sum\limits_{i=1}^l s_i \mu(\{\phi = s_i\}) \in [0, \infty]$
+\end{center}
 
 %Lemma II.6
 \begin{Lemma}
@@ -1029,11 +1085,20 @@ Für $\phi, \psi \in \tau	^+(\mu)$ und $\alpha, \beta \in [0, \infty)$ gelten:
 
 %Def II.4
 \begin{Definition}
-Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb R} \mathscr A$-messbar. Ist $f: X \rightarrow [0, \infty]$, so setzen wir:
-$\int f d\mu := \sup\Set{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f}$ $(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
+Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb R}\; \mathscr A$-messbar. Ist $f: X \rightarrow [0, \infty]$, so setzen wir:
+\begin{center}
+	$\int f d\mu := \sup\Set{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f}$ 
+\end{center}
+$(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
 
-Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von $f^+ = \max{f, 0}$ und $f^- = \max{-f, 0}$ wie eben definiert und nicht beide unendlich, so setzen wir: \\
-$\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ \\
+Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von
+\begin{center}
+	$f^+ = \max \{f, 0\}$ und $f^- = \max\{-f, 0\}$ 
+\end{center}
+wie eben definiert und nicht beide unendlich, so setzen wir: 
+\begin{center}
+	$\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ 
+\end{center}
 $(f = f^+ - f^-)$ \\
 $($Das \underline{Lebesgue-Integral}!$)$
 \end{Definition}
@@ -1045,30 +1110,41 @@ Für $f \in \tau^+ (\mu)$ gilt: $\int f d\mu = I(f)$
 
 %Bsp.
 \begin{Beispiel}
-$\mathscr L^1$ auf $\mathbb R$; $\mathscr A = \mathscr M(\mathscr L^1), \chi_\mathbb Q \in \tau^+ (\mathscr L^1)$ \\
-$\mathbb Q \in \mathscr B^1$ $($Blatt 2$)$ \\
-$\int \chi_\mathscr Q d\mathscr L^1 = 0 \cdotp \mathscr L^1(\mathbb R \backslash \mathbb Q) + 1 \cdotp \mathscr L^1(\mathbb Q) = 0$
+$\mathscr L^1$ auf $\mathbb R$; $\mathscr A = \mathscr M(\mathscr L^1), \;\chi_\mathbb Q \in \tau^+ (\mathscr L^1)$ \\
+$\mathbb Q \in \mathscr B^1$ $($Blatt 2$)$ 
+\begin{center}
+	$\int \chi_\mathscr Q d\mathscr L^1 = 0 \cdotp \mathscr L^1(\mathbb R \backslash \mathbb Q) + 1 \cdotp \mathscr L^1(\mathbb Q) = 0$
+\end{center}
 \end{Beispiel}
 
 %Def II.5
 \begin{Definition}
-Eine Funktion $f: X \rightarrow \overline{\mathbb R}; ((X, \mathscr A, \mu)$ Maßraum$)$ heißt \underline{integrierbar bzgl. $\mu$}, wenn sie \underline{$\mathscr A$-messbar} ist und wenn gilt: \\
-$\int f d\mu \in \mathbb R$ $\Leftrightarrow$ $\int f^+ d\mu + \int f^- d\mu < \infty$
+Eine Funktion $f: X \rightarrow \overline{\mathbb R} \;((X, \mathscr A, \mu)$ Maßraum$)$ heißt \underline{integrierbar bzgl. $\mu$}, wenn sie \underline{$\mathscr A$-messbar} ist und wenn gilt: 
+\begin{center}
+	$\int f d\mu \in \mathbb R$ $\Leftrightarrow$ $\int f^+ d\mu + \int f^- d\mu < \infty$
+\end{center}
 \end{Definition}
 
 %Satz II.9
 \begin{Satz}
-Sei $(X, \mathscr A, \mu)$ Maßraum und $f, g: X \rightarrow \overline{\mathbb R}$ seien $\mathscr A$-messbar. Ist $f \leq g$ $\mu$-fast unendlich und $\int f d\mu > -\infty$, so existiert auch $\int g d\mu$ und es gilt: \\
-$\int f d\mu \leq \int g d\mu$ \\
-Analog:  Ist $f \geq g$ $\mu$-fast unendlich und $\int f d\mu < \infty$, so existiert auch $\int g d\mu$ und es gilt: \\
-$\int f d\mu \geq \int g d\mu$
+Sei $(X, \mathscr A, \mu)$ Maßraum und $f, g: X \rightarrow \overline{\mathbb R}$ seien $\mathscr A$-messbar. Ist $f \leq g$ $\mu$-fast unendlich und $\int f \, d\mu > -\infty$, so existiert auch $\int g \,d\mu$ und es gilt: 
+\begin{center}
+	$\int f d\mu \leq \int g \,d\mu$ 
+\end{center}
+Analog:  Ist $f \geq g$ $\mu$-fast unendlich und $\int f d\mu < \infty$, so existiert auch $\int g \,d\mu$ und es gilt: 
+\begin{center}
+	$\int f \,d\mu \geq \int g \,d\mu$
+\end{center}
 \end{Satz}
 
 %Bem.
 \begin{Bemerkung}
 Sei $\mu$ vollständiges Maß, $f$ $\mu$-messbar und $f = g$ $\mu$-fast überall \\
-$\xRightarrow{\text{Lemma I.5}} g$ $\mu$-messbar \\
-$\Rightarrow \int f d\mu = \int g d\mu$, falls einer der beiden existiert.
+$\xRightarrow{\text{Lemma I.5}} g$ $\mu$-messbar 
+\begin{center}
+	$\Rightarrow \int f d\mu = \int g d\mu$, 
+\end{center}
+falls einer der beiden existiert.
 \end{Bemerkung}
 
 %Lemma II.8: Tschebyscheff-Ungleichung
@@ -1100,7 +1176,11 @@ $f: X \rightarrow \overline{\mathbb R}$ sei $\mathscr A$-messbar.
 %Satz II.10 Satz von der monotonen Konvergenz von Beppo Levi
 \begin{Satz}
 \emph{Satz von der monotonen Konvergenz von Beppo Levi} \\
-Sei $(X, \mathscr A, \mu)$ Maßraum und $f_k: X \rightarrow [0, \infty]$ sei Folge $\mathscr A$-messbarer Funktionen mit $f_1 \leq f_2 \leq ...$ Definiere $f: [0, \infty]$ durch $f(x) = \lim_{k \rightarrow \infty} f_k (x)$. Dann gilt:
+Sei $(X, \mathscr A, \mu)$ Maßraum und $f_k: X \rightarrow [0, \infty]$ sei Folge $\mathscr A$-messbarer Funktionen mit $f_1 \leq f_2 \leq ...$ Definiere 
+\begin{center}
+	$f: [0, \infty]$ durch $f(x) = \lim_{k \rightarrow \infty} f_k (x)$. 
+\end{center}
+Dann gilt:
 \begin{center}
 	$\int f d\mu = \lim_{k\rightarrow \infty} \int f_k d\mu$
 \end{center}
@@ -1109,8 +1189,8 @@ Sei $(X, \mathscr A, \mu)$ Maßraum und $f_k: X \rightarrow [0, \infty]$ sei Fol
 
 %Bsp.
 \begin{Beispiel}
-$f_{\epsilon} (x) = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}(x)$
-$(\mathbb R, \mathscr M(\mathscr L^1), \mathscr L^1)$ Maßraum, $\epsilon > 0$, $f_\epsilon \, \mathscr M(\mathscr L^1)$-messbar.
+$f_{\epsilon} (x) = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}(x)$,
+$(\mathbb R, \mathscr M(\mathscr L^1), \mathscr L^1)$ Maßraum, $\epsilon > 0$, $f_\epsilon \; \mathscr M(\mathscr L^1)$-messbar.
 \begin{equation}
 	\lim_{\epsilon \searrow 0} f_\epsilon (x) = f_0 (x) =
 	\begin{cases}
@@ -1118,13 +1198,19 @@ $(\mathbb R, \mathscr M(\mathscr L^1), \mathscr L^1)$ Maßraum, $\epsilon > 0$, 
 		\infty & x = 0
 	\end{cases}
 \end{equation}
-$0 = \int f_0 \, d\mathscr L^1 \ne \lim_{\epsilon \rightarrow 0} \int f_\epsilon \, d\mathscr L^1$ $\overequal{\lim_{\epsilon \searrow 0}}$ $\dfrac{1}{2\epsilon} \mathscr L^1([-\epsilon, \epsilon]) =1$
+\begin{center}
+	$0 = \int f_0 \, d\mathscr L^1 \ne \lim_{\epsilon \rightarrow 0} \int f_\epsilon \, d\mathscr L^1$ $\overequal{\lim_{\epsilon \searrow 0}}$ $\dfrac{1}{2\epsilon} \mathscr L^1([-\epsilon, \epsilon]) =1$
+\end{center}
 \end{Beispiel}
 
 
 %Satz II.11
 \begin{Satz}
-$(X, \mathscr A, \mu)$ Maßraum. Für $\mathscr A$-messbare Funktionen $f, g: X \rightarrow \overline{\mathbb R} $ und $\alpha, \beta \in \mathbb R$ sei $\alpha\int f \, d\mu + \beta \int g \, d\mu$ in $\overline{\mathbb R}$ definiert. Dann ist $\alpha f + \beta g$ außerhalb einer $\mu$-Nullmenge $N$ definiert und mit $\alpha f + \beta g = 0$ auf $N$ gilt: \\
+$(X, \mathscr A, \mu)$ Maßraum. Für $\mathscr A$-messbare Funktionen $f, g: X \rightarrow \overline{\mathbb R} $ und $\alpha, \beta \in \mathbb R$ sei 
+\begin{center}
+	$\alpha\int f \, d\mu + \beta \int g \, d\mu$
+\end{center} 
+in $\overline{\mathbb R}$ definiert. Dann ist $\alpha f + \beta g$ außerhalb einer $\mu$-Nullmenge $N$ definiert und mit $\alpha f + \beta g = 0$ auf $N$ gilt: \\
 \begin{center}
 	$\int (\alpha f + \beta g) \, d\mu = \alpha \int f \, d\mu + \beta \int g \, d\mu$
 \end{center}
@@ -1141,14 +1227,18 @@ $f$ heißt \underline{auf $E$ integrierbar}, falls $f \chi_E$ integrierbar ist.
 
 %Bem.
 \begin{Bemerkung}
-$(f \chi_E)^\pm = f^\pm \chi_E \leq f^\pm$. $f$ integrierbar $\Rightarrow$ $f$ integrierbar auf $E$. \\
+$(f \chi_E)^\pm = f^\pm \chi_E \leq f^\pm$ 
+\par\bigskip
+$f$ integrierbar $\Rightarrow$ $f$ integrierbar auf $E$. 
+\par
 $f \geq 0$ $\Rightarrow$ $\int_E f \, d\mu$ existiert $\forall E \, \mathscr A$-messbar
 \end{Bemerkung}
 
 %Behauptung, zu der er dann noch lange Gedanken/Beweise aufgeschrieben hat. Aufschrieb aus verständlichen Gründen unvollständig, dreimal darfst du raten, wer da die Vorlesung gehalten hat.
-
+\par\bigskip
 \emph{Behauptung}: \\
 $\int_{\mathbb R^n \backslash \mathscr B_1 (0)} f \, d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$
+\par\bigskip
 %Das war dann der 30.11.
 
 
@@ -1160,41 +1250,73 @@ $\int_{\mathbb R^n \backslash \mathscr B_1 (0)} f \, d\mathscr L^n < \infty$ $\L
 %Viel Spaß, sollte das mal jemand Korrektur lesen müssen. Es hat auch super viel Spaß gemacht, das zu schreiben. 04.01.16 - Freude! :)
 \begin{Beispiel}
 $f: \mathbb R^n \rightarrow \mathbb R$, $f(x) = |x|^{-\alpha}, \alpha \in \mathbb R$ \\
-\emph{Behauptung:} $\int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ \\
-%das hier macht nicht so wirklich Sinn. Wieso über B oder ohne gleich??
-$\int\limits_{\mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ \\
-$A_k := \left\{x \in \mathbb R^n | 2^k \leq |x| < 2^{k+1}\right\}, k \in \mathbb Z$ \\
-$\bigcup\limits_{k \in \mathbb Z} A_k = \mathbb R^n\backslash\{0\}$ \\
+\emph{Behauptung:} 
+\begin{center}
+	$\int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$  \\	
+	%das hier macht nicht so wirklich Sinn. Wieso über B oder ohne gleich??
+	$\int\limits_{\mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ 
+\end{center}
+
+$A_k := \left\{x \in \mathbb R^n | 2^k \leq |x| < 2^{k+1}\right\}, k \in \mathbb Z$ 
+\par\bigskip
+$\bigcup\limits_{k \in \mathbb Z} A_k = \mathbb R^n\backslash\{0\}$ 
+\par\bigskip
 $g = \sum\limits_{k \in \mathbb Z} 2^{-k\alpha}\chi_{A_k}$ \\
-Es gilt: $2^{-\alpha}g \leq f \leq g\quad \forall \alpha \geq 0$ \\
-Auf $\mathbb R^n\backslash\{0\}: 2^{-\alpha}g \geq f\geq g\quad \forall \alpha < 0$ \\
-Sei $x \in A_k$ für ein $k \in \mathbb Z \Rightarrow 2^k \leq |x| \leq 2^{k+1}$ und $g(x) = 2^{-k\alpha}$ \\
-$\alpha \geq 0 \Rightarrow 2^{k\alpha} \leq |x|^\alpha \leq 2^{(k+1)\alpha} \Rightarrow |x|^{-\alpha} \geq 2^{-k\alpha - \alpha}, |x|^{-\alpha} \leq 2^{-k\alpha} = g(x) = 2^{-\alpha} g(x)$ \\
+Es gilt: 
+\begin{center}
+	$2^{-\alpha}g \leq f \leq g\quad \forall \alpha \geq 0$ 
+\end{center}
+Auf $\mathbb R^n\backslash\{0\}: $
+\begin{center}
+	$2^{-\alpha}g \geq f\geq g\quad \forall \alpha < 0$ 
+\end{center}
+Sei $x \in A_k$ für ein $k \in \mathbb Z \Rightarrow 2^k \leq |x| \leq 2^{k+1}$ und $g(x) = 2^{-k\alpha}$ 
+\par\bigskip
+$\alpha \geq 0 \Rightarrow 2^{k\alpha} \leq |x|^\alpha \leq 2^{(k+1)\alpha} \Rightarrow |x|^{-\alpha} \geq 2^{-k\alpha - \alpha}, $
+\par\bigskip
+$|x|^{-\alpha} \leq 2^{-k\alpha} = g(x) = 2^{-\alpha} g(x)$ 
+\par\bigskip
 Es reicht, die Behauptung für $g$ zu zeigen! \\
-Satz II.7: $\mathscr L^n(A_k) = 2^{kn}\underbrace{\mathscr L^n(A_0)}_{=: \nu_n \in (0, \infty)}$ \\
-$A_k = 2^k A_0$ \\
-Es ist weiter $\sum\limits_{k=0}^l 2^{-k\alpha}\chi_{A_k}$ $\underrightarrow{k \rightarrow \infty}$ $\sum\limits_{k=0}^\infty 2^{-k\alpha}\chi_{A_k} = g\chi_{\mathbb R^n \backslash \mathscr B_1(0)}$ punktweise und monoton. \\
+Satz II.7: 
+\begin{center}
+	$\mathscr L^n(A_k) = 2^{kn}\underbrace{\mathscr L^n(A_0)}_{=: \nu_n \in (0, \infty)}$  \\
+	$A_k = 2^k A_0$
+\end{center}
+Es ist weiter 
+\begin{center}
+	$\sum\limits_{k=0}^l 2^{-k\alpha}\chi_{A_k}$ $\underrightarrow{k \rightarrow \infty}$ $\sum\limits_{k=0}^\infty 2^{-k\alpha}\chi_{A_k} = g\chi_{\mathbb R^n \backslash \mathscr B_1(0)}$
+\end{center} 
+punktweise und monoton. \\
 Satz II.10 \\
-$\rightarrow \int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} g d\mathscr L^n = \int g\chi_{\mathbb R^n\backslash B_1(0)} d\mathscr L^n = \int \sum\limits_{k=1}^\infty 2^{-k\alpha}\chi_{A_k} d\mathscr L^n = \int \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l 2^{-k\alpha} \chi_{A_k} d\mathscr L^n$
-$\overequal{\text{Satz II.10}} \, \, \, \, \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l \int 2^{-k\alpha}\chi_{A_k} d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \int \chi_{A_k} d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \mathscr L^n (A_k)$ \\
+$\rightarrow \int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} g \,d\mathscr L^n = \int g\chi_{\mathbb R^n\backslash B_1(0)} \,d\mathscr L^n = \int \sum\limits_{k=1}^\infty 2^{-k\alpha}\chi_{A_k} \,d\mathscr L^n = \int \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l 2^{-k\alpha} \chi_{A_k} \,d\mathscr L^n$
+\par\bigskip
+$\overequal{\text{Satz II.10}} \quad \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l \int 2^{-k\alpha}\chi_{A_k} \,d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \int \chi_{A_k} \,d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \mathscr L^n (A_k)$ 
+\par\bigskip
 \begin{equation}
 = \sum\limits_{k=0}^\infty  \nu_n 2^{k(n-\alpha)} =
 \begin{cases}
-	\nu_n \cdotp \dfrac{1}{(1-2^{n-\alpha})} & , \alpha > n \\
-	\infty & , \text{sonst}
+	\nu_n \cdotp \dfrac{1}{(1-2^{n-\alpha})} & ,\,\alpha > n \\
+	\infty & , \text{ sonst}
 \end{cases}
 \end{equation}
 \begin{equation}
 \overline{g}(x) :=
 \begin{cases}
-	g(x) & \forall x \in \mathbb R^n \backslash \{0\} \\
-	\infty & x = 0
+	g(x) & ,\,\forall x \in \mathbb R^n \backslash \{0\} \\
+	\infty & ,\,x = 0
 \end{cases}
 \end{equation}
-$\xRightarrow{\alpha < 0} 2^{-\alpha}\overline{g} \geq f \geq g\quad \forall x \in \mathbb R^n$ \\
-$\alpha > 0: 2^{-\alpha}g \leq f \leq \overline g$ \\
-$\mathscr L^n$ ist ein \underline{vollständiges Maß} \\
-$\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} d\mathscr L^n = \int \overline g \chi_{\mathscr B_1(0)} d\mathscr L^n$
+\begin{center}
+	$\xRightarrow{\alpha < 0} \quad2^{-\alpha}\,\overline{g} \;\geq \;f \;\geq\, g\qquad \forall x \in \mathbb R^n$ 
+\end{center}
+\begin{center}
+	$\alpha > 0: \quad 2^{-\alpha}g \;\leq\; f \;\leq\; \overline g$ 
+\end{center}
+\par\bigskip
+$\mathscr L^n$ ist ein \underline{vollständiges Maß} 
+\begin{center}
+	$\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} \,d\mathscr L^n = \int \overline g \chi_{\mathscr B_1(0)}\, d\mathscr L^n$
+\end{center}
 \end{Beispiel}
 
 %Satz II.12
@@ -1202,15 +1324,25 @@ $\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} d\ma
 Sei $f: X \rightarrow \overline{\mathbb R}$ messbar, $(X, \mathscr A, \mu)$ Maßraum. Dann gelten:
 \begin{enumerate}
 	\item $f$ integrierbar $\Leftrightarrow$ $|f|$ integrierbar.
-	\item $\left| \int f d\mu \right| \leq \int |f| d\mu$, falls $\int f d\mu$ existiert.
-	\item Ist $g: X \rightarrow [0, \infty]$ $\mathscr A$-messbar mit $|f| \leq g$ $\mu$-fast überall und $\int g d\mu < \infty$ $\Rightarrow f$ ist integrierbar.
+	\item $\left| \int f \,d\mu \right| \leq \int |f| \,d\mu$, falls $\int f \,d\mu$ existiert.
+	\item Ist $g: X \rightarrow [0, \infty]$ $\mathscr A$-messbar mit $|f| \leq g$ $\mu$-fast überall und \\
+	$\int g \, d\mu < \infty$ $\Rightarrow f$ ist integrierbar.
 \end{enumerate}
 \end{Satz}
 
 %Bsp.
 \begin{Beispiel}
-$f: \mathbb R^n \rightarrow \mathbb R$ $\mathscr M(\mathscr L^n)$-messbar und es existiert $c \in [0, \infty)$ mit $|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathscr B_\epsilon (0)$ mit $\alpha < n$ \\
-Bzw. $|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathbb R^n \backslash \mathscr B_\mathbb R (0)$ mit $\alpha > n$ $\Rightarrow f$ ist auf $\mathscr B_\epsilon (0)$ bzw. $\mathbb R^n \backslash \mathscr B_\mathscr R (0)$ integrierbar $\mathscr L^n$.
+$f: \mathbb R^n \rightarrow \mathbb R$ $\mathscr M(\mathscr L^n)$-messbar und es existiert $c \in [0, \infty)$ mit 
+\begin{center}
+	$|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathscr B_\epsilon (0)$ mit $\alpha < n$ 
+\end{center}
+Bzw. 
+\begin{center}
+	$|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathbb R^n \backslash \mathscr B_\mathbb R (0)$ mit $\alpha > n$ 
+\end{center}
+\begin{center}
+	$\Rightarrow f$ ist auf $\mathscr B_\epsilon (0)$ bzw. $\mathbb R^n \backslash \mathscr B_\mathscr R (0)$ integrierbar $\mathscr L^n$.
+\end{center} 
 \end{Beispiel}
 
 
@@ -1220,7 +1352,11 @@ Bzw. $|f(x)| \leq c|x|^{-\alpha}$ $\mathscr L^n$-fast überall in $\mathbb R^n \
 %Satz II.13: Lemma von Fatou
 \begin{Satz}
 \emph{Lemma von Fatou} \\
-$(X, \mathscr A, \mu)$ Maßraum. Sei $f_k: X \rightarrow [0, \infty]$ Folge von $\mathscr A$-messbaren Funktionen. Für $f: X \rightarrow \overline{\mathbb R}, f(x) = \liminf_{k \rightarrow \infty} f_k (x)$ gilt: \\
+$(X, \mathscr A, \mu)$ Maßraum. Sei $f_k: X \rightarrow [0, \infty]$ Folge von $\mathscr A$-messbaren Funktionen. Für 
+\begin{center}
+	$f: X \rightarrow \overline{\mathbb R}, f(x) = \liminf_{k \rightarrow \infty} f_k (x)$
+\end{center}
+gilt: \\
 \begin{center}
 $\int f d\mu \leq \liminf_{k \rightarrow \infty} \int f_k d\mu$
 \end{center}
@@ -1231,9 +1367,15 @@ Bsp. $f_\epsilon = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}$
 %Satz II.14 Satz über majorisierte Konvergenz, Satz von Lebesgue
 \begin{Satz}
 \emph{Satz über majorisierte Konvergenz, Satz von Lebesgue} \\
-Sei $(X, \mathscr A, \mu)$ Maßruam und $f_1, f_2, ...$ Folge $\mathscr A$-messbarer Funktionen mit \\$f(x) := \lim_{k \rightarrow \infty} f_k (x)$ für $\mu$-fast alle $x \in X$. \\
-Es gebe eine integrierbare Funktion $($bzgl. $\mu)$ $g: X \rightarrow [0, \infty]$ mit \\
-$\sup_{k \in \mathbb N} |f_k (x)| \leq g(x)$ für $\mu$-fast alle $x \in X$. Dann ist $f$ integrierbar bzgl $\mu$ mit
+Sei $(X, \mathscr A, \mu)$ Maßruam und $f_1, f_2, ...$ Folge $\mathscr A$-messbarer Funktionen mit 
+\begin{center}
+	$f(x) := \lim_{k \rightarrow \infty} f_k (x)$ für $\mu$-fast alle $x \in X$. 
+\end{center}
+Es gebe eine integrierbare Funktion $($bzgl. $\mu)$ $g: X \rightarrow [0, \infty]$ mit 
+\begin{center}
+	$\sup_{k \in \mathbb N} |f_k (x)| \leq g(x)$ für $\mu$-fast alle $x \in X$. 
+\end{center}
+Dann ist $f$ integrierbar bzgl. $\mu$ mit
 \begin{center}
 $\int f d\mu = \lim_{k \rightarrow \infty} \int f_k d\mu$.
 \end{center}
@@ -1241,30 +1383,47 @@ $\int f d\mu = \lim_{k \rightarrow \infty} \int f_k d\mu$.
 
 %Bem.
 \begin{Bemerkung}
-Es gilt sogar: $\|f - f_k\|_{L^1(\mu)} = \int |f - f_k|d\mu$ $\underrightarrow{k \rightarrow \infty}$ $0$
+Es gilt sogar: 
+\begin{center}
+	$\|f - f_k\|_{L^1(\mu)} = \int |f - f_k| \,d\mu \quad \underrightarrow{k \rightarrow \infty} \quad 0$
+\end{center}
 \end{Bemerkung}
 
-\emph{Riemann-Integral}
+\par\bigskip
+\emph{Riemann-Integral}: \\
+
 Welche Funktionen sind $R$-integrierbar? \\
 $f: I:=[a, b] \rightarrow \mathbb R$ \\
-Sei $Z$ eine Unterteilung von $I$, d.h. $a=x_0\leq x_1 \leq ... \leq x_N = b$ in Teilintervalle $(x_{i-1}, x_i) \ni \xi_i$ \\
-$f$ ist $R$-integrierbar $\Leftrightarrow$ \\
-$S_{Z, \xi} (f) := \sum\limits_{i=1}^N f(\xi_i)(x_i - x_{i-1})$ konvergiert für $\Delta(Z) \rightarrow 0$ \\
+Sei $Z$ eine Unterteilung von $I$, d.h. 
+\begin{center}
+	$a=x_0\leq x_1 \leq ... \leq x_N = b$ in Teilintervalle $(x_{i-1}, x_i) \ni \xi_i$ 
+\end{center}
+\begin{center}
+	$f$ ist $R$-integrierbar $\quad \Leftrightarrow \quad S_{Z, \xi} (f) := \sum\limits_{i=1}^N f(\xi_i)(x_i - x_{i-1})$ konvergiert für $\Delta(Z) \rightarrow 0$ 
+\end{center}
 
 
 %Def. Das ist eine Definition ohne Nummer? Macht die die Nummerierung dann kaputt? Oder hat er die Nummer da nur vergessen? Ich denke, es ist nur eine Unterdef, also ohne die normale Nummerierung.
-\emph{Definition} \\
-$\overline{s_Z}(f) = \sum\limits_{i=1}^N (\sup f)(x_i  - x_{i-1})$ \underline{Obersumme} \\
+\emph{Definition}: \\
+\begin{center}
+	$\overline{s_Z}(f) = \sum\limits_{i=1}^N (\sup f)(x_i  - x_{i-1})$ \quad \underline{Obersumme} 
+\end{center}
 %in deinem Aufschrieb ist da noch ein [x_{i-1}, x_i) schräg unter dem sup. Was macht das da? 04.12.15, Seite k oben
-\underline{$s_Z$}$(f) = \sum\limits_{i=1}^N (\inf f)(x_i - x_{i-1})$ \underline{Untersumme} \\
+\begin{center}
+	\underline{$s_Z$}$(f) = \sum\limits_{i=1}^N (\inf f)(x_i - x_{i-1})$ \quad \underline{Untersumme} 
+\end{center}
 Es gilt:
-$\int\limits_a^b f(x) dx = s \Leftrightarrow \sup_z \underline{s_Z}(f) = \inf \overline{s_Z}(f) = s$ \\
+\begin{center}
+	$\int\limits_a^b f(x) dx = s \Leftrightarrow \sup_z \underline{s_Z}(f) = \inf \overline{s_Z}(f) = s$ 
+\end{center}
 $($Mehr Details heute 15:45 bei unserem Lieblingsübungsleiter$)$
 
 %Satz II.15
 \begin{Satz}
-Sei $f: I \rightarrow \mathbb R$ beschränkte Funktion auf $I = [a, b]$. Dann gilt: \\
-$f R$-integrierbar $\Leftrightarrow \mathscr L^1(\Set{x \in I | f \text{ ist nicht stetig in } x }) = 0$ \\
+Sei $f: I \rightarrow \mathbb R$ beschränkte Funktion auf $I = [a, b]$. Dann gilt: 
+\begin{center}
+	$f \;R$-integrierbar $\quad \Leftrightarrow\quad  \mathscr L^1(\Set{x \in I | f \text{ ist nicht stetig in } x }) = 0$ 
+\end{center}
 In diesem Fall ist $f$ auch Lebesgue-integrierbar und die Integrale stimmen überein.
 \end{Satz}
 
@@ -1279,9 +1438,15 @@ $X$ ein metrischer Raum, $\mu$ ein Maß auf $Y$, $f: X \times Y \rightarrow \mat
 \begin{enumerate}
 	\item $\forall x \in X:$ $f(x, \cdotp)$ integrierbar
 	\item $f(\cdotp, y)$ ist in $x_0$ für $\mu$-fast alle $y$ stetig.
-	\item $\exists g: Y \rightarrow \mathbb R^+$ integrierbar, $|f(x, y)| \leq g(y)\quad \forall y \in Y \backslash Nx$, $Nx$ $\mu$-Nullmenge
+	\item $\exists\, g: Y \rightarrow \mathbb R^+$ integrierbar: 
+		\begin{center}
+			$|f(x, y)| \leq g(y)\qquad \forall y \in Y \backslash Nx, \;Nx \;\mu$-Nullmenge
+		\end{center}
 \end{enumerate}
-$\Rightarrow F: X \rightarrow \mathbb R$, $F(x):= \int f(x, y) d\mu$ ist stetig in $x_0$.
+Dann gilt:
+\begin{center}
+	$\Rightarrow F: X \rightarrow \mathbb R, \quad F(x):= \int f(x, y) \,d\mu$ \quad ist stetig in $x_0$.
+\end{center}
 \end{Satz}
 
 %Satz II.17 Differentation unter den Integralzeichen
@@ -1291,10 +1456,14 @@ $I$ offenes Integral, $\mu$-Maß auf $Y$, $f: I \times Y \rightarrow \mathbb R$ 
 \begin{enumerate}
 	\item $f(x, \cdotp)$ integrierbar für alle $x \in I$
 	\item $f(\cdotp, y)$ ist in $x_0 \in I$ differenzierbar für $\mu$-fast alle $y$
-	\item $\dfrac{|f(x, y) - f(x_0, y)|}{|x - x_0|} \leq g(y)$ für alle $y \in Y \backslash Nx, \mu(Nx)= 0$ und $f$ ist $\mu$-integrierbar \\
+	\item $\dfrac{|f(x, y) - f(x_0, y)|}{|x - x_0|} \leq g(y)$ für alle $y \in Y \backslash Nx, \mu(Nx)= 0$ und
+	\par
+	 $f$ ist $\mu$-integrierbar \\
 \end{enumerate}
-$\Rightarrow F: I \rightarrow \mathbb R, F(x):= \int f(x, y)d\mu(y)$ ist in $x_0$ differenzierbar mit $ F'(x) = \int \dfrac{\partial f}{\partial x}(x_0, y) d\mu(y)$
-
+$\Rightarrow \quad F: I \rightarrow \mathbb R, \;F(x):= \int f(x, y)\, d\mu(y)$ ist in $x_0$ differenzierbar mit 
+\begin{center}
+	$ F'(x) = \int \dfrac{\partial f}{\partial x}(x_0, y) \,d\mu(y)$
+\end{center}
 \end{Satz}
 
 %Lemma II.10
@@ -1304,9 +1473,12 @@ Sei $U \subset \mathbb R^n$ offen, $\mu$ Maß auf $Y$, $f: U \times Y \rightarro
 	\item $f(x, \cdotp)$ ist $\mu$-integrierbar für alle $x$
 	\item $f(\cdotp, y)$ ist in $\mathscr C^1(U)$ für $\mu$-fast alle $y$.
 	%Was tut das D da? ist das ein Differentialsymbol? VL 07.12. Seite f
-	\item $|D_x f(x, y)| \leq g(y)$ für alle $x$ und $g$ integrierbar.
+	\item $|D_x f(x, y)| \leq g(y)$ für alle $x$ und $g$ integrierbar. \\
 \end{enumerate}
-$\Rightarrow F: U \rightarrow \mathbb R, F(x):= \int f(x, y) d\mu(y)$ ist $\mathscr C^1(U)$ mit $\dfrac{\partial F}{\partial x}(x) = \int \dfrac{\partial f}{\partial x}(x, y) d\mu(y)$
+$\Rightarrow \quad F: U \rightarrow \mathbb R, \;F(x):= \int f(x, y) d\mu(y)$ ist $\mathscr C^1(U)$ mit 
+\begin{center}
+	$\dfrac{\partial F}{\partial x}(x) = \int \dfrac{\partial f}{\partial x}(x, y) d\mu(y)$
+\end{center}
 \end{Lemma}
 
 %Bsp.
@@ -1314,7 +1486,9 @@ $\Rightarrow F: U \rightarrow \mathbb R, F(x):= \int f(x, y) d\mu(y)$ ist $\math
 $\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) = \Set{x| \phi(x) \ne 0}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
 %Was auch immer das ist. Also 'support'
 $\forall h$ Lebesgue-integrierbar ist \\
-$\phi \Asterisk h(x) = \int \phi(x-y)f(y) d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ ist \underline{glatt}
+\begin{center}
+	$\phi \Asterisk h(x) = \int \phi(x-y)f(y)\; d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ \quad\underline{glatt}
+\end{center}
 \end{Beispiel}
 
 %Def II.7 L^p-Raum
@@ -1326,15 +1500,21 @@ Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty
 \begin{equation}
 \|f\|_{L^p (\mu)} =
 \begin{cases}
-	\left( \int |f|^p d\mu\right) ^{\dfrac{1}{p}} & , \text{für } 1 \leq p < \infty \\
-	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & , p = \infty
+	\left( \int |f|^p d\mu\right) ^{\dfrac{1}{p}} & , \text{ für } 1 \leq p < \infty \\
+	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & ,\, p = \infty
 \end{cases}
 \end{equation}
-$L^p(\mu):= \Set{f \mu\text{-messbar mit }\|f\|_{L^p (\mu)} < \infty}$ auf $L^p$ definieren die Äquivalenzrelation
 \begin{center}
-	$f \sim g \Leftrightarrow f(x) = g(x)$ für $\mu$-fast alle $x$
+	$L^p(\mu):= \Set{f \, \mu\text{-messbar mit }\|f\|_{L^p (\mu)} < \infty}$
 \end{center}
-Definiere $L^p(\mu) := L^p(\mu) /_\sim$ \\
+auf $L^p$ definieren die Äquivalenzrelation
+\begin{center}
+	$f \sim g \quad \Leftrightarrow \quad f(x) = g(x)$ für $\mu$-fast alle $x$
+\end{center}
+Definiere 
+\begin{center}
+	$L^p(\mu) := L^p(\mu) /_\sim$ 
+\end{center}
 Häufig schreiben wir $\|f\|_{L^p}$ anstelle von $\|f\|_{L^p (\mu)}$
 \end{Definition}
 
@@ -1344,26 +1524,32 @@ $E \subset X$ $\mu$-messbar, $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messb
 \begin{equation}
 f_0(x) =
 \begin{cases}
-	f(x) & x \in E \\
-	0 & \text{sonst}
+	f(x) & ,\, x \in E \\
+	0 & \text{, sonst}
 \end{cases}
 \end{equation}
-$L^p(E) := \{f: E \rightarrow \overline{\mathbb R}, f_0 \in L^p(x)\}$ und $L^p(E, \mu) = L^p(E, \mu)/_\sim$
+\begin{center}
+	$L^p(E) := \Set{f: E \rightarrow \overline{\mathbb R} |f_0 \in L^p(x)}$
+\end{center}
+und
+\begin{center}
+	$L^p(E, \mu) = L^p(E, \mu)/_\sim$
+\end{center}
 \end{Definition}
 
 %Bem.
 %ist es komisch, dass ich den Sinn dieser Bemerkung nicht verstehe? Gehört in der ersten Gleichung villeicht das ^p weg?
 \begin{Bemerkung}
-$L(E, \mu) = L^p(\mu|_E)$ und $L^p(E, \mu) = L^p(\mu|_E)$
+$L(E, \mu) = L^p(\mu\vert_E)$ \quad und $ \quad L^p(E, \mu) = L^p(\mu\vert_E)$
 \end{Bemerkung}
 
 %Satz II.18
 \begin{Satz}
-Für $1 \leq p \leq \infty$ ist $(L^p(\mu),\, \|\cdotp\|_{L^p(\mu)})$ ein normierter Vektorraum. Insbesondere gilt: für $\lambda \in \mathbb R$, $f, g \in L^p(\mu)$:
+Für $1 \leq p \leq \infty$ ist $(L^p(\mu),\, \|\cdotp\|_{L^p(\mu)})$ ein normierter Vektorraum. Insbesondere gilt für $\lambda \in \mathbb R$, $f, g \in L^p(\mu)$:
 \begin{enumerate}
-	\item $\|f\|_{L^p} = 0 \Rightarrow f=0$ $\mu$-fast überall
-	\item $f \in L^p(\mu)$ und $\|\lambda f\|_{L^p} = |\lambda|\|f\|_{L^p}$
-	\item $f +g \in L^p(\mu)$ und $\|f + g\|_{L^p} \leq \|f\|_{L^p} + \|g\|_{L^p}$
+	\item $\|f\|_{L^p} = 0 \quad \Rightarrow\quad  f=0$ $\mu$-fast überall
+	\item $f \in L^p(\mu)$ \quad und\quad $\|\lambda f\|_{L^p} = |\lambda|\|f\|_{L^p}$
+	\item $f +g \in L^p(\mu)$ \quad und\quad  $\|f + g\|_{L^p} \leq \|f\|_{L^p} + \|g\|_{L^p}$
 \end{enumerate}
 
 %Lemma II.11 Youngsche Ungleichung
@@ -1381,7 +1567,7 @@ Für $1 < p, q < \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ gilt $\forall x, y \
 \emph{Höldersche Ungleichung} \\
 $f, g$ $\mu$-messbar, $1 \leq p, q \leq \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ \\
 \begin{center}
-	$\Rightarrow \left| \int f, g, d\mu\right| \leq \|f\|_{L^p}\|g\|_{L^p}$
+	$\Rightarrow \quad \left| \int f, g, d\mu\right| \leq \|f\|_{L^p}\|g\|_{L^p}$
 \end{center}
 \end{Satz}
 
@@ -1397,9 +1583,9 @@ $f, g \in L^p(\mu), 1 \leq p \leq \infty$ dann gilt:
 
 %Lemma II.12
 \begin{Lemma}
-Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$, falls $\sum\limits_{i=1}^\infty \|u_i\|_{L^p} < \infty$ dann gilt:
+Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$, falls $\sum\limits_{i=1}^\infty \|u_i\|_{L^p} < \infty$, dann gilt:
 \begin{enumerate}
-	\item $\lim_{k \rightarrow \infty} f_k (x) = f(x)$ existiert und $\forall x \in X\backslash N$ mit $\mu(N) =0$
+	\item $\lim_{k \rightarrow \infty} f_k (x) = f(x)$ existiert $\forall x \in X\backslash N$ mit $\mu(N) =0$
 	\item Mit $f(x) = 0\quad \forall x \in N$ folgt $f \in L^p(\mu)$
 	\item $\|f-f_k\|_{L^p} \rightarrow 0$
 \end{enumerate}
@@ -1426,29 +1612,56 @@ Konvergiert $\{f_k\}_k \subset L^p (\mu)$ gegen $f \in L^p$, dann existiert eine
 
 %Bsp
 \begin{Beispiel}
-für $n = 2^k + j$ definiere $f_n(x) = \chi_{\left[\dfrac{j}{2^k}, \dfrac{j+1}{2^k}\right]}$, $0 \leq j \leq 2^k$ \\
-Für $p \rightarrow \infty: \|f_n\|_{L^p(\mathscr L^1)} = L^1\left(\left[\dfrac{j}{1^k}, \dfrac{j+1}{2^k} \right] ^{\dfrac{1}{p}} \right) = 2^{-\dfrac{k}{p}} \rightarrow 0$, d.h. $f_n \rightarrow 0$ in $L^p(\mathscr L^1)$ \\
-Also $\forall x \in [0, 1]: \limsup_{n \rightarrow \infty} f_n (x) = 1$, d.h. $f_n$ konvergiert nicht punktweise fast überall. \\
+für $n = 2^k + j$ definiere 
+\begin{center}
+	$f_n(x) = \chi_{\left[\dfrac{j}{2^k}, \dfrac{j+1}{2^k}\right]}$, $0 \leq j \leq 2^k$ 
+\end{center}
+Für $p \rightarrow \infty: $
+\begin{center}
+	$\|f_n\|_{L^p(\mathscr L^1)} = L^1\left(\left[\dfrac{j}{1^k}, \dfrac{j+1}{2^k} \right] ^{\dfrac{1}{p}} \right) = 2^{-\dfrac{k}{p}} \quad \underrightarrow{p \rightarrow \infty} \quad  0$, 
+\end{center}
+d.h. 
+\begin{center}
+	$f_n \rightarrow 0$ in $L^p(\mathscr L^1)$ 
+\end{center}
+Also 
+\begin{center}
+	$\forall x \in [0, 1]: \limsup_{n \rightarrow \infty} f_n (x) = 1$,
+\end{center} 
+d.h. $f_n$ konvergiert nicht punktweise fast überall. \\
 mögliche Teilfolge $\{f_{2^k}\}_{k \in \mathbb N}$ konvergiert punktweise fast überall.
 \end{Beispiel}
 
 %Satz II.22: Dichtheit C^0_c (x) in L^p (\Omega)
 \begin{Satz}
 \emph{Dichtheit $C^0_c (x)$ in $L^p(\Omega)$}: \\
-Sei $\Omega \subset \mathbb R^n$ offen und $1 \leq p < \infty$. Dann gibt es zu jedem $f \in L^p$ eine Folge $f_k \in C^0_c (\Omega)$ mit $\|f_k - f\|_{L^p} \rightarrow 0$\\
+Sei $\Omega \subset \mathbb R^n$ offen und $1 \leq p < \infty$. Dann gibt es zu jedem $f \in L^p$ eine Folge $f_k \in C^0_c (\Omega)$ mit 
+\begin{center}
+	$\|f_k - f\|_{L^p} \rightarrow 0$
+\end{center}
 $(\mu$ ist Radon-Maß, z.B. Lebesgue-Maß$)$
 \end{Satz}
 
 %Def II.9
 \begin{Definition}
-Der \underline{Träger} einer Funktion $f: \Omega \rightarrow \mathbb R$ ist $spt(f) = \overline{\{x \in \Omega: f(x) \ne 0\}} $
-und $C_c^0 (\Omega) = \{g \in C^0(\Omega): sprt(y) \, \text{kompakt} \subset \Omega\}$
+Der \underline{Träger} einer Funktion $f: \Omega \rightarrow \mathbb R$ ist 
+\begin{center}
+	$spt(f) = \overline{\{x \in \Omega: f(x) \ne 0\}} $
+\end{center}
+Der \underline{Raum der stetigen Funktionen mit kompakten Träger in $\Omega$} wird mit
+\begin{center}
+	$C_c^0 (\Omega) = \{g \in C^0(\Omega): spt(y) \, \text{kompakt} \subset \Omega\}$
+\end{center}
+bezeichnet
 \end{Definition}
 
 
 %Bem.
 \begin{Bemerkung}
-Falls $\mu$ ein Radonmaß, folgt aus $Satz \, II.22$ und $Satz \,  II.21$, dass $\overline{C^0_c (\Omega)}^{\|\cdotp\|_{L^p}} = L^p (\mu)$ für $p < \infty$
+Falls $\mu$ ein Radonmaß, folgt aus $Satz \, II.22$ und $Satz \,  II.21$, dass 
+\begin{center}
+	$\overline{C^0_c (\Omega)}^{\|\cdotp\|_{L^p}} = L^p (\mu)$\quad  für $p < \infty$
+\end{center}
 \end{Bemerkung}
 
 %Satz II.23: Konvergenzsatz von Vitali
