@@ -54,7 +54,7 @@
 \section{$\sigma$-Algebren und Maße}
 
 
-\emph{Notation}: $X$ Menge, \\ $P(X) =$ \{Teilmengen von $X$\}  {} Potenzmenge \\
+\emph{Notation}: $X$ Menge, \\ $P(X) =$ \{Teilmengen von $X$\}  \; Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
 %Def. I.1
 \begin{Definition}
@@ -81,7 +81,7 @@ Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 \begin{Beispiel}
 \begin{enumerate}
 	\item $P(X)$ trivial
-	\item $\{ \emptyset, X \}${} trivial
+	\item $\{ \emptyset, X \}$\; trivial
 \end{enumerate}
 \end{Beispiel}
 
@@ -101,18 +101,18 @@ $\sigma(E):=\bigcap \{ \mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in $X$ und
 \begin{enumerate}
 	\item $P(X)$ $\sigma$-Algebra mit $E \subset P(X)$
 	\item Satz 1 $\Rightarrow \sigma(E)$ ist $\sigma$-Algebra
-	\item $\mathscr{A}$ $\sigma$-Algebra mit $E \subset \mathscr{A} \Rightarrow \sigma(E) \subset 		\mathscr{A}$ "kleinste"{} $\sigma$-Algebra, die $E$ enthält.
+	\item $\mathscr{A}$ $\sigma$-Algebra mit $E \subset \mathscr{A} \Rightarrow \sigma(E) \subset 		\mathscr{A}$ "kleinste"\; $\sigma$-Algebra, die $E$ enthält.
 \end{enumerate}
 \end{Bemerkung}
 
 %Bsp.
 \begin{Beispiel}
 \begin{enumerate}
-	\item $E \subset X$ $\Rightarrow $ $\sigma(E)$ = \textbraceleft $X$, $E$, $\emptyset$, $X \setminus E$\textbraceright
-	\item $(X, d)$ sei metrischer Raum. $\mathscr{O}:=$ \textbraceleft offene Teilmenge von $X$ \\
+	\item $E \subset X \; \Rightarrow \; \sigma(E) = \left\{X, E, \emptyset, X \backslash E\right\}$
+	\item $(X, d)$ sei metrischer Raum. $\mathscr{O}:=$ \{ offene Teilmenge von $X$\} \\
 	$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \underline{Borel $\sigma$-Algebra}. Elemente darin heißen \underline{Borelmengen} \\
 	$X = \mathbb{R}^{n}: \mathscr{B(O)} = \mathscr{B}^{n}$ \\
-	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \{t$\pm\infty$\} {}($a < b$ Anordnung)
+	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \{t$\pm\infty$\} \quad $(a < b$ Anordnung$)$
 \end{enumerate}
 \end{Beispiel}
 
@@ -133,7 +133,7 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 	$\Rightarrow \lim a_n \in \mathbb{\overline{R}}$
 	\item $\sum\limits_{n=1}^{\infty} a_n \in \mathbb{\overline{R}}$, $a_n \geq 0 \quad \forall n \in \mathbb{N}$
 	\item offene Teilmengen von $\overline{\mathbb{R}}$: \\
-	$U \subset \overline{\mathbb{R}} $ offen $\Leftrightarrow U \cap \mathbb{R}$ offen und falls $\{+\infty\}$ oder $\{-\infty\}$ in $M$ liegt, existiert ein $a \in \mathbb{R}$ mit $(a,{} \infty ]\subset U$ bzw. $[-\infty, a) \subset U$
+	$U \subset \overline{\mathbb{R}} $ offen $\Leftrightarrow U \cap \mathbb{R}$ offen und falls $\{+\infty\}$ oder $\{-\infty\}$ in $M$ liegt, existiert ein $a \in \mathbb{R}$ mit $(a,\; \infty ]\subset U$ bzw. $[-\infty, a) \subset U$
 \end{enumerate}
 \end{Bemerkung}
  % Hier fehlt noch eine kleine Tabelle
@@ -157,7 +157,7 @@ $\mu(B) = \mu(A \cup B\backslash A) = \mu(A) + \underbrace{\mu(B\backslash A)}_{
 
 %Def I.5
 \begin{Definition}
-$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \underline{endlich}, wenn $\mu(A)$ \textless {} $ \infty \quad \forall A \in \mathscr{A}$, $\mu$ heißt \underline{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i)$ \textless {} $ \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
+$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \underline{endlich}, wenn $\mu(A)\; <\; \infty \quad \forall A \in \mathscr{A}$, $\mu$ heißt \underline{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i) < \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
 Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 \end{Definition}
 
@@ -211,7 +211,7 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 \begin{enumerate}
 	\item $A_1 \subset A_2 \subset ...  A_i \subset A_{i+1} \subset .. $\\
 	$\Rightarrow \mu(\bigcup\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
-	\item Aus $A_1 \supset A_2 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\mu(A_1)$ \textless  {} $ \infty$ folgt\\
+	\item Aus $A_1 \supset A_2 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\mu(A_1)\; < \;  \infty$ folgt\\
 	$\mu(\bigcap\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
 	\item $\mu(\bigcup\limits_{i=1}^{\infty} A_i) \leq \sum\limits_{i=1}^{\infty} \mu(A_i)$ \\
 	($A_i$ müssen hier nicht paarweise disjunkt sein)
@@ -224,7 +224,7 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 	\item \emph{1.} heißt \underline{Stetigkeit von unten} \\
 	\emph{2.} heißt \underline{Stetigkeit von oben} \\
 	\emph{3.} \underline{$\sigma$-Subadditivität} des Maßes
-	\item  $\mu(A_1$ \textless $\infty)$ in \emph{2.} kann durch $\mu(A_k) $ \textless  $\infty$ für ein $k \in \mathbb{N}$ ersetzt werden.
+	\item  $\mu(A_1\; < \;\infty)$ in \emph{2.} kann durch $\mu(A_k) \; < \;\infty$ für ein $k \in \mathbb{N}$ ersetzt werden.
 \end{enumerate}
 \end{Bemerkung}
 
@@ -569,7 +569,7 @@ Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\
 
 %Satz I.11, VL 06.11.15
 \begin{Satz}
-$\lambda: R \rightarrow [0, \infty], {}R \subset P(X)$ (Prämaß auf Ring), $\forall {}E \subset X:$ \\
+$\lambda: R \rightarrow [0, \infty], \;R \subset P(X)$ (Prämaß auf Ring), $\forall \;E \subset X:$ \\
 \begin{center}
 $\mu(E):= inf\Set{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}}$
 \end{center}
@@ -578,7 +578,7 @@ ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußer
 
 %Lemma I.6
 \begin{Lemma}
-Sei $\mu$ \cara{} des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt $\tilde{\mu}(R) \leq \mu(E)\quad \forall E \in \sigma(R)$.
+Sei $\mu$ \cara\; des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt $\tilde{\mu}(R) \leq \mu(E)\quad \forall E \in \sigma(R)$.
 \end{Lemma}
 
 %Satz I.12
@@ -595,17 +595,17 @@ Blödes Beispiel
 
 %Satz I.13
 \begin{Satz}
-Sei $\mu$ \cara{} des Prämaßes $\lambda$ auf $R$. Dann existiert zu jedem $D \subset X$ ein $E \in \sigma(R) \subset \mathscr M(\mu)$ mit $E \supset D$ und $\mu(D) = \mu(E)$
+Sei $\mu$ \cara\; des Prämaßes $\lambda$ auf $R$. Dann existiert zu jedem $D \subset X$ ein $E \in \sigma(R) \subset \mathscr M(\mu)$ mit $E \supset D$ und $\mu(D) = \mu(E)$
 \end{Satz}
 
 %Satz I.14
 \begin{Satz}
-$\lambda$  $\sigma$-endliches Prämaß auf Ring $\mathscr R$ und $\mu$ sei \cara{} von $\lambda$. Dann ist $\mu|_{\mathscr M(\mu)}$ die \underline{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. Insbesondere gibt es genau eine Fortsetzung von $\lambda$ zu einem Maß auf $\mathscr M(\mu)$.
+$\lambda$  $\sigma$-endliches Prämaß auf Ring $\mathscr R$ und $\mu$ sei \cara\; von $\lambda$. Dann ist $\mu|_{\mathscr M(\mu)}$ die \underline{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. Insbesondere gibt es genau eine Fortsetzung von $\lambda$ zu einem Maß auf $\mathscr M(\mu)$.
 \end{Satz}
 
 %Lemma I.9
 \begin{Lemma}
-Sei $\lambda: \mathscr R \rightarrow [0, \infty]$ Prämaß auf Ring $\mathscr R$ und $\lambda$ sei $\sigma$-endlich. $\mu$ sei die \cara{} von $\lambda$. $D \subset X$ ist genau dann $\mu$-messbar, falls eine der beiden folgenden Bedingungen gilt:
+Sei $\lambda: \mathscr R \rightarrow [0, \infty]$ Prämaß auf Ring $\mathscr R$ und $\lambda$ sei $\sigma$-endlich. $\mu$ sei die \cara\; von $\lambda$. $D \subset X$ ist genau dann $\mu$-messbar, falls eine der beiden folgenden Bedingungen gilt:
 \begin{enumerate}
 	\item $\exists E \in \sigma(\mathscr R)$ mit $E \supset D$ und $\mu(E \backslash D) = 0$
 	\item $\exists C \in \sigma(\mathscr R)$ mit $C \subset D$ und $\mu(D \backslash C) = 0$
@@ -774,7 +774,7 @@ $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
 
 	Prämaß auf Halbring\\
-	$\Rightarrow$ \cara{} ist äußeres Maß auf $P(X)$.
+	$\Rightarrow$ \cara\; ist äußeres Maß auf $P(X)$.
 
 \begin{Lemma}
 	$vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$ ist ein Prämaß.
@@ -1482,7 +1482,10 @@ $\underrightarrow{Fubini} \int\limits_a^b \left( \int\limits_c^d f(x, y) dy\righ
 
 %Def III.1
 \begin{Definition}
-Seien $\alpha_i$ äußere Maße auf $X_i, i = 1, ... n$. Eine Menge $P \subset X_1 \times ... \times X_n$ heißt \underline{Produktmenge}, wenn es $\mathscr M(\alpha_i)$ messbare Mengen $A_i \subset X_i$ gibt mit $P = A_1 \times ... \times A_n$
+Seien $\alpha_i$ äußere Maße auf $X_i, i = 1, ... n$. Eine Menge $P \subset X_1 \times ... \times X_n$ heißt \underline{Produktmenge}, wenn es $\mathscr M(\alpha_i)$ messbare Mengen $A_i \subset X_i$ gibt mit
+\begin{center}
+	$P = A_1 \times ... \times A_n$
+\end{center}
 \end{Definition}
 
 %Lemma III.1
@@ -1625,7 +1628,8 @@ $\alpha_n \rightarrow 0$ mit $n \rightarrow \infty$
 
 %Bsp.
 \begin{Beispiel}
-$\mu$ $\sigma$-endliches äußeres Maß auf $X$ und $f: X \rightarrow [0, \infty]\, \mu$-messbar. $\phi: [0, \infty] \rightarrow [0, \infty]$ stetig mit $\phi(0) = 0$ und $\phi\lvert_{[0, \infty]}$ stetig differenzierbar mit $\phi'(t) >0$ \\
+$\mu$ $\sigma$-endliches äußeres Maß auf $X$ und $f: X \rightarrow [0, \infty]\, \mu$-messbar. \\
+$\phi: [0, \infty] \rightarrow [0, \infty]$ stetig mit $\phi(0) = 0$ und $\phi\lvert_{[0, \infty]}$ stetig differenzierbar mit $\phi'(t) >0$ \\
 \emph{Behauptung}:
 $\int_t \phi(f(x)) \, d\mu(x) = \int\limits_0^\infty \phi'(t)\mu(\{x \in X: f(x) >t\} \, dt$\\
 \emph{Anwendung der Behauptung}:  \\
@@ -1671,8 +1675,6 @@ $\varrightwavearrow x \in \mathscr C^1(\mathbb R^n, \mathbb R^n):$
 \end{center}
 \end{Lemma}
 
-\newpage
-
 %neues Jahr, Freude:
 %08.01.16 bei unserem Lieblingsübungsleiter -.-
 
@@ -1705,7 +1707,9 @@ $\Phi(r, \theta) = (r \cos \theta, r \sin \theta)$ \\
 	\end{cases}
 \end{equation}
 mit $r = \sqrt{|x|^2 + y^2} $\\
-$\Phi^{-1} (x, y) = \left(r, \dfrac{\pi}{2} + \arccos\left(\dfrac{y}{r}\right)\right)$ für $x < 0$
+\begin{center}
+	$\Phi^{-1} (x, y) = \left(r, \dfrac{\pi}{2} + \arccos\left(\dfrac{y}{r}\right)\right)$ \quad für $x < 0$
+\end{center}
 
 %Und noch ein schönes Bild.
 \end{Beispiel}
@@ -1793,33 +1797,49 @@ $\det g(x) = \det(D\Phi(x)^T D \Phi(x)) = |\det(D \Phi(x))|^2$
 \begin{Beispiel}
 \emph{Gauß-Integral}:
 $f(x, y) = e^{-(x^2 + y^2)}$ \\
-$\int_{\mathbb R^2} f(x, y) \, \mathscr L^2(x, y) = \int_\mathbb R \int_\mathbb R e^{-x^2} e^{-y^2} \, dx\, dy = \left(\int \mathbb R e^{-x^2} \, dx \right)^2$ \\
-Da $\det(D\phi(r, \theta)) = r$ $($s. Bsp.$)$ \\
-$\Rightarrow \int_\mathbb R f(x, y) \, d\mathscr L^2(x,y) = \int_{(0, \infty) \times (0, 2\pi)} f(\phi(r, \theta))r \, dr\, d\theta = \int\limits_0^\infty \int\limits_0^{2\phi} e^{-r^2} \, d\theta\, r \, dr = 2\pi \int\limits_0^\infty e^{-r^2}r\, dr = -\pi e^{-r^2} |_0^\infty = \pi \Rightarrow \int_\mathbb R e^{-x^2} \, dx = \sqrt{\pi}$
+$\int_{\mathbb R^2} f(x, y) \, \mathscr L^2(x, y) = \int_\mathbb R \int_\mathbb R e^{-x^2} e^{-y^2} \, dx\, dy = \left(\int \mathbb R e^{-x^2} \, dx \right)^2$ 
+\par
+da $\det(D\phi(r, \theta)) = r$ $($s. Bsp.$)$ 
+\par
+$\Rightarrow \int_\mathbb R f(x, y) \, d\mathscr L^2(x,y) = \int_{(0, \infty) \times (0, 2\pi)} f(\phi(r, \theta))r \, dr\, d\theta = \int\limits_0^\infty \int\limits_0^{2\phi} e^{-r^2} \, d\theta\, r \, dr$
+\par
+$= 2\pi \int\limits_0^\infty e^{-r^2}r\, dr = -\pi e^{-r^2} |_0^\infty = \pi \Rightarrow \int_\mathbb R e^{-x^2} \, dx = \sqrt{\pi}$
 \end{Beispiel}
 
 %Younis, das kann ich nicht lesen. Letzte Seite der VL am 08.01
 %Bsp. 2 Hirsch
 \begin{Beispiel}
-Sei $s \in Q_n(\mathbb R)$ und $\phi(x) = sx$ \\
-$\Rightarrow D\phi(x) = s$ \\
-$\Rightarrow \mathscr L^n(\phi(A)) = |\det(s)|\mathscr L^n(A)$ \\
+Sei $s \in Q_n(\mathbb R)$ und $\phi(x) = sx$ 
+\par
+$\Rightarrow D\phi(x) = s$ 
+\par
+$\Rightarrow \mathscr L^n(\phi(A)) = |\det(s)|\mathscr L^n(A)$ 
+\par
 $\int $
 \end{Beispiel}
 
 %abgesehen davon, dass ich mir an vielen Stellen nicht so ganz sicher bin, was du da gemeint hast, ist der 08.01. dann auch fertig
-
+\par\bigskip
 %ab hier mit 11.01. weiter
-$\phi: U \rightarrow V$ Diffeomorphismus, $x \in U, y \in V$, $v: V \rightarrow \mathbb R$ Funktion, \\
+$\phi: U \rightarrow V$ Diffeomorphismus, $x \in U, y \in V$, $v: V \rightarrow \mathbb R$ Funktion, 
+\par
 $v = v(y) \varrightwavearrow u:= v \circ \phi: U \rightarrow \mathbb R, \, u(x) = v(\phi(x))$
 
 %Bsp. Kugelkoordinaten
 \begin{Beispiel}
-\emph{Kugelkoordinaten - Polarkoordinaten in $\mathbb R^3$} \\
-$\phi: \underbrace{(0, \infty) \times (0, \pi), \times (0, 2\pi)}_{=: U} \rightarrow \mathbb R^3 \backslash \{x, 0, z): x \geq 0\}$ \\
-$\phi(r, \theta, \phi) = (r \sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$ \\
+\emph{Kugelkoordinaten - Polarkoordinaten in $\mathbb R^3$} 
+\par
+$\phi: \underbrace{(0, \infty) \times (0, \pi), \times (0, 2\pi)}_{=: U} \rightarrow \mathbb R^3 \backslash \{x, 0, z): x \geq 0\}$ 
+\par
+$\phi(r, \theta, \phi) = (r \sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$ 
+\par
 $\varrightwavearrow V = v(x, y, z) \varrightwavearrow u(r, \theta, \phi) = v(r\sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)$
 \end{Beispiel}
+
+
+
+
+
 
 
 \chapter{Das Flächenmaß auf Untermannigfaltigkeiten und der Satz von Gauß}
@@ -1992,9 +2012,6 @@ wobei $U \subseteq \mathbb R^m$ offen ist.
 %Bem
 \begin{Bemerkung}
 \begin{enumerate}
-	\item $f: U \rightarrow M \, \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion $\Rightarrow f:U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus
-
-	\item $f: U \rightarrow ?$ injektive Immersion $\nRightarrow f: U \rightarrow f(U) \, \mathscr C^1$-Homomorphismus.
 	\item $f: U \rightarrow M \quad \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion \\
 	$\Rightarrow f:U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus
 
