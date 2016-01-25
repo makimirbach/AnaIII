@@ -57,6 +57,7 @@
 \emph{Notation}: $X$ Menge, \\ $P(X) =$ \{Teilmengen von $X$\}  \; Potenzmenge \\
 $A$ $\subset$  $P(X)$ Mengensystem
 %Def. I.1
+
 \begin{Definition}
 Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra}, falls
 \begin{enumerate}
@@ -70,8 +71,8 @@ Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 %Bem.
 \begin{Bemerkung}
 \begin{enumerate}
-	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, denn:
-	$\bigcap_{i=1}^{\infty} A_i  = X \backslash (\bigcup_{i=1}^{\infty} (X \backslash A_i))$
+	\item $A_i \in \mathscr{A}$, $i \in \mathbb{N} \Rightarrow \bigcap_{i = 1}^{\infty} A_i$, \quad denn:
+	$\bigcap_{i=1}^{\infty} A_i  = X \backslash \left(\bigcup_{i=1}^{\infty} (X \backslash A_i)\right)$
 	\item $\emptyset \in \mathscr{A}$
 	\item $A, B \in \mathscr{A} \Rightarrow A \backslash B \in \mathscr{A}$, denn $A \backslash B = A \cap (X \backslash B)$
 \end{enumerate}
@@ -92,8 +93,11 @@ Jeder Durchschnitt von (endlich oder $\infty$-vielen) $\sigma$-Algebren auf ders
 
 %Def I.2
 \begin{Definition}
-Für ein Mengensystem $E \subset P(X)$ heißt \\
-$\sigma(E):=\bigcap \{ \mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in $X$ und $E$ $\subset \mathscr{A} \}$ die \underline{von $E$ erzeugte $\sigma$-Algebra}.
+Für ein Mengensystem $E \subset P(X)$ heißt 
+\begin{center}
+$\sigma(E):=\bigcap \Set{\mathscr{A}| \mathscr{A} \text{ ist } \sigma\text{-Algebra in }X\text{ und } E \subset \mathscr{A} }$
+\end{center}
+die \underline{von $E$ erzeugte $\sigma$-Algebra}.
 \end{Definition}
 
 %Bem.
@@ -109,10 +113,16 @@ $\sigma(E):=\bigcap \{ \mathscr{A}: \mathscr{A}$ ist $\sigma$-Algebra in $X$ und
 \begin{Beispiel}
 \begin{enumerate}
 	\item $E \subset X \; \Rightarrow \; \sigma(E) = \left\{X, E, \emptyset, X \backslash E\right\}$
-	\item $(X, d)$ sei metrischer Raum. $\mathscr{O}:=$ \{ offene Teilmenge von $X$\} \\
-	$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \underline{Borel $\sigma$-Algebra}. Elemente darin heißen \underline{Borelmengen} \\
-	$X = \mathbb{R}^{n}: \mathscr{B(O)} = \mathscr{B}^{n}$ \\
-	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \{t$\pm\infty$\} \quad $(a < b$ Anordnung$)$
+	%b
+	\item $(X, d)$ sei metrischer Raum, $\mathscr{O}:=$ \{ offene Teilmenge von $X$\} 
+	\begin{center}
+		$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \quad \underline{Borel $\sigma$-Algebra}. 
+	\end{center}
+	Elemente darin heißen  \underline{Borelmengen} 
+	\par
+	$X = \mathbb{R}^{n}: \quad \mathscr{B(O)} = \mathscr{B}^{n}$ 
+	\par
+	$\overline{\mathbb{R}} := \mathbb{R}$  $\cup$ \{$\pm\infty$\} \quad $(a < b$ Anordnung$)$
 \end{enumerate}
 \end{Beispiel}
 
@@ -489,7 +499,10 @@ Sei $\mu$ äußeres Maß und seien $A_i \in \mathscr M(\mu), i \in \mathbb N$. D
 
 %Def I.12
 \begin{Definition}
-Ein Mengensystem $\mathscr A \in P(X)$ heißt \underline{$\cap$-stabil}, \underline{ $\cup$-stabil }, \underline{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch $A \cap B \in \mathscr A, A \cup B \in \mathscr A, A\backslash B \in \mathscr A$.
+Ein Mengensystem $\mathscr A \in P(X)$ heißt \underline{$\cap$-stabil}, \underline{ $\cup$-stabil }, \underline{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch 
+\begin{center}
+	$A \cap B \in \mathscr A, A \cup B \in \mathscr A, A\backslash B \in \mathscr A$.
+\end{center}
 \end{Definition}
 
 %Bem.
@@ -531,8 +544,10 @@ Ist $X \in \mathscr R$, so heißt $\mathscr R$ \underline{Algebra}.
 Sei $\mathscr R \subset P(X)$ ein Ring. Eine Funktion $\lambda: \mathscr R \rightarrow [0, \infty]$ heißt \underline{Prämaß} auf $\mathscr R$, falls
 \begin{enumerate}
 	\item $\lambda(\emptyset) = 0$
-	\item für paarweise disjunkte $A_i \in \mathscr R, i \in \mathbb N$ mit $\bigcup\limits_{i=1}^\infty A_i \in \mathscr R$: \\
-	$\lambda \left(\bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \lambda(A_i)$
+	\item für paarweise disjunkte $A_i \in \mathscr R, i \in \mathbb N$ mit $\bigcup\limits_{i=1}^\infty A_i \in \mathscr R$: 
+	\begin{center}
+		$\lambda \left(\bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \lambda(A_i)$
+	\end{center}
 \end{enumerate}
 \end{Definition}
 
@@ -561,7 +576,10 @@ Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, endlich, monoton, Nullmenge 
 \begin{Definition}
 Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\mu$ auf $X$ (bzw. ein Maß $\mu$ auf $\mathscr A$) heißt \underline{Fortsetzung} von $\lambda$, falls gilt:
 \begin{enumerate}
-	\item $\mu|_\mathscr R = \lambda$, d.h. $\mu(A) = \lambda(A)$ $\forall A \in \mathscr R$
+	\item $\mu|_\mathscr R = \lambda$, d.h. 
+	\begin{center}
+		$\mu(A) = \lambda(A)$ $\forall A \in \mathscr R$
+	\end{center}
 	\item $\mathscr R \in \mathscr M(\mu) ($bzw. $\mathscr R \subset \mathscr A)$
 \end{enumerate}
 \end{Definition}
@@ -571,19 +589,26 @@ Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\
 \begin{Satz}
 $\lambda: R \rightarrow [0, \infty], \;R \subset P(X)$ (Prämaß auf Ring), $\forall \;E \subset X:$ \\
 \begin{center}
-$\mu(E):= inf\Set{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}}$
+$\mu(E):= \inf\Set{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}}$
 \end{center}
 ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußere Maß$)$
 \end{Satz}
 
-%Lemma I.6
+%Lemma I.8
 \begin{Lemma}
-Sei $\mu$ \cara\; des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt $\tilde{\mu}(R) \leq \mu(E)\quad \forall E \in \sigma(R)$.
+Sei $\mu$ \cara\; des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt 
+\begin{center}
+	$\tilde{\mu}(R) \leq \mu(E)\quad \forall E \in \sigma(R)$.
+\end{center}
 \end{Lemma}
 
 %Satz I.12
 \begin{Satz} \emph{Hopf-Fortsetzung} \\
-Sei $\lambda: R \rightarrow [0, \infty]$ Prämaß auf Ring $R \subset P(X)$. Dann existiert ein Maß $\mu$ auf $\sigma(R)$ mit $\mu =\lambda$ auf $R$. Diese Fortsetzung ist \underline{eindeutig}, falls $\lambda$ $\sigma$-endlich ist.
+Sei $\lambda: R \rightarrow [0, \infty]$ Prämaß auf Ring $R \subset P(X)$. Dann existiert ein Maß 
+\begin{center}
+	$\mu$ auf $\sigma(R)$ mit $\mu =\lambda$ auf $R$.
+\end{center}	
+Diese Fortsetzung ist \underline{eindeutig}, falls $\lambda$ $\sigma$-endlich ist.
 \end{Satz}
 
 \emph{Notation:}
@@ -595,12 +620,19 @@ Blödes Beispiel
 
 %Satz I.13
 \begin{Satz}
-Sei $\mu$ \cara\; des Prämaßes $\lambda$ auf $R$. Dann existiert zu jedem $D \subset X$ ein $E \in \sigma(R) \subset \mathscr M(\mu)$ mit $E \supset D$ und $\mu(D) = \mu(E)$
+Sei $\mu$ \cara\, des Prämaßes $\lambda$ auf $R$. Dann existiert zu jedem $D \subset X$ ein $E \in \sigma(R) \subset \mathscr M(\mu)$ mit 
+\begin{center}
+	$E \supset D$ \quad und \quad $\mu(D) = \mu(E)$
+\end{center}
 \end{Satz}
 
 %Satz I.14
 \begin{Satz}
-$\lambda$  $\sigma$-endliches Prämaß auf Ring $\mathscr R$ und $\mu$ sei \cara\; von $\lambda$. Dann ist $\mu|_{\mathscr M(\mu)}$ die \underline{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. Insbesondere gibt es genau eine Fortsetzung von $\lambda$ zu einem Maß auf $\mathscr M(\mu)$.
+$\lambda$  $\sigma$-endliches Prämaß auf Ring $\mathscr R$ und $\mu$ sei \cara\; von $\lambda$. Dann ist 
+\begin{center}
+	$\mu|_{\mathscr M(\mu)}$ die \underline{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. 
+\end{center}
+Insbesondere gibt es genau eine Fortsetzung von $\lambda$ zu einem Maß auf $\mathscr M(\mu)$.
 \end{Satz}
 
 %Lemma I.9
@@ -632,8 +664,12 @@ Ein Mengensystem $\mathscr Q \subset P(X)$ heißt \underline{Halbring} über $X$
 %Bsp.
 \begin{Beispiel}
 \begin{enumerate}
-	\item $X$ beliebige Menge. $Q := \{\emptyset\} \cup \{\{a\}:  a \in X\}$ ist Halbring
-	\item $I \subset \mathbb R$ heißt \underline{Intervall}, falls $a, b \in \mathbb R$ existieren mit $a \leq b$ und $(a, b) \subset \overline{I} \subset [a, b]$. Quader in $\mathbb R^n$ $ Q:= I_1 \times ... \times I_n$,  $I_1, ... I_n$ Intervalle.
+	\item $X$ beliebige Menge. $Q := \{\emptyset\} \cup \Set{\{a\}|  a \in X}$ ist Halbring
+	\item $I \subset \mathbb R$ heißt \underline{Intervall}, falls $a, b \in \mathbb R$ existieren mit $a \leq b$ und 
+	\begin{center}
+		$(a, b) \subset \overline{I} \subset [a, b]$. 
+	\end{center}
+	Quader in $\mathbb R^n$ ist $ Q:= I_1 \times ... \times I_n$,  \quad $I_1, ... I_n$ Intervalle.
 \end{enumerate}
 \end{Beispiel}
 
@@ -644,35 +680,53 @@ $Q^n := \{Q \in \mathbb R^n: Q $ Quader$\}$ ist Halbring über $\mathbb R^n$
 
 %Satz I.16
 \begin{Satz}
-$\mathscr Q$ Halbring über $X$ und $\mathscr F := \Set{F = \bigcup\limits_{i=1}^k P_i, k \in \mathbb N, P_i \in \mathscr Q \quad \forall 1 \leq i \leq k}$. Dann ist $\mathscr F$ der von $\mathscr Q$ erzeugte Ring.
+$\mathscr Q$ Halbring über $X$ und 
+\begin{center}
+	$\mathscr F := \Set{F = \bigcup\limits_{i=1}^k P_i, k \in \mathbb N, P_i \in \mathscr Q \quad \forall 1 \leq i \leq k}$. 
+\end{center}	
+Dann ist $\mathscr F$ der von $\mathscr Q$ erzeugte Ring.
 \end{Satz}
 
 %Bsp.
 \begin{Beispiel}
 \begin{enumerate}
-	\item $\mathscr Q = \{\emptyset \} \cup \{\{a\}: a \in X\} \rightarrow \mathscr F = \{$ endliche Teilmengen von $X\}$
+	\item $\mathscr Q = \{\emptyset \} \cup \Set{\{a\}| a \in X} \quad \rightarrow \mathscr F = \{$ endliche Teilmengen von $X\}$
 	\item $\mathscr Q^n \rightarrow$ E erzeugter Ring $\mathscr F^n:= \{$endliche Vereinigung von Quadern$\}$: Figuren
 \end{enumerate}
 \end{Beispiel}
 
 %Lemma I.10
 \begin{Lemma}
-Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gilt: $\sigma(\mathscr Q) = \sigma(\mathscr F)$, $(\sigma(.)$: erzeugte $\sigma$-Algebra$)$
+Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gilt: 
+\begin{center}
+	$\sigma(\mathscr Q) = \sigma(\mathscr F)$, \quad $(\sigma(.)$: erzeugte $\sigma$-Algebra$)$
+\end{center}
 \end{Lemma}
 
 %Lemma I.11
 \begin{Lemma}
-Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Zu jedem $F \in \mathscr F$ existieren $P_1, ... P_k \in \mathscr Q$ \underline{paarweise disjunkt} mit $F = \bigcup\limits_{i=1}^k P_i$
+Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Zu jedem $F \in \mathscr F$ existieren $P_1, ... P_k \in \mathscr Q$ \underline{paarweise disjunkt} mit 
+\begin{center}
+	$F = \bigcup\limits_{i=1}^k P_i$
+\end{center}
 \end{Lemma}
 
 %Def I.17
 \begin{Definition}
-Sei $\mathscr Q \subset P(X)$ Halbring über $X$. Eine Funktione $\lambda: \mathscr Q \rightarrow [0, \infty ]$ heißt \underline{Inhalt} auf $\mathscr Q$, falls
+Sei $\mathscr Q \subset P(X)$ Halbring über $X$. Eine Funktion 
+\begin{center}
+	$\lambda: \mathscr Q \rightarrow [0, \infty ]$ heißt \underline{Inhalt} auf $\mathscr Q$, 
+\end{center}	
+falls
 \begin{enumerate}
 	\item $\lambda(\emptyset) = 0$
 	\item $\lambda\left(\bigcup\limits_{i=1}^n	A_i\right) = \sum\limits_{i=1}^n \lambda(A_i)$ für paarweise disjunkte $A_i \in \mathscr Q$ mit $\bigcup\limits_{i=1}^n A_i \in \mathscr Q$
 \end{enumerate}
-Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma$-additiv auf $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: $\lambda\left(\bigcup\limits_{i\in \mathbb N} A_i \right) = \sum\limits_{i=1}^\infty \lambda(A_i)$, falls $\bigcup\limits_{i \in \mathbb N} A_i \in \mathscr Q$
+
+Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma$-additiv auf $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: 
+\begin{center}
+	$\lambda\left(\bigcup\limits_{i\in \mathbb N} A_i \right) = \sum\limits_{i=1}^\infty \lambda(A_i)$,\quad  falls $\bigcup\limits_{i \in \mathbb N} A_i \in \mathscr Q$
+\end{center}	
 \end{Definition}
 
 %Bem.
@@ -685,7 +739,10 @@ Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma
 
 %Satz I.17
 \begin{Satz}
-Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit $\overline{\lambda}(Q) = \lambda(Q)\quad \forall Q \in \mathscr Q$
+Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Dann gibt es genau einen Inhalt $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ mit 
+\begin{center}
+	$\overline{\lambda}(Q) = \lambda(Q)\quad \forall Q \in \mathscr Q$
+\end{center}
 \end{Satz}
 
 %Fehlt hier noch was?? Die Vorlesung nach dem 09.11. war über was:
@@ -696,8 +753,10 @@ Sei $\lambda$ Inhalt auf Halbring $\mathscr Q$ über $X$ und sei $\mathscr F$ de
 Ein Inhalt $\lambda$ auf dem Halbring $\mathscr Q$ über $X$ ist monoton und subadditiv.
 \end{Lemma}
 
-Auf $\mathscr Q^n = \{Q = I_1 \times ... \times I_n: I_i \in J, 1 \leq i \leq n, $ Quader in $\mathbb R^n \}$ .
-Halbring, falls $Q = I_1 \times ... \times I_n$ und $(a_i, b_i) \subset I_i \subset [a_i, b_i]$:
+Auf $\mathscr Q^n = \Set{Q = I_1 \times ... \times I_n| I_i \in J, 1 \leq i \leq n, \text{ Quader in }\mathbb R^n }$ Halbring, falls 
+\begin{center}
+	$Q = I_1 \times ... \times I_n$\quad und \quad  $(a_i, b_i) \subset I_i \subset [a_i, b_i]$:
+\end{center}
 \begin{center}
 	$vol^n(Q) := \prod\limits_{i=1}^n (b_i - a_i)$
 \end{center}
@@ -758,8 +817,13 @@ Für einen Inhalt $\lambda$ auf einem Ring $R$ auf $A_i \in P,\, i \in \mathbb N
 		$\Rightarrow \lim \lambda(A_i) = 0$
 	\end{center}
 \end{enumerate}
-Dann gilt: $1. \Leftrightarrow 2. \Rightarrow 3. \Rightarrow 4.$ \\
-Ist $\lambda$ endlich, d.h. $\lambda(A) < \infty \quad \forall A \in R$, dann sind $1. - 4.$ äquivalent.
+Dann gilt: 1. $\Leftrightarrow $2. $\Rightarrow$ 3.$ \Rightarrow $ 4. 
+\par\bigskip
+Ist $\lambda$ endlich, d.h. 
+\begin{center}
+	$\lambda(A) < \infty \quad \forall A \in R$, 
+\end{center}	
+dann sind $1. - 4.$ äquivalent.
 \end{Satz}
 
 
@@ -1796,11 +1860,11 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$,
 $\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$\\
 \par
-$\mathscr B_1(0) = \{z \in \mathbb R^n,|z| < 1\} = \{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R: |x|^2 + y^2 <1\} $
+$\mathscr B_1(0) = \Set{z \in \mathbb R^n| \,|z| < 1} = \Set{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R| \,|x|^2 + y^2 <1} $
 \par\bigskip
-$(\mathscr B_1(0))_y = \{x \in \mathbb R^{n-1}: |x| < \sqrt{1-y^2},\,  y \in (-1, 1]\} = \sqrt{1-y^2}\mathscr B_1^{n-1} (0) $
+$(\mathscr B_1(0))_y = \Set{x \in \mathbb R^{n-1}| \,|x| < \sqrt{1-y^2},\,  y \in (-1, 1]} = \sqrt{1-y^2}\;\mathscr B_1^{n-1} (0) $
 \par\bigskip
-$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)(\mathscr B_1(0))$
+$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)\;(\mathscr B_1(0))$
 \par\bigskip
 $ = \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y) $
 \par\bigskip
@@ -2280,19 +2344,152 @@ Ist $M \subset \mathbb R^n$ \umgf $\Rightarrow \tau(M) =: N$ ist \umgf und für 
 \emph{Zwiebelformel}: \\
 Für $u \in L^n(\mathbb R^{n+1})$ ist $u\lvert_{JB_r} \in L^1(\mu_{JB_r})$ für fast alle $r >0$ mit $JB_r:= JB_r(0)$ und es gilt:
 \begin{center}
-	$\int{\mathbb R^{n+1}} u(p) \, dL^{n+1}(p) = \int\limits_0^\infty \int_{JB_r} u(p) \,d\mu_{JB_r} \,dL^1(r) = \int\limits_0^\infty r^n \int_{S^n} u(rw)\,d\mu_{S^n}(u) \,dL^1(r)$
+	$\int{\mathbb R^{n+1}} u(p) \, d\mathscr L^{n+1}(p) = \int\limits_0^\infty \int_{JB_r} u(p) \,d\mu_{JB_r} \,d\mathscr L^1(r) = \int\limits_0^\infty r^n \int_{S^n} u(rw)\,d\mu_{S^n}(u) \,d\mathscr L^1(r)$
 \end{center}
 \end{Satz}
 
 %Bsp
 \begin{Beispiel}
 $u = \chi_{B_1}(0),\, \omega_n = \mu_{S^n} (S^n) $\\
-$L_{n+1} = \mathscr L^{n+1}(B_1(0)) = \int_{\mathbb R^{n+1}} \chi_{B_1}(0) \,dL^{n+1} = \int\limits_0^1 \mu_{JB_r}(JF_r) \,dL^1(r) = \int\limits_0^1 r^n \omega_n \, dL^1(r) $
+$L_{n+1} = \mathscr L^{n+1}(B_1(0)) = \int_{\mathbb R^{n+1}} \chi_{B_1}(0) \,d \mathscr L^{n+1} = \int\limits_0^1 \mu_{JB_r}(JF_r) \,d \mathscr L^1(r) = \int\limits_0^1 r^n \omega_n \, d \mathscr L^1(r) $
 \par
 $= \dfrac{\omega_n}{n+1}$ \\
 $\omega_1 = 2\pi, \, \alpha_2 = \pi; \, \omega_2 = 4\pi \, \Rightarrow \alpha_3 = \dfrac{4}{3}\pi$
 \end{Beispiel}
 
+%25.01.16
+\par\bigskip
+
+\emph{zu Satz IV.7}: \\
+
+haben gezeigt, falls $f: A \rightarrow B \subset S^n$ lokale Parametrisierung. $\mathbb R^n$ ersetzt durch $C(B) = \Set{rw | r \in (0, \infty), w \in B}$. Überdecke $S^n$ durch disjunkte Mengen $B_j, 1 \leq j \leq N$, mit
+$f:A_j \rightarrow B_j$ lokale Parametrisierung $($Lemma IV.1$)$ 
+\par
+$\Rightarrow \bigcup\limits_{j=1}^\infty C(B_j) = \mathbb R^{n+1}\backslash \{0\}$ disjunkt 
+\par\bigskip
+$\varrightwavearrow \int_{\mathbb R^{n+1}} u \, d\mathscr L^{n+1} = \int_{\mathbb R^{n+1}\backslash \{0\}} u \, d \mathscr L^{n+1} = \sum\limits_{j=1}^N \int_{C(B_j)}...$
+\par\bigskip
+$\overequal{\text{FR?}} \quad \sum\limits_{j=1}^N \int\limits_0^\infty r^n \int_{B_j} u(rw) \,d\mu_{S^n}(w) \, \mathscr L^1(r) = \int\limits_0^\infty r^n \int_{S^n}...$
+
+
+\par\bigskip
+%Satz von Gauß
+\emph{Satz von Gauß. Satz?}:\\
+$\Omega \subset \mathbb R^n?$ $($Das Fragezeichen ist wichtig!$)$ \\
+$F \in \mathscr C^1(\Omega, \mathbb R^n),$
+\begin{center}
+	$\int_\Omega \text{div} F \, d\mathscr L^n = \int_{\partial\Omega} <F, \nu> \, d\mu_{\partial\Omega}$
+\end{center}
+
+%Def IV.4
+\begin{Definition}
+Sei $\Omega \subset \mathbb R^n$ offen. Wir sagen, \underline{$\Omega$ hat $\mathscr C^1$-Rand}, falls gilt:
+\begin{center}
+	$\forall \gamma \in \partial\Omega \quad \exists$ nach eventueller Rotation eine offene Menge $U \subset \mathbb R^{n-1}$ 
+\end{center}
+und ein offenes Intervall $I \subset \mathbb R$ mit $\gamma \in U \times I$ und eine $\mathscr C^1$-Funktion $u: U \rightarrow I$, sodass 
+\begin{center}
+	$\Omega \cap (U \times I) = \Set{(y, r) \in U \times I | r < u(y)}$ 
+\end{center}
+$(\Omega$ lässt sich lokal als Subgraph schreiben$)$
+%Bildchen: YouniS
+\end{Definition}
+
+
+%Bsp
+\begin{Beispiel}
+$H^n := \mathbb R^{n-1} \times (-\infty, 0) \subset \mathbb R^n$ \\
+$\partial H^n = \mathbb R^{n-1} \times \{0\}$ \\
+$U = \mathbb R^{n-1};\; I = \mathbb R, \;u \equiv 0$
+\end{Beispiel}
+
+%Lemma IV.2
+\begin{Lemma}
+$\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand.
+\begin{center}
+	$\Rightarrow \partial \Omega$ ist $(n-1)$-dimensionale Untermannigfaltigkeit des $\mathbb R^n$.
+\end{center}
+\end{Lemma}
+
+
+%Bem.
+\begin{Bemerkung}
+\begin{enumerate}
+	\item $\partial \Omega \cap (U \times I) = \Set{F=0} = \Set{(y,r) | r = u(y)}$
+	\item $M (n-1)$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ 
+	\par
+	$\nRightarrow M = \partial \Omega$ für $\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand. 
+	\par
+	\emph{Beispiel}: 
+	\par
+	$M = \mathbb R^{n-1} \times \{0\}, \; \Omega = \mathbb R^{n-1} \times \left((-\infty, 0) \cup (0, \infty)\right)$
+	\par
+	$\Rightarrow \partial\Omega = M$
+	%Bildchen
+\end{enumerate}
+\end{Bemerkung}
+
+%Satz IV.8
+\begin{Satz}
+Sei $\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand. Dann existiert eine eindeutig bestimmte Funktion $f: \partial\Omega \rightarrow \mathbb R^n$, sodass $\forall p \in \partial \Omega$ gilt:
+\begin{enumerate}
+	%T_p ist Tangentialraum
+	\item $r(p) \bot T_p \, \partial \Omega$
+	\item $|r(p)| = 1$
+	\item $p + r \nu(p) \notin \Omega \quad \forall r > 0$ hinreichend klein.
+\end{enumerate}
+Der Vektor $r(p)$ heißt \underline{äußere Normale} von $\Omega$ in $p \in \partial \omega$. Die Funktion 
+\begin{center}
+	$r: \partial \Omega \rightarrow \mathbb R^n$ 
+\end{center}
+ist stetig.
+%Bildchen
+\end{Satz}
+
+
+%Def IV.5
+\begin{Definition}
+Sei $\Omega \subset \mathbb R^n$ offen mti $\mathscr C^1$-Rang. Dann setzen wir:
+\begin{center}
+	$\mathscr C^1(\overline {\mathbb R^m}) := \Set{f \in \mathscr C^1(\Omega, \mathbb R^m) | f \text{ und }Df \text{ können stetig auf }\partial \Omega \text{ fortgesetzt werden}}$
+\end{center}
+\end{Definition}
+
+%Konstruktion der Abschneidefunktion
+\par\bigskip
+\emph{Konstruktion von Abschneidefunktionen}: 
+\par\bigskip
+\begin{equation}
+	\chi '': \mathbb R \rightarrow \mathbb R, 
+	\quad \chi''(t) :=
+	\begin{cases}
+		0 & , \,t \leq 0 \\
+		e^{-\dfrac{1}{t}} & ,\,t > 0
+	\end{cases}
+	\quad \in \mathscr C^\infty(\mathbb R) \\
+\end{equation}
+\par
+\begin{equation}
+	\chi': \mathbb R \rightarrow \mathbb R, \quad \chi'(t) =
+	\dfrac{\chi''(4-t}{\chi''(4-t) + \chi''(t-1)} =
+	\begin{cases}
+		1 & , \, t \leq 1 \\
+		\in (0, 1) &, \, 1 < t < 4 \\
+		0 & ,\, t \geq 4
+	\end{cases}
+	\quad \in \mathscr C^\infty(\mathbb R)
+\end{equation}
+\par
+\begin{equation}
+	\chi: \mathbb R^n \rightarrow \mathbb R
+	\chi(x) := \chi'(|x|^2) \in \mathscr C^\infty (\mathbb R^n)
+\end{equation}
+\par
+\begin{equation}
+	\quad \chi \equiv 0 \text{ auf } \mathbb R^n\backslash B_2(0)
+	\qquad \chi \equiv 1\text{ auf }\overline{B_1(0)}
+	\qquad 0 \leq \chi(x) \leq 1 \quad \forall x \in \mathbb R^n
+\end{equation}
 
 
 
