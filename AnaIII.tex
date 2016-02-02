@@ -41,6 +41,9 @@
 \newcommand\overequal[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $ #1 $}}}{=}}}
 \newcommand{\quotes}[1]{``#1''}
 \newcommand{\umgf}{$m$-dimensionale Untermannigfaltigkeit des $\mathbb R^n$}
+\newcommand{\dom}{\partial\Omega}
+\newcommand{\oo}{\overline{\Omega}}
+\newcommand{\dudv}{\dfrac{\partial u}{\partial v}}
 
 \begin{document}
 
@@ -81,7 +84,7 @@ Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
 %Bsp.
 \begin{Beispiel}
 \begin{enumerate}
-	\item $P(X)$ trivial
+	\item $P(X)$\; trivial
 	\item $\{ \emptyset, X \}$\; trivial
 \end{enumerate}
 \end{Beispiel}
@@ -143,7 +146,7 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 	$\Rightarrow \lim a_n \in \mathbb{\overline{R}}$
 	\item $\sum\limits_{n=1}^{\infty} a_n \in \mathbb{\overline{R}}$, $a_n \geq 0 \quad \forall n \in \mathbb{N}$
 	\item offene Teilmengen von $\overline{\mathbb{R}}$: \\
-	$U \subset \overline{\mathbb{R}} $ offen $\Leftrightarrow U \cap \mathbb{R}$ offen und falls $\{+\infty\}$ oder $\{-\infty\}$ in $M$ liegt, existiert ein $a \in \mathbb{R}$ mit $(a,\; \infty ]\subset U$ bzw. $[-\infty, a) \subset U$
+	$U \subset \overline{\mathbb{R}} $ offen $\Leftrightarrow U \cap \mathbb{R}$ offen und falls $\{+\infty\}$ oder $\{-\infty\}$ in $U$ liegt, existiert ein $a \in \mathbb{R}$ mit $(a,\; \infty ]\subset U$ bzw. $[-\infty, a) \subset U$
 \end{enumerate}
 \end{Bemerkung}
  % Hier fehlt noch eine kleine Tabelle
@@ -219,10 +222,14 @@ Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 \begin{Satz}
 $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \in \mathbb{N}$ die Aussagen
 \begin{enumerate}
-	\item $A_1 \subset A_2 \subset ...  A_i \subset A_{i+1} \subset .. $\\
-	$\Rightarrow \mu(\bigcup\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
-	\item Aus $A_1 \supset A_2 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\mu(A_1)\; < \;  \infty$ folgt\\
-	$\mu(\bigcap\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+	\item $A_1 \subset A_2 \subset ...  A_i \subset A_{i+1} \subset .. $
+	\begin{center}
+		$\Rightarrow \quad \mu(\bigcup\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+	\end{center}
+	\item Aus $A_1 \supset A_2 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\mu(A_1)\; < \;  \infty$ folgt
+	\begin{center}
+		$\mu(\bigcap\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+	\end{center}
 	\item $\mu(\bigcup\limits_{i=1}^{\infty} A_i) \leq \sum\limits_{i=1}^{\infty} \mu(A_i)$ \\
 	($A_i$ müssen hier nicht paarweise disjunkt sein)
 \end{enumerate}
@@ -240,8 +247,8 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 
 %Bsp.
 \begin{Beispiel}
-$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k) > \infty$ \\
-card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne 0 \lim_{k \rightarrow \infty} $card$ (A_k) = \infty$
+$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k) \leq \infty$ \\
+card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne \lim_{k \rightarrow \infty} $card$ (A_k) = \infty$
 \end{Beispiel}
 
 %Def I.6
@@ -1037,7 +1044,7 @@ Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt:
 \begin{Beispiel}
 \emph{Ellipsoid} \\
 $\lambda_1, ..., \lambda_n = 0$, $E = \Set{ x \in \mathbb R^n | \left( \dfrac{x_1}{\lambda_1} \right)^2 + ... + \left (\dfrac{x_n}{\lambda_n}\right)^2 < 1 }$ \\
-Jetzt gilt: $E = \Lambda(\mathscr B_1(0))$,\; $\Lambda =$
+Jetzt gilt: $E = \Lambda(B_1(0))$,\; $\Lambda =$
 $\begin{pmatrix}
       \lambda_1 & 	 &	&	& 0 \\
       		 &  	\ddots \\
@@ -1045,7 +1052,7 @@ $\begin{pmatrix}
 		 &	&	& \ddots \\
 		 0 &	&	&	&	\lambda_n
 \end{pmatrix}$ \\
-$\Rightarrow \mathscr L^n(E) = (\lambda_1 \cdotp ... \cdotp \lambda_n) \cdotp \mathscr L^n(\mathscr B_1(0))$
+$\Rightarrow \mathscr L^n(E) = (\lambda_1 \cdotp ... \cdotp \lambda_n) \cdotp \mathscr L^n(B_1(0))$
 \end{Beispiel}
 
 
@@ -1316,9 +1323,9 @@ $\int_{\mathbb R^n \backslash \mathscr B_1 (0)} f \, d\mathscr L^n < \infty$ $\L
 $f: \mathbb R^n \rightarrow \mathbb R$, $f(x) = |x|^{-\alpha}, \alpha \in \mathbb R$ \\
 \emph{Behauptung:} 
 \begin{center}
-	$\int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$  \\	
+	$\int\limits_{\mathbb R^n\backslash B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$  \\	
 	%das hier macht nicht so wirklich Sinn. Wieso über B oder ohne gleich??
-	$\int\limits_{\mathscr B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ 
+	$\int\limits_{B_1(0)} f d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$ 
 \end{center}
 
 $A_k := \left\{x \in \mathbb R^n | 2^k \leq |x| < 2^{k+1}\right\}, k \in \mathbb Z$ 
@@ -1348,11 +1355,11 @@ Satz II.7:
 \end{center}
 Es ist weiter 
 \begin{center}
-	$\sum\limits_{k=0}^l 2^{-k\alpha}\chi_{A_k}$ $\underrightarrow{k \rightarrow \infty}$ $\sum\limits_{k=0}^\infty 2^{-k\alpha}\chi_{A_k} = g\chi_{\mathbb R^n \backslash \mathscr B_1(0)}$
+	$\sum\limits_{k=0}^l 2^{-k\alpha}\chi_{A_k}$ $\underrightarrow{k \rightarrow \infty}$ $\sum\limits_{k=0}^\infty 2^{-k\alpha}\chi_{A_k} = g\chi_{\mathbb R^n \backslash B_1(0)}$
 \end{center} 
 punktweise und monoton. \\
 Satz II.10 \\
-$\rightarrow \int\limits_{\mathbb R^n\backslash \mathscr B_1(0)} g \,d\mathscr L^n = \int g\chi_{\mathbb R^n\backslash B_1(0)} \,d\mathscr L^n = \int \sum\limits_{k=1}^\infty 2^{-k\alpha}\chi_{A_k} \,d\mathscr L^n = \int \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l 2^{-k\alpha} \chi_{A_k} \,d\mathscr L^n$
+$\rightarrow \int\limits_{\mathbb R^n\backslash B_1(0)} g \,d\mathscr L^n = \int g\chi_{\mathbb R^n\backslash B_1(0)} \,d\mathscr L^n = \int \sum\limits_{k=1}^\infty 2^{-k\alpha}\chi_{A_k} \,d\mathscr L^n = \int \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l 2^{-k\alpha} \chi_{A_k} \,d\mathscr L^n$
 \par\bigskip
 $\overequal{\text{Satz II.10}} \quad \lim_{l \rightarrow \infty} \sum\limits_{k=0}^l \int 2^{-k\alpha}\chi_{A_k} \,d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \int \chi_{A_k} \,d\mathscr L^n = \sum\limits_{k=0}^\infty 2^{-k\alpha} \mathscr L^n (A_k)$ 
 \par\bigskip
@@ -1379,7 +1386,7 @@ $\overequal{\text{Satz II.10}} \quad \lim_{l \rightarrow \infty} \sum\limits_{k=
 \par\bigskip
 $\mathscr L^n$ ist ein \underline{vollständiges Maß} 
 \begin{center}
-	$\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} \,d\mathscr L^n = \int \overline g \chi_{\mathscr B_1(0)}\, d\mathscr L^n$
+	$\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} \,d\mathscr L^n = \int \overline g \chi_{B_1(0)}\, d\mathscr L^n$
 \end{center}
 \end{Beispiel}
 
@@ -1857,14 +1864,14 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 
 %Bsp.
 \begin{Beispiel}
-Sei $\alpha_n = \mathscr L^n(\mathscr B_1(0))$,
+Sei $\alpha_n = \mathscr L^n(B_1(0))$,
 $\mathscr L^n = \mathscr L^{n-1} \times \mathscr L^1$\\
 \par
-$\mathscr B_1(0) = \Set{z \in \mathbb R^n| \,|z| < 1} = \Set{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R| \,|x|^2 + y^2 <1} $
+$B_1(0) = \Set{z \in \mathbb R^n| \,|z| < 1} = \Set{z = (x, y) \in \mathbb R^{n-1} \times \mathbb R| \,|x|^2 + y^2 <1} $
 \par\bigskip
-$(\mathscr B_1(0))_y = \Set{x \in \mathbb R^{n-1}| \,|x| < \sqrt{1-y^2},\,  y \in (-1, 1]} = \sqrt{1-y^2}\;\mathscr B_1^{n-1} (0) $
+$(B_1(0))_y = \Set{x \in \mathbb R^{n-1}| \,|x| < \sqrt{1-y^2},\,  y \in (-1, 1]} = \sqrt{1-y^2}\;\mathscr B_1^{n-1} (0) $
 \par\bigskip
-$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)\;(\mathscr B_1(0))$
+$\alpha_n = \mathscr L^n(\mathscr B^1(0)) = (\mathscr L^{n-1} \times \mathscr L^1)\;(B_1(0))$
 \par\bigskip
 $ = \int\limits_{-1}^1 \mathscr L^{n-1}\left(\{x \in \mathbb R^{n-1}: |x| < \sqrt{1 -y^2}\}\right)\, d\mathscr L^1(y) $
 \par\bigskip
@@ -2490,6 +2497,141 @@ Sei $\Omega \subset \mathbb R^n$ offen mti $\mathscr C^1$-Rang. Dann setzen wir:
 	\qquad \chi \equiv 1\text{ auf }\overline{B_1(0)}
 	\qquad 0 \leq \chi(x) \leq 1 \quad \forall x \in \mathbb R^n
 \end{equation}
+
+%29.01.16
+%Lemma IV.3
+\begin{Lemma}
+Sei $\Omega = \Set{(y, r) \in U \times I | r < \mu(y)}$ mit $U \subseteq \mathbb R^{n-1}$ offen, $I = (a, b)$ und $u \in \mathscr C^1(U, I)$. \\
+Hat $f \in \mathscr C^1(\Omega, \mathbb R^n)$ kompakten Träger in $U \times I$, so gilt nach dem Satz von Gauß:
+\begin{center}
+	$\int_{\Omega} \text{div} f \, \mathscr L^n = \int_{\partial \Omega} <f, r> \, d\mu_{\partial\Omega}$,
+\end{center}
+wobei $r$ die \underline{äußere Normale} von $\Omega$ ist.
+\end{Lemma}
+
+%Lemma IV.4
+\begin{Lemma}
+Sei $K \subseteq \mathbb R^n$ kompakt und sei $(A_i)_{i \in I}$, $I$ beliebige Indexmenge, eine offene Überdeckung von $K$. \\
+Dann existiert eine \underline{Teilung der Eins} zu $(A_i)_{i \in I}$, das heißt es existiert eine endliche Indexmenge $J$ und es existieren Funktionen $\eta_j \in \mathscr C_c^\infty(\mathbb R^n)$, $j \in J$ mit $\eta_j > 0 \quad \forall j \in J$, sodass
+\begin{enumerate}
+	\item $\forall x \in K: \sum\limits_{j \in J} \eta_j(x) =1$
+	\item $\forall j \in J \; \exists i \in I: \; $spt $ \eta_j \subseteq A_i$
+\end{enumerate}
+\end{Lemma}
+
+
+%Satz IV.9 Satz von Gauß
+\begin{Satz}
+\emph{Satz von Gauß}: \\
+Sei $\Omega \subset \mathbb R^n$ offen und beschränkt mit $\mathscr C^1$-Rand. Dann gilt $\forall f \in \mathscr C^1(\overline \Omega, \mathbb R^n)$:
+\begin{center}
+	$\int_\Omega $div $f\, d\mathscr L^n = \int_{\dom} <f, r> \, d\mu_{\dom}$,
+\end{center}
+wobei $r$ die äußere Normale von $\Omega$ ist.
+\end{Satz}
+
+
+%01.02.16 beim Reh
+
+%Lemma II.5 Greensche Formeln
+\begin{Lemma}
+\emph{Greensche Formeln}: \\
+Sei $\Omega \subset \mathbb R^n$ offen, beschränkt mit $\mathscr C^1$-Rand.
+\begin{enumerate}
+	\item $u \in \mathscr C^1(\overline{\Omega}), \, v \in \mathscr C^2(\oo)$, dann gilt:
+	\begin{center}
+		$\int_\Omega u \triangle v \; + \; \left\langle Du, Dv \right\rangle \; d\mathscr L^n \; = \; \int_{\dom} u \;\dfrac{\partial v}{\partial u}\; d\mu$
+	\end{center}
+	\item $u, v \in \mathscr C^2(\oo)$
+	\begin{center}
+		$\int_\Omega u \triangle v \; - \; \triangle u v \; d\mathscr L^n \; = \; \int_{\dom} u \; \dfrac{\partial v}{\partial v} \; - \; \dfrac{\partial u}{\partial v} \, v \; d\mu$
+	\end{center}
+\end{enumerate}
+\end{Lemma}
+
+%Bsp. Mittelwerteigenschaft von harmonischen Funktionen
+\begin{Beispiel}
+\emph{Mittelwerteigenschaft von harmonischen Funktionen}: \\
+Sei $u \in \mathscr C^2(\Omega)$ \underline{harmonisch}, das heißt
+\begin{center}
+	$\triangle u = 0$ \quad auf $\Omega \qquad (\Omega \subset \mathbb R^n$ offen$)$
+\end{center}
+Sei $B_r(x_0) \subset \Omega \;(r < $ dist $(x_0, \dom))$, dann folgt aus dem Satz von Gauß:
+\begin{center}
+	$\int_{\partial B_r(x_0)} \dudv \; d\mu \; = \; \int_{B_r(x_0)} \triangle u \; d\mathscr L^n \; = \; 0$
+\end{center}
+Aus der Übung (höhöhö) wissen wir, dass
+\begin{equation}
+	G(x) =
+	\begin{cases}
+		\dfrac{\left | x - x_0 \right | ^2 }{2-n} & , \; n > 2 \\
+		\log(\left | x - x_0 \right |) & ,\; n = 2
+	\end{cases}
+\end{equation}
+ist harmonisch aus $\mathscr R^n\backslash \{x_0\}$,
+\begin{equation}
+	G(x) =
+	\begin{cases}
+		\dfrac{r^{2-n} }{2-n} & , \; n > 2 \\
+		\log(r) & ,\; n = 2
+	\end{cases}
+\end{equation}
+konstant auf $\partial B_r(x_0)$ und 
+\begin{equation}
+	\dfrac{\partial G}{\partial v} (x) = r^{1-n}
+\end{equation}
+auf $\partial B_r(x_0)$.\\
+Das Gebiet $\tilde\Omega := B_r(x_0) \backslash \overline{B_\epsilon (x_0)}$ hat $\mathscr C^1$-Rand $\left(\text{, da }\tilde\Omega = \Set{x \in \mathbb R^n| \epsilon^2 < \left |x-x_0\right |^2 < r^2}\right)$. 
+\par\bigskip
+Wir wenden Lemma IV.5 (2) auf $u$ und $v$ an und erhalten:
+\par\bigskip
+$r^{1-n} \int_{\partial B_r(x_0)} u \; d\mu = \epsilon^{1-n} \int_{\partial B_\epsilon (x_0)} u \; d\mu$
+\par\bigskip
+für $\epsilon \rightarrow 0$:
+\par\bigskip
+$\left | \epsilon^{1-n}  \int_{\partial B_r(x_0)} u \; d\mu \; - \; w_{n-1} \;u(x_0)\right | 
+\quad = \quad 
+\left | \epsilon^{1-n}  \int_{\partial B_r(x_0)} u \; d\mu \; -  \;u(x_0)\; d\mu \right | $
+\par\bigskip
+$\quad \leq \sup_{|x-x_0| = \epsilon} \left |u(x) - u(x_0)\right | \longrightarrow 0$
+
+\par\bigskip
+Damit gilt:
+\begin{center}
+	$u(x_0) = \dfrac{1}{w_{n-1}}\; r^{1-n} \; \int_{\partial B_r(x_0)} u \; d\mu$
+\end{center}
+
+aus Satz IV.7
+\par\bigskip
+$\dfrac{1}{\alpha_n r^n} \; \int_{B_r(x_0)} u \, d\mathscr L^n 
+\quad = \quad 
+\dfrac{1}{\alpha_n r^n} \; \int_0^r \int_{\partial B_l} u \; d\mu \;dl
+\quad = \quad 
+\dfrac{1}{\alpha_n r^n} \; \int_0^r w_{n-1} l^{n-1} \; dl \, u(x_0)$
+\par\bigskip
+$\quad = \quad u(x_0) \dfrac{n \,w_{n-1}}{\alpha_n} 
+\quad = \quad
+u(x_0)$
+\begin{center}
+	$\Rightarrow u(x_0) \quad = \quad \dfrac{1}{\alpha_n r^n} \; \int_{B_r(x_0)} u \;d\mathscr L^n$
+\end{center}
+
+\end{Beispiel}
+
+%Bsp. Integralsatz von Cauchy
+\begin{Beispiel}
+\emph{Integralsatz von Cauchy}: \\
+$\Omega \subset \mathbb C \cong \mathbb R^2$ beschränkt, offen mit $\mathscr C^1$-Rand.
+$f \in \mathscr C^1(\oo, \mathbb C)$, das heißt $f = u + i v$, $f$ ist \underline{holomorph}, falls
+\begin{center}
+	$\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y}; \quad \dfrac{\partial u}{\partial y} = - \dfrac{\partial v}{\partial x}$
+\end{center}
+$($Cauchy-Riemann-Gleichungen$)$ \\
+Dann gilt für $\dom = r$:
+\begin{center}
+	$\int_r f\; dz = 0$
+\end{center}
+\end{Beispiel}
 
 
 
