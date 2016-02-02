@@ -44,6 +44,7 @@
 \newcommand{\dom}{\partial\Omega}
 \newcommand{\oo}{\overline{\Omega}}
 \newcommand{\dudv}{\dfrac{\partial u}{\partial v}}
+\newcommand{\ffg}{f \Asterisk g}
 
 \begin{document}
 
@@ -2634,5 +2635,100 @@ Dann gilt für $\dom = r$:
 \end{Beispiel}
 
 
+
+
+%KAPITEL 5 
+%JUCHU; BALD IST ES VORBEI!!!
+
+\chapter{Faltung und Fouriertransformation}
+
+%Notation
+\emph{Notation}: \\
+Wir schreiben "$dx$"\; anstelle von "$d\mathscr L^n(x)$".
+
+%Satz V.1 Definition der Faltung. Super, also Definition im Satz
+\begin{Satz}
+\emph{Definition der Faltung}: \\
+$f \in L^p(\mathbb R^n), \; 1 \leq p \leq \infty$ und $g \in L^1(\mathbb R^n)$.
+Die \underline{Faltung von $f$ mit $g$} ist die $L^n$-fast-überall definierte Funktion
+\begin{center}
+	$(f \Asterisk g)(x) \quad = \quad \int_{\mathbb R^n} f(x-y)g(y) \,dy$
+\end{center}
+Es gilt: $f \Asterisk g \in L^p(\mathbb R^n)$ mit
+\begin{center}
+	$\| \ffg \|_{L^p(\mathbb R^n)} \leq \|g\|_{L^1(\mathbb R^n)} \|f \|_{L^p(\mathbb R^n)}$
+\end{center}
+\end{Satz}
+%hier ist irgendwie nicht ganz klar, was der Beweis ist und was noch "wichtig" sein könnte.
+
+
+%Bem
+\begin{Bemerkung}
+Es gilt:
+\begin{center}
+	$\ffg(x) = g \Asterisk f(x)$,
+\end{center}
+denn mit $z = x -y$ folgt: 
+\begin{center}
+	$(\ffg)(x) = \int_{\mathbb R^n} f(x -y) g(y) \; dy = \int_{\mathbb R^n} f(z) g(x - z) \, dz = (g \Asterisk f)(x)$
+\end{center}
+\end{Bemerkung}
+
+
+%Lemma V.1
+\begin{Lemma}
+Sei $f \in L^p$ mit $1 \leq p \leq \infty$ und $\tau_n : \mathbb R^n \rightarrow \mathbb R^n$, $\tau_n(x) := x + n$, dann gilt:
+\begin{enumerate} 
+	\item $f \circ \tau_n \in L^p(\mathbb R^n)$ und 
+	\begin{center}
+		$\| f \circ \tau_n\|_{L^p(\mathbb R^n)} = \|f\|_{L^p(\mathbb R^n)}$
+	\end{center}
+	\item falls $p < \infty$, dann gilt in $L^p(\mathbb R^n)$:
+	\begin{center}
+		$f \circ \tau_n \quad \underrightarrow{\;n \rightarrow 0\;} \quad f$  
+	\end{center}
+\end{enumerate}
+\end{Lemma}
+
+%Satz V.2 Approximation durch Faltung
+\begin{Satz}
+\emph{Approximation durch Faltung}: \\
+Sei $f \in L^p(\mathbb R^n)$ mit $1 \leq p \leq \infty$, $\eta \in L^1(\mathbb R^n)$, 
+\begin{center}
+	$\int_{\mathbb R^n} \eta(z) \,dz = 1$, 
+\end{center}
+so folgt für 
+\begin{center}
+	$\eta_\rho (z):= f^{-n} \eta\left(\dfrac{z}{\rho}\right):$
+\end{center}
+\begin{center}
+	$\|f \Asterisk \eta_\rho\|_{L^p} \leq \|f\|_{L^p} \|\eta\|_{L^1}$
+\end{center}
+und in $L^p$:
+\begin{center}
+	$f \Asterisk \eta_\rho \longrightarrow f$
+\end{center}
+\end{Satz}
+
+
+%Satz V.3 Glättung
+\begin{Satz}
+\emph{Glättung}: \\
+Sei $\eta \in \mathscr C^k(\mathbb R^k)$ mit $\|D^\alpha \eta\|_{C^0} \leq K \quad \forall |\alpha| \leq k$ \\
+für $f \in L^1(\mathbb R^n)$, 
+$f \Asterisk \eta \in \mathscr C^k(\mathbb R^n)$ und 
+\begin{center}
+	$D^\alpha(f \Asterisk \eta) = f \Asterisk D^\alpha \eta$, 
+\end{center}
+insbesondere
+\begin{center}
+	$\|D^\alpha (f \Asterisk \eta) \|_{C^0(\mathbb R^n)} \leq K \|f\|_{L^1}$
+\end{center}
+\emph{Multiindex}: 
+$\alpha = (\alpha_1, .., \alpha_n) \in \mathbb N_0^n:$
+\begin{center}
+	$|\alpha| = |\alpha_1| + ... + |\alpha_n| \qquad D^\alpha = \partial_1^{\alpha_1}... \partial_n^{\alpha_n}$
+\end{center}
+\end{Satz}
 
 \end{document}
