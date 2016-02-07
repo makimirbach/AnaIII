@@ -7,7 +7,7 @@
 \usepackage{ntheorem}
 \everymath{\displaystyle}
 \usepackage{amsmath, amssymb} %Damit geht dann cases
-\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen 
+%\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen 
 \usepackage{ulsy} %Für Widerspruchspfeil
 \usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
 \usepackage{extpfeil} %für = mit Wort drüber
@@ -31,113 +31,69 @@
 
 \emph{Mengen mit $\mathscr C^1$-Rand}: 
 \par
-$\Omega \subset \mathbb R^n$ heißt $\mathscr C^k$-regulär, falls für jedes $p \in \partial\Omega \; \exists ($ nach Rotation und Translation$), U \subset \mathbb R^{n-1}, I \subset \mathbb R$ offen, $u: U \rightarrow I, u \in \mathscr C^k (U)$ 
-\begin{center}
-	$\Omega \cap U \times I = \Set{(y,r) \in U \times I | r < u(y)}$
-\end{center}
+$\Omega \subset \mathbb R^n$ heißt $\mathscr C^k$-regulär, falls für jedes $p \in \partial\Omega \; \exists ($nach Rotation und Translation$), U \subset \mathbb R^{n-1}, I \subset \mathbb R$ offen, $u: U \rightarrow I, u \in \mathscr C^k (U)$ 
+$$\Omega \cap U \times I = \Set{(y,r) \in U \times I | r < u(y)}$$
 
 $\exists O \in SO(n), q \in \mathbb R^n$, 
-\begin{center}
-	$O(\Omega - p) \cap U \times I = \Set{(y,r) \in U \times I | r < u(y)}$
-\end{center}
+$$O(\Omega - p) \cap U \times I = \Set{(y,r) \in U \times I | r < u(y)}$$
 
 \par
 
-\underline{Wichtig}: \\
-$\partial\Omega$ ist eine $\mathscr C^{(k)}$-Mannigfaltigkeit. Falls $\Omega \subset \mathbb R^n$ und $\partial\Omega$ ist eine $\mathscr C^{(k)}$-Mannigfaltigkeit $\nRightarrow \Omega \; \mathscr C^k$-regulär.
-
-\par
-
+\textbf{Wichtig}: \\
+$\partial\Omega$ ist eine $\mathscr C^{(k)}$-Mannigfaltigkeit. Falls $\Omega \subset \mathbb R^n$ und $\partial\Omega$ ist eine $\mathscr C^{(k)}$-Mannigfaltigkeit $$\nRightarrow \Omega \; \mathscr C^k \text{-regulär}.$$
 z.B $B_2\backslash \partial B_1$
 
 \par
 
-\underline{Satz von Gauß}: \\
+\textbf{Satz von Gauß}: \\
 $\Omega \subset \mathbb R^n$ mit $\mathscr C^1$-Rand. $X \in \mathscr C^1(\overline{\Omega}, \mathbb R^n)$, dann gilt:
-\begin{center}
-	$\int_\Omega \text{div} (X)  = \int_{\partial\Omega} X\cdotp \nu \;d\mu_{\partial\Omega}$
-\end{center}
-
-\par
-
+$$\int_\Omega \text{div} (X)  = \int_{\partial\Omega} X\cdotp \nu \;d\mu_{\partial\Omega}$$
 \emph{Randbemerkung}: \\
-Wichtiges Mittel für den Beweis war die Partition der $1$.
-
-\par\bigskip
-
-\underline{$1.$ Schritt:} 
-\par
-$\Omega = \Set{(x, r) | r < u(x)}$ 
-\par
-$x \in U,\; U \subset \mathbb R^{n-1},\; u \in \mathscr C^1(U \mathbb R^n)$ \\
-$\partial\Omega \cap (U \times \mathbb R) = \Set{u(x) = r} \Rightarrow T_{(x, u(x))}  \text{Graph}_u = \text{span}\Set{e_i + \dfrac{\partial u}{\partial  x_i}  e_n | i = 1, ..., n-1}$
-
-$X \in \mathscr C^1(U, \mathbb R^n)$ mit spt$(X) \subset K \times \mathbb R$
-
-$\int_\Omega \sum\limits_{i=1}^n \dfrac{\partial x^i}{x ^i} \, dx = \int_\Omega \text{div}(X) = \int_{\partial \Omega \cap U \times \mathbb R} X \nu \, d\mu_{\partial \Omega}$
-\par
-$ = \int_U \left\langle X(x, u(x), \text{ Vektor }-\bigtriangledown u \text{ und }1 \right\rangle \dfrac{1}{\text{hässliches Gekritzel}} \text{gleiches hässliches Gekritzel, kürzt sich weg} \, dx $
-\par
-$= \int_U \left\langle X(x, u(x)), selber Vektor \right\rangle \; dx$
-
-\par\bigskip
-
-\underline{$2.$ Schritt:} Partition der Eins
+Wichtiges Mittel für den Beweis war die Partition der $1$. \\
+\textbf{$1.$ Schritt:} 
+$$\Omega = \Set{(x, r) | r < u(x)}$$
+$$x \in U,\; U \subset \mathbb R^{n-1},\; u \in \mathscr C^1(U \mathbb R^n)$$
+$$\partial\Omega \;\cap\; (U \times \mathbb R) = \Set{u(x) = r} \Rightarrow T_{(x, u(x))}  \text{Graph}_u = \text{span}\Set{e_i + \dfrac{\partial u}{\partial  x_i}  e_n | i = 1, ..., n-1}$$
+$$X \in \mathscr C^1(U, \mathbb R^n) \text{ mit spt } (X) \subset K \times \mathbb R$$
+$$\int_\Omega \sum\limits_{i=1}^n \dfrac{\partial x^i}{x ^i} \, dx = \int_\Omega \text{div}(X) = \int_{\partial \Omega \cap U \times \mathbb R} X \nu \, d\mu_{\partial \Omega}$$
+$$ = \int_U \left\langle X(x, u(x), \text{ Vektor }-\bigtriangledown u \text{ und }1 \right\rangle \, dx $$
+$$= \int_U \left\langle X(x, u(x)), selber Vektor \right\rangle \; dx$$
+\textbf{$2.$ Schritt:} Partition der Eins
 \par
 Im Falle von $\mathbb R^3$-Bemerkung: \\
 Sei $\Omega$ ein $\mathscr C^1$-reguläre Menge und $\phi: U \rightarrow \mathbb R^3$ mit $U \subset \mathbb R^2$ offen und $\phi(U)$ ist ein lokale Parametrisierung von $\partial \Omega$
-
-$\nu \| $ span$\Set{\dfrac{\partial\phi}{\partial x}, \dfrac{\partial \phi}{\partial y}}^\bot \Rightarrow \nu = \lambda \cdotp \dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}; \; \lambda = \pm \dfrac{1}{| \dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}|}$
-
-$\left\lvert\dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}\right\rvert^2 = \left\lvert\dfrac{d \phi}{d x} \times \left(  \dfrac{\pap}{\pay} - \left\langle\dfrac{ \dfrac{\pap}{\pax}}{\left\lvert\dfrac{\pap}{\pax}\right\rvert^2}, \dfrac{\pap}{\pay}\right\rangle \dfrac{ \dfrac{\pap}{\pax}}{\left\lvert\dfrac{\pap}{\pax}\right\rvert}\right) \right\rvert^2$ \\
-
-$= |\dfrac{\pap}{\pax}|^2 \left(|\dfrac{\pap}{\pay} - \left\langle\dfrac{ \dfrac{\pap}{\pax}}{|\dfrac{\pap}{\pax}|}, \dfrac{\pap}{\pay}\right\rangle \dfrac{\pap}{\pax}|\right)^2$ \\
-
-$= |\dfrac{\pap}{\pax}|^2|\dfrac{\pap}{\pay}|^2  - \left\langle\dfrac{\partial \phi}{\partial x} , \dfrac{\partial \phi}{\partial y}\right\rangle^2 = \det(g)$
+$$\nu \| \text{ span }\Set{\dfrac{\partial\phi}{\partial x}, \dfrac{\partial \phi}{\partial y}}^\bot \Rightarrow \nu = \lambda \cdotp \dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}; \; \lambda = \pm \dfrac{1}{\left| \dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}\right|}$$
+$$\left\lvert\dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}\right\rvert^2 = \left\lvert\dfrac{d \phi}{d x} \times \left(  \dfrac{\pap}{\pay} - \left\langle\dfrac{ \dfrac{\pap}{\pax}}{\left\lvert\dfrac{\pap}{\pax}\right\rvert^2}, \dfrac{\pap}{\pay}\right\rangle \dfrac{ \dfrac{\pap}{\pax}}{\left\lvert\dfrac{\pap}{\pax}\right\rvert}\right) \right\rvert^2$$ 
+$$= \left|\dfrac{\pap}{\pax}\right|^2 \left(\left|\dfrac{\pap}{\pay} - \left\langle\dfrac{ \dfrac{\pap}{\pax}}{\left|\dfrac{\pap}{\pax}\right|}, \dfrac{\pap}{\pay}\right\rangle \dfrac{\pap}{\pax}\right|\right)^2$$
+$$= \left|\dfrac{\pap}{\pax}\right|^2\left|\dfrac{\pap}{\pay}\right|^2  - \left\langle\dfrac{\partial \phi}{\partial x} , \dfrac{\partial \phi}{\partial y}\right\rangle^2 = \det(g)$$
 
 \par\bigskip
 
 $g$ Gramsche Matrix
-
-$\int_{\partial \Omega \cap \phi(U)} X \nu \, d\mu_{\partial\Omega} = \sigma \int_U \left\langle X(\phi(x)), \dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}\right\rangle \, dx \, dy$,
+$$\int_{\partial \Omega \cap \phi(U)} X \nu \, d\mu_{\partial\Omega} = \sigma \int_U \left\langle X(\phi(x)), \dfrac{\partial \phi}{\partial x} \times \dfrac{\partial \phi}{\partial y}\right\rangle \, dx \, dy,$$
 wobei $\sigma \in \Set{\pm 1}$ je nach Orientierung von $\phi$.
 
 \par\bigskip
-
-\underline{1. Beispiel}: \\
+\textbf{1. Beispiel}: \\
 Sei $\Omega \subset \mathbb R^n \, \mathscr C^1$-regulär, dann gilt:
-\begin{center}
-	$L^n(\Omega) = \dfrac{1}{n} \int_{\partial \Omega} \left\langle x - x_0, \nu\right\rangle \; d\mu_{\partial\Omega} \quad \forall x_0 \in \mathbb R^n$ \quad $(1)$
-\end{center}
-\begin{center}
-	$\Rightarrow L^n(\Omega) \leq \dfrac{1}{n}$ diam$(\Omega) \mu(\partial\Omega)$ \quad $(2)$
-\end{center}
-
+$$L^n(\Omega) = \dfrac{1}{n} \int_{\partial \Omega} \left\langle x - x_0, \nu\right\rangle \; d\mu_{\partial\Omega} \quad \forall x_0 \in \mathbb R^n \quad (1)$$
+$$\Rightarrow L^n(\Omega) \leq \dfrac{1}{n}\text{ diam }(\Omega) \mu(\partial\Omega) \quad (2)$$
 
 \par\bigskip
-\underline{Theorem}: 
+\textbf{Theorem}: 
 \par
 Sei $u: \overline{B_1} \rightarrow \overline{B_1}$ stetig differenzierbar auf $\overline{B_1}$, dann hat $u$ (mindestens) einen Fixpunkt, d.h.
-\begin{center}
-	$\exists x \in \overline{B_1}$ mit $u(x) = x$
-\end{center}
-
+$$\exists x \in \overline{B_1} \text{ mit }u(x) = x$$
 \par\bigskip
 
-\underline{Lemma 1}: (Null Lagrangions) 
-\par
-$L: \mathbb R^{n \times n} \rightarrow \mathbb R$ heißt \underline{Null-Lagrangion}, falls gilt:
-\begin{center}
-	$\forall u \in \mathscr C^1(U, \mathbb R^n): \quad \dfrac{\partial}{\partial x} \left( \dfrac{\partial L}{\partial p_{i,j}}\right) = 0 \quad \forall j = 1,... n$
-\end{center}
+\textbf{Lemma 1}: (Null Lagrangions) 
+$L: \mathbb R^{n \times n} \rightarrow \mathbb R$ heißt \textbf{Null-Lagrangion}, falls gilt:
+$$\forall u \in \mathscr C^1(U, \mathbb R^n): \quad \dfrac{\partial}{\partial x} \left( \dfrac{\partial L}{\partial p_{i,j}}\right) = 0 \quad \forall j = 1,... n$$
 Wenn $L$ diese Eigenschaft hat:
-\begin{center}
-	$\int_U L(\bigtriangledown u) = \int_U L(\bigtriangledown v) \quad \forall u, v \in \mathscr C^1(U, \mathbb R^n)$ mit $u = v$ auf $\dom$
-\end{center}
+$$\int_U L(\bigtriangledown u) = \int_U L(\bigtriangledown v) \quad \forall u, v \in \mathscr C^1(U, \mathbb R^n) \text{ mit }u = v \text{ auf } \dom$$
 
 
-\underline{Lemma 2}: 
-\par
+\textbf{Lemma 2}: 
 $L(P) = \det (P)$ ist ein Null-Lagrangian.
 
 \end{document}
