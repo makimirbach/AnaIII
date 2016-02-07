@@ -1,0 +1,158 @@
+\documentclass[11pt]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{mathrsfs} %hübsche Buchstaben
+\usepackage{amssymb}
+\usepackage{ntheorem}
+\everymath{\displaystyle}
+\usepackage{amsmath, amssymb} %Damit geht dann cases
+%\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen werden.
+%\usepackage{array}
+\usepackage{mathabx} %für #
+%\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
+%\usepackage{fontenc} % Für "
+\usepackage{ulsy} %Für Widerspruchspfeil
+\usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
+\usepackage{extpfeil} %für = mit Wort drüber
+\usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
+\usepackage{braket} % Für schönere Mengen. Oder so. Hier ist z. B. \Set drin und die vertikalen Balken sind schön.
+
+
+\newcommand{\dom}{\partial\Omega}
+\newcommand{\pax}{\partial x}
+\newcommand{\pay}{\partial y}
+\newcommand{\pap}{\partial\phi}
+\newcommand{\ffg}{f \Asterisk g}
+\newcommand\overequal[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $ #1 $}}}{=}}}
+
+
+\begin{document}
+
+\title{\textbf{Analysis III}\\ Übung am 05.02.16}
+\author{Tamar Mirbach}
+\date{Wintersemester 2015/16\\ Karlsruher Institut für Technologie}
+
+
+\maketitle
+
+
+\emph{Wiederholung}: \textbf{Faltung} \\
+$f \in L^p(\mathbb R^n), g \in L^q(\mathbb R^n)$. Dann definiert
+$$(\ffg)(x) = \int_{\mathbb R^n} f(x-y) g(y) \; dy$$
+eine Funktion in $L^r(\mathbb R^n)$ mit $1+ 1/r = 1/p + 1/q$ mit
+$$\| \ffg\|_{L^r(\mathbb R^n)} \leq \|g\|_{L^1(\mathbb R^n)} \|f\|_{L^p(\mathbb R^n)}$$
+
+$($In der Vorlesung hatten wir den Fall $q = 1 \Rightarrow r=p, \|f \Asterisk g \|_{L^p} \leq \|g\|_{L^1} \|f\|_{L^p}$\\
+
+
+Gleich brauchen wir: \\
+\emph{Lemma}: \textbf{Erweiterung von Hölder} \\
+$f_i \in L^{p_i} (\mathbb R^n)$ für $i= 1, .., k$ und $1/q = 1/p_1 + ... + 1/p_k$, dann folgt:
+$$\|f_1 ... f_k\|_{L^q} \leq \|f_1\|_{L^{p_1}} ... \|f_k\|_{L^{p_k}}$$
+
+\par\bigskip
+
+Wir nehmen an: $f, g \geq 0$, d.h. wir können Fubini anwenden: \\
+$$\ffg = \int_{\mathbb R^n} f(x-y)g(y)dy = \int \underbrace{f(x-y)^{p/r} g(y)^{q/r}}_{f_1} \, \underbrace{f(x-y)^{1-p/r}}_{f_2} \, \underbrace{g(y)^{1-q/r}}_{f_3} \; dy$$
+Wegen Hölder mit $r = p_1$:
+$$1/r  +1/p_2 + 1/p_3 = 1$$
+$$(\ffg)(x)^r \leq \int f(x-y)^p g(y)^q \quad \|f(x-y)^{1-p/r}\|_{p_2}^r \quad \|g^{1-q/r}\|_{p_3}^r \, dy$$
+$$ = \int f(x-y)^p g(y) ^q \, dy \quad \|f\|_{p_2(1-p/r)}^{r(1-p/r)} \quad \|g\|_{1-q/r}^{(1-q/r)r}$$
+$$p_2(1-p/r) = p \quad \Rightarrow \quad 1/p_2 = 1/p - 1/r $$
+$$p_3(1-q/r) = q \quad \Rightarrow \quad 1/p_3 = 1/q - 1/r$$
+$$1/r + 1/p - 1/r + 1/q - 1/r= 1$$ und damit lösbar.
+$$\Rightarrow (\ffg)(x)^r \leq \int f(x-y)^p g(y)^q\, dy \quad \|f\|_{L^p}^{r-p} \quad \|g\|_{L^q}^{r-q}$$
+$$\Rightarrow \int(\ffg)^r(x) \, dx  \stackrel{\text{mit Fubini}}{\leq} \int \int f(x-y)^p \, dx g(y)^q\, dy \quad \|f\|_{L^p}^{r-p} \quad \|g\|_{L^q}^{r-q} \quad = \quad \|f\|_{L^p}^r \quad \|g\|_{L^q}^r$$
+$$\Rightarrow \|\ffg\|^r_{L^r} \leq \|f\|_{L^p}^r \quad \|g\|^r_{L^q}$$
+Für $f, g$ beliebig folgt die Ungleichung aus
+$$|\ffg|(x) \leq |f| \Asterisk |g|(x)$$
+und der obigen Ungleichung.
+
+
+
+
+\par\bigskip
+
+\emph{Beispiel für eine Glättung durch} \textbf{Faltung}: \\
+\begin{equation}
+	\eta(x) = 
+	\begin{cases}
+		1- |x| & , \text{ für } |x| < 1 \\
+		0  & , \text{ sonst}
+	\end{cases}
+\end{equation}
+$$f(x) = \chi_{\Set{x > 0}}$$
+$$f_\rho (x) := \eta_\rho \Asterisk f(x) \quad \overequal{z = y/ \rho} \quad \int f(x-\rho z) \eta (z) \, dz $$
+$$= \int f(\rho(x/\rho - y)) \eta(y) \; dy = \int f (x/\rho -y) \eta(y) \, dy = f_1(x/\rho)$$
+
+\begin{equation}
+	f_1(x) = \int f(x-y) \eta (y) \;dy = \int_{(-\infty, x)} \eta (y) \,dy =
+	\begin{cases}
+		0 & ,\text{ für } x < -1 \\
+		\int\limits_{-1}^x \eta(y) \, dy & ,\text{ für } x > -1
+	\end{cases}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow
+	f_1(x) = 
+	\begin{cases}
+		0 & ,\text{ für } x < -1 \\
+		1/2\;(1+x)^2 & ,\text{ für }-1 \leq x < 0 \\
+		1-1/2\;(1-x)^2 & , \text{ für } 0 \leq x < 1 \\
+		1 & ,\text{ für } x > 1
+	\end{cases}
+\end{equation}
+
+\emph{Fallunterscheidung:}
+\begin{enumerate}
+	\item $-1 \leq x < 0$		
+	$$\int\limits_{-1}^x \eta (y) \;dy = \int\limits_{-1}^x (1+s) \, ds = 1/2 (1+x)^2$$
+	\item $0 < x \leq 1$
+	$$\int\limits_{-1}^x \eta(y) \, dy = 1/2 + \int\limits_0^x (1-s) \, ds = 1/2 - 1/2 (1 - s)^2 \ \bigg\vert ^x_0 = 1 - 1/2\;(1-x)^2$$
+\end{enumerate}
+\emph{Lemma}: \\
+$u \in L^1(\Omega)$ mit der Eigenschaft, dass entweder
+\begin{enumerate}
+	\item $ r \mapsto 1/r^n \int_{B-r(x)} u(y) \, dy$ ist konstant für $0 < r <  $ dist $(x, \dom)$ oder
+	\item $f \mapsto 1/r^{n-1} \int_{\partial B_r(x)} u(y) \, d\mu$ ist kompakt für $0 < r <  $ dist $(x, \dom)$
+\end{enumerate}
+gilt:
+$$u \in \mathscr C^\infty(\Omega) \text{ und }\Delta u = 0 \text{ auf  }\Omega$$
+\textbf{Fourierreihen}: \\
+$f \in L^2(\mathbb R, \mathbb C) \;2\pi$-periodisch 
+$$f_n(x) = \sum\limits_{k=-n}^n \tilde{f}(k) e^{ikx} \text{ mit }\tilde{f}(k) = 1/2\pi \int\limits_{-\pi}^\pi f(x) e^{-iky} \, dy$$
+Aus Vorlesung folgt:
+\begin{enumerate}
+	\item $$\|f_n\|^2_{L^2((-\pi, \pi))} = 2\pi \sum\limits_{k=-n}^n |\tilde{f}(k)|^2$$ 
+	\item $$f_n \rightarrow f \text{ in} \;L^2([-\pi, \pi])$$
+\end{enumerate}
+
+Bsp(?)
+\begin{equation}
+	f(x) = 
+	\begin{cases}
+		1 & , \text{ für }0 < x < \pi \\
+		-1 & , \text{ für } -\pi < x < 0
+	\end{cases}
+\end{equation}
+$2\pi$-periodisch fortgesetzt: hübsches Bild. Sieht aus wie eine Straße mit den nicht durchgezogenen Linien. \\
+\par
+
+$$\tilde{f}(k) = \dfrac{1}{2\pi} \Set{\int_0^\pi \;e^{-ikx} \, dx - \int^0_{-\pi}\; e^{-ikx} \, dx}$$
+\par
+\begin{equation}
+	= \dfrac{1}{2\pi} \Set{-\dfrac{1}{ik}(e^{ik\pi} - 1) + \dfrac{1}{ik}(1- e^{ik\pi})} =
+	\begin{cases}
+		\dfrac{1}{2\pi} \Set{\dfrac{2}{ik} + \dfrac{2}{ik}} = \dfrac{2}{\pi ik} & \text{für k ungerade} \\
+		0 & \text{für k gerade}
+	\end{cases}
+\end{equation}
+
+
+$$f_n(x) = \sum\limits_{k=-n\text{k ungerade}}^n \dfrac{2}{\pi i k} \;e^{ikx} = \sum\limits_{k=1, \text{k ungerade}}^n \dfrac{4}{\pi} \;\dfrac{1}{k} \left(\dfrac{e^{ikx} - e^{-ikx}}{2i}\right) $$
+$$= \sum\limits_{l=0}^{\lfloor n/2 \rfloor} \dfrac{4}{\pi} \dfrac{1}{(2l+1)}\sin((2l+1)x) $$
+ 
+
+\end{document}
