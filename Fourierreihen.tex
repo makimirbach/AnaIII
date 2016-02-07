@@ -1,0 +1,90 @@
+\documentclass[11pt]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{mathrsfs} %hübsche Buchstaben
+\usepackage{amssymb}
+\usepackage{ntheorem}
+\everymath{\displaystyle}
+\usepackage{amsmath, amssymb} %Damit geht dann cases
+%%\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen werden.
+%\usepackage{array}
+\usepackage{mathabx} %für #
+%\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
+%\usepackage{fontenc} % Für "
+\usepackage{ulsy} %Für Widerspruchspfeil
+\usepackage{mathtools} %Für Rightarrow mit Wort darüberunderbrace
+\usepackage{extpfeil} %für = mit Wort drüber
+\usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
+\usepackage{braket} % Für schönere Mengen. Oder so. Hier ist z. B. \Set drin und die vertikalen Balken sind schön.
+%\usepackage{breqn}
+
+\newtheorem{Definition}{Definition}[chapter]
+
+
+\newcommand{\cara}{Carathéodory-Fortsetzung}
+\newcommand\overequal[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $ #1 $}}}{=}}}
+\newcommand{\quotes}[1]{``#1''}
+\newcommand{\umgf}{$m$-dimensionale Untermannigfaltigkeit des $\mathbb R^n$}
+\newcommand{\dom}{\partial\Omega}
+\newcommand{\oo}{\overline{\Omega}}
+\newcommand{\dudv}{\dfrac{\partial u}{\partial v}}
+\newcommand{\ffg}{f \Asterisk g}
+
+\begin{document}
+
+\title{\textbf{Fourierreihen}\\ Skript zur Vorlesung von Prof. Dr. Tobias Lamm, Einschub}
+\author{Tamar Mirbach, 05.02.16}
+\date{Wintersemester 2015/16\\ Karlsruher Institut für Technologie}
+
+\maketitle
+
+
+$$L^2(I, \mathbb C) := \left\{ f: (-\pi, \pi) \rightarrow \mathbb C \ \bigg\vert \ u = Re(f), v = Im(f) \, \mathscr L^1-\text{messbar}, \right\}$$ \\
+mit $$ \|f\|_{c^2} = \left( \int\limits_{-\pi}^\pi |f(x)|^2 \, d\mathscr L^1(x) \right)^{1/2} < \infty $$
+
+
+Satz II.21 (Riesz-Fischer) $\Rightarrow L^2(I, \mathbb C)$ ist vollständig bzgl der $L^2$-Norm.
+%Def
+\begin{Definition}
+\emph{Skalarprodukt}: \\
+$$\langle f, g\rangle_{L^2}\; = \;\int\limits_{-\pi}^\pi f(x) \overline{g(x)} \; d\mathscr L^1(x), \quad \langle f, f\rangle_{L^2} = \|f\|^2_{L^2}$$
+
+$\Rightarrow L^2(I, \mathbb C)$ ist ein \textbf{Hilbertraum}.
+\end{Definition}
+$w_k(x) := \dfrac{1}{\sqrt{2\pi}} e^{ikx}, \;k \in \mathbb Z \; \Rightarrow\; w_k$ bilden ein \textbf{ONS: Orthonormalsystem}.
+\par
+\begin{equation}
+\langle w_k, w_l \rangle_{L^2} \;=\; 1/2\pi \int\limits_{-\pi}^\pi e^{i(k-l)x} \, d\mathscr L^1(x) = 
+\begin{cases}
+	1 & , k=l \\
+	0 & \text{, sonst}
+\end{cases}
+\end{equation}
+span$\Set{w_k} =: \mathbb P$ \quad \textbf{Trigonometrische Polynome} \\
+$$\mathbb P_n := \Set{\text{Trigonometrische Polynome vom Grad }\leq n} := $$ $$\text{span}\Set{w_k | -n \leq k \leq n}$$ \\
+Das $n-$te Fourier-Polynom von $f$ ist die Orthogonalprojektion von $f$ auf $\mathbb P_n$. \\
+$$\Rightarrow f_n = \sum\limits_{k=-n}^n \langle f, w_k \rangle_{L^2} \cdotp w_k =: \sum\limits_{k=-n}^n \tilde{f}(k)e^{iks}$$ \\
+$$\tilde{f}(k) = \dfrac{1}{\sqrt{2\pi}} \langle f, w_k\rangle_{L^2} = 1/2\pi \int\limits_{-\pi}^\pi f(x) e^{-ikx}\, d\mathscr L^1(x) $$ \\
+$\tilde{f}(k)$ ist der \textbf{$k-$ te Fourier-Koeffizient von $f$}. \\
+Die Folge $f_n$ heißt \textbf{Fourier-Reihe} von $f$. 
+\par\bigskip
+
+Sei $p \in \mathbb P_n$, dann gilt: \\
+$$\|f - p \|^1_{L^2} = \|(f-f_n) + (f_n - p)\|^2_{L^2} = \langle(f-f_n) + (f_n - p). (f-f_n) + (f_n - p)\rangle_{L^2}$$ \\
+$$(\Asterisk) : = \|f - f_n\|_{L^2}^2 + \|f_n - p\|^2_{L^2}, \text{denn} f-f_n \bot \mathbb P_n, \;f_n - p \in \mathbb P$$ \\
+Mit $p \equiv 0$ folgt die \textbf{Besselsche Ungleichung}:
+$$2\pi \sum\limits_{k=-\infty}^\infty |\tilde{f}(k)|^2 = 2\pi \lim_{n \rightarrow \infty} \sum\limits_{k=-n}^n |\tilde{f}(k)|^2 = \lim_{n \rightarrow \infty} \|f_n\|_{L^2}^2 \leq \|f\|_{L^2}^2 \quad (\Asterisk \, \Asterisk)$$
+
+\emph{Nebenrechnung}: \\
+$$\|f_n\|_{L^2}^2 = \langle\sum\limits_{k=-n}^n \tilde{f}(k) e^{ikx}, \sum\limits_{l=-n}^n \tilde{f}(l) e^{ilx} \rangle_{L^2} $$
+$$ = \sum_k \sum_l \tilde{f}(k)\overline{\tilde{f}(l)} \underbrace{\int\limits_{-\pi}^\pi e^{i(k-l)x}}_{= 2\pi \delta_{k,l}} \, d\mathscr L^1(x) = 2\pi \sum\limits_{k=-n}^n |\tilde{f}(k)|^2$$ 
+Für $f \in L^2(I, \mathbb C)$ und $m \geq n$ folgt: \\
+$$\|f_m - f_n\|_{L^2}^2 = 2\pi \Set{\sum\limits_{k=n+1}^m |\tilde{f}(k)|^2  + \sum\limits_{k=-m}^{-n-1}|\tilde{f}(k)|^2 < \epsilon \; \forall n \geq N(\epsilon) }$$ 
+$$\Rightarrow f_n \text{ ist Cauchy-Folge in }L^2(I, \mathbb C).$$ \\
+Mit Satz II.21 $\Rightarrow f_n \quad \underrightarrow{L^2}\quad  g\in L^2(I, \mathbb C)$ \\
+
+\emph{Frage}: Ist $f = g$? \\
+Es gilt $$(\Asterisk \Asterisk \Asterisk): \|f-f_n\|_{L^2}^2 = \min_{p \in \mathbb P_n} \|f-p\|_{L^2}^2$$  
+
+\end{document}
