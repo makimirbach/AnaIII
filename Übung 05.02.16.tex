@@ -122,7 +122,7 @@ gilt:
 $$u \in \mathscr C^\infty(\Omega) \text{ und }\Delta u = 0 \text{ auf  }\Omega$$
 \textbf{Fourierreihen}: \\
 $f \in L^2(\mathbb R, \mathbb C) \;2\pi$-periodisch 
-$$f_n(x) = \sum\limits_{k=-n}^n \tilde{f}(k) e^{ikx} \text{ mit }\tilde{f}(k) = 1/2\pi \int\limits_{-\pi}^\pi f(x) e^{-iky} \, dy$$
+$$f_n(x) = \sum\limits_{k=-n}^n \tilde{f}(k) e^{ikx} \quad \text{ mit } \quad \tilde{f}(k) = 1/2\pi \int\limits_{-\pi}^\pi f(x) e^{-iky} \, dy$$
 Aus Vorlesung folgt:
 \begin{enumerate}
 	\item $$\|f_n\|^2_{L^2((-\pi, \pi))} = 2\pi \sum\limits_{k=-n}^n |\tilde{f}(k)|^2$$ 
@@ -154,5 +154,6 @@ $$\tilde{f}(k) = \dfrac{1}{2\pi} \Set{\int_0^\pi \;e^{-ikx} \, dx - \int^0_{-\pi
 $$f_n(x) = \sum\limits_{k=-n\text{k ungerade}}^n \dfrac{2}{\pi i k} \;e^{ikx} = \sum\limits_{k=1, \text{k ungerade}}^n \dfrac{4}{\pi} \;\dfrac{1}{k} \left(\dfrac{e^{ikx} - e^{-ikx}}{2i}\right) $$
 $$= \sum\limits_{l=0}^{\lfloor n/2 \rfloor} \dfrac{4}{\pi} \dfrac{1}{(2l+1)}\sin((2l+1)x) $$
  
+
 
 \end{document}
