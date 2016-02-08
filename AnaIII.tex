@@ -7,7 +7,7 @@
 \usepackage{ntheorem}
 \everymath{\displaystyle}
 \usepackage{amsmath, amssymb} %Damit geht dann cases
-\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen werden.
+%\usepackage[all, error]{onlyamsmath} %Wohl sinnvoll, damit Befehle immer mathematisch genommen werden.
 %\usepackage{array}
 \usepackage{mathabx} %für #
 %\usepackage{amsfonts} Wie bekommt man Underrightarrow{bla}?
@@ -63,13 +63,13 @@ $A$ $\subset$  $P(X)$ Mengensystem
 %Def. I.1
 
 \begin{Definition}
-Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \underline{$\sigma$-Algebra}, falls
+Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \textbf{$\sigma$-Algebra}, falls
 \begin{enumerate}
 	\item $X \in \mathscr{A}$
 	\item $A \in \mathscr{A} \Rightarrow X \backslash A \in \mathscr{A}$
 	\item $A_i \in \mathscr{A}$, $i \in$ $\mathbb{N} \Rightarrow \bigcup_{i = 1}^{\infty} A_i$
 \end{enumerate}
-Das System $(X, \mathscr{A})$ heißt \underline{messbarer Raum}.
+Das System $(X, \mathscr{A})$ heißt \textbf{messbarer Raum}.
 \end{Definition}
 
 %Bem.
@@ -101,7 +101,7 @@ Für ein Mengensystem $E \subset P(X)$ heißt
 \begin{center}
 $\sigma(E):=\bigcap \Set{\mathscr{A}| \mathscr{A} \text{ ist } \sigma\text{-Algebra in }X\text{ und } E \subset \mathscr{A} }$
 \end{center}
-die \underline{von $E$ erzeugte $\sigma$-Algebra}.
+die \textbf{von $E$ erzeugte $\sigma$-Algebra}.
 \end{Definition}
 
 %Bem.
@@ -120,9 +120,9 @@ die \underline{von $E$ erzeugte $\sigma$-Algebra}.
 	%b
 	\item $(X, d)$ sei metrischer Raum, $\mathscr{O}:=$ \{ offene Teilmenge von $X$\} 
 	\begin{center}
-		$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \quad \underline{Borel $\sigma$-Algebra}. 
+		$\sigma(\mathscr{O})=:\mathscr{B(O)}$ \quad \textbf{Borel $\sigma$-Algebra}. 
 	\end{center}
-	Elemente darin heißen  \underline{Borelmengen} 
+	Elemente darin heißen  \textbf{Borelmengen} 
 	\par
 	$X = \mathbb{R}^{n}: \quad \mathscr{B(O)} = \mathscr{B}^{n}$ 
 	\par
@@ -132,7 +132,7 @@ die \underline{von $E$ erzeugte $\sigma$-Algebra}.
 
 %Def I.3
 \begin{Definition}
-Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen $s \in \mathbb{R}$, falls eine der folgenden Alternativen gilt:
+Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \textbf{konvergiert} gegen $s \in \mathbb{R}$, falls eine der folgenden Alternativen gilt:
 \begin{itemize}
 	\item  $s \in \mathbb{R}$ und $\forall \epsilon > 0$ gilt $s_{k} \in (s-\epsilon, s+\epsilon) \quad\forall k$ groß genug
 	\item $s = \infty$ und $\forall r \in \mathbb{R}: s_{k} \in (r, \infty] \quad \forall k$ groß genug
@@ -154,11 +154,11 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \underline{konvergiert} gegen
 
  %Def I.4
 \begin{Definition}
-$\mathscr{A} \subset P(X)$ $\sigma$-Algebra. Eine nicht negative Mengenfunktion $\mu: \mathscr{A} \rightarrow [0, \infty]$ heißt \underline{Maß} auf $\mathscr{A}$, wenn
+$\mathscr{A} \subset P(X)$ $\sigma$-Algebra. Eine nicht negative Mengenfunktion $\mu: \mathscr{A} \rightarrow [0, \infty]$ heißt \textbf{Maß} auf $\mathscr{A}$, wenn
 \begin{enumerate}
 	\item $\mu(\infty) = 0$
 	\item für paarweise disjunkte Mengen $A_i \in \mathscr{A}, i \in \mathbb{N}$ gilt: \\
-	$\mu(\bigcup\limits_{i=1}^{\infty}A_i) = \sum\limits_{i=1}^{\infty} \mu(A_i)$ \underline{$\sigma$-Additivität}
+	$\mu(\bigcup\limits_{i=1}^{\infty}A_i) = \sum\limits_{i=1}^{\infty} \mu(A_i)$ \textbf{$\sigma$-Additivität}
 \end{enumerate}
 Das Tripel $(X, \mathscr{A}, \mu)$ wird als Maßraum bezeichnet.
 \end{Definition}
@@ -171,15 +171,15 @@ $\mu(B) = \mu(A \cup B\backslash A) = \mu(A) + \underbrace{\mu(B\backslash A)}_{
 
 %Def I.5
 \begin{Definition}
-$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \underline{endlich}, wenn $\mu(A)\; <\; \infty \quad \forall A \in \mathscr{A}$, $\mu$ heißt \underline{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i) < \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
-Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
+$(X, \mathscr{A}, \mu)$ sei Maßraum: $\mu$ heißt \textbf{endlich}, wenn $\mu(A)\; <\; \infty \quad \forall A \in \mathscr{A}$, $\mu$ heißt \textbf{$\sigma$-endlich}, falls eine Folge $(X_i) \subset \mathscr{A}$ mit $\mu(X_i) < \infty $ existiert, sodass $X = \bigcup\limits_{i=1}^{\infty} X_i$. \\
+Falls $\mu(X) = 1$, so wird $\mu$ \textbf{Wahrscheinlichkeitsmaß} genannt.
 \end{Definition}
 
 
 %Bsp.
 \begin{Beispiel}
 \begin{enumerate}
-	\item $X$ Menge, $\mathscr{A} = P(X), x \in X$ \underline{Diracmaß}
+	\item $X$ Menge, $\mathscr{A} = P(X), x \in X$ \textbf{Diracmaß}
 	\begin{equation}
 		\delta_{x} (A) =
 		\begin{cases}
@@ -196,7 +196,7 @@ Falls $\mu(X) = 1$, so wird $\mu$ \underline{Wahrscheinlichkeitsmaß} genannt.
 					\end{enumerate}
 		Weil $\delta_x(X) = 1$, ist $\delta_x$ ein Wahrscheinlichkeitsmaß.
 	\end{itemize}
-	\item $X$ beliebig, $\mathscr{A} = P(X)$: \underline{Zählmaß} card: $P(X) \rightarrow [0, +\infty]$
+	\item $X$ beliebig, $\mathscr{A} = P(X)$: \textbf{Zählmaß} card: $P(X) \rightarrow [0, +\infty]$
 	\begin{equation}
 		card(A) :=
 		\begin{cases}
@@ -239,9 +239,9 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 %Bem
 \begin{Bemerkung}
 \begin{enumerate}
-	\item \emph{1.} heißt \underline{Stetigkeit von unten} \\
-	\emph{2.} heißt \underline{Stetigkeit von oben} \\
-	\emph{3.} \underline{$\sigma$-Subadditivität} des Maßes
+	\item \emph{1.} heißt \textbf{Stetigkeit von unten} \\
+	\emph{2.} heißt \textbf{Stetigkeit von oben} \\
+	\emph{3.} \textbf{$\sigma$-Subadditivität} des Maßes
 	\item  $\mu(A_1\; < \;\infty)$ in \emph{2.} kann durch $\mu(A_k) \; < \;\infty$ für ein $k \in \mathbb{N}$ ersetzt werden.
 \end{enumerate}
 \end{Bemerkung}
@@ -254,13 +254,13 @@ card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne \lim_{k \rightarrow \infty} $
 
 %Def I.6
 \begin{Definition}
-Sei $(X, \mathscr{A}, \mu)$ Maßraum. Jede Menge $A \in \mathscr{A}$ mit $\mu(A) = 0$ heißt \underline{$\mu$-Nullmenge}. Das Maß heißt \underline{vollständig}, wenn $N \subset A $ für ein $A \subset \mathscr{A}$ mit $\mu(A) = 0 \Rightarrow N \in \mathscr{A}$ und $\mu(N) = 0$.
+Sei $(X, \mathscr{A}, \mu)$ Maßraum. Jede Menge $A \in \mathscr{A}$ mit $\mu(A) = 0$ heißt \textbf{$\mu$-Nullmenge}. Das Maß heißt \textbf{vollständig}, wenn $N \subset A $ für ein $A \subset \mathscr{A}$ mit $\mu(A) = 0 \Rightarrow N \in \mathscr{A}$ und $\mu(N) = 0$.
 \end{Definition}
 
 %Bsp.
 \begin{Beispiel}
 (das blöde Maß): \\
-$\mu(A) = 0$ $ \forall A \in \mathscr{A}$ und $\mathscr{A} \ne P(X)$ ist \underline{nicht vollständig}
+$\mu(A) = 0$ $ \forall A \in \mathscr{A}$ und $\mathscr{A} \ne P(X)$ ist \textbf{nicht vollständig}
 \end{Beispiel}
 
 %Bem.
@@ -274,7 +274,7 @@ Jedes Maß kann vervollständigt werden (siehe Blatt $2$)
 %Def. I.7
 \begin{Definition}
 Seien $(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume.\\
- Eine Abbildung $f: X \rightarrow Y$ heißt \underline{$\mathscr{A}-\mathscr{C}$-messbar}, wenn $f^{-1}(\mathscr{C}) \subset \mathscr{A}$, d.h. $f^{-1}(C) \in \mathscr{A}$ $ \forall C \in \mathscr{C}$
+ Eine Abbildung $f: X \rightarrow Y$ heißt \textbf{$\mathscr{A}-\mathscr{C}$-messbar}, wenn $f^{-1}(\mathscr{C}) \subset \mathscr{A}$, d.h. $f^{-1}(C) \in \mathscr{A}$ $ \forall C \in \mathscr{C}$
 \end{Definition}
 
 %Bem.
@@ -304,7 +304,7 @@ $f$ heißt kurz messbar (bzw. $\mathscr{A}$-messbar), wenn an $\mathscr{A}, \mat
 			0 & \text{sonst}
 		\end{cases}
 	\end{equation}
-	\underline{charakteristische Funktion} von $E$ auf $\mathbb{R}$. \\
+	\textbf{charakteristische Funktion} von $E$ auf $\mathbb{R}$. \\
 	Sei $\mathscr{B}^1$ als $\sigma$-Algebra gegeben. \\
 	$\chi_E$ ist $\mathscr{A}$-messbar $\Leftrightarrow$ $\{1\} = \bigcap\limits_k \left(1- \dfrac{1}{k}, 1 + \dfrac{1}{k}\right), E \in \mathscr{A}$
 	\item $(X, \mathscr{A}), (Y, \mathscr{C}), (Z, \mathscr{D})$ messbare Räume \\
@@ -329,15 +329,15 @@ Seien $(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $\mathscr{C} = \s
 \begin{Beispiel}
 \begin{enumerate}
 	\item Jedes $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$ stetig ist $\mathscr{B}^n-\mathscr{B}^m-$ messbar, denn $f^{-1}(\text{offen})$ ist offen. \\
-	\emph{Notation}: $f$ ist \underline{Borel-messbar}
+	\emph{Notation}: $f$ ist \textbf{Borel-messbar}
 	\item $X \ne \emptyset$ Menge, $(Y, \mathscr{C})$ messbarer Raum, $f: X \rightarrow Y$ Abbildung. \\
-	Blatt $\varrightwavearrow$ $f^{-1}(\mathscr{C})$ $\sigma$-Algebra. Tatsächlich ist es die kleinste $\sigma$-Algebra, die $f: X \rightarrow Y$ messbar macht. $f^{-1}(\mathscr{C})$ heißt die \underline{durch $f$ und $(Y, \mathscr{C})$ induzierte $\sigma$-Algebra}
+	Blatt $\varrightwavearrow$ $f^{-1}(\mathscr{C})$ $\sigma$-Algebra. Tatsächlich ist es die kleinste $\sigma$-Algebra, die $f: X \rightarrow Y$ messbar macht. $f^{-1}(\mathscr{C})$ heißt die \textbf{durch $f$ und $(Y, \mathscr{C})$ induzierte $\sigma$-Algebra}
 \end{enumerate}
 \end{Beispiel}
 
 %Definition I.8
 \begin{Definition}
-Sei $(X, \mathscr{A})$ messbarer Raum und $D \in \mathscr{A}$. Eine Funktion $f: D \rightarrow \overline{\mathbb{R}}$ heißt \underline{numerische Funktion}.
+Sei $(X, \mathscr{A})$ messbarer Raum und $D \in \mathscr{A}$. Eine Funktion $f: D \rightarrow \overline{\mathbb{R}}$ heißt \textbf{numerische Funktion}.
 \end{Definition}
 
 %Bem
@@ -380,16 +380,16 @@ $\left( f^+ = \max{\{f, 0\}} \geq 0, f^- = \max{\{-f, 0\}} \geq 0, f = f^+ - f^-
 %Wieso x in M in A?? Was ist dann M?
 %Bem
 \begin{Bemerkung}
-$(X, \mathscr A, \mu)$ Maßraum. Man sagt, die Aussage $A[x]$ ist wahr für \underline{$\mu$-fast alle $x \in M \in \mathscr A$}, falls eine $\mu$-Mullmenge $N$ existiert mit $\{x \in M: A[x]  \text{ falsch}\} \subset N$.\\
+$(X, \mathscr A, \mu)$ Maßraum. Man sagt, die Aussage $A[x]$ ist wahr für \textbf{$\mu$-fast alle $x \in M \in \mathscr A$}, falls eine $\mu$-Mullmenge $N$ existiert mit $\{x \in M: A[x]  \text{ falsch}\} \subset N$.\\
 $f, g: X \rightarrow \overline{\mathbb R}$ Aussage  \quotes{$f(x) \leq g(x)$ für $\mu$-fast alle $x \in X$}  bedeutet: \\
 $\exists N \subset \mathscr A$ mit $\mu(N) = 0$, sodass $\forall x \in X\backslash N: f(x) \leq g(x)$ \\
-Eine Funktion $h$ ist \quotes{\underline{$\mu$-fast überall auf $X$}} definiert, wenn $h$ aus $D \in \mathscr A$ definiert ist und $\mu(X \backslash D) = 0$. \\
+Eine Funktion $h$ ist \quotes{\textbf{$\mu$-fast überall auf $X$}} definiert, wenn $h$ aus $D \in \mathscr A$ definiert ist und $\mu(X \backslash D) = 0$. \\
 Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert punktweise $\mu$-fast überall gegen $f: D \rightarrow \overline{\mathbb R}$, falls eine Menge $M \in \mathscr A$ existiert mit $\mu(N) = 0$ und $\lim\limits_ {k \rightarrow \infty} f_k(x) = f(x)\quad \forall x \in D \backslash N$
 \end{Bemerkung}
 
 %Definition I.9
 \begin{Definition}
-$(X, \mathscr A, \mu)$ Maßraum. Eine auf $D \in \mathscr A$ definierte numerische Funktion $f$ heißt \underline{$\mu$ messbar} (auf $X$), wenn $\mu(X \backslash D) = 0$ und $f$ $\mathscr A$-messbar ist.
+$(X, \mathscr A, \mu)$ Maßraum. Eine auf $D \in \mathscr A$ definierte numerische Funktion $f$ heißt \textbf{$\mu$ messbar} (auf $X$), wenn $\mu(X \backslash D) = 0$ und $f$ $\mathscr A$-messbar ist.
 \end{Definition}
 
 %bem
@@ -419,7 +419,7 @@ $(X, \mathscr A, \mu)$ vollständiger Maßraum, $f_k, k \in \mathbb N$ $\mu$-mes
 \end{Satz}
 
 %Satz I.6
-\begin{Satz}{\emph{Egorov:}} \\
+\begin{Satz}{\emph{\textbf{Egorov:}}} \\
 $(X, \mathscr A, \mu)$ Maßraum. $D \in \mathscr A$ Menge mit $\mu(D) \less \infty$ und $f_k, f$ $ \mu|_D$-messbar, $\mu|_D$ - fast überall endliche Funktionen mit $f_k \rightarrow f$ $\mu|_D$- fast überall. \\
 Dann existiert $\forall \epsilon \> 0$ eine Menge $B \subset D, B \in \mathscr A$ mit \\
 \begin{enumerate}
@@ -432,14 +432,14 @@ Dann existiert $\forall \epsilon \> 0$ eine Menge $B \subset D, B \in \mathscr A
 
 %Def I.10
 \begin{Definition}
-Sei $X$ eine Menge. Eine Funktion $\mu: P(X) \rightarrow [0, \infty]$ mit $\mu(\emptyset) = 0$ und $A \subset \bigcup\limits_{i=1}^\infty A_i \Rightarrow \mu(A) \leq \sum\limits_{i=1}^\infty \mu(A_i)$ heißt \underline{äußeres Maß} auf $X$.
+Sei $X$ eine Menge. Eine Funktion $\mu: P(X) \rightarrow [0, \infty]$ mit $\mu(\emptyset) = 0$ und $A \subset \bigcup\limits_{i=1}^\infty A_i \Rightarrow \mu(A) \leq \sum\limits_{i=1}^\infty \mu(A_i)$ heißt \textbf{äußeres Maß} auf $X$.
 \end{Definition}
 
 %Bem
 \begin{Bemerkung}
 \begin{enumerate}
 	\item Äußeres Maß ist immer auf $P(X)$ definiert.
-	\item $\mu$ Maß auf $P(X) \Rightarrow$ $\mu$ \underline{äußeres Maß}.
+	\item $\mu$ Maß auf $P(X) \Rightarrow$ $\mu$ \textbf{äußeres Maß}.
 	\item Begriffe $\sigma$-Additiv, $\sigma$-endlich, endlich, monoton, Nullmengen sind wie bei Maßen definiert.
 	\item Jedes äußere Maß ist monoton. $A \subset B \Rightarrow \mu(A) \leq \mu(B)$
 \end{enumerate}
@@ -447,7 +447,7 @@ Sei $X$ eine Menge. Eine Funktion $\mu: P(X) \rightarrow [0, \infty]$ mit $\mu(\
 
 %Def I.11
 \begin{Definition}
-Sei $\mu$ äußeres Maß auf $X$. Die Menge $A \subset X$ heißt \underline{$\mu$-messbar}, falls für alle $S \subset X$: \\
+Sei $\mu$ äußeres Maß auf $X$. Die Menge $A \subset X$ heißt \textbf{$\mu$-messbar}, falls für alle $S \subset X$: \\
 $\mu(S) \geq \mu(S \cap A) + \mu(S \backslash A)$ \\
 $\mathscr M(\mu):= \{ A \subset X | A$ $ \mu-messbar \}$
 \end{Definition}
@@ -468,7 +468,7 @@ Dann ist $\mu$ äußeres Maß. $(\inf \emptyset = + \infty)$
 
 %Satz I.8
 \begin{Satz}
-$\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß auf $X$. Für $M \subset X$ erhält man durch $\mu|_M : P(X) \rightarrow [0, \infty], \mu|_M := \mu(A \cap M)$ ein \underline{äußeres Maß} (Einschränkung von $\mu$ auf $M$) auf $X$. Es gilt: $A$ $ \mu-$messbar $\Rightarrow$  $A$ $ \mu|_M $-messbar
+$\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß auf $X$. Für $M \subset X$ erhält man durch $\mu|_M : P(X) \rightarrow [0, \infty], \mu|_M := \mu(A \cap M)$ ein \textbf{äußeres Maß} (Einschränkung von $\mu$ auf $M$) auf $X$. Es gilt: $A$ $ \mu-$messbar $\Rightarrow$  $A$ $ \mu|_M $-messbar
 \end{Satz}
 
 %Satz I.9
@@ -507,7 +507,7 @@ Sei $\mu$ äußeres Maß und seien $A_i \in \mathscr M(\mu), i \in \mathbb N$. D
 
 %Def I.12
 \begin{Definition}
-Ein Mengensystem $\mathscr A \in P(X)$ heißt \underline{$\cap$-stabil}, \underline{ $\cup$-stabil }, \underline{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch 
+Ein Mengensystem $\mathscr A \in P(X)$ heißt \textbf{$\cap$-stabil}, \textbf{ $\cup$-stabil }, \textbf{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch 
 \begin{center}
 	$A \cap B \in \mathscr A, A \cup B \in \mathscr A, A\backslash B \in \mathscr A$.
 \end{center}
@@ -520,13 +520,13 @@ $\cap$-stabil $(\cup$-stabil$)$ $\Rightarrow$ $\cap$-Stabilität $($bzw. $\cup)$
 
 %Def I.13.
 \begin{Definition}
-Ein Mengensystem $\mathscr R \in P(X)$ heißt \underline{Ring} über $X$, falls
+Ein Mengensystem $\mathscr R \in P(X)$ heißt \textbf{Ring} über $X$, falls
 \begin{enumerate}
 	\item $\emptyset \in \mathscr R$
 	\item $A, B \in \mathscr R \Rightarrow A\backslash B \in \mathscr R$
 	\item $A, B \in \mathscr R \Rightarrow A \cup B \in \mathscr R$
 \end{enumerate}
-Ist $X \in \mathscr R$, so heißt $\mathscr R$ \underline{Algebra}.
+Ist $X \in \mathscr R$, so heißt $\mathscr R$ \textbf{Algebra}.
 \end{Definition}
 
 
@@ -549,7 +549,7 @@ Ist $X \in \mathscr R$, so heißt $\mathscr R$ \underline{Algebra}.
 
 %Def I.14
 \begin{Definition}
-Sei $\mathscr R \subset P(X)$ ein Ring. Eine Funktion $\lambda: \mathscr R \rightarrow [0, \infty]$ heißt \underline{Prämaß} auf $\mathscr R$, falls
+Sei $\mathscr R \subset P(X)$ ein Ring. Eine Funktion $\lambda: \mathscr R \rightarrow [0, \infty]$ heißt \textbf{Prämaß} auf $\mathscr R$, falls
 \begin{enumerate}
 	\item $\lambda(\emptyset) = 0$
 	\item für paarweise disjunkte $A_i \in \mathscr R, i \in \mathbb N$ mit $\bigcup\limits_{i=1}^\infty A_i \in \mathscr R$: 
@@ -582,7 +582,7 @@ Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, endlich, monoton, Nullmenge 
 
 %Def I.15
 \begin{Definition}
-Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\mu$ auf $X$ (bzw. ein Maß $\mu$ auf $\mathscr A$) heißt \underline{Fortsetzung} von $\lambda$, falls gilt:
+Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\mu$ auf $X$ (bzw. ein Maß $\mu$ auf $\mathscr A$) heißt \textbf{Fortsetzung} von $\lambda$, falls gilt:
 \begin{enumerate}
 	\item $\mu|_\mathscr R = \lambda$, d.h. 
 	\begin{center}
@@ -611,16 +611,16 @@ Sei $\mu$ \cara\; des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf
 \end{Lemma}
 
 %Satz I.12
-\begin{Satz} \emph{Hopf-Fortsetzung} \\
+\begin{Satz} \emph{\textbf{Hopf-Fortsetzung} }\\
 Sei $\lambda: R \rightarrow [0, \infty]$ Prämaß auf Ring $R \subset P(X)$. Dann existiert ein Maß 
 \begin{center}
 	$\mu$ auf $\sigma(R)$ mit $\mu =\lambda$ auf $R$.
 \end{center}	
-Diese Fortsetzung ist \underline{eindeutig}, falls $\lambda$ $\sigma$-endlich ist.
+Diese Fortsetzung ist \emph{eindeutig}, falls $\lambda$ $\sigma$-endlich ist.
 \end{Satz}
 
 \emph{Notation:}
-Sei $\mu$ Maß auf $X$ mit der Eigenschaft: $\forall D \subset X: \exists E \in \mathscr{M}(\mu)$ mit $D \subset E$ und $\mu(D) = \mu(E)$. Dann heißt $\mu$ \underline{reguläres} äußeres Maß.
+Sei $\mu$ Maß auf $X$ mit der Eigenschaft: $\forall D \subset X: \exists E \in \mathscr{M}(\mu)$ mit $D \subset E$ und $\mu(D) = \mu(E)$. Dann heißt $\mu$ \textbf{reguläres} äußeres Maß.
 
 \begin{Beispiel}
 Blödes Beispiel
@@ -638,7 +638,7 @@ Sei $\mu$ \cara\, des Prämaßes $\lambda$ auf $R$. Dann existiert zu jedem $D \
 \begin{Satz}
 $\lambda$  $\sigma$-endliches Prämaß auf Ring $\mathscr R$ und $\mu$ sei \cara\; von $\lambda$. Dann ist 
 \begin{center}
-	$\mu|_{\mathscr M(\mu)}$ die \underline{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. 
+	$\mu|_{\mathscr M(\mu)}$ die \textbf{Vervollständigung} von $\mu|_{\sigma(\mathscr R)}$. 
 \end{center}
 Insbesondere gibt es genau eine Fortsetzung von $\lambda$ zu einem Maß auf $\mathscr M(\mu)$.
 \end{Satz}
@@ -653,15 +653,15 @@ Sei $\lambda: \mathscr R \rightarrow [0, \infty]$ Prämaß auf Ring $\mathscr R$
 \end{Lemma}
 
 %Michelle 09.11.15
-Prämaß auf Ring kann zu einem \underline{Maß} fortgesetzt werden: \\
-\underline{Ziel}: Volumen (Flächeninhalt) einer Menge $\Omega \subset \mathbb R^n$ zu berechnen ($\rightarrow$ Maß einer Menge)
+Prämaß auf Ring kann zu einem \emph{Maß} fortgesetzt werden: \\
+\emph{Ziel}: Volumen (Flächeninhalt) einer Menge $\Omega \subset \mathbb R^n$ zu berechnen ($\rightarrow$ Maß einer Menge)
 
 
 %I.5 Halbringe und Inhalte
 \section{Halbringe und Inhalte}
 %Def. I.16
 \begin{Definition}
-Ein Mengensystem $\mathscr Q \subset P(X)$ heißt \underline{Halbring} über $X$, falls
+Ein Mengensystem $\mathscr Q \subset P(X)$ heißt \textbf{Halbring} über $X$, falls
 \begin{enumerate}
 	\item $\emptyset \in \mathscr Q$
 	\item $P, Q \in \mathscr Q \Rightarrow P \cap Q \in \mathscr Q$
@@ -673,7 +673,7 @@ Ein Mengensystem $\mathscr Q \subset P(X)$ heißt \underline{Halbring} über $X$
 \begin{Beispiel}
 \begin{enumerate}
 	\item $X$ beliebige Menge. $Q := \{\emptyset\} \cup \Set{\{a\}|  a \in X}$ ist Halbring
-	\item $I \subset \mathbb R$ heißt \underline{Intervall}, falls $a, b \in \mathbb R$ existieren mit $a \leq b$ und 
+	\item $I \subset \mathbb R$ heißt \textbf{Intervall}, falls $a, b \in \mathbb R$ existieren mit $a \leq b$ und 
 	\begin{center}
 		$(a, b) \subset \overline{I} \subset [a, b]$. 
 	\end{center}
@@ -713,7 +713,7 @@ Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeug
 
 %Lemma I.11
 \begin{Lemma}
-Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Zu jedem $F \in \mathscr F$ existieren $P_1, ... P_k \in \mathscr Q$ \underline{paarweise disjunkt} mit 
+Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeugte Ring. Zu jedem $F \in \mathscr F$ existieren $P_1, ... P_k \in \mathscr Q$ \emph{paarweise disjunkt} mit 
 \begin{center}
 	$F = \bigcup\limits_{i=1}^k P_i$
 \end{center}
@@ -723,7 +723,7 @@ Sei $\mathscr Q$ Halbring über $X$ und $\mathscr F$ der von $\mathscr Q$ erzeug
 \begin{Definition}
 Sei $\mathscr Q \subset P(X)$ Halbring über $X$. Eine Funktion 
 \begin{center}
-	$\lambda: \mathscr Q \rightarrow [0, \infty ]$ heißt \underline{Inhalt} auf $\mathscr Q$, 
+	$\lambda: \mathscr Q \rightarrow [0, \infty ]$ heißt \textbf{Inhalt} auf $\mathscr Q$, 
 \end{center}	
 falls
 \begin{enumerate}
@@ -731,7 +731,7 @@ falls
 	\item $\lambda\left(\bigcup\limits_{i=1}^n	A_i\right) = \sum\limits_{i=1}^n \lambda(A_i)$ für paarweise disjunkte $A_i \in \mathscr Q$ mit $\bigcup\limits_{i=1}^n A_i \in \mathscr Q$
 \end{enumerate}
 
-Ein Inhalt heißt \underline{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma$-additiv auf $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: 
+Ein Inhalt heißt \textbf{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma$-additiv auf $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: 
 \begin{center}
 	$\lambda\left(\bigcup\limits_{i\in \mathbb N} A_i \right) = \sum\limits_{i=1}^\infty \lambda(A_i)$,\quad  falls $\bigcup\limits_{i \in \mathbb N} A_i \in \mathscr Q$
 \end{center}	
@@ -864,7 +864,7 @@ Inhalt $vol^n : \mathscr{Q}^n \rightarrow [0, \infty]$
 
 %Def II.1
 \begin{Definition}
-	Das \underline{(äußere) Lebesgue - Maß} einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
+	Das \textbf{(äußere) Lebesgue - Maß} einer Menge $E \subset \mathbb{R}^n$ ist definiert durch\\
 	$ \mathscr{L}^n(E) := \inf \Set{ \sum_{i = 1}^{\infty} vol^n(P_i) | P_i \in \mathscr{Q}^n, E \subset \bigcup\limits_{i = 1}^\infty P_i }$
 \end{Definition}
 
@@ -918,7 +918,7 @@ $\mathscr L^n \vert_{\mu(\mathscr L^n)}$ ist vollständiges Maß.
 %20.11.15
 %Satz II.3: Luisin
 \begin{Satz}
-\emph{Luisin}: \\
+\emph{\textbf{Luisin}}: \\
 Sei $A \subset \mathbb R^n$ offen mit $\mathscr L^n(A) < + \infty$. $f$ sei $\mathscr L^n\vert_A$-messbar mit Werten in $\mathbb R$. \\
 Für alle $\epsilon > 0$ existiert $\kappa = \kappa_\epsilon \subset A$ kompakt mit
 \begin{enumerate}
@@ -932,7 +932,7 @@ Für alle $\epsilon > 0$ existiert $\kappa = \kappa_\epsilon \subset A$ kompakt 
 
 %Def II.2
 \begin{Definition}
-Ein äußeres Maß $\mu$ auf $\mathbb R^n$ heißt \underline{Borelmaß}, falls gilt:
+Ein äußeres Maß $\mu$ auf $\mathbb R^n$ heißt \textbf{Borelmaß}, falls gilt:
 \begin{enumerate}
 	\item $B \in \mathscr B^n \Rightarrow B \, \mu$-messbar $(B \in \mathscr M(\mu))$
 	\item $\mu(\kappa) < \infty \quad \forall \kappa \subset \mathbb R^n$ kompakt
@@ -945,7 +945,7 @@ $\mathscr L^n$ $($Satz II.1$) \varrightwavearrow \, \mathscr L^n|_E$, $E \subset
 \end{Beispiel}
 
 \emph{Notation}: \\
-Ein Maß $\mu$ auf $\mathbb R^n$ heißt \underline{translationsinvariant}, wenn mit $E + a = \Set{x +a | x \in E}$ gilt:
+Ein Maß $\mu$ auf $\mathbb R^n$ heißt \textbf{translationsinvariant}, wenn mit $E + a = \Set{x +a | x \in E}$ gilt:
 \begin{center}
 	$\mu(E+a) = \mu(E) \quad \forall E \subset \mathbb R^n, a \in \mathbb R^n$
 \end{center}
@@ -1009,7 +1009,7 @@ $\mathscr L^n(E) = 0 \Rightarrow \mathscr L^n(f(E)) = 0$
 
 %Satz II.5
 \begin{Satz}
-Sei $U \subseteq \mathbb R^n$ offen und $f: U \rightarrow \mathbb R^n$ lokal Lipschitz $($z.B. $f \in \mathscr C^1(U, \mathbb R^n))$, so gilt:
+Sei $U \subseteq \mathbb R^n$ offen und $f: U \rightarrow \mathbb R^n$ lokal Lipschitz $($z.B. $f \in C^1(U, \mathbb R^n))$, so gilt:
 \begin{enumerate}
 	\item $N \subset U$ $\mathscr L^n$-Nullmenge $\Rightarrow$ $f(N)$ $\mathscr L^n$-Nullmenge
 	\item $E \subset U$ $\mathscr L^n$-messbar $\Rightarrow$ $f(E)$ $\mathscr L^n$-messbar.
@@ -1032,7 +1032,7 @@ $\forall S \in GL(n)$ $\exists$ Diagonalmatrix $\Lambda$ mit Einträgen $\lambda
 
 %Satz II.7 Lineare Transformationsformel
 \begin{Satz}
-\emph{Lineare Transformationsformel} \\
+\emph{\textbf{Lineare Transformationsformel}} \\
 Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt: 
 \begin{center}
 	$\mathscr L^n(S(E)) = \vert\det S \vert \cdotp \mathscr L^n(E) \quad \forall E \subset \mathbb R^n$
@@ -1043,7 +1043,7 @@ Für eine lineare Abbildung $S: \mathbb R^n \rightarrow \mathbb R^n$ gilt:
 %YES! Erste Matrix! Sogar mit Punkten!! :D
 %Bsp Ellipsoid
 \begin{Beispiel}
-\emph{Ellipsoid} \\
+\emph{\textbf{Ellipsoid}} \\
 $\lambda_1, ..., \lambda_n = 0$, $E = \Set{ x \in \mathbb R^n | \left( \dfrac{x_1}{\lambda_1} \right)^2 + ... + \left (\dfrac{x_n}{\lambda_n}\right)^2 < 1 }$ \\
 Jetzt gilt: $E = \Lambda(B_1(0))$,\; $\Lambda =$
 $\begin{pmatrix}
@@ -1059,7 +1059,7 @@ $\Rightarrow \mathscr L^n(E) = (\lambda_1 \cdotp ... \cdotp \lambda_n) \cdotp \m
 
 %Bsp Vitali
 \begin{Beispiel}
-\emph{Vitali 1905} \\
+\emph{\textbf{Vitali 1905}} \\
 $\exists S \subset [0, 1]$, die nicht $\mathscr L^1$-messbar ist. Auf $[0, 1]$ gibt es die Äquivalenzrelation
 \begin{center}
 	$x \sim y \Leftrightarrow x - y \in \mathbb Q$
@@ -1095,7 +1095,7 @@ $\forall q \in \mathbb Q$ folgt:
 \section{Lebesgue-Integral}
 %Def II.3
 \begin{Definition}
-$(X, \mathscr A)$ messbarer Raum. Eine Funktion $\phi: X \rightarrow \mathbb R$ heißt \underline{$\mathscr A$-Treppenfunktion} $(\mathscr A$-TF$)$, falls sie $\mathscr A$-messbar ist und nur endlich vielen Funktonswerte annimmt. Nach Satz I.4 ist die Menge $\tau_ \mathscr A$ der $\mathscr A$-TF ein $\mathbb R$-Vektorraum. \\
+$(X, \mathscr A)$ messbarer Raum. Eine Funktion $\phi: X \rightarrow \mathbb R$ heißt \textbf{$\mathscr A$-Treppenfunktion} $(\mathscr A$-TF$)$, falls sie $\mathscr A$-messbar ist und nur endlich vielen Funktonswerte annimmt. Nach Satz I.4 ist die Menge $\tau_ \mathscr A$ der $\mathscr A$-TF ein $\mathbb R$-Vektorraum. \\
 Nun setze: 
 \begin{center}
 	$\tau_\mathscr A^+ := \left\{\phi\in \tau_\mathscr A: \phi \geq\right\}$
@@ -1161,7 +1161,7 @@ Sei $(X, \mathscr A, \mu)$ ein Maßraum und $f: X \rightarrow \overline{\mathbb 
 \begin{center}
 	$\int f d\mu := \sup\Set{I(\phi) | \phi \in \tau^+(\mu), \phi \leq f}$ 
 \end{center}
-$(\phi$ heißt \underline{Unterfunktion} in dieser Definition$)$ \\
+$(\phi$ heißt \textbf{Unterfunktion} in dieser Definition$)$ \\
 
 Ist $f: X \rightarrow \overline{\mathbb R}$ und sind die Integrale von
 \begin{center}
@@ -1172,7 +1172,7 @@ wie eben definiert und nicht beide unendlich, so setzen wir:
 	$\int f d\mu := \int f^+ d\mu - \int f^- d\mu \in [-\infty, \infty]$ 
 \end{center}
 $(f = f^+ - f^-)$ \\
-$($Das \underline{Lebesgue-Integral}!$)$
+$($Das \textbf{Lebesgue-Integral}!$)$
 \end{Definition}
 
 %Lemma II.7
@@ -1191,7 +1191,7 @@ $\mathbb Q \in \mathscr B^1$ $($Blatt 2$)$
 
 %Def II.5
 \begin{Definition}
-Eine Funktion $f: X \rightarrow \overline{\mathbb R} \;((X, \mathscr A, \mu)$ Maßraum$)$ heißt \underline{integrierbar bzgl. $\mu$}, wenn sie \underline{$\mathscr A$-messbar} ist und wenn gilt: 
+Eine Funktion $f: X \rightarrow \overline{\mathbb R} \;((X, \mathscr A, \mu)$ Maßraum$)$ heißt \textbf{integrierbar bzgl. $\mu$}, wenn sie \textbf{$\mathscr A$-messbar} ist und wenn gilt: 
 \begin{center}
 	$\int f d\mu \in \mathbb R$ $\Leftrightarrow$ $\int f^+ d\mu + \int f^- d\mu < \infty$
 \end{center}
@@ -1221,7 +1221,7 @@ falls einer der beiden existiert.
 
 %Lemma II.8: Tschebyscheff-Ungleichung
 \begin{Lemma}
-\emph{Tschebyscheff-Ungleichung} \\
+\emph{\textbf{Tschebyscheff-Ungleichung}} \\
 Für eine $\mathscr A$-messbare Funktion $f: X \rightarrow [0, \infty]$ mit $\int f d\mu < \infty$ gilt: \\
 \begin{equation}
 	\mu(\{f \geq s\}) \leq
@@ -1247,7 +1247,7 @@ $f: X \rightarrow \overline{\mathbb R}$ sei $\mathscr A$-messbar.
 
 %Satz II.10 Satz von der monotonen Konvergenz von Beppo Levi
 \begin{Satz}
-\emph{Satz von der monotonen Konvergenz von Beppo Levi} \\
+\emph{\textbf{Satz von der monotonen Konvergenz von Beppo Levi}} \\
 Sei $(X, \mathscr A, \mu)$ Maßraum und $f_k: X \rightarrow [0, \infty]$ sei Folge $\mathscr A$-messbarer Funktionen mit $f_1 \leq f_2 \leq ...$ Definiere 
 \begin{center}
 	$f: [0, \infty]$ durch $f(x) = \lim_{k \rightarrow \infty} f_k (x)$. 
@@ -1294,7 +1294,7 @@ $(X, \mathscr A, \mu)$ Maßraum und $E \subset X$ sei $\mathscr A$-messbar. Dann
 \begin{center}
 	$\int_E f \, d\mu := \int f \chi_E \, d\mu$
 \end{center}
-$f$ heißt \underline{auf $E$ integrierbar}, falls $f \chi_E$ integrierbar ist.
+$f$ heißt \textbf{auf $E$ integrierbar}, falls $f \chi_E$ integrierbar ist.
 \end{Definition}
 
 %Bem.
@@ -1385,7 +1385,7 @@ $\overequal{\text{Satz II.10}} \quad \lim_{l \rightarrow \infty} \sum\limits_{k=
 	$\alpha > 0: \quad 2^{-\alpha}g \;\leq\; f \;\leq\; \overline g$ 
 \end{center}
 \par\bigskip
-$\mathscr L^n$ ist ein \underline{vollständiges Maß} 
+$\mathscr L^n$ ist ein \textbf{vollständiges Maß} 
 \begin{center}
 	$\xRightarrow{\text{Bem. letzten Freitag}}$ $\int g \chi_{\mathscr B_1 (0)} \,d\mathscr L^n = \int \overline g \chi_{B_1(0)}\, d\mathscr L^n$
 \end{center}
@@ -1423,7 +1423,7 @@ Bzw.
 
 %Satz II.13: Lemma von Fatou
 \begin{Satz}
-\emph{Lemma von Fatou} \\
+\emph{\textbf{Lemma von Fatou}} \\
 $(X, \mathscr A, \mu)$ Maßraum. Sei $f_k: X \rightarrow [0, \infty]$ Folge von $\mathscr A$-messbaren Funktionen. Für 
 \begin{center}
 	$f: X \rightarrow \overline{\mathbb R}, f(x) = \liminf_{k \rightarrow \infty} f_k (x)$
@@ -1438,7 +1438,7 @@ Bsp. $f_\epsilon = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}$
 
 %Satz II.14 Satz über majorisierte Konvergenz, Satz von Lebesgue
 \begin{Satz}
-\emph{Satz über majorisierte Konvergenz, Satz von Lebesgue} \\
+\emph{\textbf{Satz über majorisierte Konvergenz, Satz von Lebesgue}} \\
 Sei $(X, \mathscr A, \mu)$ Maßruam und $f_1, f_2, ...$ Folge $\mathscr A$-messbarer Funktionen mit 
 \begin{center}
 	$f(x) := \lim_{k \rightarrow \infty} f_k (x)$ für $\mu$-fast alle $x \in X$. 
@@ -1462,7 +1462,7 @@ Es gilt sogar:
 \end{Bemerkung}
 
 \par\bigskip
-\emph{Riemann-Integral}: \\
+\emph{\textbf{Riemann-Integral}}: \\
 
 Welche Funktionen sind $R$-integrierbar? \\
 $f: I:=[a, b] \rightarrow \mathbb R$ \\
@@ -1478,11 +1478,11 @@ Sei $Z$ eine Unterteilung von $I$, d.h.
 %Def. Das ist eine Definition ohne Nummer? Macht die die Nummerierung dann kaputt? Oder hat er die Nummer da nur vergessen? Ich denke, es ist nur eine Unterdef, also ohne die normale Nummerierung.
 \emph{Definition}: \\
 \begin{center}
-	$\overline{s_Z}(f) = \sum\limits_{i=1}^N (\sup f)(x_i  - x_{i-1})$ \quad \underline{Obersumme} 
+	$\overline{s_Z}(f) = \sum\limits_{i=1}^N (\sup f)(x_i  - x_{i-1})$ \quad \textbf{Obersumme} 
 \end{center}
 %in deinem Aufschrieb ist da noch ein [x_{i-1}, x_i) schräg unter dem sup. Was macht das da? 04.12.15, Seite k oben
 \begin{center}
-	\underline{$s_Z$}$(f) = \sum\limits_{i=1}^N (\inf f)(x_i - x_{i-1})$ \quad \underline{Untersumme} 
+	\underline{$s_Z$}$(f) = \sum\limits_{i=1}^N (\inf f)(x_i - x_{i-1})$ \quad \textbf{Untersumme} 
 \end{center}
 Es gilt:
 \begin{center}
@@ -1505,7 +1505,7 @@ In diesem Fall ist $f$ auch Lebesgue-integrierbar und die Integrale stimmen übe
 
 %Satz II.16 Stetigkeit von Parameterintegralen
 \begin{Satz}
-\emph{Stetigkeit von Parameterintegralen} \\
+\emph{\textbf{Stetigkeit von Parameterintegralen}} \\
 $X$ ein metrischer Raum, $\mu$ ein Maß auf $Y$, $f: X \times Y \rightarrow \mathbb R$ mit den Eigenschaften:
 \begin{enumerate}
 	\item $\forall x \in X:$ $f(x, \cdotp)$ integrierbar
@@ -1523,7 +1523,7 @@ Dann gilt:
 
 %Satz II.17 Differentation unter den Integralzeichen
 \begin{Satz}
-\emph{Differentation unter den Integralzeichen} \\
+\emph{\textbf{Differentation unter den Integralzeichen}} \\
 $I$ offenes Integral, $\mu$-Maß auf $Y$, $f: I \times Y \rightarrow \mathbb R$ mit
 \begin{enumerate}
 	\item $f(x, \cdotp)$ integrierbar für alle $x \in I$
@@ -1543,11 +1543,11 @@ $\Rightarrow \quad F: I \rightarrow \mathbb R, \;F(x):= \int f(x, y)\, d\mu(y)$ 
 Sei $U \subset \mathbb R^n$ offen, $\mu$ Maß auf $Y$, $f: U \times Y \rightarrow \mathbb R$ mit
 \begin{enumerate}
 	\item $f(x, \cdotp)$ ist $\mu$-integrierbar für alle $x$
-	\item $f(\cdotp, y)$ ist in $\mathscr C^1(U)$ für $\mu$-fast alle $y$.
+	\item $f(\cdotp, y)$ ist in $C^1(U)$ für $\mu$-fast alle $y$.
 	%Was tut das D da? ist das ein Differentialsymbol? VL 07.12. Seite f
 	\item $|D_x f(x, y)| \leq g(y)$ für alle $x$ und $g$ integrierbar. \\
 \end{enumerate}
-$\Rightarrow \quad F: U \rightarrow \mathbb R, \;F(x):= \int f(x, y) d\mu(y)$ ist $\mathscr C^1(U)$ mit 
+$\Rightarrow \quad F: U \rightarrow \mathbb R, \;F(x):= \int f(x, y) d\mu(y)$ ist $C^1(U)$ mit 
 \begin{center}
 	$\dfrac{\partial F}{\partial x}(x) = \int \dfrac{\partial f}{\partial x}(x, y) d\mu(y)$
 \end{center}
@@ -1555,11 +1555,11 @@ $\Rightarrow \quad F: U \rightarrow \mathbb R, \;F(x):= \int f(x, y) d\mu(y)$ is
 
 %Bsp.
 \begin{Beispiel}
-$\phi \in \mathscr C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) = \Set{x| \phi(x) \ne 0}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
+$\phi \in C_c^\infty(\mathbb R^n, \mathbb R)$ $($d.h. $spt(\phi) = \Set{x| \phi(x) \ne 0}$ ist kompakt, $spt$ steht wohl für support.$)$  \\
 %Was auch immer das ist. Also 'support'
 $\forall h$ Lebesgue-integrierbar ist \\
 \begin{center}
-	$\phi \Asterisk h(x) = \int \phi(x-y)f(y)\; d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ \quad\underline{glatt}
+	$\phi \Asterisk h(x) = \int \phi(x-y)f(y)\; d\mathscr L^1(y)$ $(\Asterisk$ ist \emph{Faltung}$)$ \quad\textbf{glatt}
 \end{center}
 \end{Beispiel}
 
@@ -1567,7 +1567,7 @@ $\forall h$ Lebesgue-integrierbar ist \\
 
 %juchuu, hier beginnt, das Chaos mit den Lp-Räumen und dem Lebesgueding
 \begin{Definition}
-\emph{$L^p$-Raum} \\
+\emph{\textbf{$L^p$-Raum}} \\
 Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty$ \\
 \begin{equation}
 \|f\|_{L^p (\mu)} =
@@ -1626,7 +1626,7 @@ Für $1 \leq p \leq \infty$ ist $(L^p(\mu),\, \|\cdotp\|_{L^p(\mu)})$ ein normie
 
 %Lemma II.11 Youngsche Ungleichung
 \begin{Lemma}
-\emph{Youngsche Ungleichung} \\
+\emph{\textbf{Youngsche Ungleichung}} \\
 Für $1 < p, q < \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ gilt $\forall x, y \geq 0$
 \begin{center}
 	$xy \leq \dfrac{1}{p}x^p + \dfrac{1}{q}y^q$
@@ -1636,7 +1636,7 @@ Für $1 < p, q < \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ gilt $\forall x, y \
 
 %Satz II.19 Hölder Ungleichung
 \begin{Satz}
-\emph{Höldersche Ungleichung} \\
+\emph{\textbf{Höldersche Ungleichung}} \\
 $f, g$ $\mu$-messbar, $1 \leq p, q \leq \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =1$ \\
 \begin{center}
 	$\Rightarrow \quad \left| \int f, g, d\mu\right| \leq \|f\|_{L^p}\|g\|_{L^p}$
@@ -1646,7 +1646,7 @@ $f, g$ $\mu$-messbar, $1 \leq p, q \leq \infty$ mit $\dfrac{1}{p}+\dfrac{1}{q} =
 
 %Satz II.20 Minkovski Ungleichung
 \begin{Satz}
-\emph{Minkovski-Ungleichung} \\
+\emph{\textbf{Minkovski-Ungleichung}} \\
 $f, g \in L^p(\mu), 1 \leq p \leq \infty$ dann gilt:
 \begin{center}
 	$\|f+g\|_{L^p} \leq \|f\|_{L^p} + \|g\|_{L^p}$
@@ -1673,7 +1673,7 @@ Sei $1 \leq p \leq \infty$, $f_k := \sum\limits_{i=1}^k u_i$, $u_i \in L^p(\mu)$
 %erstes
 %Satz II.21 Riesz-Fischer
 \begin{Satz}
-\emph{Riesz-Fischer} \\
+\emph{\textbf{Riesz-Fischer}} \\
 $\left(L^p(\mu), \|\cdotp\|_{L^p}\right)$ ist vollständig, d.h. ein Banachraum.
 \end{Satz}
 
@@ -1706,7 +1706,7 @@ mögliche Teilfolge $\{f_{2^k}\}_{k \in \mathbb N}$ konvergiert punktweise fast 
 
 %Satz II.22: Dichtheit C^0_c (x) in L^p (\Omega)
 \begin{Satz}
-\emph{Dichtheit $C^0_c (x)$ in $L^p(\Omega)$}: \\
+\emph{\textbf{Dichtheit $C^0_c (x)$ in $L^p(\Omega)$}}: \\
 Sei $\Omega \subset \mathbb R^n$ offen und $1 \leq p < \infty$. Dann gibt es zu jedem $f \in L^p$ eine Folge $f_k \in C^0_c (\Omega)$ mit 
 \begin{center}
 	$\|f_k - f\|_{L^p} \rightarrow 0$
@@ -1716,11 +1716,11 @@ $(\mu$ ist Radon-Maß, z.B. Lebesgue-Maß$)$
 
 %Def II.9
 \begin{Definition}
-Der \underline{Träger} einer Funktion $f: \Omega \rightarrow \mathbb R$ ist 
+Der \textbf{Träger} einer Funktion $f: \Omega \rightarrow \mathbb R$ ist 
 \begin{center}
 	$spt(f) = \overline{\{x \in \Omega: f(x) \ne 0\}} $
 \end{center}
-Der \underline{Raum der stetigen Funktionen mit kompakten Träger in $\Omega$} wird mit
+Der \textbf{Raum der stetigen Funktionen mit kompakten Träger in $\Omega$} wird mit
 \begin{center}
 	$C_c^0 (\Omega) = \{g \in C^0(\Omega): spt(y) \, \text{kompakt} \subset \Omega\}$
 \end{center}
@@ -1738,7 +1738,7 @@ Falls $\mu$ ein Radonmaß, folgt aus $Satz \, II.22$ und $Satz \,  II.21$, dass
 
 %Satz II.23: Konvergenzsatz von Vitali
 \begin{Satz}
-\emph{Konvergenzsatz von Vitali} \\
+\emph{\textbf{Konvergenzsatz von Vitali}} \\
 Sei $\mu$ ein Maß auf $A \subset P(X)$ und $1 \leq p < \infty$ \\
 $\{f_n\}_{n \in \mathbb N} \subset L^p(\mu)$ mit $f_n \rightarrow f$ $\mu$-fast überall, dann ist äquivalent:
 \begin{enumerate}
@@ -1767,7 +1767,7 @@ $\underrightarrow{Fubini} \int\limits_a^b \left( \int\limits_c^d f(x, y) dy\righ
 
 %Def III.1
 \begin{Definition}
-Seien $\alpha_i$ äußere Maße auf $X_i, i = 1, ... n$. Eine Menge $P \subset X_1 \times ... \times X_n$ heißt \underline{Produktmenge}, wenn es $\mathscr M(\alpha_i)$ messbare Mengen $A_i \subset X_i$ gibt mit
+Seien $\alpha_i$ äußere Maße auf $X_i, i = 1, ... n$. Eine Menge $P \subset X_1 \times ... \times X_n$ heißt \textbf{Produktmenge}, wenn es $\mathscr M(\alpha_i)$ messbare Mengen $A_i \subset X_i$ gibt mit
 \begin{center}
 	$P = A_1 \times ... \times A_n$
 \end{center}
@@ -1784,7 +1784,7 @@ $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Dann gilt:
 
 %Def III.2
 \begin{Definition}
-Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \underline{Produktmaß} $\alpha_1 \times ... \times \alpha_n$ einer Menge $E \subset X_1 \times ... \times X_n$ ist definiert durch
+Seien $\alpha_i$ äußere Maße auf $X_i, 1 \leq i \leq n$. Das \textbf{Produktmaß} $\alpha_1 \times ... \times \alpha_n$ einer Menge $E \subset X_1 \times ... \times X_n$ ist definiert durch
 \begin{center}
 	$(\alpha_1 \times ... \times \alpha_n)(E) = \inf\Set{ \sum\limits_{j=1}^\infty \lambda(P_j) | P_j \in \mathscr P, E \subset \bigcup\limits_{j=1}^\infty P_j }$
 
@@ -1806,7 +1806,7 @@ Es gilt
 %wuhu, Monstersatz
 
 \begin{Satz}
-\emph{Satz von Fubini} \\
+\emph{\textbf{Satz von Fubini}} \\
 Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 \begin{enumerate}
 	\item $\forall S \subset X \times Y$ $\exists R \in \mathscr M(\mu \times \nu)$ mit $S \subset R$ und
@@ -1831,7 +1831,7 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 	\begin{center}
 		$(\mu \times \nu)(S) = \int \mu(S_y)\, d\nu(y) = \int \nu(S^x) \, d\mu(x)$ \\
 	\end{center}
-	\emph{Prinzip von \underline{Cavalieri}}
+	\emph{Prinzip von \textbf{Cavalieri}}
 
 	\item Für $f: X \times Y \rightarrow [0, \infty]$ $\mathscr M(\mu \times \nu)$-messbar und $\{f > 0\}$ sei $\sigma$-endlich bezüglich $\mu \times \nu$ gilt:
 	\par
@@ -1845,7 +1845,7 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 	\begin{center}
 		$\int f \, d(\mu \times \nu) = \int \left( \int f(x, y) \, d\mu(x) \right) \, d\nu(y) = \int \left( \int f(x, y) \, d\nu(y) \right) \, d\mu(x)$ \\
 	\end{center}
-	\emph{\underline{Tonelli}}
+	\emph{\textbf{Tonelli}}
 
 	\item Für $f \in L^1(\mu \times \nu)$ gilt:
 	\par
@@ -1859,7 +1859,7 @@ Es seien $\mu, \nu$ äußere Maße auf $X$ bzw. $Y$. Dann gilt:
 	\begin{center}
 		$\int f \, d(\mu \times \nu) = \int \int f(x, y) \, d\mu(x)d\nu(y) = \int \int f(x, y) \, d\nu(y)d\mu(x)$
 	\end{center}
-	\emph{\underline{Fubini}}
+	\emph{\textbf{Fubini}}
 \end{enumerate}
 \end{Satz}
 
@@ -1940,7 +1940,7 @@ $($Es fehlt die Überdeckung von kompakten Intervallen, damit Riemann = Lebesgue
 
 %Satz III.2
 \begin{Satz}
-$f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ sind integrierbar bezüglich $\mathscr L^n$. Dann gilt:
+$f, g\in C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ sind integrierbar bezüglich $\mathscr L^n$. Dann gilt:
 \begin{center}
 	$\int_{\mathbb R^n} (\partial_j f)g \, dx = - \int_{\mathbb R^n} f(\partial_j y) \, dx$
 	\par\bigskip
@@ -1952,8 +1952,8 @@ $f, g\in \mathscr C^1(\mathbb R^1)$ und $(\partial_j f)g, f(\partial_j g), fg$ s
 
 %Lemma III.3
 \begin{Lemma}
-$f \in \mathscr C^1_C(\mathbb R^n), \, g\in \mathscr C^1(\mathbb R^n) \Rightarrow \int_{\mathbb R^n}g\, dx = - \int_{\mathbb R^n}f \partial_j g\, dx$ \\
-$\varrightwavearrow x \in \mathscr C^1(\mathbb R^n, \mathbb R^n):$
+$f \in C^1_C(\mathbb R^n), \, g\in C^1(\mathbb R^n) \Rightarrow \int_{\mathbb R^n}g\, dx = - \int_{\mathbb R^n}f \partial_j g\, dx$ \\
+$\varrightwavearrow x \in C^1(\mathbb R^n, \mathbb R^n):$
 \begin{center}
 	%$\nabla$
 	$\int <\largetriangledown f, x>\, ds = - \int f\, dv(x) \,dx$
@@ -1968,11 +1968,11 @@ $\varrightwavearrow x \in \mathscr C^1(\mathbb R^n, \mathbb R^n):$
 
 %Ich habe mit Grapher das mit den Zeichnungen mal ausprobiert, das ist aber noch nicht so ganz tauglich. Also mache ich erstmal ohne weiter.
 
-$\Phi: \mathbb R^n \rightarrow \mathbb R^n$ $\mathscr C^1$ Diffeomorphismus, $L^n(\Phi(A))$
+$\Phi: \mathbb R^n \rightarrow \mathbb R^n$ $C^1$ Diffeomorphismus, $L^n(\Phi(A))$
 
 %Def III.3
 \begin{Definition}
-Eine Abbildung $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen heißt \underline{$\mathscr C^1$-Diffeomorphismus}, falls:
+Eine Abbildung $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen heißt \textbf{$C^1$-Diffeomorphismus}, falls:
 \begin{enumerate}
 	\item $\Phi$ bijektiv
 	\item $\Phi, \Phi^{-1}$ sind stetig differenzierbar.
@@ -2003,7 +2003,7 @@ mit $r = \sqrt{|x|^2 + y^2} $\\
 \begin{Beispiel}
 Für $n = 1$: \\
 falls $\Phi: I \rightarrow J$, $I, J \subset \mathbb R$ offene Intervalle \\
-$\Phi$ $\mathscr C^1$ und streng monoton. \\
+$\Phi$ $C^1$ und streng monoton. \\
 \begin{center}
 	$\Rightarrow \int\limits_a^b f\left(\Phi(s)\right) \Phi^{-1}(s) \, ds = \int\limits_{\Phi(a)}^{\Phi(b)} f(s) \, ds$
 \end{center}
@@ -2041,8 +2041,8 @@ Sei $Q_j = Q(x_i, l_j)$ gegeben mit $x_i \rightarrow x_0$ und $l_j \rightarrow 0
 
 %Satz III.3 Tranformationsformel
 \begin{Satz}
-\emph{Transformationsformel} \\
-Seien $U, V \subset \mathbb R^n$ offen, $\Phi: U \rightarrow V$ $\mathscr C^1$ Diffeomorphismen. \\
+\emph{\textbf{Transformationsformel}} \\
+Seien $U, V \subset \mathbb R^n$ offen, $\Phi: U \rightarrow V$ $C^1$ Diffeomorphismen. \\
 $A \subset U $ $\mathscr L^n$-messbar, dann ist $\Phi(A) $ $\mathscr L^n$-messbar und \\
 \begin{center}
 	$\mathscr L^n(\Phi(A)) = \int |\det (D\Phi(x))| \, dx$\\
@@ -2054,10 +2054,10 @@ Weiter gilt für $\mathscr L^n$-messbare Funktion $f: V \rightarrow \overline{\m
 \end{center}
 falls eines der Integrale definiert ist.
 %Ab hier von Lamm am 11.01.16
-Sei $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen, $\mathscr C^k$-Diffeomorphismus $(k \in \mathbb N)$: \\
+Sei $\Phi: U \rightarrow V$, $U, V \subset \mathbb R^n$ offen, $C^k$-Diffeomorphismus $(k \in \mathbb N)$: \\
 
 
-\emph{Gramsche Matrix}: \\
+\emph{\textbf{Gramsche Matrix}}: \\
 $g \in (g_{ij})$,
 \begin{center}
 	$g(x) = D\Phi(x)^T D \Phi(x)$ \\
@@ -2131,7 +2131,7 @@ $\varrightwavearrow V = v(x, y, z) \varrightwavearrow u(r, \theta, \phi) = v(r\s
 
 %Def IV.1
 \begin{Definition}
-Sei $U \subset \mathbb R^n$ offen. Eine Abbildung $f \in \mathscr C^1(U, \mathbb R^{n+k})$ heißt \underline{Immersion}, falls gilt:
+Sei $U \subset \mathbb R^n$ offen. Eine Abbildung $f \in C^1(U, \mathbb R^{n+k})$ heißt \textbf{Immersion}, falls gilt:
 \begin{center}
 	$ rang D f(x) = n \Leftrightarrow ker D f(x) = \{0\}\quad \forall x \in U$
 \end{center}
@@ -2147,7 +2147,7 @@ $\gamma: [0, 1] \rightarrow \mathbb R^2$ mit $\gamma'(t) \ne 0\quad \forall t \i
 Die Vektoren $\partial_1 f(x), ..., \partial_n f(x)$ bilden eine Basis von $Bild\,(Df(x))$ \\
 Analog zu vorher: Definiere die Gramersche Matrix $($ bzw. induzierte Matrix$): g(x) = \underbrace{Df(x)^T}_{\in \mathbb R^{n \times (n+k)}}\cdotp \underbrace{Df(x)}_{\in \mathbb R^{(n+k) \times n}} \in \mathbb R^{n\times n}$ \\
 $g= (g_{ij}), g_{ij}(x) = <\partial_i f(x), \partial_j f(x)>$ \\
-Tatsächlich ist $(g_{ij})$ für eine beliebige Abbildung $f \in \mathscr C^1(U, \mathbb R^{n+k})$ definiert und positiv semi-definit. $<g(x)v, v> = |Df(x)v|^2 \geq 0$ \\
+Tatsächlich ist $(g_{ij})$ für eine beliebige Abbildung $f \in C^1(U, \mathbb R^{n+k})$ definiert und positiv semi-definit. $<g(x)v, v> = |Df(x)v|^2 \geq 0$ \\
 $g$ ist strikt positiv definit und damit invertierbar, falls
 \begin{center}
 	$|Df(x)v|^2 > 0\quad \forall v \in \mathbb R^n \backslash \{0\} \Leftrightarrow f$ Immersion
@@ -2157,7 +2157,7 @@ Es gilt: $ker g(x) = ker Df(x)$
 
 %Def. IV.2
 \begin{Definition}
-Sei $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n$, Immersion mit induzierter Matrix $g$ und $B \subseteq U$ sei $\mathscr L^n$-messbar. Der $m$-dimensionale Flächeninhalt von $\phi$ auf $B$ ist
+Sei $\phi \in C^1(U, \mathbb R^n), U \subseteq \mathbb R^n$, Immersion mit induzierter Matrix $g$ und $B \subseteq U$ sei $\mathscr L^n$-messbar. Der $m$-dimensionale Flächeninhalt von $\phi$ auf $B$ ist
 \begin{center}
 	$A_B(\phi) := \int_B J \phi(x) \, d \mathscr L^n(x)$
 \end{center}
@@ -2171,7 +2171,7 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 \begin{Beispiel}
 \begin{enumerate}
 	% 1)
-	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in \mathscr C^1(I, \mathbb R^n)$
+	\item $\phi: I \rightarrow \mathbb R^n, I = (a, b)$ reguläre Kurve, $\phi \in C^1(I, \mathbb R^n)$
 	\par
 	$\varrightwavearrow \phi'(t) \ne 0 \quad \forall t\in I $
 	\par
@@ -2219,12 +2219,12 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \overequal{\text{Fubini}} \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
 
 	% 4)
-	\item $\phi \in \mathscr C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
-	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow \mathscr C(U)$ injektiv \\
+	\item $\phi \in C^1(U, \mathbb R^n), U \subseteq \mathbb R^n, \phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \, \forall x \in U \Leftrightarrow \phi$ ist lokaler Diffeomorphismus. \\
+	$J(\phi)= |\det D\phi|$ ist zusätzlcih $\phi: U \rightarrow C(U)$ injektiv \\
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \overequal{\text{Satz 3.3}} \mathscr L^n(\phi(E)) \, \forall E \subseteq U \, \mathscr L^n$-messbar
 
 	% 5)
-	\item $U \subseteq \mathbb R^n, u \in \mathscr C^1(U, \mathbb R^k), m+k =n,\, \phi(x) := (x, u(x)), \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion \\
+	\item $U \subseteq \mathbb R^n, u \in C^1(U, \mathbb R^k), m+k =n,\, \phi(x) := (x, u(x)), \phi: U \rightarrow \mathbb R^n, \phi \in C^1(U, \mathbb R^n)$ Immersion \\
 	$g_{ij}(x) = <\partial_i \phi(x), \partial_j \phi(x)> = <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> =
 	\delta_{ij} + <\partial_i u(x), \partial_j u(x)> $ \\
 
@@ -2232,20 +2232,20 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 	$A_U(\phi) = \int_U \sin\theta\,d\mathscr L^2(\theta, \Phi) \quad \overequal{\text{Fubini}} \quad \int\limits_0^\pi \left( \int\limits_0^{2\pi} \sin\theta \, d\Phi\right) \,d\theta = 4 \pi$
 
 	% 6)
-	\item $\phi \in \mathscr C^1(U, \mathbb R^n), \, U \subseteq \mathbb R^n$,
+	\item $\phi \in C^1(U, \mathbb R^n), \, U \subseteq \mathbb R^n$,
 	\par
 	$\phi$ ist Immersion $\Leftrightarrow \det D\phi(x) \ne 0 \quad \forall x \in U$
 	\par
 	$\Leftrightarrow \phi$ ist lokaler Diffeomorphismus.
 	\par
-	$J(\phi)= |\det D\phi|$ ist zusätzlich $\phi: U \rightarrow \mathscr C(U)$ injektiv
+	$J(\phi)= |\det D\phi|$ ist zusätzlich $\phi: U \rightarrow C(U)$ injektiv
 	\par
 	$\Rightarrow A_E (\phi) = \int_E |\det D\phi|\, d\mathscr L^n \quad \overequal{\text{Satz 3.3}} \quad \mathscr L^n(\phi(E)) \quad \forall E \subseteq U \, \mathscr L^n$-messbar
 
 	% 7)
-	\item $U \subseteq \mathbb R^n, \;u \in \mathscr C^1(U, \mathbb R^k), \, m+k =n,$
+	\item $U \subseteq \mathbb R^n, \;u \in C^1(U, \mathbb R^k), \, m+k =n,$
 	\par
-	$ \phi(x) := (x, u(x)), \, \phi: U \rightarrow \mathbb R^n, \phi \in \mathscr C^1(U, \mathbb R^n)$ Immersion
+	$ \phi(x) := (x, u(x)), \, \phi: U \rightarrow \mathbb R^n, \phi \in C^1(U, \mathbb R^n)$ Immersion
 	\par
 	$g_{ij}(x) \quad = <\partial_i \phi(x), \partial_j \phi(x)> \quad=\quad <(e_i, \partial_i u(x)), (e_j, \partial_j u(x))> \quad$
 	\par
@@ -2267,7 +2267,7 @@ mit $J\phi(x) := \sqrt{\det g(x)}$ $($Jacobische$)$
 
 %Satz IV.1
 \begin{Satz}
-Sei $\Phi \in \mathscr C^1(U, \tilde U)$ Diffeomorphismus. $U, \tilde U \subseteq \mathbb R^m$ und $\phi \in \mathscr C^1(\tilde U, \mathbb R^n)$ sei Immersion. Dann gilt:
+Sei $\Phi \in C^1(U, \tilde U)$ Diffeomorphismus. $U, \tilde U \subseteq \mathbb R^m$ und $\phi \in C^1(\tilde U, \mathbb R^n)$ sei Immersion. Dann gilt:
 \begin{center}
 	$A_{\Phi(B)}(\phi) = A_B (\phi \circ \Phi) \quad \forall B \subseteq U \, \mathscr L^n$-messbar
 \end{center}
@@ -2276,18 +2276,18 @@ Sei $\Phi \in \mathscr C^1(U, \tilde U)$ Diffeomorphismus. $U, \tilde U \subsete
 
 %Satz IV,2
 \begin{Satz}
-$\phi_1, \phi_2$ wie oben, $M$ sei $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$. Dann sind $U_1 ', U_2 '$ offen in $\mathbb R^m$ und $\phi_2^{-1}\circ \phi_1$ ist $\mathscr C^1$-Diffeomorphismus.
+$\phi_1, \phi_2$ wie oben, $M$ sei $m$-dimensionale $C^1$-Untermannigfaltigkeit des $\mathbb R^n$. Dann sind $U_1 ', U_2 '$ offen in $\mathbb R^m$ und $\phi_2^{-1}\circ \phi_1$ ist $C^1$-Diffeomorphismus.
 \end{Satz}
 
 %Satz IV.3
 \begin{Satz}
-Jede $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ kann als abzählbare Vereinigung $M = \bigcup\limits_{i=1}^\infty K_i$ von relativ kompakten Mengen $K_i \subseteq \mathbb R^n$ geschrieben werden.
+Jede $m$-dimensionale $C^1$-Untermannigfaltigkeit des $\mathbb R^n$ kann als abzählbare Vereinigung $M = \bigcup\limits_{i=1}^\infty K_i$ von relativ kompakten Mengen $K_i \subseteq \mathbb R^n$ geschrieben werden.
 \end{Satz}
 
 %Def. IV.3
 \begin{Definition}
-\emph{injektive Immersion} \\
-Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit. Eine \underline{lokale Parametrisierung} von $M$ ist ein $\mathscr C^1$-Homomorphismus.
+\emph{\textbf{injektive Immersion}} \\
+Sei $M \subseteq \mathbb R^n$ $m$-dimensionale $C^1$-Untermannigfaltigkeit. Eine \textbf{lokale Parametrisierung} von $M$ ist ein $C^1$-Homomorphismus.
 \par\bigskip
 $f: U \rightarrow f(U) \subseteq M \subseteq \mathbb R^2$ mit Rang $Df(x) = m \quad \forall x \in U$,
 \par
@@ -2297,17 +2297,17 @@ wobei $U \subseteq \mathbb R^m$ offen ist.
 %Bem
 \begin{Bemerkung}
 \begin{enumerate}
-	\item $f: U \rightarrow M \quad \mathscr C^1$-Untermannigfaltigkeit injektiver Immersion \\
-	$\Rightarrow f:U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus
+	\item $f: U \rightarrow M \quad C^1$-Untermannigfaltigkeit injektiver Immersion \\
+	$\Rightarrow f:U \rightarrow f(U) \quad C^1$-Homomorphismus
 
 	\item $f: U \rightarrow \,?\,$ injektive Immersion \\
-	$\nRightarrow f: U \rightarrow f(U) \quad \mathscr C^1$-Homomorphismus.
+	$\nRightarrow f: U \rightarrow f(U) \quad C^1$-Homomorphismus.
 \end{enumerate}
 \end{Bemerkung}
 
 %Lemma IV.1
 \begin{Lemma}
-Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ gibt es lokale Parametrisierung $f_i: U \rightarrow M, i \in \mathbb N$, sodass
+Für jedes $m$-dimensionale $C^1$-Untermannigfaltigkeit des $\mathbb R^n$ gibt es lokale Parametrisierung $f_i: U \rightarrow M, i \in \mathbb N$, sodass
 \begin{center}
 	$M = \bigcup\limits_{i=1}^\infty f(U)$
 \end{center}
@@ -2316,7 +2316,7 @@ Für jedes $m$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^
 
 %Satz IV.4
 \begin{Satz}
-Sei $M \subset \mathbb R^n$ \umgf. \,$ B \subset M$ heißt \underline{messbar}, falls $\phi^{-1}(B) \, L^m$-messbar ist für alle lokalen Parametrisierungen \\
+Sei $M \subset \mathbb R^n$ \umgf. \,$ B \subset M$ heißt \textbf{messbar}, falls $\phi^{-1}(B) \, L^m$-messbar ist für alle lokalen Parametrisierungen \\
  $\phi: \underbrace{U}_{\subset \mathbb R^m \text{ offen}} \rightarrow M$
  \par\bigskip
  Das System $M$ alles messbaren Teilmengen von $M$ ist eine $\sigma$-Algebra und enthält alle Borelmengen. Auf $M$ existiert genau ein Maß $\mu_M$, sodass für jede lokale Parametrisierung $\phi: U \rightarrow M$ und jede messbare Menge $B \subset \phi(U)$ gilt:
@@ -2349,7 +2349,7 @@ Ist $M \subset \mathbb R^n$ \umgf $\Rightarrow \tau(M) =: N$ ist \umgf und für 
 
 %Satz IV.7 Zwiebelformel
 \begin{Satz}
-\emph{Zwiebelformel}: \\
+\emph{\textbf{Zwiebelformel}}: \\
 Für $u \in L^n(\mathbb R^{n+1})$ ist $u\lvert_{JB_r} \in L^1(\mu_{JB_r})$ für fast alle $r >0$ mit $JB_r:= JB_r(0)$ und es gilt:
 \begin{center}
 	$\int{\mathbb R^{n+1}} u(p) \, d\mathscr L^{n+1}(p) = \int\limits_0^\infty \int_{JB_r} u(p) \,d\mu_{JB_r} \,d\mathscr L^1(r) = \int\limits_0^\infty r^n \int_{S^n} u(rw)\,d\mu_{S^n}(u) \,d\mathscr L^1(r)$
@@ -2382,20 +2382,20 @@ $\overequal{\text{FR?}} \quad \sum\limits_{j=1}^N \int\limits_0^\infty r^n \int_
 
 \par\bigskip
 %Satz von Gauß
-\emph{Satz von Gauß. Satz?}:\\
+\emph{\textbf{Satz von Gauß. Satz?}}:\\
 $\Omega \subset \mathbb R^n?$ $($Das Fragezeichen ist wichtig!$)$ \\
-$F \in \mathscr C^1(\Omega, \mathbb R^n),$
+$F \in C^1(\Omega, \mathbb R^n),$
 \begin{center}
 	$\int_\Omega \text{div} F \, d\mathscr L^n = \int_{\partial\Omega} <F, \nu> \, d\mu_{\partial\Omega}$
 \end{center}
 
 %Def IV.4
 \begin{Definition}
-Sei $\Omega \subset \mathbb R^n$ offen. Wir sagen, \underline{$\Omega$ hat $\mathscr C^1$-Rand}, falls gilt:
+Sei $\Omega \subset \mathbb R^n$ offen. Wir sagen, \textbf{$\Omega$ hat $C^1$-Rand}, falls gilt:
 \begin{center}
 	$\forall \gamma \in \partial\Omega \quad \exists$ nach eventueller Rotation eine offene Menge $U \subset \mathbb R^{n-1}$ 
 \end{center}
-und ein offenes Intervall $I \subset \mathbb R$ mit $\gamma \in U \times I$ und eine $\mathscr C^1$-Funktion $u: U \rightarrow I$, sodass 
+und ein offenes Intervall $I \subset \mathbb R$ mit $\gamma \in U \times I$ und eine $C^1$-Funktion $u: U \rightarrow I$, sodass 
 \begin{center}
 	$\Omega \cap (U \times I) = \Set{(y, r) \in U \times I | r < u(y)}$ 
 \end{center}
@@ -2413,7 +2413,7 @@ $U = \mathbb R^{n-1};\; I = \mathbb R, \;u \equiv 0$
 
 %Lemma IV.2
 \begin{Lemma}
-$\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand.
+$\Omega \subset \mathbb R^n$ offen mit $C^1$-Rand.
 \begin{center}
 	$\Rightarrow \partial \Omega$ ist $(n-1)$-dimensionale Untermannigfaltigkeit des $\mathbb R^n$.
 \end{center}
@@ -2424,9 +2424,9 @@ $\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand.
 \begin{Bemerkung}
 \begin{enumerate}
 	\item $\partial \Omega \cap (U \times I) = \Set{F=0} = \Set{(y,r) | r = u(y)}$
-	\item $M (n-1)$-dimensionale $\mathscr C^1$-Untermannigfaltigkeit des $\mathbb R^n$ 
+	\item $M (n-1)$-dimensionale $C^1$-Untermannigfaltigkeit des $\mathbb R^n$ 
 	\par
-	$\nRightarrow M = \partial \Omega$ für $\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand. 
+	$\nRightarrow M = \partial \Omega$ für $\Omega \subset \mathbb R^n$ offen mit $C^1$-Rand. 
 	\par
 	\emph{Beispiel}: 
 	\par
@@ -2439,14 +2439,14 @@ $\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand.
 
 %Satz IV.8
 \begin{Satz}
-Sei $\Omega \subset \mathbb R^n$ offen mit $\mathscr C^1$-Rand. Dann existiert eine eindeutig bestimmte Funktion $f: \partial\Omega \rightarrow \mathbb R^n$, sodass $\forall p \in \partial \Omega$ gilt:
+Sei $\Omega \subset \mathbb R^n$ offen mit $C^1$-Rand. Dann existiert eine eindeutig bestimmte Funktion $f: \partial\Omega \rightarrow \mathbb R^n$, sodass $\forall p \in \partial \Omega$ gilt:
 \begin{enumerate}
 	%T_p ist Tangentialraum
 	\item $r(p) \bot T_p \, \partial \Omega$
 	\item $|r(p)| = 1$
 	\item $p + r \nu(p) \notin \Omega \quad \forall r > 0$ hinreichend klein.
 \end{enumerate}
-Der Vektor $r(p)$ heißt \underline{äußere Normale} von $\Omega$ in $p \in \partial \omega$. Die Funktion 
+Der Vektor $r(p)$ heißt \textbf{äußere Normale} von $\Omega$ in $p \in \partial \omega$. Die Funktion 
 \begin{center}
 	$r: \partial \Omega \rightarrow \mathbb R^n$ 
 \end{center}
@@ -2457,15 +2457,15 @@ ist stetig.
 
 %Def IV.5
 \begin{Definition}
-Sei $\Omega \subset \mathbb R^n$ offen mti $\mathscr C^1$-Rang. Dann setzen wir:
+Sei $\Omega \subset \mathbb R^n$ offen mti $C^1$-Rang. Dann setzen wir:
 \begin{center}
-	$\mathscr C^1(\overline {\mathbb R^m}) := \Set{f \in \mathscr C^1(\Omega, \mathbb R^m) | f \text{ und }Df \text{ können stetig auf }\partial \Omega \text{ fortgesetzt werden}}$
+	$C^1(\overline {\mathbb R^m}) := \Set{f \in C^1(\Omega, \mathbb R^m) | f \text{ und }Df \text{ können stetig auf }\partial \Omega \text{ fortgesetzt werden}}$
 \end{center}
 \end{Definition}
 
 %Konstruktion der Abschneidefunktion
 \par\bigskip
-\emph{Konstruktion von Abschneidefunktionen}: 
+\emph{\textbf{Konstruktion von Abschneidefunktionen}}: 
 \par\bigskip
 \begin{equation}
 	\chi '': \mathbb R \rightarrow \mathbb R, 
@@ -2474,7 +2474,7 @@ Sei $\Omega \subset \mathbb R^n$ offen mti $\mathscr C^1$-Rang. Dann setzen wir:
 		0 & , \,t \leq 0 \\
 		e^{-\dfrac{1}{t}} & ,\,t > 0
 	\end{cases}
-	\quad \in \mathscr C^\infty(\mathbb R) \\
+	\quad \in C^\infty(\mathbb R) \\
 \end{equation}
 \par
 \begin{equation}
@@ -2485,12 +2485,12 @@ Sei $\Omega \subset \mathbb R^n$ offen mti $\mathscr C^1$-Rang. Dann setzen wir:
 		\in (0, 1) &, \, 1 < t < 4 \\
 		0 & ,\, t \geq 4
 	\end{cases}
-	\quad \in \mathscr C^\infty(\mathbb R)
+	\quad \in C^\infty(\mathbb R)
 \end{equation}
 \par
 \begin{equation}
 	\chi: \mathbb R^n \rightarrow \mathbb R
-	\chi(x) := \chi'(|x|^2) \in \mathscr C^\infty (\mathbb R^n)
+	\chi(x) := \chi'(|x|^2) \in C^\infty (\mathbb R^n)
 \end{equation}
 \par
 \begin{equation}
@@ -2502,18 +2502,18 @@ Sei $\Omega \subset \mathbb R^n$ offen mti $\mathscr C^1$-Rang. Dann setzen wir:
 %29.01.16
 %Lemma IV.3
 \begin{Lemma}
-Sei $\Omega = \Set{(y, r) \in U \times I | r < \mu(y)}$ mit $U \subseteq \mathbb R^{n-1}$ offen, $I = (a, b)$ und $u \in \mathscr C^1(U, I)$. \\
-Hat $f \in \mathscr C^1(\Omega, \mathbb R^n)$ kompakten Träger in $U \times I$, so gilt nach dem Satz von Gauß:
+Sei $\Omega = \Set{(y, r) \in U \times I | r < \mu(y)}$ mit $U \subseteq \mathbb R^{n-1}$ offen, $I = (a, b)$ und $u \in C^1(U, I)$. \\
+Hat $f \in C^1(\Omega, \mathbb R^n)$ kompakten Träger in $U \times I$, so gilt nach dem Satz von Gauß:
 \begin{center}
 	$\int_{\Omega} \text{div} f \, \mathscr L^n = \int_{\partial \Omega} <f, r> \, d\mu_{\partial\Omega}$,
 \end{center}
-wobei $r$ die \underline{äußere Normale} von $\Omega$ ist.
+wobei $r$ die \textbf{äußere Normale} von $\Omega$ ist.
 \end{Lemma}
 
 %Lemma IV.4
 \begin{Lemma}
 Sei $K \subseteq \mathbb R^n$ kompakt und sei $(A_i)_{i \in I}$, $I$ beliebige Indexmenge, eine offene Überdeckung von $K$. \\
-Dann existiert eine \underline{Teilung der Eins} zu $(A_i)_{i \in I}$, das heißt es existiert eine endliche Indexmenge $J$ und es existieren Funktionen $\eta_j \in \mathscr C_c^\infty(\mathbb R^n)$, $j \in J$ mit $\eta_j > 0 \quad \forall j \in J$, sodass
+Dann existiert eine \textbf{Teilung der Eins} zu $(A_i)_{i \in I}$, das heißt es existiert eine endliche Indexmenge $J$ und es existieren Funktionen $\eta_j \in C_c^\infty(\mathbb R^n)$, $j \in J$ mit $\eta_j > 0 \quad \forall j \in J$, sodass
 \begin{enumerate}
 	\item $\forall x \in K: \sum\limits_{j \in J} \eta_j(x) =1$
 	\item $\forall j \in J \; \exists i \in I: \; $spt $ \eta_j \subseteq A_i$
@@ -2523,8 +2523,8 @@ Dann existiert eine \underline{Teilung der Eins} zu $(A_i)_{i \in I}$, das heiß
 
 %Satz IV.9 Satz von Gauß
 \begin{Satz}
-\emph{Satz von Gauß}: \\
-Sei $\Omega \subset \mathbb R^n$ offen und beschränkt mit $\mathscr C^1$-Rand. Dann gilt $\forall f \in \mathscr C^1(\overline \Omega, \mathbb R^n)$:
+\emph{\textbf{Satz von Gauß}}: \\
+Sei $\Omega \subset \mathbb R^n$ offen und beschränkt mit $C^1$-Rand. Dann gilt $\forall f \in C^1(\overline \Omega, \mathbb R^n)$:
 \begin{center}
 	$\int_\Omega $div $f\, d\mathscr L^n = \int_{\dom} <f, r> \, d\mu_{\dom}$,
 \end{center}
@@ -2536,14 +2536,14 @@ wobei $r$ die äußere Normale von $\Omega$ ist.
 
 %Lemma II.5 Greensche Formeln
 \begin{Lemma}
-\emph{Greensche Formeln}: \\
-Sei $\Omega \subset \mathbb R^n$ offen, beschränkt mit $\mathscr C^1$-Rand.
+\emph{\textbf{Greensche Formeln}}: \\
+Sei $\Omega \subset \mathbb R^n$ offen, beschränkt mit $C^1$-Rand.
 \begin{enumerate}
-	\item $u \in \mathscr C^1(\overline{\Omega}), \, v \in \mathscr C^2(\oo)$, dann gilt:
+	\item $u \in C^1(\overline{\Omega}), \, v \in C^2(\oo)$, dann gilt:
 	\begin{center}
 		$\int_\Omega u \triangle v \; + \; \left\langle Du, Dv \right\rangle \; d\mathscr L^n \; = \; \int_{\dom} u \;\dfrac{\partial v}{\partial u}\; d\mu$
 	\end{center}
-	\item $u, v \in \mathscr C^2(\oo)$
+	\item $u, v \in C^2(\oo)$
 	\begin{center}
 		$\int_\Omega u \triangle v \; - \; \triangle u v \; d\mathscr L^n \; = \; \int_{\dom} u \; \dfrac{\partial v}{\partial v} \; - \; \dfrac{\partial u}{\partial v} \, v \; d\mu$
 	\end{center}
@@ -2552,8 +2552,8 @@ Sei $\Omega \subset \mathbb R^n$ offen, beschränkt mit $\mathscr C^1$-Rand.
 
 %Bsp. Mittelwerteigenschaft von harmonischen Funktionen
 \begin{Beispiel}
-\emph{Mittelwerteigenschaft von harmonischen Funktionen}: \\
-Sei $u \in \mathscr C^2(\Omega)$ \underline{harmonisch}, das heißt
+\emph{\textbf{Mittelwerteigenschaft von harmonischen Funktionen}}: \\
+Sei $u \in C^2(\Omega)$ \textbf{harmonisch}, das heißt
 \begin{center}
 	$\triangle u = 0$ \quad auf $\Omega \qquad (\Omega \subset \mathbb R^n$ offen$)$
 \end{center}
@@ -2582,7 +2582,7 @@ konstant auf $\partial B_r(x_0)$ und
 	\dfrac{\partial G}{\partial v} (x) = r^{1-n}
 \end{equation}
 auf $\partial B_r(x_0)$.\\
-Das Gebiet $\tilde\Omega := B_r(x_0) \backslash \overline{B_\epsilon (x_0)}$ hat $\mathscr C^1$-Rand $\left(\text{, da }\tilde\Omega = \Set{x \in \mathbb R^n| \epsilon^2 < \left |x-x_0\right |^2 < r^2}\right)$. 
+Das Gebiet $\tilde\Omega := B_r(x_0) \backslash \overline{B_\epsilon (x_0)}$ hat $C^1$-Rand $\left(\text{, da }\tilde\Omega = \Set{x \in \mathbb R^n| \epsilon^2 < \left |x-x_0\right |^2 < r^2}\right)$. 
 \par\bigskip
 Wir wenden Lemma IV.5 (2) auf $u$ und $v$ an und erhalten:
 \par\bigskip
@@ -2622,8 +2622,8 @@ u(x_0)$
 %Bsp. Integralsatz von Cauchy
 \begin{Beispiel}
 \emph{Integralsatz von Cauchy}: \\
-$\Omega \subset \mathbb C \cong \mathbb R^2$ beschränkt, offen mit $\mathscr C^1$-Rand.
-$f \in \mathscr C^1(\oo, \mathbb C)$, das heißt $f = u + i v$, $f$ ist \underline{holomorph}, falls
+$\Omega \subset \mathbb C \cong \mathbb R^2$ beschränkt, offen mit $C^1$-Rand.
+$f \in C^1(\oo, \mathbb C)$, das heißt $f = u + i v$, $f$ ist \textbf{holomorph}, falls
 \begin{center}
 	$\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y}; \quad \dfrac{\partial u}{\partial y} = - \dfrac{\partial v}{\partial x}$
 \end{center}
@@ -2648,9 +2648,9 @@ Wir schreiben "$dx$"\; anstelle von "$d\mathscr L^n(x)$".
 
 %Satz V.1 Definition der Faltung. Super, also Definition im Satz
 \begin{Satz}
-\emph{Definition der Faltung}: \\
+\emph{\textbf{Definition der Faltung}}: \\
 $f \in L^p(\mathbb R^n), \; 1 \leq p \leq \infty$ und $g \in L^1(\mathbb R^n)$.
-Die \underline{Faltung von $f$ mit $g$} ist die $L^n$-fast-überall definierte Funktion
+Die \textbf{Faltung von $f$ mit $g$} ist die $L^n$-fast-überall definierte Funktion
 \begin{center}
 	$(f \Asterisk g)(x) \quad = \quad \int_{\mathbb R^n} f(x-y)g(y) \,dy$
 \end{center}
@@ -2692,7 +2692,7 @@ Sei $f \in L^p$ mit $1 \leq p \leq \infty$ und $\tau_n : \mathbb R^n \rightarrow
 
 %Satz V.2 Approximation durch Faltung
 \begin{Satz}
-\emph{Approximation durch Faltung}: \\
+\emph{\textbf{Approximation durch Faltung}}: \\
 Sei $f \in L^p(\mathbb R^n)$ mit $1 \leq p \leq \infty$, $\eta \in L^1(\mathbb R^n)$, 
 \begin{center}
 	$\int_{\mathbb R^n} \eta(z) \,dz = 1$, 
@@ -2713,10 +2713,10 @@ und in $L^p$:
 
 %Satz V.3 Glättung
 \begin{Satz}
-\emph{Glättung}: \\
-Sei $\eta \in \mathscr C^k(\mathbb R^k)$ mit $\|D^\alpha \eta\|_{C^0} \leq K \quad \forall |\alpha| \leq k$ \\
+\emph{\textbf{Glättung}}: \\
+Sei $\eta \in C^k(\mathbb R^k)$ mit $\|D^\alpha \eta\|_{C^0} \leq K \quad \forall |\alpha| \leq k$ \\
 für $f \in L^1(\mathbb R^n)$, 
-$f \Asterisk \eta \in \mathscr C^k(\mathbb R^n)$ und 
+$f \Asterisk \eta \in C^k(\mathbb R^n)$ und 
 \begin{center}
 	$D^\alpha(f \Asterisk \eta) = f \Asterisk D^\alpha \eta$, 
 \end{center}
@@ -2735,12 +2735,77 @@ $\alpha = (\alpha_1, .., \alpha_n) \in \mathbb N_0^n:$
 %05.02.16
 %Satz V.4
 \begin{Satz}
-$\Omega \subseteq \mathbb R^n$ offen, $1 \leq p < \infty$. Dann existiert zu $f \in \mathscr C^p(\Omega)$ eine Folge $f_k \in \mathscr C_c^\infty(\Omega)$ mit $\|f-f_k\|_{L^p} \rightarrow 0 \quad (\mathscr C_c^\infty(\Omega)$ ist dicht in $L^p(\Omega))$ 
+$\Omega \subseteq \mathbb R^n$ offen, $1 \leq p < \infty$. Dann existiert zu $f \in C^p(\Omega)$ eine Folge $f_k \in C_c^\infty(\Omega)$ mit $\|f-f_k\|_{L^p} \rightarrow 0 \quad (C_c^\infty(\Omega)$ ist dicht in $L^p(\Omega))$ 
 \end{Satz}
 
 %Satz V.5
 \begin{Satz}
 Der Raum $\mathbb P$ ist dicht in $L^2(I, \mathbb C)$
+\end{Satz}
+
+%08.02.16
+%Def. V.1
+\begin{Definition}
+Die \textbf{Fouriertransformierte} von $f \in L^1(\mathbb R^n, \mathbb C)$ ist die Funktion 
+$$\hat f: \mathbb R^n \rightarrow \mathbb C,\quad  \hat f(\gamma) = (2\pi)^{-\dfrac{n}{2}} \int_{\mathbb R^n} f(x) e^{-i\langle \gamma, x \rangle} \; d\mathscr L^n(x)$$
+Die \textbf{inverse Fouriertransformierte} von $g \in L^1(\mathbb R^n, \mathbb C)$ ist 
+$$\check g: \mathbb R^n \rightarrow \mathbb C, \quad \check g(x) = (2\pi)^{-\dfrac{n}{2}} \int_{\mathbb R^n} g(\gamma) e^{i\langle \gamma, x\rangle} \; d\mathscr L^n(\gamma)$$  
+\end{Definition}
+
+%Bem.
+\begin{Bemerkung}
+$$\hat f(-x) = \check f(x)$$
+\end{Bemerkung}
+
+%Satz V.7
+\begin{Satz}
+Für $f, g \in L^1(\mathbb R^n, \mathbb C)$ gilt:
+\begin{enumerate}
+	\item $\hat f \in C^0(\mathbb R^n, \mathbb C)$ und $\|\hat f\|_{C^0} \leq (2\pi)^{-\dfrac{n}{2}} \|f\|_{L^1}$
+	\item $\hat {\ffg} = \hat f \;\hat g \;(2\pi)^{\dfrac{n}{2}}$
+	\item $\langle \hat f, g \rangle_{L^2} = \langle f, \check g\rangle_{L^2}$
+\end{enumerate}
+\end{Satz}
+
+%Bsp
+\begin{Beispiel}
+\begin{enumerate}
+	\item Gauß-Funktion $G: \mathbb R^n \rightarrow \mathbb R, \; G(x) = e^{\dfrac{-|x|^2}{2}}$ \\
+	\emph{Behauptung}: $\hat G = G = \check G$
+	\item Für $a >0$ betrachte $\chi_{[-a, a]}: \mathbb R \rightarrow \mathbb Rn \in L^1(\mathbb R)$ 
+	$$\hat {\chi_{[-a, a]}} (\gamma) \;= \;(2\pi)^{-1/2} \int_ \mathbb R \chi_{[-a, a]} (x) e^{-i x \gamma} \; d\mathscr L^1(x)$$
+	\begin{equation}
+		= \;(2\pi)^{-1/2} \int\limits_{-a}^ ae^{-i x \gamma} \; dx\; =\; 
+		\begin{cases}
+			\sqrt{\dfrac{2}{\pi}} \;a& , \; \gamma = 0 \\
+			\sqrt{\dfrac{2}{\pi}} \;\dfrac{\sin(a\gamma)}{\gamma} & , \; \gamma \ne 0
+		\end{cases}
+		\quad \notin L^1(\mathbb R)
+	\end{equation}
+\end{enumerate}
+\end{Beispiel}
+
+%Satz V.8: Plancherel
+\begin{Satz}
+\emph{\textbf{Satz von Plancherel} }\\
+Für $f \in (L^1 \cap L^2)(\mathbb R^n, \mathbb C)$ gilt:
+\begin{center}
+	$\|\hat f \|_{L^2} = \|f\|_{L^2} = \|\check f\|_{L^2}$
+\end{center}
+\end{Satz}
+
+%Satz V.9
+\begin{Satz}
+Es gibt eindeutig bestimmte Abbildungen $\mathscr F, \mathscr F^\star: L^2(\mathbb R^n, \mathbb C) \rightarrow L^2(\mathbb R^n, \mathbb C)$ mit 
+\begin{enumerate}
+	\item $\mathscr F f= \hat f, \; \mathscr F^\star f = \check f \quad \forall f \in (L^1(\mathbb R^n, \mathbb C)$
+	\item $\|\mathscr F f\|_{L^2} = \|f\|_{L^2} = \|\mathscr F^\star f\|_{L^2} \quad \forall f \in L^2(\mathbb R^n, \mathbb C)$ \\
+	\par\bigskip
+	Weiter gelten für $f, g \in L^2(\mathbb R^n, \mathbb C)$:
+	\item $\langle \mathscr F f, \mathscr F g\rangle_{L^2} = \langle f, g \rangle_{L^2} = \langle \mathscr F^\star f, \mathscr F^\star g\rangle_{L^2}$
+	\item $\langle \mathscr F f, g \rangle_{L^2} = \langle f, \mathscr F^\star g \rangle_{L^2}$
+	\item $\mathscr F^\star \mathscr F = \mathscr F \mathscr F^\star = $Id$_{L^2}$
+\end{enumerate}
 \end{Satz}
 
 \end{document}
