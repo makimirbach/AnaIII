@@ -18,7 +18,20 @@
 \usepackage{fdsymbol} %varrightwavearrow - blockiert Underbrace: muss nach mathtools kommen, sonst hässliche Balken.
 \usepackage{braket} % Für schönere Mengen. Oder so. Hier ist z. B. \Set drin und die vertikalen Balken sind schön.
 
-%Oder mdsymbol?
+\usepackage{scalerel, stackengine}
+\stackMath
+
+%really wide hat
+\newcommand\rwhat[1]{
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}% 
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+\parskip 1ex
 
 
 %
@@ -2747,14 +2760,14 @@ Der Raum $\mathbb P$ ist dicht in $L^2(I, \mathbb C)$
 %Def. V.1
 \begin{Definition}
 Die \textbf{Fouriertransformierte} von $f \in L^1(\mathbb R^n, \mathbb C)$ ist die Funktion 
-$$\hat f: \mathbb R^n \rightarrow \mathbb C,\quad  \hat f(\gamma) = (2\pi)^{-\dfrac{n}{2}} \int_{\mathbb R^n} f(x) e^{-i\langle \gamma, x \rangle} \; d\mathscr L^n(x)$$
+$$\rwhat f: \mathbb R^n \rightarrow \mathbb C,\quad  \rwhat f(\gamma) = (2\pi)^{-\dfrac{n}{2}} \int_{\mathbb R^n} f(x) e^{-i\langle \gamma, x \rangle} \; d\mathscr L^n(x)$$
 Die \textbf{inverse Fouriertransformierte} von $g \in L^1(\mathbb R^n, \mathbb C)$ ist 
 $$\check g: \mathbb R^n \rightarrow \mathbb C, \quad \check g(x) = (2\pi)^{-\dfrac{n}{2}} \int_{\mathbb R^n} g(\gamma) e^{i\langle \gamma, x\rangle} \; d\mathscr L^n(\gamma)$$  
 \end{Definition}
 
 %Bem.
 \begin{Bemerkung}
-$$\hat f(-x) = \check f(x)$$
+$$\rwhat f(-x) = \check f(x)$$
 \end{Bemerkung}
 
 %Satz V.7
@@ -2762,7 +2775,7 @@ $$\hat f(-x) = \check f(x)$$
 Für $f, g \in L^1(\mathbb R^n, \mathbb C)$ gilt:
 \begin{enumerate}
 	\item $\hat f \in C^0(\mathbb R^n, \mathbb C)$ und $\|\hat f\|_{C^0} \leq (2\pi)^{-\dfrac{n}{2}} \|f\|_{L^1}$
-	\item $\hat {\ffg} = \hat f \;\hat g \;(2\pi)^{\dfrac{n}{2}}$
+	\item $\rwhat {\ffg} = \hat f \;\hat g \;(2\pi)^{\dfrac{n}{2}}$
 	\item $\langle \hat f, g \rangle_{L^2} = \langle f, \check g\rangle_{L^2}$
 \end{enumerate}
 \end{Satz}
@@ -2772,8 +2785,8 @@ Für $f, g \in L^1(\mathbb R^n, \mathbb C)$ gilt:
 \begin{enumerate}
 	\item Gauß-Funktion $G: \mathbb R^n \rightarrow \mathbb R, \; G(x) = e^{\dfrac{-|x|^2}{2}}$ \\
 	\emph{Behauptung}: $\hat G = G = \check G$
-	\item Für $a >0$ betrachte $\chi_{[-a, a]}: \mathbb R \rightarrow \mathbb Rn \in L^1(\mathbb R)$ 
-	$$\hat {\chi_{[-a, a]}} (\gamma) \;= \;(2\pi)^{-1/2} \int_ \mathbb R \chi_{[-a, a]} (x) e^{-i x \gamma} \; d\mathscr L^1(x)$$
+	\item Für $a >0$ betrachte $\chi_{[-a, a]}: \mathbb R \rightarrow \mathbb R^n \in L^1(\mathbb R)$ 
+	$$\rwhat {\chi_{[-a, a]}} (\gamma) \;= \;(2\pi)^{-1/2} \int_ \mathbb R \chi_{[-a, a]} (x) e^{-i x \gamma} \; d\mathscr L^1(x)$$
 	\begin{equation}
 		= \;(2\pi)^{-1/2} \int\limits_{-a}^ ae^{-i x \gamma} \; dx\; =\; 
 		\begin{cases}
@@ -2807,5 +2820,22 @@ Es gibt eindeutig bestimmte Abbildungen $\mathscr F, \mathscr F^\star: L^2(\math
 	\item $\mathscr F^\star \mathscr F = \mathscr F \mathscr F^\star = $Id$_{L^2}$
 \end{enumerate}
 \end{Satz}
+
+
+%ein Integral, das so aussieht.
+%Trafosatz anwenden
+%Fourier-Aufgabe ohne Wissen der Hintergründe lösbar.
+
+%12.02.16 
+%Bem
+\begin{Bemerkung}
+Im Folgenden schreiben wir $\mathscr F f = \hat f \quad \forall f \in L^2(\mathbb R^n, \mathbb C)$
+\end{Bemerkung}
+
+%Definition V.2
+
+\begin{Definition}
+Der Raum $S(\mathbb R^n, \mathbb C):= \Set{f \in \mathbb C^\infty(\mathbb R^n, \mathbb C) | x^\alpha D^\beta f \text{ ist beschränkt } \forall \alpha, \beta \in \mathbb N_0}$ heißt \textbf{Schwartz-Raum}.
+\end{Definition}
 
 \end{document}
