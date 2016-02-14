@@ -2836,6 +2836,53 @@ Im Folgenden schreiben wir $\mathscr F f = \hat f \quad \forall f \in L^2(\mathb
 
 \begin{Definition}
 Der Raum $S(\mathbb R^n, \mathbb C):= \Set{f \in \mathbb C^\infty(\mathbb R^n, \mathbb C) | x^\alpha D^\beta f \text{ ist beschränkt } \forall \alpha, \beta \in \mathbb N_0}$ heißt \textbf{Schwartz-Raum}.
+$\left(x^\alpha = x_1^{\alpha_1} \cdotp ... \cdotp x_n^{\alpha_n}, \; D^\beta = \partial_1^{\beta_1} \cdotp ... \cdotp \partial_n^{\beta_n}\right)$
 \end{Definition}
+
+%Bem
+\begin{Bemerkung}
+\begin{enumerate}
+	\item $f \in S(\mathbb R^n, \mathbb C) \Rightarrow f \in L^p(\mathbb R^n, \mathbb C) \quad \forall N \in \mathbb N$
+	\item $f \in S(\mathbb R^n, \mathbb C) \Rightarrow \partial_j f, x_j f \in S(\mathbb R^n, \mathbb C) \quad \forall 1 \leq j \leq n$
+	\item $C_c^\infty (\mathbb R^n) \subset S(\mathbb R^n, \mathbb C)$
+\end{enumerate}
+\end{Bemerkung}
+
+%Satz V.10
+\begin{Satz}
+Mit $f$ ist auch $\hat f \in S(\mathbb R^n \mathbb C)$ und
+\begin{enumerate}
+	\item $\rwhat{\partial_j f}(p) = i p_j \hat f(p), \; \rwhat{x_j f}(p) = i \partial_j \hat f(p) \quad \forall 1 \leq j \leq n$
+	\item $f(x) = (2\pi)^{-n/2} \int_{\mathbb R^n} \hat f(p) e^{i\langle p, x \rangle} \; d\mathscr L^n(p) \quad \forall x \in \mathbb R^n$
+\end{enumerate}
+\end{Satz}
+
+%Bsp Wärmeleitungsgleichung
+\begin{Beispiel}
+\begin{align}
+	\partial_t u - \Delta u = 0 &\quad \text{ auf }\;\mathbb R^n \times (0, \infty) \\
+	u(\cdotp, 0) = f & \quad \text{ auf }\;\mathbb R^n
+\end{align}
+Für alle $t \in (0, \infty)$ bilde FT $\hat u(\cdotp, t) = \rwhat{u(\cdotp, t)}$. \\
+$$0 = \rwhat{\left(\partial_t u - \Delta u\right)} = \partial_t \hat u - \rwhat{\Delta u} = \partial_t \hat u + |p|^2 \hat u \quad \text{ auf } \mathbb R^n \times (0, \infty)$$
+$$\hat f = \hat u(\cdotp, 0)$$
+$$\Rightarrow \hat u(p,t) = \hat f(p) e^{-|p|^2 t}$$
+Betrachte $u(x, t) = (\hat u)(x, t)$. \\
+\underline{Annahme}: $\exists g: $
+$$\hat g(p) = e^{-|p|^2 t} \Rightarrow \hat u = \hat f \cdotp \hat g \quad  \underRightarrow{Satz V.7} \quad  u = (2\pi)^{-n/2} \ffg = (2\pi)^{-n/2} \rwhat{\ffg}$$
+$G(x) = e^{\dfrac{-|x|^2}{2}}$ Gauß-Funktion $\Rightarrow G = \hat G$ \\
+$G_{\sqrt{2t}}(x) = (2t)^{-n/2} G\left(\dfrac{x}{\sqrt{2t}}\right) $
+$$\Rightarrow \hat G_{\sqrt{2t}}(p) = (4\pi t)^{-n/2} \int_{\mathbb R^n} G\left(\dfrac{x}{\sqrt{2t}} \right) e^{-i \langle p, x \rangle} \; d\mathscr L^n(x)$$
+Sei $y = \dfrac{x}{\sqrt{2t}}$
+$$\Rightarrow (2\pi)^{-n/2} \int_{\mathbb R^n} G(y) e^{-i \langle \sqrt{2t} p, q \rangle} \; d\mathscr L^n(y) = \hat G\left(\sqrt{2t}, p\right) = G\left(\sqrt{2t}, p\right) = e^{-t|p|^2}$$
+%
+$$\Rightarrow \hat u = \hat G_{\sqrt{2t}} \hat f$$
+$$\Rightarrow u(x, t) = (2\pi)^{-n/2} \int_{\mathbb R^n} (2t)^{-n/2} e^{\dfrac{-|x-y|^2}{4t}} f(y) \; d\mathscr L^n(y)$$
+$$\text{ bzw. }u(x, t) = (4\pi t)^{-n/2} \int_{\mathbb R^n} e^{\dfrac{-|x-y|^2}{4t}} f(y) \; d\mathscr L^n(y)$$
+\end{Beispiel}
+
+\emph{Bemerkung}:
+$f \in C^0 $ und beschränkt $\Rightarrow u \in C^\infty\left(\mathbb R^n \times (0, \infty)\right)$
+
 
 \end{document}
