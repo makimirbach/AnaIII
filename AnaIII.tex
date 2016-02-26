@@ -25,7 +25,7 @@
 \newcommand\rwhat[1]{
 \savestack{\tmpbox}{\stretchto{%
   \scaleto{%
-    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.8pt}%
     {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
   }{\textheight}% 
 }{0.5ex}}%
@@ -80,7 +80,7 @@ Ein Mengensystem $\mathscr{A} \subset P(X)$ heißt \textbf{$\sigma$-Algebra}, fa
 \begin{enumerate}
 	\item $X \in \mathscr{A}$
 	\item $A \in \mathscr{A} \Rightarrow X \backslash A \in \mathscr{A}$
-	\item $A_i \in \mathscr{A}$, $i \in$ $\mathbb{N} \Rightarrow \bigcup_{i = 1}^{\infty} A_i$
+	\item $A_i \in \mathscr{A}$, $i \in$ $\mathbb{N} \Rightarrow \bigcup_{i = 1}^{\infty} A_i \subset \mathscr A$
 \end{enumerate}
 Das System $(X, \mathscr{A})$ heißt \textbf{messbarer Raum}.
 \end{Definition}
@@ -149,7 +149,7 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \textbf{konvergiert} gegen $s
 \begin{itemize}
 	\item  $s \in \mathbb{R}$ und $\forall \epsilon > 0$ gilt $s_{k} \in (s-\epsilon, s+\epsilon) \quad\forall k$ groß genug
 	\item $s = \infty$ und $\forall r \in \mathbb{R}: s_{k} \in (r, \infty] \quad \forall k$ groß genug
-	\item $s = -\infty$ und $\forall r \in \mathbb{R}: s_k \in (-\infty, r) \quad \forall k$ groß genug
+	\item $s = -\infty$ und $\forall r \in \mathbb{R}: s_k \in [-\infty, r) \quad \forall k$ groß genug
 \end{itemize}
 \end{Definition}
 
@@ -169,9 +169,9 @@ Eine Folge $(s_{k}) \subset \overline{\mathbb{R}}$ \textbf{konvergiert} gegen $s
 \begin{Definition}
 $\mathscr{A} \subset P(X)$ $\sigma$-Algebra. Eine nicht negative Mengenfunktion $\mu: \mathscr{A} \rightarrow [0, \infty]$ heißt \textbf{Maß} auf $\mathscr{A}$, wenn
 \begin{enumerate}
-	\item $\mu(\infty) = 0$
+	\item $\mu(\emptyset) = 0$
 	\item für paarweise disjunkte Mengen $A_i \in \mathscr{A}, i \in \mathbb{N}$ gilt: \\
-	$\mu(\bigcup\limits_{i=1}^{\infty}A_i) = \sum\limits_{i=1}^{\infty} \mu(A_i)$ \textbf{$\sigma$-Additivität}
+	$\mu\left(\bigcup\limits_{i=1}^{\infty}A_i\right) = \sum\limits_{i=1}^{\infty} \mu(A_i)$ \textbf{$\sigma$-Additivität}
 \end{enumerate}
 Das Tripel $(X, \mathscr{A}, \mu)$ wird als Maßraum bezeichnet.
 \end{Definition}
@@ -238,13 +238,13 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 \begin{enumerate}
 	\item $A_1 \subset A_2 \subset ...  A_i \subset A_{i+1} \subset .. $
 	\begin{center}
-		$\Rightarrow \quad \mu(\bigcup\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+		$\Rightarrow \quad \mu\left(\bigcup\limits_{i=1}^{\infty} A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$
 	\end{center}
 	\item Aus $A_1 \supset A_2 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\mu(A_1)\; < \;  \infty$ folgt
 	\begin{center}
-		$\mu(\bigcap\limits_{i=1}^{\infty} A_i) = \lim_{i \rightarrow \infty} \mu(A_i)$
+		$\mu\left(\bigcap\limits_{i=1}^{\infty} A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$
 	\end{center}
-	\item $\mu(\bigcup\limits_{i=1}^{\infty} A_i) \leq \sum\limits_{i=1}^{\infty} \mu(A_i)$ \\
+	\item $\mu\left(\bigcup\limits_{i=1}^{\infty} A_i\right) \leq \sum\limits_{i=1}^{\infty} \mu(A_i)$ \\
 	($A_i$ müssen hier nicht paarweise disjunkt sein)
 \end{enumerate}
 \end{Satz}
@@ -255,19 +255,22 @@ $(X, \mathscr{A}, \mu)$ sei Maßraum. Dann gelten für $A_i \in \mathscr{A}, i \
 	\item \emph{1.} heißt \textbf{Stetigkeit von unten} \\
 	\emph{2.} heißt \textbf{Stetigkeit von oben} \\
 	\emph{3.} \textbf{$\sigma$-Subadditivität} des Maßes
-	\item  $\mu(A_1\; < \;\infty)$ in \emph{2.} kann durch $\mu(A_k) \; < \;\infty$ für ein $k \in \mathbb{N}$ ersetzt werden.
+	\item  $\mu(A_1 < \infty)$ in \emph{2.} kann durch $\mu(A_k) < \infty$ für ein $k \in \mathbb{N}$ ersetzt werden.
 \end{enumerate}
 \end{Bemerkung}
 
 %Bsp.
 \begin{Beispiel}
-$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card($A_k) \leq \infty$ \\
-card($\bigcap\limits_{k=1}^{\infty} A_k$) $= 0 \ne \lim_{k \rightarrow \infty} $card$ (A_k) = \infty$
+$A_k := \{k, k+1, ... \} \subset \mathbb{N}$, card $(A_k) \leq \infty$ \\
+card $\left(\bigcap\limits_{k=1}^{\infty} A_k\right) = 0 \ne \lim_{k \rightarrow \infty} $card  $(A_k) = \infty$
 \end{Beispiel}
 
 %Def I.6
 \begin{Definition}
-Sei $(X, \mathscr{A}, \mu)$ Maßraum. Jede Menge $A \in \mathscr{A}$ mit $\mu(A) = 0$ heißt \textbf{$\mu$-Nullmenge}. Das Maß heißt \textbf{vollständig}, wenn $N \subset A $ für ein $A \subset \mathscr{A}$ mit $\mu(A) = 0 \Rightarrow N \in \mathscr{A}$ und $\mu(N) = 0$.
+Sei $(X, \mathscr{A}, \mu)$ Maßraum. Jede Menge $A \in \mathscr{A}$ mit $\mu(A) = 0$ heißt \textbf{$\mu$-Nullmenge}. Das Maß heißt \textbf{vollständig}, wenn $N \subset A $ für ein $A \subset \mathscr{A}$ mit 
+\begin{center}
+	$\mu(A) = 0 \Rightarrow N \in \mathscr{A}$ \; und \; $\mu(N) = 0$.
+\end{center}
 \end{Definition}
 
 %Bsp.
@@ -324,18 +327,18 @@ $f$ heißt kurz messbar (bzw. $\mathscr{A}$-messbar), wenn an $\mathscr{A}, \mat
 	$f: X \rightarrow Y$ $ \mathscr{A}-\mathscr{C}$-messbar \\
 	$g: Y \rightarrow Z$ $ \mathscr{C}-\mathscr{D}$-messbar \\
 	$\xRightarrow{Beh.}$ $  g \circ f: X \rightarrow Z$ $ \mathscr{A}-\mathscr{D}$-messbar, denn \\
-	$(g \circ f)^{-1}(\mathscr{D}) = f^{-1}(g^{-1}(\mathscr{D})) \subset f^{-1}(\mathscr{D}) \subset \mathscr{A}$
+	$(g \circ f)^{-1}(\mathscr{D}) = f^{-1}(g^{-1}(\mathscr{D})) \subset f^{-1}(\mathscr{C}) \subset \mathscr{A}$
 \end{enumerate}
 \end{Beispiel}
 
 % Lemma I.1
 \begin{Lemma}
-$(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $f: X \rightarrow Y$ Abbildung. Für beliebige Mengensysteme $\xi \in \mathscr{C}$ gilt $f^{-1}(\sigma(\xi)) = \sigma(f^{-1}(\xi))$
+$(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $f: X \rightarrow Y$ Abbildung. Für beliebige Mengensysteme $\mathscr E \in \mathscr{C}$ gilt $f^{-1}(\sigma(\mathscr E)) = \sigma(f^{-1}(\mathscr E))$
 \end{Lemma}
 
 % Lemma I.2
 \begin{Lemma}
-Seien $(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $\mathscr{C} = \sigma(\xi)$ für ein Mengensystem $\xi \subset P(Y)$. Jede Abbildung $f: X \rightarrow Y$ mit $f^{-1}(\xi) \subset \mathscr{A}$ ist $\mathscr{A}-\mathscr{C}$-messbar.
+Seien $(X, \mathscr{A}), (Y, \mathscr{C})$ messbare Räume und $\mathscr{C} = \sigma(\mathscr E)$ für ein Mengensystem $\mathscr E \subset P(Y)$. Jede Abbildung $f: X \rightarrow Y$ mit $f^{-1}(\mathscr E) \subset \mathscr{A}$ ist $\mathscr{A}-\mathscr{C}$-messbar.
 \end{Lemma}
 
 %Bsp
@@ -355,7 +358,7 @@ Sei $(X, \mathscr{A})$ messbarer Raum und $D \in \mathscr{A}$. Eine Funktion $f:
 
 %Bem
 \begin{Bemerkung}
-Numerische Funktionen sind $\mathscr{A}$-messbar (auf $D$), wenn $f^{-1}(\overline{\mathbb{B}^1}) \subset \mathscr{A}|_D:= \{A \cap D |A \in \mathscr{A}\}$ \\
+Numerische Funktionen sind $\mathscr{A}$-messbar (auf $D$), wenn $$f^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr{A}|_D:= \{A \cap D |A \in \mathscr{A}\}$$ 
 ($\mathscr A | _D$ ist $\sigma$-Algebra, siehe Übung).
 \end{Bemerkung}
 
@@ -374,30 +377,39 @@ $(X, \mathscr A)$ messbarer Raum, $D \in \mathscr A$, $f: D \rightarrow \overlin
 
 %Lemma I.4
 \begin{Lemma}
-$(X, \mathscr A)$ messbarer Raum. $D \in \mathscr a$ und $f, g: D \rightarrow \overline{\mathbb R }$ $\mathscr A$-messbar \\
-$ \left( f^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr A |_D, g^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr A |_D\right)$. \\ Dann sind die Mengen $\{f < g\}:= \{x \in D: f(x) < g(x)\}$ und $\{f \leq g\}$ Elemente aus $\mathscr A |_D$.
+$(X, \mathscr A)$ messbarer Raum. $D \in \mathscr A$ und $f, g: D \rightarrow \overline{\mathbb R }$ $\mathscr A$-messbar \\
+$ \left( f^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr A |_D, g^{-1}(\overline{\mathscr{B}^1}) \subset \mathscr A |_D\right)$. \\ Dann sind die Mengen $\Set{f < g}:= \Set{x \in D | f(x) < g(x)}$ und $\Set{f \leq g}$ Elemente aus $\mathscr A |_D$.
 \end{Lemma}
 
 %Satz I.3
 \begin{Satz}
-$(X, \mathscr A)$ messbarer Raum. $D \in \mathscr A$, $f_k: D \rightarrow \overline{\mathbb R}$ Folge von $\mathscr A$-messbaren numerischen Funktionen. dann sind $\inf\limits_k f_k$, $\sup\limits_k f_k$, $\liminf\limits_{k\rightarrow \infty} f_k$, $\limsup\limits_{k \rightarrow \infty} f_k$ auch $\mathscr A$-messbar. \\
-(Hierbei ist $(\liminf f_k)(x) = \liminf f_k(x)$, ebenso $\limsup$)
+$(X, \mathscr A)$ messbarer Raum. $D \in \mathscr A$, $f_k: D \rightarrow \overline{\mathbb R}$ Folge von $\mathscr A$-messbaren numerischen Funktionen. 
+Dann sind $$\inf\limits_k f_k,\; \sup\limits_k f_k,\; \liminf\limits_{k\rightarrow \infty} f_k,\; \limsup\limits_{k \rightarrow \infty} f_k$$ auch $\mathscr A$-messbar. 
+$($Hierbei ist $(\liminf f_k)(x) = \liminf f_k(x)$, ebenso $\limsup)$
 \end{Satz}
 
 %Satz I.4
 \begin{Satz}
-$(X, \mathscr A)$ messbarer Raum, $D \in \mathscr A$, $f, g: D \rightarrow \overline{\mathbb R }$ $\mathscr A$-messbar und $\alpha \in \mathbb R$. Dann sind $f+g, \alpha \cdotp f, f^\pm, \max{\{f, g\}}, \min{\{f, g\}}, \|f\|, f \cdotp g, \dfrac{f}{g}$ $\mathscr A$-messbar. \\
-$\left( f^+ = \max{\{f, 0\}} \geq 0, f^- = \max{\{-f, 0\}} \geq 0, f = f^+ - f^-, \|f\| = f^+ + f^- \right)$
+$(X, \mathscr A)$ messbarer Raum, $D \in \mathscr A$, $f, g: D \rightarrow \overline{\mathbb R }$ $\mathscr A$-messbar und $\alpha \in \mathbb R$. 
+Dann sind 
+$$f+g, \;\alpha \cdotp f, \;f^\pm,\; \max{\{f, g\}}, \;\min{\{f, g\}},\; \|f\|, \;f \cdotp g, \;\dfrac{f}{g}$$ $\mathscr A$-messbar. \\
+$\left( f^+ = \max{\{f, 0\}} \geq 0, \;f^- = \max{\{-f, 0\}} \geq 0, f = f^+ - f^-, \; \|f\| = f^+ + f^- \right)$
 \end{Satz}
 
-%Wieso x in M in A?? Was ist dann M?
+%Wieso x in M in A?? Was ist dann M? Ist bei Ruzicka auch so
 %Bem
 \begin{Bemerkung}
-$(X, \mathscr A, \mu)$ Maßraum. Man sagt, die Aussage $A[x]$ ist wahr für \textbf{$\mu$-fast alle $x \in M \in \mathscr A$}, falls eine $\mu$-Mullmenge $N$ existiert mit $\{x \in M: A[x]  \text{ falsch}\} \subset N$.\\
-$f, g: X \rightarrow \overline{\mathbb R}$ Aussage  \quotes{$f(x) \leq g(x)$ für $\mu$-fast alle $x \in X$}  bedeutet: \\
-$\exists N \subset \mathscr A$ mit $\mu(N) = 0$, sodass $\forall x \in X\backslash N: f(x) \leq g(x)$ \\
-Eine Funktion $h$ ist \quotes{\textbf{$\mu$-fast überall auf $X$}} definiert, wenn $h$ aus $D \in \mathscr A$ definiert ist und $\mu(X \backslash D) = 0$. \\
-Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert punktweise $\mu$-fast überall gegen $f: D \rightarrow \overline{\mathbb R}$, falls eine Menge $M \in \mathscr A$ existiert mit $\mu(N) = 0$ und $\lim\limits_ {k \rightarrow \infty} f_k(x) = f(x)\quad \forall x \in D \backslash N$
+$(X, \mathscr A, \mu)$ Maßraum. Man sagt, die Aussage $A[x]$ ist \quotes{ \textbf{wahr für \textbf{$\mu$-fast alle $x \in M \in \mathscr A$}}}, falls eine $\mu$-Nullmenge $N$ existiert mit 
+$$\Set{x \in M| A[x]  \text{  falsch }} \subset N.$$
+
+$f, g: X \rightarrow \overline{\mathbb R}$; \quad Aussage  \quotes{\textbf{$f(x) \leq g(x)$ für $\mu$-fast alle $x \in X$}}  bedeutet: \\
+$\exists N \subset \mathscr A$ mit $\mu(N) = 0$, sodass 
+$$\forall x \in X\backslash N: f(x) \leq g(x)$$
+
+Eine Funktion $h$ ist \quotes{\textbf{$\mu$-fast überall auf $X$}} definiert, wenn $h$ aus $D \in \mathscr A$ definiert ist und 
+$$\mu(X \backslash D) = 0.$$
+
+Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert \quotes{ \textbf{punktweise $\mu$-fast überall gegen $f: D \rightarrow \overline{\mathbb R}$}}, falls eine Menge $N \in \mathscr A$ existiert mit $\mu(N) = 0$ und $$\lim\limits_ {k \rightarrow \infty} f_k(x) = f(x)\quad \forall x \in D \backslash N$$
 \end{Bemerkung}
 
 %Definition I.9
@@ -405,9 +417,10 @@ Eine Folge von Funktionen $f_k: D \rightarrow \overline{\mathbb R}$ konvergiert 
 $(X, \mathscr A, \mu)$ Maßraum. Eine auf $D \in \mathscr A$ definierte numerische Funktion $f$ heißt \textbf{$\mu$ messbar} (auf $X$), wenn $\mu(X \backslash D) = 0$ und $f$ $\mathscr A$-messbar ist.
 \end{Definition}
 
-%bem
+%Bem
 \begin{Bemerkung}
-Die Relation $f = g$ $\mu$-fast überall ist eine Äquivalenzrelation. Sei $D \in \mathscr A, f: D \rightarrow \overline{\mathbb R} \mu$-messbar. Dann gibt es eine $\mathscr A$-messbare Funkion $g: X \rightarrow \overline{\mathbb R}$ mit $f = g$ auf $D$. \\
+Die Relation ($f = g$ $\mu$-fast überall) ist eine Äquivalenzrelation. \\
+Sei $D \in \mathscr A, f: D \rightarrow \overline{\mathbb R} \; \mu$-messbar. Dann gibt es eine $\mathscr A$-messbare Funktion $g: X \rightarrow \overline{\mathbb R}$ mit $f = g$ auf $D$. \\
 \emph{Z.B.} \\
 \begin{equation}
 	g(x) =
@@ -434,7 +447,7 @@ $(X, \mathscr A, \mu)$ vollständiger Maßraum, $f_k, k \in \mathbb N$ $\mu$-mes
 %Satz I.6
 \begin{Satz}{\emph{\textbf{Egorov:}}} \\
 $(X, \mathscr A, \mu)$ Maßraum. $D \in \mathscr A$ Menge mit $\mu(D) \less \infty$ und $f_k, f$ $ \mu|_D$-messbar, $\mu|_D$ - fast überall endliche Funktionen mit $f_k \rightarrow f$ $\mu|_D$- fast überall. \\
-Dann existiert $\forall \epsilon \> 0$ eine Menge $B \subset D, B \in \mathscr A$ mit \\
+Dann existiert $\forall \epsilon > 0$ eine Menge $B \subset D, B \in \mathscr A$ mit 
 \begin{enumerate}
 	\item $\mu(D\backslash B) \less \epsilon$
 	\item $f_n \rightarrow f$ gleichmäßig auf $B$.
@@ -460,44 +473,51 @@ Sei $X$ eine Menge. Eine Funktion $\mu: P(X) \rightarrow [0, \infty]$ mit $\mu(\
 
 %Def I.11
 \begin{Definition}
-Sei $\mu$ äußeres Maß auf $X$. Die Menge $A \subset X$ heißt \textbf{$\mu$-messbar}, falls für alle $S \subset X$: \\
-$\mu(S) \geq \mu(S \cap A) + \mu(S \backslash A)$ \\
-$\mathscr M(\mu):= \{ A \subset X | A$ $ \mu-messbar \}$
+Sei $\mu$ äußeres Maß auf $X$. Die Menge $A \subset X$ heißt \textbf{$\mu$-messbar}, falls für alle $S \subset X$: 
+$$\mu(S) \geq \mu(S \cap A) + \mu(S \backslash A)$$
+$\mathscr M(\mu):= \Set{ A \subset X | A \;  \mu-\text{messbar} }$ ist das \textbf{System der $\mu$-messbaren Mengen}.
 \end{Definition}
 
 %Bem
 \begin{Bemerkung}
-Es gilt $(S \cap A) \cup (S \backslash A) = S$. Also $\mu(S) \leq \mu(S \cap A) + \mu(S \backslash A)$ \\
+Es gilt $(S \cap A) \cup (S \backslash A) = S$. Also 
+$$\mu(S) \leq \mu(S \cap A) + \mu(S \backslash A)$$
 $A$ $\mu$-messbar $\Leftrightarrow$ $\mu(S) = \mu(S \cap A) + \mu(S \backslash A)\quad \forall S \subset X$
 \end{Bemerkung}
 
 %Satz I.7
 \begin{Satz}
-Sei $\mathscr Q$ ein System von Teilmengen einer Menge $X$, das die leere Menge enthält und sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ mit $\lambda(\emptyset) = 0$.\\
-Definiere $\mu: P(X) \rightarrow [0, \infty]$ für beliebige $E \subset X$ durch \\
- $\mu(E) := \inf \Set{ \sum\limits_{i=1}^\infty \lambda(P_i) | P_i \in \mathscr Q \forall i, E \subset \bigcup\limits_{i=1}^\infty P_i }$ \\
+Sei $\mathscr Q$ ein System von Teilmengen einer Menge $X$, das die leere Menge enthält und 
+sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ mit $\lambda(\emptyset) = 0$.\\
+Definiere $\mu: P(X) \rightarrow [0, \infty]$ für beliebige $E \subset X$ durch 
+$$\mu(E) := \inf \Set{ \sum\limits_{i=1}^\infty \lambda(P_i) | P_i \in \mathscr Q \; \forall i,\quad  E \subset \bigcup\limits_{i=1}^\infty P_i }$$
 Dann ist $\mu$ äußeres Maß. $(\inf \emptyset = + \infty)$
 \end{Satz}
 
 %Satz I.8
 \begin{Satz}
-$\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß auf $X$. Für $M \subset X$ erhält man durch $\mu|_M : P(X) \rightarrow [0, \infty], \mu|_M := \mu(A \cap M)$ ein \textbf{äußeres Maß} (Einschränkung von $\mu$ auf $M$) auf $X$. Es gilt: $A$ $ \mu-$messbar $\Rightarrow$  $A$ $ \mu|_M $-messbar
+$\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß auf $X$. 
+Für $M \subset X$ erhält man durch 
+$$\mu|_M : P(X) \rightarrow [0, \infty], \; \mu|_M := \mu(A \cap M)$$ 
+ein \textbf{äußeres Maß} (Einschränkung von $\mu$ auf $M$) auf $X$. \\
+Es gilt: 
+$$A \; \mu-\text{messbar} \Rightarrow A  \; \mu|_M -\text{messbar}$$
 \end{Satz}
 
 %Satz I.9
 \begin{Satz}
 Sei $\mu$ äußeres Maß auf $X$. Dann gilt:
 \begin{enumerate}
-	\item $N$ $\mu$-Nullmenge $\Rightarrow N$ $\mu$-messbar
-	\item $N_i, i \in \mathbb N,$ $\mu$-messbar $\Rightarrow \bigcup\limits_{x=1}^\infty N_i$ Nullmengen
+	\item $N$ $\mu$-Nullmenge $\Rightarrow N$ $\mu$-messbar.
+	\item $N_i, i \in \mathbb N,$ $\mu$-messbar $\Rightarrow \bigcup\limits_{i=1}^\infty N_i \; \mu-$ Nullmenge.
 \end{enumerate}
 \end{Satz}
 
 
 %Lemma I.6
 \begin{Lemma}
-$\mu$ äußeres Maß auf $X$, $A_i \in \mathscr M(\mu), i = 1, ... k$ seien paarweise disjunkt. Dann gilt $\forall S \subset X$: \\
-$\mu\left(S \cap \bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \mu(S \cap A_i)$
+Sei $\mu$ äußeres Maß auf $X$, $A_i \in \mathscr M(\mu),\; i = 1, ... k$ seien paarweise disjunkt. Dann gilt $\forall S \subset X$: 
+$$\mu\left(S \cap \bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \mu(S \cap A_i)$$
 \end{Lemma}
 
 %Satz I.10
@@ -509,8 +529,10 @@ Sei $\mu: P(X) \rightarrow [0, \infty]$ äußeres Maß. Dann ist $\mathscr M(\mu
 \begin{Lemma}
 Sei $\mu$ äußeres Maß und seien $A_i \in \mathscr M(\mu), i \in \mathbb N$. Dann gelten:
 \begin{enumerate}
-	\item aus $A_1 \subset A_2 \subset ...$ folgt $\mu\left(\bigcup\limits_{i=1}^\infty A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$
-	\item aus $A_1 \supset A_2 \supset ...$ folgt $\mu\left(\bigcap\limits_{i=1}^\infty A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$, falls $\mu(A_1) \less \infty$
+	\item Aus $A_1 \subset A_2 \subset ...$ folgt 
+	$$\mu\left(\bigcup\limits_{i=1}^\infty A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$$
+	\item Aus $A_1 \supset A_2 \supset ...$ folgt, falls $\mu(A_1) \less \infty$
+	$$\mu\left(\bigcap\limits_{i=1}^\infty A_i\right) = \lim_{i \rightarrow \infty} \mu(A_i)$$
 \end{enumerate}
 \end{Lemma}
 
@@ -520,9 +542,9 @@ Sei $\mu$ äußeres Maß und seien $A_i \in \mathscr M(\mu), i \in \mathbb N$. D
 
 %Def I.12
 \begin{Definition}
-Ein Mengensystem $\mathscr A \in P(X)$ heißt \textbf{$\cap$-stabil}, \textbf{ $\cup$-stabil }, \textbf{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch 
+Ein Mengensystem $\mathscr A \subset P(X)$ heißt \textbf{$\cap$-stabil}, \textbf{ $\cup$-stabil }, \textbf{$\backslash$-stabil}, falls mit $A, B \in \mathscr A$ auch 
 \begin{center}
-	$A \cap B \in \mathscr A, A \cup B \in \mathscr A, A\backslash B \in \mathscr A$.
+	$A \cap B \in \mathscr A, \; A \cup B \in \mathscr A, \; A\backslash B \in \mathscr A$.
 \end{center}
 \end{Definition}
 
@@ -533,7 +555,7 @@ $\cap$-stabil $(\cup$-stabil$)$ $\Rightarrow$ $\cap$-Stabilität $($bzw. $\cup)$
 
 %Def I.13.
 \begin{Definition}
-Ein Mengensystem $\mathscr R \in P(X)$ heißt \textbf{Ring} über $X$, falls
+Ein Mengensystem $\mathscr R \subset P(X)$ heißt \textbf{Ring} über $X$, falls
 \begin{enumerate}
 	\item $\emptyset \in \mathscr R$
 	\item $A, B \in \mathscr R \Rightarrow A\backslash B \in \mathscr R$
@@ -565,7 +587,7 @@ Ist $X \in \mathscr R$, so heißt $\mathscr R$ \textbf{Algebra}.
 Sei $\mathscr R \subset P(X)$ ein Ring. Eine Funktion $\lambda: \mathscr R \rightarrow [0, \infty]$ heißt \textbf{Prämaß} auf $\mathscr R$, falls
 \begin{enumerate}
 	\item $\lambda(\emptyset) = 0$
-	\item für paarweise disjunkte $A_i \in \mathscr R, i \in \mathbb N$ mit $\bigcup\limits_{i=1}^\infty A_i \in \mathscr R$: 
+	\item für paarweise disjunkte $A_i \in \mathscr R, \; i \in \mathbb N$ mit $\bigcup\limits_{i=1}^\infty A_i \in \mathscr R$: 
 	\begin{center}
 		$\lambda \left(\bigcup\limits_{i=1}^\infty A_i\right) = \sum\limits_{i=1}^\infty \lambda(A_i)$
 	\end{center}
@@ -574,7 +596,7 @@ Sei $\mathscr R \subset P(X)$ ein Ring. Eine Funktion $\lambda: \mathscr R \righ
 
 %Bem.
 \begin{Bemerkung}
-Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, endlich, monoton, Nullmenge werden wie bei Maßen definiert
+Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, endlich, monoton, Nullmenge werden wie bei Maßen definiert.
 \end{Bemerkung}
 
 %Bsp.
@@ -589,45 +611,46 @@ Die Begriffe $\sigma$-subadditiv, $\sigma$-endlich, endlich, monoton, Nullmenge 
 		\end{cases}
 	\end{equation}
 	\item $\mathscr R = \{$endliche Teilmengen vom $X\}$, $\lambda = $ $card|_{\mathscr R}$ ist Prämaß
-	\item alle äußeren Maße sind Prämaße, wenn man sie einschränkt auf $\mathscr R = \mathscr M(\mu)$
+	\item Alle äußeren Maße sind Prämaße, wenn man sie einschränkt auf $\mathscr R = \mathscr M(\mu)$.
 \end{enumerate}
 \end{Beispiel}
 
 %Def I.15
 \begin{Definition}
-Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\mu$ auf $X$ (bzw. ein Maß $\mu$ auf $\mathscr A$) heißt \textbf{Fortsetzung} von $\lambda$, falls gilt:
+Sei $\lambda$ Prämaß auf Ring $\mathscr R \subset P(X)$. Ein äußeres Maß $\mu$ auf $X$ (bzw. ein Maß $\mu$ auf $\mathscr A$) heißt \textbf{Fortsetzung von $\lambda$}, falls gilt:
 \begin{enumerate}
 	\item $\mu|_\mathscr R = \lambda$, d.h. 
 	\begin{center}
 		$\mu(A) = \lambda(A)$ $\forall A \in \mathscr R$
 	\end{center}
-	\item $\mathscr R \in \mathscr M(\mu) ($bzw. $\mathscr R \subset \mathscr A)$
+	\item $\mathscr R \in \mathscr M(\mu) \; ($bzw. $\mathscr R \subset \mathscr A)$
 \end{enumerate}
 \end{Definition}
 
 
 %Satz I.11, VL 06.11.15
 \begin{Satz}
-$\lambda: R \rightarrow [0, \infty], \;R \subset P(X)$ (Prämaß auf Ring), $\forall \;E \subset X:$ \\
+$\lambda: \mathscr R \rightarrow [0, \infty], \; \mathscr R \subset P(X) ($Prämaß auf Ring$), \forall \;E \subset X:$ \\
 \begin{center}
-$\mu(E):= \inf\Set{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, A_i \in \mathbb{R}}$
+$\mu(E):= \inf\Set{ \sum\limits_{i=1}^{\infty} \lambda(A_i) | E \subset \bigcup\limits_{i=1}^{\infty} A_i, \; A_i \in \mathscr{R}}$
 \end{center}
-ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußere Maß$)$
+ist Fortsetzung von $\lambda$. $(\mu$ ist das durch $\lambda$ induzierte äußere Maß$)$ \\
+bzw. $\mu$ ist \textbf{\cara\, von $\lambda$}.
 \end{Satz}
 
 %Lemma I.8
 \begin{Lemma}
-Sei $\mu$ \cara\; des Prämaß $\lambda$ auf $R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(R)$ mit $\tilde{\mu} = \lambda$ auf $R$. Dann gilt 
+Sei $\mu$ \cara\; des Prämaß $\lambda$ auf $\mathscr R$. Sei $\tilde{\mu}$ ein Maß auf $\sigma(\mathscr R)$ mit $\tilde{\mu} = \lambda$ auf $ \mathscr R$. Dann gilt 
 \begin{center}
-	$\tilde{\mu}(R) \leq \mu(E)\quad \forall E \in \sigma(R)$.
+	$\tilde{\mu}(\mathscr R) \leq \mu(E)\quad \forall E \in \sigma(\mathscr R)$.
 \end{center}
 \end{Lemma}
 
 %Satz I.12
 \begin{Satz} \emph{\textbf{Hopf-Fortsetzung} }\\
-Sei $\lambda: R \rightarrow [0, \infty]$ Prämaß auf Ring $R \subset P(X)$. Dann existiert ein Maß 
+Sei $\lambda: \mathscr R \rightarrow [0, \infty]$ Prämaß auf Ring $\mathscr R \subset P(X)$. Dann existiert ein Maß 
 \begin{center}
-	$\mu$ auf $\sigma(R)$ mit $\mu =\lambda$ auf $R$.
+	$\mu$ auf $\sigma(\mathscr R)$ mit $\mu =\lambda$ auf $\mathscr R$.
 \end{center}	
 Diese Fortsetzung ist \emph{eindeutig}, falls $\lambda$ $\sigma$-endlich ist.
 \end{Satz}
