@@ -713,7 +713,7 @@ Ein Mengensystem $\mathscr Q \subset P(X)$ heißt \textbf{Halbring} über $X$, f
 	\begin{center}
 		$(a, b) \subset \overline{I} \subset [a, b]$. 
 	\end{center}
-	Quader in $\mathbb R^n$ ist $ Q:= I_1 \times ... \times I_n$,  \quad $I_1, ... I_n$ Intervalle.
+	\textbf{Quader} in $\mathbb R^n$ ist $ Q:= I_1 \times ... \times I_n$,  \quad $I_1, ... I_n$ Intervalle.
 \end{enumerate}
 \end{Beispiel}
 
@@ -735,7 +735,7 @@ Dann ist $\mathscr F$ der von $\mathscr Q$ erzeugte Ring.
 \begin{Beispiel}
 \begin{enumerate}
 	\item $\mathscr Q = \{\emptyset \} \cup \Set{\{a\}| a \in X} \quad \rightarrow \mathscr F = \{$ endliche Teilmengen von $X\}$
-	\item $\mathscr Q^n \rightarrow$ E erzeugter Ring $\mathscr F^n:= \{$endliche Vereinigung von Quadern$\}$: Figuren
+	\item $\mathscr Q^n \rightarrow$ E erzeugter Ring $\mathscr F^n:= \{$endliche Vereinigung von Quadern$\}$: \textbf{Figuren}
 \end{enumerate}
 \end{Beispiel}
 
@@ -764,10 +764,10 @@ Sei $\mathscr Q \subset P(X)$ Halbring über $X$. Eine Funktion
 falls
 \begin{enumerate}
 	\item $\lambda(\emptyset) = 0$
-	\item $\lambda\left(\bigcup\limits_{i=1}^n	A_i\right) = \sum\limits_{i=1}^n \lambda(A_i)$ für paarweise disjunkte $A_i \in \mathscr Q$ mit $\bigcup\limits_{i=1}^n A_i \in \mathscr Q$
+	\item $\lambda\left(\bigcup\limits_{i=1}^n	A_i\right) = \sum\limits_{i=1}^n \lambda(A_i)$ für paarweise disjunkte $A_i \in \mathscr Q$ mit $\bigcup\limits_{i=1}^n A_i \in \mathscr Q$: \textbf{endliche Additivität auf $\mathscr Q$}
 \end{enumerate}
 
-Ein Inhalt heißt \textbf{Prämaß} auf $\mathscr Q$, falls $\lambda$ $\sigma$-additiv auf $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: 
+Ein Inhalt heißt \textbf{Prämaß} auf $\mathscr Q$, falls $\lambda$ \textbf{$\sigma$-additiv auf} $\mathscr Q$ ist, d.h. für paarweise disjunkte $A_i, i \in \mathbb N$ gilt: 
 \begin{center}
 	$\lambda\left(\bigcup\limits_{i\in \mathbb N} A_i \right) = \sum\limits_{i=1}^\infty \lambda(A_i)$,\quad  falls $\bigcup\limits_{i \in \mathbb N} A_i \in \mathscr Q$
 \end{center}	
@@ -812,8 +812,8 @@ $vol^n(\cdotp)$ ist ein Inhalt auf $\mathscr Q^n$
 
 %Satz I.19
 \begin{Satz}
-$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$, $F$ sei der von $\mathscr Q$ erzeugte Ring und $\overline{\lambda}: F \rightarrow [0, \infty]$ der eindeutig bestimmte Inhalt auf $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda \; ($Satz I.17$)$
-Dann ist $\overline{\lambda}$ ein Prämaß auf $F$.
+$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$, $\mathscr F$ sei der von $\mathscr Q$ erzeugte Ring und $\overline{\lambda}: \mathscr F \rightarrow [0, \infty]$ der eindeutig bestimmte Inhalt auf $\mathscr F$ mit $\overline{\lambda}|_\mathscr Q = \lambda \; ($Satz I.17$)$
+Dann ist $\overline{\lambda}$ ein Prämaß auf $\mathscr F$.
 \end{Satz}
 
 
@@ -821,7 +821,7 @@ Dann ist $\overline{\lambda}$ ein Prämaß auf $F$.
 %Was tust du da? Das ist sehr komisch. Bzw. ich weiß nicht, wo das hässliche F herkommt und was noch zur Bemerkung gehört, bzw. wofür die Gänsefüßchen stehen.
 %Bem
 \begin{Bemerkung}
-$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$ und $\overline{\lambda} : F \rightarrow [0, \infty]$ Prämaß auf dem von $\mathscr Q$ erzeugten Ring $F$ mit $\overline{\lambda}|_\mathscr Q = \lambda$ \\
+$\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q \subset P(X)$ und $\overline{\lambda} : \mathscr F \rightarrow [0, \infty]$ Prämaß auf dem von $\mathscr Q$ erzeugten Ring $\mathscr F$ mit $\overline{\lambda}|_\mathscr Q = \lambda$ \\
 
 $\mathscr  F =$ Menge aller Figuren. Oder so. \\
 
@@ -837,7 +837,7 @@ Satz I.17 $\rightarrow$ für zwei äußere Maße $\mu, \overline{\mu}$ gilt: $\m
 Sei $\lambda: \mathscr Q \rightarrow [0, \infty]$ Prämaß auf Halbring $\mathscr Q$ über $X$. Sei $\mu: P(X) \rightarrow [0, \infty]$ das aus $\lambda$ konstruierte äußere Maß $($Satz I.7$)$ \\
 D.h.:
 \begin{center}
-	$\mu(E) := \inf\Set{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \inf\mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i }$
+	$\mu(E) := \inf\Set{\sum\limits_{i=1}^\infty \lambda(A_i) \, |\, A_i \in \mathscr Q, \, E \subset \bigcup\limits_{i=1}^\infty A_i }$
 \end{center}
 Dann ist $\mu$ eine Fortsetzung von $\lambda$.
 \end{Satz}
@@ -845,16 +845,16 @@ Dann ist $\mu$ eine Fortsetzung von $\lambda$.
 
 %Satz I.21
 \begin{Satz}
-Für einen Inhalt $\lambda$ auf einem Ring $R$ auf $A_i \in P,\, i \in \mathbb N$ betrachte die Aussagen:
+Für einen Inhalt $\lambda$ auf einem Ring $R$ mit $A_i \in R,\, i \in \mathbb N$ betrachte die Aussagen:
 \begin{enumerate}
 	\item $\lambda$ ist Prämaß auf $R$
 	\item $A_1 \subset A_2 \subset ... \subset A_i \subset A_{i+1} \subset ...$
 	\begin{center}
-		$\Rightarrow \lambda\left( \bigcup_{i \in \mathbb N} a_i \right) = \lim_{i \rightarrow \infty} \lambda(A_i)$
+		$\Rightarrow \lambda\left( \bigcup_{i \in \mathbb N} A_i \right) = \lim_{i \rightarrow \infty} \lambda(A_i)$
 	\end{center}
 	\item $A_1 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\lambda(A_1) < \infty$
 	\begin{center}
-		$\Rightarrow \lambda\left(\bigcap_{i \in \mathbb B} A_i \right) = \lim_{i\rightarrow \infty} \lambda(A_i)$
+		$\Rightarrow \lambda\left(\bigcap_{i \in \mathbb N} A_i \right) = \lim_{i\rightarrow \infty} \lambda(A_i)$
 	\end{center}
 	\item $A_1 \supset ... \supset A_i \supset A_{i+1} \supset ...$ mit $\lambda(A_1) <  \infty$ und $\bigcap\limits_{i=1}^\infty A_i = \emptyset$
 	\begin{center}
@@ -943,7 +943,7 @@ $\mathscr L^n \vert_{\mu(\mathscr L^n)}$ ist vollständiges Maß.
 \begin{Satz}
 	$D \subset \mathbb{R}^n$ ist genau dann $\mathscr{L}^n$-messbar, wenn eine der folgenden Bedingungen gilt:
 	\begin{enumerate}
-		\item $\exists B \in \mathscr{B}^n$ mit $B \ni D$ und $\mathscr{L}^n(B \backslash D) = 0$
+		\item $\exists B \in \mathscr{B}^n$ mit $B \supset D$ und $\mathscr{L}^n(B \backslash D) = 0$
 		\item $\exists C \in \mathscr{B}^n$ mit $C \subset D$ und $\mathscr{L}^n(D \backslash C) = 0$
 	\end{enumerate}
 	\textit{Zusatz:}\\
@@ -1062,7 +1062,7 @@ $\mathscr L^n (S(E) +a) = \mathscr L^n(E)\quad \forall E \subset \mathbb R^n$
 
 %Lemma II.5
 \begin{Lemma}
-$\forall S \in GL(n)$ $\exists$ Diagonalmatrix $\Lambda$ mit Einträgen $\lambda_i > 0$ und $T_1, T_2 \in O(n)$, sodass $S = T_1\cdotp\Lambda\cdotp T_2$ $($Polarzerlegung$)$
+$\forall S \in GL(n)$ $\exists$ Diagonalmatrix $\Lambda$ mit Einträgen $\lambda_i > 0$ und $T_1, T_2 \in O(n)$, sodass $S = T_1\cdotp\Lambda\cdotp T_2$ $($\textbf{Polarzerlegung}$)$
 \end{Lemma}
 
 
@@ -1106,7 +1106,7 @@ Auswahlaxiom: $\exists$ Repräsentantensystem $S \subset [0, 1]$ für $\sim$, d.
 \end{center}
 Sei jetzt $q_1, q_2, ...$ eine Abzählung von $\mathbb Q \cap [-1, 1]$. Dann gilt: 
 \begin{center}
-	$(q_j + S) \cap (q_k +S)  \emptyset \quad \forall j \ne k$ 
+	$(q_j + S) \cap (q_k +S)  = \emptyset \quad \forall j \ne k$ 
 \end{center}
 $($Sonst existieren $x_1, x_2 \in S$ mit $q_j +x_1 = q_k + x_2 \Rightarrow x_1-x_2 = q_k -q_j \in \mathbb Q$
 $ \Rightarrow x_1 \sim x_2  \Rightarrow x_1 = x_2 \Rightarrow q_j = q_k $\blitzd $ )$ \\
@@ -1134,7 +1134,7 @@ $\forall q \in \mathbb Q$ folgt:
 $(X, \mathscr A)$ messbarer Raum. Eine Funktion $\phi: X \rightarrow \mathbb R$ heißt \textbf{$\mathscr A$-Treppenfunktion} $(\mathscr A$-TF$)$, falls sie $\mathscr A$-messbar ist und nur endlich vielen Funktonswerte annimmt. Nach Satz I.4 ist die Menge $\tau_ \mathscr A$ der $\mathscr A$-TF ein $\mathbb R$-Vektorraum. \\
 Nun setze: 
 \begin{center}
-	$\tau_\mathscr A^+ := \left\{\phi\in \tau_\mathscr A: \phi \geq\right\}$
+	$\tau_\mathscr A^+ := \left\{\phi\in \tau_\mathscr A: \phi \geq 0 \right\}$
 \end{center}
 \end{Definition}
 
@@ -1154,7 +1154,7 @@ $E \subset X$ \\
 
 %Satz II.8
 \begin{Satz}
-Zu jeder $\mathscr A$-messbaren Funktion $f: [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \leq ...$ und
+Zu jeder $\mathscr A$-messbaren Funktion $f: X \rightarrow [0, \infty]$ exisitert eine Folge $f_k \in \tau_\mathscr A^+$ mit $f_0 \leq f_1 \leq ...$ und
 \begin{center}
 	$\lim_{k \rightarrow \infty} f_k(x) = f(x) \quad \forall x\in X$
 \end{center}
@@ -1176,7 +1176,7 @@ Neue Notation:
 \begin{center}	
 	\underline{$\tau^+ (\mu)$} statt $\tau_\mathscr A ^+$ 
 \end{center}	
-Definiere für $\phi \in \tau+(\mu)$ mit Wertemenge $\{s_1, ... , s_l\} \subset [0, \infty)$ das \emph{Integral}: 
+Definiere für $\phi \in \tau^+(\mu)$ mit Wertemenge $\{s_1, ... , s_l\} \subset [0, \infty)$ das \emph{Integral}: 
 \begin{center}
 	$I(\phi) = \sum\limits_{i=1}^l s_i \mu(\{\phi = s_i\}) \in [0, \infty]$
 \end{center}
@@ -1250,7 +1250,7 @@ Analog:  Ist $f \geq g$ $\mu$-fast unendlich und $\int f d\mu < \infty$, so exis
 Sei $\mu$ vollständiges Maß, $f$ $\mu$-messbar und $f = g$ $\mu$-fast überall \\
 $\xRightarrow{\text{Lemma I.5}} g$ $\mu$-messbar 
 \begin{center}
-	$\Rightarrow \int f d\mu = \int g d\mu$, 
+	$\Rightarrow \int f d\mu = \int g \;d\mu$, 
 \end{center}
 falls einer der beiden existiert.
 \end{Bemerkung}
@@ -1258,11 +1258,11 @@ falls einer der beiden existiert.
 %Lemma II.8: Tschebyscheff-Ungleichung
 \begin{Lemma}
 \emph{\textbf{Tschebyscheff-Ungleichung}} \\
-Für eine $\mathscr A$-messbare Funktion $f: X \rightarrow [0, \infty]$ mit $\int f d\mu < \infty$ gilt: \\
+Für eine $\mathscr A$-messbare Funktion $f: X \rightarrow [0, \infty]$ mit $\int_X f d\mu < \infty$ gilt: \\
 \begin{equation}
 	\mu(\{f \geq s\}) \leq
 	\begin{cases}
-		\dfrac{1}{s}\int f d\mu & s \in (0, \infty) \\
+		\dfrac{1}{s}\int_X f d\mu & s \in (0, \infty) \\
 		0 & s = \infty
 	\end{cases}
 \end{equation}
@@ -1343,10 +1343,6 @@ $f \geq 0$ $\Rightarrow$ $\int_E f \, d\mu$ existiert $\forall E \, \mathscr A$-
 \end{Bemerkung}
 
 %Behauptung, zu der er dann noch lange Gedanken/Beweise aufgeschrieben hat. Aufschrieb aus verständlichen Gründen unvollständig, dreimal darfst du raten, wer da die Vorlesung gehalten hat.
-\par\bigskip
-\emph{Behauptung}: \\
-$\int_{\mathbb R^n \backslash \mathscr B_1 (0)} f \, d\mathscr L^n < \infty$ $\Leftrightarrow$ $\alpha > n$
-\par\bigskip
 %Das war dann der 30.11.
 
 
@@ -1475,7 +1471,7 @@ Bsp. $f_\epsilon = \dfrac{1}{2\epsilon} \chi_{[-\epsilon, \epsilon]}$
 %Satz II.14 Satz über majorisierte Konvergenz, Satz von Lebesgue
 \begin{Satz}
 \emph{\textbf{Satz über majorisierte Konvergenz, Satz von Lebesgue}} \\
-Sei $(X, \mathscr A, \mu)$ Maßruam und $f_1, f_2, ...$ Folge $\mathscr A$-messbarer Funktionen mit 
+Sei $(X, \mathscr A, \mu)$ Maßraum und $f_1, f_2, ...$ Folge $\mathscr A$-messbarer Funktionen mit 
 \begin{center}
 	$f(x) := \lim_{k \rightarrow \infty} f_k (x)$ für $\mu$-fast alle $x \in X$. 
 \end{center}
@@ -1609,7 +1605,7 @@ Sei $f: X \rightarrow \overline{\mathbb R}$ $\mu$-messbar, $1 \leq p \leq \infty
 \|f\|_{L^p (\mu)} =
 \begin{cases}
 	\left( \int |f|^p d\mu\right) ^{\dfrac{1}{p}} & , \text{ für } 1 \leq p < \infty \\
-	\inf \{s > 0 | \mu(\{|f| > s\}) = \infty \} & ,\, p = \infty
+	\inf \{s > 0 | \mu(\{|f| > s\}) = 0 \} & ,\, p = \infty
 \end{cases}
 \end{equation}
 \begin{center}
